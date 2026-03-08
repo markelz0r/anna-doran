@@ -1,0 +1,56 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: #f6f6f6;
+  --color-foreground: #4a4a4a;
+  --color-card: #ffffff;
+  --color-card-foreground: #4a4a4a;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #4a4a4a;
+  --color-primary: #f38f3b;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #f0f0f0;
+  --color-secondary-foreground: #4a4a4a;
+  --color-muted: #f0f0f0;
+  --color-muted-foreground: #737373;
+  --color-accent: #f38f3b;
+  --color-accent-foreground: #ffffff;
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
+  --color-border: #e5e5e5;
+  --color-input: #e5e5e5;
+  --color-ring: #f38f3b;
+  --color-chart-1: #f38f3b;
+  --color-chart-2: #4a4a4a;
+  --color-chart-3: #737373;
+  --color-chart-4: #e5e5e5;
+  --color-chart-5: #f0f0f0;
+  --color-sidebar: #f6f6f6;
+  --color-sidebar-foreground: #4a4a4a;
+  --color-sidebar-primary: #f38f3b;
+  --color-sidebar-primary-foreground: #ffffff;
+  --color-sidebar-accent: #f0f0f0;
+  --color-sidebar-accent-foreground: #4a4a4a;
+  --color-sidebar-border: #e5e5e5;
+  --color-sidebar-ring: #f38f3b;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+}

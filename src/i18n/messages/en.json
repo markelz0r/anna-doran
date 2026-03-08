@@ -1,0 +1,44 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About me",
+    "contacts": "Contacts"
+  },
+  "hero": {
+    "cta": "Book free discovery call"
+  },
+  "sections": {
+    "testimonials": "What my clients say",
+    "problems": "Problems I help solve",
+    "conditions": "Conditions I treat",
+    "goals": "With me you will achieve",
+    "services": "My Services",
+    "about": "About me",
+    "contact": "Start making changes right now",
+    "contactSubtitle": "Leave your contacts or get in touch directly via messenger by clicking the icon"
+  },
+  "form": {
+    "name": "Name",
+    "email": "Email",
+    "privacyConsent": "I agree to the privacy policy",
+    "submit": "Send",
+    "success": "Thank you! Your message has been sent.",
+    "error": "Something went wrong. Please try again."
+  },
+  "services": {
+    "bookNow": "Book now",
+    "free": "FREE",
+    "perConsultation": "per consultation"
+  },
+  "footer": {
+    "privacyPolicy": "Privacy Policy",
+    "newsletter": "Monthly newsletter",
+    "subscribe": "Subscribe",
+    "copyright": "© {year} Anna Doran. All rights reserved.",
+    "emailPlaceholder": "Your email"
+  },
+  "language": {
+    "switch": "RU"
+  }
+}
