@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
+import Image from 'next/image'
 import { Menu } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
@@ -38,8 +39,15 @@ export function Header({ settings, locale }: HeaderProps) {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <a href="#" className="text-xl font-bold text-primary">
-          {settings.siteName || 'Anna Doran'}
+        <a href="#">
+          <Image
+            src={locale === 'ru' ? '/images/logo-ru.png' : '/images/logo-en.png'}
+            alt={settings.siteName || 'Anna Doran'}
+            width={140}
+            height={130}
+            className="h-12 w-auto"
+            priority
+          />
         </a>
 
         {/* Desktop nav */}

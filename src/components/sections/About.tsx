@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { Separator } from '@/components/ui/separator'
 import { SectionHeading } from '@/components/shared/SectionHeading'
@@ -23,6 +24,16 @@ export function About({ about, education, credentials, additionalTraining }: Abo
     <section id="about" className="py-20">
       <div className="container mx-auto px-4 max-w-4xl">
         <SectionHeading>{t('about')}</SectionHeading>
+
+        <div className="flex justify-center mb-12">
+          <Image
+            src="/images/portrait.jpg"
+            alt="Anna Doran"
+            width={300}
+            height={450}
+            className="rounded-2xl shadow-lg object-cover"
+          />
+        </div>
 
         {about.mission && (
           <p className="text-lg text-center text-muted-foreground mb-12 italic">{about.mission}</p>
