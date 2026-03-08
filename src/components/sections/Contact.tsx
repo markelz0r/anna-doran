@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -37,7 +38,17 @@ export function Contact({ locale, whatsapp, telegram }: ContactProps) {
 
   return (
     <section id="contacts" className="py-20 bg-card">
-      <div className="container mx-auto px-4 max-w-xl">
+      <div className="container mx-auto px-4 max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="hidden md:block">
+          <Image
+            src="/images/nutrition-greens.png"
+            alt="Anna Doran"
+            width={450}
+            height={580}
+            className="rounded-2xl shadow-lg object-cover"
+          />
+        </div>
+      <div>
         <SectionHeading>{t('contact')}</SectionHeading>
         <p className="text-center text-muted-foreground mb-8">{t('contactSubtitle')}</p>
 
@@ -82,6 +93,7 @@ export function Contact({ locale, whatsapp, telegram }: ContactProps) {
             )}
           </form>
         )}
+      </div>
       </div>
     </section>
   )

@@ -27,11 +27,11 @@ export function About({ about, education, credentials, additionalTraining }: Abo
 
         <div className="flex justify-center mb-12">
           <Image
-            src="/images/portrait.jpg"
+            src="/images/portrait-headshot.png"
             alt="Anna Doran"
-            width={300}
-            height={450}
-            className="rounded-2xl shadow-lg object-cover"
+            width={400}
+            height={520}
+            className="rounded-2xl shadow-lg object-cover max-h-[450px] w-auto"
           />
         </div>
 

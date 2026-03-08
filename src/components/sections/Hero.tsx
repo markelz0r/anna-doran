@@ -22,11 +22,11 @@ export function Hero({ name, title, tagline, ctaText }: HeroProps) {
         </div>
         <div className="flex justify-center">
           <Image
-            src="/images/portrait.jpg"
+            src="/images/hero-anna.png"
             alt="Anna Doran"
-            width={420}
-            height={630}
-            className="rounded-2xl shadow-lg object-cover max-h-[500px] w-auto"
+            width={547}
+            height={565}
+            className="rounded-2xl shadow-lg object-cover"
             priority
           />
         </div>
