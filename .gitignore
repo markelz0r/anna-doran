@@ -35,3 +35,10 @@ next-env.d.ts
 
 # payload
 /media
+
+# IDE
+.idea/
+
+# deploy scripts with credentials
+deploy.py
+run-seed.py

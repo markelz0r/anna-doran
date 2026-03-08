@@ -15,6 +15,12 @@ interface AboutProps {
   }>
   credentials: string[]
   additionalTraining: string[]
+  settings?: {
+    social?: {
+      instagram?: string
+      linkedin?: string
+    }
+  }
 }
 
 export function About({ about, education, credentials, additionalTraining }: AboutProps) {
@@ -22,69 +28,71 @@ export function About({ about, education, credentials, additionalTraining }: Abo
 
   return (
     <section id="about" className="py-20">
-      <div className="container mx-auto px-4 max-w-4xl">
+      <div className="container mx-auto px-4 max-w-6xl">
         <SectionHeading>{t('about')}</SectionHeading>
 
-        <div className="flex justify-center mb-12">
-          <Image
-            src="/images/portrait-headshot.png"
-            alt="Anna Doran"
-            width={400}
-            height={520}
-            className="rounded-2xl shadow-lg object-cover max-h-[450px] w-auto"
-          />
-        </div>
-
-        {about.mission && (
-          <p className="text-lg text-center text-muted-foreground mb-12 italic">{about.mission}</p>
-        )}
-
-        {credentials.length > 0 && (
-          <div className="mb-12">
-            <ul className="space-y-2">
-              {credentials.map((cred, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <span className="text-primary mt-1">•</span>
-                  <span className="text-foreground">{cred}</span>
-                </li>
-              ))}
-            </ul>
+        {/* Top: portrait + credentials side by side */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+          <div className="flex justify-center lg:justify-start">
+            <div className="relative rounded-2xl overflow-hidden w-full max-w-[300px] aspect-[3/4]">
+              <Image
+                src="/images/portrait-headshot.png"
+                alt="Anna Doran"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
-        )}
-
-        <Separator className="my-8" />
-
-        {education.length > 0 && (
-          <div className="mb-12">
-            <h3 className="text-2xl font-semibold mb-8 text-center">
-              {/* Education heading is part of the section */}
-            </h3>
-            <div className="space-y-6">
-              {education.map((item) => (
-                <div key={item.id} className="flex gap-6 items-start">
-                  <span className="text-primary font-bold min-w-[100px] text-right">{item.year}</span>
-                  <div>
-                    <p className="font-semibold text-foreground">{item.qualification}</p>
-                    <p className="text-sm text-muted-foreground">{item.institution}</p>
-                  </div>
-                </div>
+          <div className="lg:col-span-2 flex flex-col justify-center">
+            {about.mission && (
+              <p className="text-lg text-muted-foreground italic mb-6">{about.mission}</p>
+            )}
+            <div className="space-y-3">
+              {credentials.map((cred, i) => (
+                <p key={i} className="flex items-start gap-2 text-foreground leading-relaxed">
+                  <span className="text-primary mt-1">•</span>
+                  {cred}
+                </p>
               ))}
             </div>
           </div>
+        </div>
+
+        {/* Education */}
+        {education.length > 0 && (
+          <>
+            <Separator className="my-8" />
+            <div className="mb-16">
+              <h3 className="text-2xl font-bold text-center mb-10">Education</h3>
+              <div className="space-y-6 max-w-3xl mx-auto">
+                {education.map((item) => (
+                  <div key={item.id} className="flex gap-6 items-start">
+                    <span className="text-primary font-semibold min-w-[80px] text-sm">{item.year}</span>
+                    <div className="border-l-2 border-primary pl-6">
+                      <p className="font-medium text-foreground">{item.qualification}</p>
+                      <p className="text-sm text-muted-foreground">{item.institution}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </>
         )}
 
+        {/* Additional Training */}
         {additionalTraining.length > 0 && (
           <>
             <Separator className="my-8" />
             <div>
-              <ul className="space-y-2">
+              <h3 className="text-2xl font-bold text-center mb-10">Additional Training</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
                 {additionalTraining.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="text-primary mt-1">✓</span>
-                    <span className="text-muted-foreground">{item}</span>
-                  </li>
+                  <p key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <span className="text-primary mt-0.5">✓</span>
+                    {item}
+                  </p>
                 ))}
-              </ul>
+              </div>
             </div>
           </>
         )}

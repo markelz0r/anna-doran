@@ -46,6 +46,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         title={hero.title}
         tagline={hero.tagline}
         ctaText={hero.ctaText}
+        testimonialSnippets={testimonials.docs.slice(0, 2).map((t) => t.quote)}
       />
       <Testimonials
         testimonials={testimonials.docs.map((t) => ({
@@ -97,6 +98,12 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         }))}
         credentials={credentialsList}
         additionalTraining={trainingList}
+        settings={{
+          social: {
+            instagram: settings.social?.instagram || undefined,
+            linkedin: settings.social?.linkedin || undefined,
+          },
+        }}
       />
       <Contact
         locale={locale}
