@@ -54,11 +54,12 @@ async function seed() {
       phoneEN: '+447990651664',
       phoneRU: '+79151154413',
       social: {
-        instagram: 'annadoran_health',
+        instagram: 'annadoran_diet',
         whatsappEN: '447990651664',
         whatsappRU: '79151154413',
         telegram: 'annadoran_nutri',
         linkedin: 'annadoranhealth',
+        youtube: 'annadoran_diet',
       },
     },
     locale: 'en',

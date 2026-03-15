@@ -3,7 +3,8 @@
     "home": "Home",
     "services": "Services",
     "about": "About me",
-    "contacts": "Contacts"
+    "contacts": "Contacts",
+    "courses": "Courses & Resources"
   },
   "hero": {
     "cta": "Book free discovery call"
@@ -16,11 +17,12 @@
     "services": "My services",
     "about": "About me",
     "contact": "Start making changes right now",
-    "contactSubtitle": "Leave your contacts or get in touch directly via messenger by clicking the icon"
+    "contactSubtitle": "Leave your contact details below or contact me directly on Instagram or emailing me."
   },
   "form": {
     "name": "Name",
     "email": "Email",
+    "message": "Your message",
     "privacyConsent": "I agree to the privacy policy",
     "submit": "Send",
     "success": "Thank you! Your message has been sent.",
@@ -38,6 +40,34 @@
     "subscribe": "Subscribe",
     "copyright": "© {year} Anna Doran. All rights reserved.",
     "emailPlaceholder": "Your email"
+  },
+  "newsletter": {
+    "heading": "Nutrition tips & inspiration",
+    "subtitle": "Sign up for tips, recipes, and lifestyle inspiration to help balancing your health with nutrition.",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "Your email",
+    "subscribe": "Subscribe",
+    "success": "Thank you for subscribing!"
+  },
+  "courses": {
+    "heading": "Courses & Resources",
+    "backHome": "Back to home",
+    "coursesSection": "Courses",
+    "resourcesSection": "Resources",
+    "comingSoon": "Coming soon"
+  },
+  "about": {
+    "heading": "About me",
+    "backHome": "Back to home",
+    "education": "Education",
+    "additionalTraining": "Additional training",
+    "journeyHeading": "My journey into nutrition",
+    "transformation": "My transformation",
+    "cta": "Book free discovery call",
+    "learnMore": "Learn more about me",
+    "followInstagram": "Follow me on Instagram",
+    "watchYouTube": "Watch on YouTube",
+    "connectLinkedIn": "Connect on LinkedIn"
   },
   "language": {
     "switch": "RU"

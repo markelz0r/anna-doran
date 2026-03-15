@@ -8,9 +8,7 @@ interface FooterProps {
     email?: string
     social?: {
       instagram?: string
-      whatsappEN?: string
-      whatsappRU?: string
-      telegram?: string
+      youtube?: string
       linkedin?: string
     }
   }
@@ -19,8 +17,6 @@ interface FooterProps {
 
 export function Footer({ settings, locale }: FooterProps) {
   const t = useTranslations('footer')
-
-  const whatsapp = locale === 'ru' ? settings.social?.whatsappRU : settings.social?.whatsappEN
 
   return (
     <footer className="py-16 bg-background text-foreground">
@@ -31,8 +27,7 @@ export function Footer({ settings, locale }: FooterProps) {
         <div className="flex justify-center mb-10">
           <SocialIcons
             instagram={settings.social?.instagram}
-            whatsapp={whatsapp}
-            telegram={settings.social?.telegram}
+            youtube={settings.social?.youtube}
             linkedin={settings.social?.linkedin}
           />
         </div>

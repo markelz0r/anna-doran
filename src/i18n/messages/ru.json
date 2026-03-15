@@ -3,7 +3,8 @@
     "home": "Главная",
     "services": "Услуги",
     "about": "Обо мне",
-    "contacts": "Контакты"
+    "contacts": "Контакты",
+    "courses": "Курсы и ресурсы"
   },
   "hero": {
     "cta": "Бесплатная диагностика"
@@ -21,6 +22,7 @@
   "form": {
     "name": "Имя",
     "email": "Электронная почта",
+    "message": "Ваше сообщение",
     "privacyConsent": "Я согласен с политикой конфиденциальности",
     "submit": "Отправить",
     "success": "Спасибо! Ваше сообщение отправлено.",
@@ -38,6 +40,34 @@
     "subscribe": "Подписаться",
     "copyright": "© {year} Анна Доран. Все права защищены.",
     "emailPlaceholder": "Ваш email"
+  },
+  "newsletter": {
+    "heading": "Советы по питанию и вдохновение",
+    "subtitle": "Подпишитесь на советы, рецепты и вдохновение для здорового образа жизни с помощью правильного питания.",
+    "namePlaceholder": "Ваше имя",
+    "emailPlaceholder": "Ваш email",
+    "subscribe": "Подписаться",
+    "success": "Спасибо за подписку!"
+  },
+  "courses": {
+    "heading": "Курсы и ресурсы",
+    "backHome": "На главную",
+    "coursesSection": "Курсы",
+    "resourcesSection": "Ресурсы",
+    "comingSoon": "Скоро"
+  },
+  "about": {
+    "heading": "Обо мне",
+    "backHome": "На главную",
+    "education": "Образование",
+    "additionalTraining": "Дополнительное обучение",
+    "journeyHeading": "Мой путь в нутрициологию",
+    "transformation": "Моя трансформация",
+    "cta": "Записаться на консультацию",
+    "learnMore": "Узнать больше обо мне",
+    "followInstagram": "Подписаться в Instagram",
+    "watchYouTube": "Смотреть на YouTube",
+    "connectLinkedIn": "Связаться в LinkedIn"
   },
   "language": {
     "switch": "EN"

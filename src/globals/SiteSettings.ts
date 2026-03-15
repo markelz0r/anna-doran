@@ -18,6 +18,7 @@ export const SiteSettings: GlobalConfig = {
         { name: 'whatsappRU', type: 'text', label: 'WhatsApp (RU)' },
         { name: 'telegram', type: 'text' },
         { name: 'linkedin', type: 'text' },
+        { name: 'youtube', type: 'text', label: 'YouTube' },
       ],
     },
     { name: 'logo', type: 'upload', relationTo: 'media' },

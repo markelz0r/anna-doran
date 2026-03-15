@@ -14,9 +14,7 @@ interface HeaderProps {
     siteName?: string
     social?: {
       instagram?: string
-      whatsappEN?: string
-      whatsappRU?: string
-      telegram?: string
+      youtube?: string
       linkedin?: string
     }
   }
@@ -28,18 +26,17 @@ export function Header({ settings, locale }: HeaderProps) {
   const [open, setOpen] = useState(false)
 
   const navItems = [
-    { label: t('home'), href: '#' },
-    { label: t('services'), href: '#services' },
-    { label: t('about'), href: '#about' },
-    { label: t('contacts'), href: '#contacts' },
+    { label: t('home'), href: `/${locale}` },
+    { label: t('services'), href: `/${locale}#services` },
+    { label: t('about'), href: `/${locale}/about` },
+    { label: t('contacts'), href: `/${locale}#contacts` },
+    { label: t('courses'), href: `/${locale}/courses` },
   ]
-
-  const whatsapp = locale === 'ru' ? settings.social?.whatsappRU : settings.social?.whatsappEN
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <a href="#">
+        <a href={`/${locale}`}>
           <Image
             src={locale === 'ru' ? '/images/logo-ru.png' : '/images/logo-en.png'}
             alt={settings.siteName || 'Anna Doran'}
@@ -59,8 +56,7 @@ export function Header({ settings, locale }: HeaderProps) {
           ))}
           <SocialIcons
             instagram={settings.social?.instagram}
-            whatsapp={whatsapp}
-            telegram={settings.social?.telegram}
+            youtube={settings.social?.youtube}
             linkedin={settings.social?.linkedin}
           />
           <LanguageToggle />
@@ -84,8 +80,7 @@ export function Header({ settings, locale }: HeaderProps) {
                 ))}
                 <SocialIcons
                   instagram={settings.social?.instagram}
-                  whatsapp={whatsapp}
-                  telegram={settings.social?.telegram}
+                  youtube={settings.social?.youtube}
                   linkedin={settings.social?.linkedin}
                   className="mt-4"
                 />
