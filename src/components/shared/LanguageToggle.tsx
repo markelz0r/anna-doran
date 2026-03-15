@@ -17,7 +17,7 @@ export function LanguageToggle() {
   }
 
   return (
-    <Button variant="ghost" size="sm" onClick={switchLocale} className="font-semibold">
+    <Button variant="ghost" size="sm" onClick={switchLocale} className="text-sm font-medium text-[#979797]">
       {t('switch')}
     </Button>
   )

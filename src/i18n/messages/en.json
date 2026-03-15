@@ -10,10 +10,10 @@
   },
   "sections": {
     "testimonials": "What my clients say",
-    "problems": "Problems I help solve",
-    "conditions": "Conditions I treat",
-    "goals": "With me you will achieve",
-    "services": "My Services",
+    "problems": "Queries I solve :",
+    "conditions": "I can also help with serious chronic conditions",
+    "goals": "The goals you can achieve with me safely and effectively",
+    "services": "My services",
     "about": "About me",
     "contact": "Start making changes right now",
     "contactSubtitle": "Leave your contacts or get in touch directly via messenger by clicking the icon"
@@ -32,6 +32,7 @@
     "perConsultation": "per consultation"
   },
   "footer": {
+    "connectSocial": "Connect on social media",
     "privacyPolicy": "Privacy Policy",
     "newsletter": "Monthly newsletter",
     "subscribe": "Subscribe",

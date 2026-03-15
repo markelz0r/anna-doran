@@ -78,7 +78,8 @@ async function seed() {
     data: {
       name: 'Anna Doran',
       title: 'Nutritionist and Dietitian',
-      tagline: 'Restore your energy and health through a conscious attitude towards yourself and your diet',
+      heading: 'Restore your energy and health',
+      tagline: 'through a conscious attitude towards yourself and your diet',
       ctaText: 'Book free discovery call',
     },
     locale: 'en',
@@ -88,7 +89,8 @@ async function seed() {
     data: {
       name: 'Анна Доран',
       title: 'нутрициолог и диетолог',
-      tagline: 'Восстановите энергию и здоровье через осознанное отношение к себе и своему питанию',
+      heading: 'Восстановите энергию и здоровье',
+      tagline: 'через осознанное отношение к себе и своему питанию',
       ctaText: 'Бесплатная диагностика',
     },
     locale: 'ru',
@@ -109,11 +111,19 @@ async function seed() {
         'Regularly organises seminars and lectures on healthy eating and lifestyle',
       ]),
       additionalTraining: richTextParagraphs([
-        'Food labelling from Food Standards Agency in England (2023)',
-        'Food hygiene and food safety in the kitchen (2023)',
-        'Ketogenic diet in pediatric epilepsy (2023)',
-        'IBS treatment trends from British Dietetic Association (2023)',
-        'Detox coaching at the Academy of Youth and Beauty (2024)',
+        'Food labelling e-learning course from Food Standards Agency (2023)',
+        'Food hygiene and safety for catering (2023)',
+        'Ketogenic diet in children with epilepsy (2023)',
+        'The latest trends treatment of IBS from the BDA (2023)',
+        'Detox coaching at the Academy of Youth and Beauty by Gastroenterologist Olga Evdokimova (2024)',
+        'Plant based nutrition for older adults course by British Society of Lifestyle Medicine (2024)',
+        'Obesity-Weight management training by Novo Nordisk UK (2024)',
+        'Motivational Interviewing training Course by Leeds Beckett University (2025)',
+        'Optimising Nutrition in the Management of COPD: Transforming Clinical Evidence into Practice by Nutricia (2025)',
+        'Introduction to Nutrition in Cancer training by the BDA (2025)',
+        'Management of IBS using a Low FODMAP Diet course by the BDA (2025)',
+        'Management of Chronic Kidney Disease Stages 3-5 training by the BDA (2026)',
+
       ]),
       publication: richTextParagraphs([
         '"Using markers to diagnose colorectal cancer" (OMICs Online)',
@@ -207,28 +217,28 @@ async function seed() {
   // 7. Seed Problems
   const problemsData = [
     {
-      en: "Prolonged health struggles — been to many doctors and can't understand why",
-      ru: 'Давно мучаетесь с проблемой, обошли врачей и никак не можете понять, почему так',
+      en: "You've been suffering from health problem for a long time,|you've been to doctors and you still can't understand why it's like this.",
+      ru: 'Давно мучаетесь с проблемой,|обошли врачей и никак не можете понять, почему так.',
     },
     {
-      en: "Want to start planning your diet and your family's diet",
-      ru: 'Хочется начать планировать свой рацион и рацион питания вашей семьи',
+      en: "Want to start planning|yours and your family's diet.",
+      ru: 'Хочется начать планировать|свой рацион и рацион питания вашей семьи.',
     },
     {
-      en: 'Lack of motivation and support to achieve goals',
-      ru: 'Не хватает мотивации и поддержки для достижения целей',
+      en: 'Lack motivation|and support to achieve your goals.',
+      ru: 'Не хватает мотивации|и поддержки для достижения целей.',
     },
     {
-      en: 'Confident that you need to find the cause, not treat symptoms',
-      ru: 'Уверены, что нужно найти причину, чтобы улучшить здоровье, а не лечить симптомы',
+      en: "You're convinced that, you need to find the cause|to improve your health rather than treating the symptoms.",
+      ru: 'Уверены, что нужно найти причину,|чтобы улучшить здоровье, а не лечить симптомы.',
     },
     {
-      en: "Think it's all about nutrition but don't have expert knowledge and don't know where to start",
-      ru: 'Думаете, что все дело в питании, но не имеете экспертных знаний и не знаете, с чего начать',
+      en: "You think it's all about nutrition,|but you don't have expert knowledge and don't know where to start and what will give you the best results.",
+      ru: 'Думаете, что все дело в питании,|но не имеете экспертных знаний и не знаете, с чего начать.',
     },
     {
-      en: 'Already spent a lot of money on various doctors and tired of the huge amount of recommendations',
-      ru: 'Уже отдали много денег разным врачам и устали от огромного количества рекомендаций',
+      en: 'Have spent a lot of money on doctors|and overwhelmed with the amount of recommendations.',
+      ru: 'Уже отдали много денег разным врачам|и устали от огромного количества рекомендаций.',
     },
   ]
 

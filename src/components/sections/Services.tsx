@@ -41,18 +41,18 @@ export function Services({ services, locale }: ServicesProps) {
                   </Badge>
                 )}
                 <CardHeader>
-                  <CardTitle className="text-lg">{service.title}</CardTitle>
+                  <CardTitle className="font-[family-name:var(--font-heading)] text-[20px] font-semibold">{service.title}</CardTitle>
                   {service.duration && (
-                    <p className="text-sm text-muted-foreground">{service.duration}</p>
+                    <p className="text-base font-light text-[#9f9f9f]">{service.duration}</p>
                   )}
                 </CardHeader>
                 <CardContent className="flex-1 flex flex-col">
-                  <p className="text-sm text-muted-foreground mb-4 flex-1">{service.description}</p>
+                  <p className="text-base text-[#4b4b4b] mb-4 flex-1">{service.description}</p>
                   <div className="mt-auto">
-                    <p className="text-2xl font-bold text-primary mb-4">
+                    <p className="text-[26px] font-medium text-[#1781ae] mb-4">
                       {price || st('free')}
                     </p>
-                    <Button asChild className="w-full bg-primary hover:bg-primary/90">
+                    <Button asChild className="w-full bg-primary hover:bg-primary/90 text-base font-medium">
                       <a href="#contacts">{service.ctaLabel || st('bookNow')}</a>
                     </Button>
                   </div>

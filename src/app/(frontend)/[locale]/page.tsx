@@ -7,7 +7,6 @@ export const dynamic = 'force-dynamic'
 import { Hero } from '@/components/sections/Hero'
 import { Testimonials } from '@/components/sections/Testimonials'
 import { ProblemsAddressed } from '@/components/sections/ProblemsAddressed'
-import { ConditionsTreated } from '@/components/sections/ConditionsTreated'
 import { GoalsAchievable } from '@/components/sections/GoalsAchievable'
 import { Services } from '@/components/sections/Services'
 import { About } from '@/components/sections/About'
@@ -44,16 +43,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <Hero
         name={hero.name}
         title={hero.title}
-        tagline={hero.tagline}
+        heading={hero.heading}
+        subtitle={hero.tagline}
         ctaText={hero.ctaText}
-        testimonialSnippets={testimonials.docs.slice(0, 2).map((t) => t.quote)}
-      />
-      <Testimonials
-        testimonials={testimonials.docs.map((t) => ({
-          id: String(t.id),
-          quote: t.quote,
-          authorName: t.authorName,
-        }))}
+        testimonialSnippets={testimonials.docs.map((t) => t.quote)}
       />
       <ProblemsAddressed
         problems={problems.docs.map((p) => ({
@@ -61,8 +54,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           text: p.text,
           order: p.order,
         }))}
-      />
-      <ConditionsTreated
         conditions={conditions.docs.map((c) => ({
           id: String(c.id),
           text: c.text,
@@ -105,6 +96,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           },
         }}
       />
+      <Testimonials />
       <Contact
         locale={locale}
         whatsapp={whatsapp || undefined}
