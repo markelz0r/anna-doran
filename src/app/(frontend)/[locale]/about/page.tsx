@@ -92,16 +92,6 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Closing paragraph */}
-        <div className="space-y-4 text-base text-foreground leading-relaxed mb-10">
-          <p>
-            Perhaps some of you will see yourselves in this as well. Then it&apos;s important to start working in this direction, but remember, your path will be unique because we are all different.
-          </p>
-          <p>
-            Having come this far, I realize my mission is to use my knowledge and experience to help those who are just beginning their journey to restore health and beauty. I believe that everyone can manage their health through mindful nutrition and self-care, and I&apos;m here to guide you on the shortest path to your goal.
-          </p>
-        </div>
-
         {/* CTA */}
         <a
           href="/#contacts"

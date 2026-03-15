@@ -44,7 +44,7 @@ export function GoalsAchievable({ goals }: GoalsAchievableProps) {
               {goals.map((item) => (
                 <div key={item.id} className="flex items-start gap-4">
                   <OrangeCheck />
-                  <p className="text-base font-normal text-foreground">{item.text}</p>
+                  <p className="text-[15px] font-normal text-foreground">{item.text}</p>
                 </div>
               ))}
             </div>

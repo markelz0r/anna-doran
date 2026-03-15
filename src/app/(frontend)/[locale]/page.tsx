@@ -35,7 +35,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const whatsapp = locale === 'ru' ? settings.social?.whatsappRU : settings.social?.whatsappEN
 
   // Extract credentials and training from richText as simple arrays
-  const credentialsList = extractTextFromRichText(about.credentials)
+  const credentialsList = extractRichTextParagraphs(about.credentials)
   const trainingList = extractTextFromRichText(about.additionalTraining)
 
   return (
@@ -87,7 +87,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           institution: e.institution,
           qualification: e.qualification,
         }))}
-        credentials={credentialsList}
+        credentials={credentialsList as Array<Array<{ text: string; bold: boolean }>>}
         additionalTraining={trainingList}
         settings={{
           social: {
@@ -121,4 +121,26 @@ function extractTextFromRichText(richText: unknown): string[] {
       return ''
     })
     .filter((text: string) => text.length > 0)
+}
+
+// Helper to extract rich text with bold formatting preserved
+type RichTextSpan = { text: string; bold: boolean }
+type RichTextParagraph = RichTextSpan[]
+
+function extractRichTextParagraphs(richText: unknown): RichTextParagraph[] {
+  if (!richText || typeof richText !== 'object') return []
+  const root = (richText as { root?: { children?: unknown[] } }).root
+  if (!root?.children) return []
+
+  return root.children
+    .map((node: unknown) => {
+      const n = node as { children?: Array<{ text?: string; format?: number }> }
+      if (n.children) {
+        return n.children
+          .filter((c) => c.text)
+          .map((c) => ({ text: c.text || '', bold: (c.format || 0) === 1 }))
+      }
+      return []
+    })
+    .filter((spans) => spans.length > 0)
 }

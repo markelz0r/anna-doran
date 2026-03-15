@@ -35,7 +35,7 @@ export function ProblemsAddressed({ problems, conditions }: ProblemsAddressedPro
                     <span className="text-sm font-normal text-[#dadada]">
                       [{String(item.order).padStart(2, '0')}]
                     </span>
-                    <p className="text-sm font-normal text-foreground leading-relaxed">
+                    <p className="text-[15px] font-normal text-foreground leading-relaxed">
                       <span className="font-bold text-[#1881ae]">{boldPart}</span>
                       {normalPart && <> {normalPart}</>}
                     </p>
@@ -80,7 +80,7 @@ export function ProblemsAddressed({ problems, conditions }: ProblemsAddressedPro
                 {conditions.map((item) => (
                   <div key={item.id} className="flex items-start gap-3">
                     <span className="text-primary mt-1.5 text-lg leading-none">•</span>
-                    <p className="text-base font-normal text-foreground">{item.text}</p>
+                    <p className="text-[15px] font-normal text-foreground">{item.text}</p>
                   </div>
                 ))}
               </div>

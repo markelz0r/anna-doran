@@ -14,7 +14,7 @@ interface AboutProps {
     institution: string
     qualification: string
   }>
-  credentials: string[]
+  credentials: Array<Array<{ text: string; bold: boolean }>>
   additionalTraining: string[]
   settings?: {
     social?: {
@@ -40,36 +40,30 @@ export function About({ about, education, credentials, additionalTraining, setti
             </h2>
 
             <div className="space-y-5 mb-8">
-              {credentials.map((cred, i) => (
-                <p key={i} className="text-sm text-foreground leading-relaxed">{cred}</p>
+              {credentials.map((spans, i) => (
+                <p key={i} className="text-[15px] text-foreground leading-relaxed">
+                  {spans.map((span, j) =>
+                    span.bold ? <strong key={j}>{span.text}</strong> : <span key={j}>{span.text}</span>
+                  )}
+                </p>
               ))}
             </div>
 
             {/* My journey button */}
             <a
               href={`/${locale}/about`}
-              className="flex items-center justify-center gap-4 border-2 border-primary text-primary rounded-full px-8 py-4 text-base font-medium hover:bg-primary/5 transition-colors mb-6"
+              className="flex items-center justify-center gap-4 border-2 border-primary text-primary rounded-full px-6 py-3 text-[15px] font-medium hover:bg-primary/5 transition-colors mb-6"
             >
               My journey into nutrition
               <span className="text-xl">→</span>
             </a>
 
-            {/* Article link */}
-            <a
-              href="https://www.omicsonline.org/open-access/using-markers-to-diagnose-colorectal-cancer.php"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-4 text-primary hover:underline text-sm"
-            >
-              Read my article &ldquo;Using markers to diagnose colorectal cancer&rdquo;
-              <span className="text-lg">→</span>
-            </a>
-
             {/* Professional body logos */}
-            <div className="flex items-center gap-8 mt-8 pt-8 border-t border-border">
-              <Image src="/images/logo-bps.png" alt="British Pharmacological Society" width={102} height={33} className="h-8 w-auto object-contain" />
-              <Image src="/images/logo-bda.png" alt="BDA - The Association of UK Dietitians" width={51} height={35} className="h-8 w-auto object-contain" />
-              <Image src="/images/logo-trust-dietitian.png" alt="Trust a Dietitian" width={102} height={32} className="h-8 w-auto object-contain" />
+            <div className="flex items-center justify-between mt-8 pt-8 border-t border-border">
+              <Image src="/images/logo-nhs.svg" alt="NHS" width={100} height={48} className="h-12 w-auto object-contain" />
+              <Image src="/images/logo-trust-dietitian.png" alt="Trust a Dietitian" width={100} height={48} className="h-12 w-auto object-contain" />
+              <Image src="/images/logo-bda-new.png" alt="BDA - The Association of UK Dietitians" width={100} height={48} className="h-12 w-auto object-contain" />
+              <Image src="/images/logo-sustainable-diets.png" alt="BDA Sustainable Diets Specialist Group" width={100} height={48} className="h-18 w-auto object-contain" />
             </div>
           </div>
 
@@ -89,27 +83,11 @@ export function About({ about, education, credentials, additionalTraining, setti
                 Anna Doran
               </h2>
             </div>
-            {/* Bottom: social icons + mission */}
-            <div className="absolute bottom-8 left-8 right-8">
-              <div className="flex items-end justify-between gap-4">
-                <div className="flex gap-3">
-                  {settings?.social?.linkedin && (
-                    <a href={`https://linkedin.com/in/${settings.social.linkedin}`} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-                      <Image src="/images/icon-linkedin.svg" alt="LinkedIn" width={20} height={20} />
-                    </a>
-                  )}
-                  {settings?.social?.instagram && (
-                    <a href={`https://instagram.com/${settings.social.instagram}`} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-                      <Image src="/images/icon-instagram.svg" alt="Instagram" width={20} height={20} />
-                    </a>
-                  )}
-                </div>
-                {about.mission && (
-                  <p className="font-[family-name:var(--font-heading)] text-[10px] md:text-xs text-white uppercase tracking-wider leading-relaxed max-w-[200px] text-right">
-                    {about.mission}
-                  </p>
-                )}
-              </div>
+            {/* Bottom: mission text */}
+            <div className="absolute bottom-0 left-0 right-0 bg-black/60 backdrop-blur-sm px-6 py-5">
+              <p className="font-[family-name:var(--font-heading)] text-sm md:text-base text-white uppercase tracking-wider leading-relaxed">
+                My mission is to help people improve their health through practical nutrition advice that fits into real life. I focus on building sustainable habits rather than extreme diets, because small, consistent changes can make a meaningful difference to long-term health.
+              </p>
             </div>
           </div>
         </div>

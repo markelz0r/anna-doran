@@ -103,12 +103,9 @@ async function seed() {
     data: {
       mission: 'To use all her knowledge and experience to support and guide individuals on their journey to restoring health and beauty',
       credentials: richTextParagraphs([
-        'Certified Dietitian currently working in the NHS in Sunderland Royal Hospital Trust',
-        'Integrative Nutritionist doing remote consultation on Nutrition',
-        'Pharmacologist from the University of East Anglia, UK',
-        'Experience working in clinical trials at the international company IQVIA',
-        'Founder and President of the FoodTalk Nutrition Community at Teesside University, UK',
-        'Regularly organises seminars and lectures on healthy eating and lifestyle',
+        "Hi, I'm Anna, a Registered Dietitian and Nutritionist with a Master's degree in Dietetics from Teesside University. I am registered with the Health and Care Professions Council (HCPC) and a member of the British Dietetic Association (BDA), which means the advice I provide is safe, regulated and evidence-based.",
+        "Alongside my private practice, I work in an NHS acute hospital, supporting patients with a wide range of medical conditions including digestive disorders, diabetes, and nutritional deficiencies, both on hospital wards and in outpatient clinics.",
+        "I am also a Research Officer for the BDA Sustainable Diets Specialist Group, contributing to work exploring the relationship between nutrition, health, and sustainable food systems.",
       ]),
       additionalTraining: richTextParagraphs([
         'Food labelling e-learning course from Food Standards Agency (2023)',

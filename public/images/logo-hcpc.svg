@@ -1,0 +1,15 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="40" cy="40" r="40" fill="#4A7C9B"/>
+  <g stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Globe -->
+    <circle cx="40" cy="32" r="14"/>
+    <ellipse cx="40" cy="32" rx="6" ry="14"/>
+    <line x1="26" y1="32" x2="54" y2="32"/>
+    <path d="M28 24c3.5 1.5 7.5 2.2 12 2.2s8.5-.7 12-2.2"/>
+    <path d="M28 40c3.5-1.5 7.5-2.2 12-2.2s8.5.7 12 2.2"/>
+    <!-- Hand -->
+    <path d="M24 52c0 0 4-6 8-8c2-1 4-1 6 0c1 0.5 2 1.5 2 3c0 0 4-1 6 0c3 1.5 6 4 8 6"/>
+    <path d="M22 56c2-2 5-5 8-6"/>
+    <path d="M48 53c2 2 4 4 4 4"/>
+  </g>
+</svg>
