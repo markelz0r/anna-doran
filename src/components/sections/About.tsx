@@ -1,21 +1,11 @@
 import Image from 'next/image'
 import { useTranslations, useLocale } from 'next-intl'
-import { Separator } from '@/components/ui/separator'
-import { SectionHeading } from '@/components/shared/SectionHeading'
-import { ScrollableTimeline } from '@/components/shared/ScrollableTimeline'
 
 interface AboutProps {
   about: {
     mission?: string
   }
-  education: Array<{
-    id: string
-    year: string
-    institution: string
-    qualification: string
-  }>
   credentials: Array<Array<{ text: string; bold: boolean }>>
-  additionalTraining: string[]
   settings?: {
     social?: {
       instagram?: string
@@ -24,8 +14,9 @@ interface AboutProps {
   }
 }
 
-export function About({ about, education, credentials, additionalTraining, settings }: AboutProps) {
+export function About({ about, credentials, settings }: AboutProps) {
   const t = useTranslations('sections')
+  const tAbout = useTranslations('about')
   const locale = useLocale()
 
   return (
@@ -49,13 +40,11 @@ export function About({ about, education, credentials, additionalTraining, setti
               ))}
             </div>
 
-            {/* My journey button */}
             <a
               href={`/${locale}/about`}
-              className="flex items-center justify-center gap-4 border-2 border-primary text-primary rounded-full px-6 py-3 text-[15px] font-medium hover:bg-primary/5 transition-colors mb-6"
+              className="inline-flex items-center self-start rounded-full border-2 border-primary text-primary text-sm font-medium px-6 py-2.5 hover:bg-primary/5 transition-colors"
             >
-              My journey into nutrition
-              <span className="text-xl">→</span>
+              {tAbout('learnMore')}
             </a>
 
             {/* Professional body logos */}
@@ -91,78 +80,6 @@ export function About({ about, education, credentials, additionalTraining, setti
             </div>
           </div>
         </div>
-
-        {/* Education - Vertical Timeline */}
-        {education.length > 0 && (() => {
-          const logoMap: Record<string, { logo: string; url: string }> = {
-            'University of East Anglia': { logo: '/images/edu-uea.png', url: 'https://www.uea.ac.uk/' },
-            'International Institute of Integrative Nutriciology (MIIN)': { logo: '/images/edu-miin-1.png', url: 'https://miin.ru' },
-            'MIIN': { logo: '/images/edu-miin-2.png', url: 'https://miin.ru' },
-            'Teesside University': { logo: '/images/edu-teesside.png', url: 'https://www.tees.ac.uk/' },
-          }
-          const miin3 = '/images/edu-miin-3.png'
-
-          return (
-            <>
-              <Separator className="my-8" />
-              <div className="mb-16">
-                <h3 className="font-[family-name:var(--font-heading)] text-[36px] md:text-[42px] font-medium text-center mb-10 text-foreground">Education</h3>
-                <div className="relative max-w-4xl mx-auto">
-                  {education.map((item, idx) => {
-                    const info = logoMap[item.institution] || { logo: miin3, url: '#' }
-                    return (
-                      <div key={item.id} className="flex items-stretch gap-6 md:gap-10">
-                        {/* Year */}
-                        <div className="min-w-[120px] md:min-w-[140px] text-right pt-4">
-                          <span className="text-[20px] md:text-[24px] font-bold text-foreground">{item.year}</span>
-                        </div>
-                        {/* Logo circle + connecting line */}
-                        <div className="flex flex-col items-center shrink-0">
-                          <div className="w-[75px] h-[75px] rounded-full border-2 border-primary flex items-center justify-center bg-white overflow-hidden relative z-10 shrink-0">
-                            <Image
-                              src={info.logo}
-                              alt={item.institution}
-                              width={60}
-                              height={60}
-                              className="object-contain"
-                            />
-                          </div>
-                          {idx < education.length - 1 && (
-                            <div className="w-[2px] bg-primary flex-1" />
-                          )}
-                        </div>
-                        {/* Details */}
-                        <div className="pt-3">
-                          <p className="text-base font-normal text-foreground">{item.qualification}</p>
-                          <p className="text-base text-[#828282]">{item.institution}</p>
-                          <a
-                            href={info.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-base text-primary hover:underline"
-                          >
-                            {info.url}
-                          </a>
-                        </div>
-                      </div>
-                    )
-                  })}
-                </div>
-              </div>
-            </>
-          )
-        })()}
-
-        {/* Additional Training - Scrollable Timeline */}
-        {additionalTraining.length > 0 && (
-          <>
-            <Separator className="my-8" />
-            <div>
-              <h3 className="font-[family-name:var(--font-heading)] text-[36px] md:text-[42px] font-medium text-center mb-12 text-foreground">Additional training</h3>
-              <ScrollableTimeline items={additionalTraining} />
-            </div>
-          </>
-        )}
       </div>
     </section>
   )

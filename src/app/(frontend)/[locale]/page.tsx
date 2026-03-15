@@ -11,6 +11,7 @@ import { GoalsAchievable } from '@/components/sections/GoalsAchievable'
 import { Services } from '@/components/sections/Services'
 import { About } from '@/components/sections/About'
 import { Contact } from '@/components/sections/Contact'
+import { Newsletter } from '@/components/sections/Newsletter'
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
@@ -19,7 +20,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const payload = await getPayload({ config })
   const localeParam = locale as 'en' | 'ru'
 
-  const [hero, testimonials, problems, conditions, goals, services, education, settings, about] =
+  const [hero, testimonials, problems, conditions, goals, services, settings, about] =
     await Promise.all([
       payload.findGlobal({ slug: 'hero-content', locale: localeParam }),
       payload.find({ collection: 'testimonials', locale: localeParam, sort: 'order', limit: 100 }),
@@ -27,16 +28,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       payload.find({ collection: 'conditions', locale: localeParam, sort: 'order', limit: 100 }),
       payload.find({ collection: 'goals', locale: localeParam, sort: 'order', limit: 100 }),
       payload.find({ collection: 'services', locale: localeParam, sort: 'order', limit: 100 }),
-      payload.find({ collection: 'education-timeline', locale: localeParam, sort: 'order', limit: 100 }),
       payload.findGlobal({ slug: 'site-settings', locale: localeParam }),
       payload.findGlobal({ slug: 'about-content', locale: localeParam }),
     ])
 
-  const whatsapp = locale === 'ru' ? settings.social?.whatsappRU : settings.social?.whatsappEN
 
-  // Extract credentials and training from richText as simple arrays
+  // Extract credentials from richText
   const credentialsList = extractRichTextParagraphs(about.credentials)
-  const trainingList = extractTextFromRichText(about.additionalTraining)
 
   return (
     <>
@@ -81,14 +79,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       />
       <About
         about={{ mission: about.mission || undefined }}
-        education={education.docs.map((e) => ({
-          id: String(e.id),
-          year: e.year,
-          institution: e.institution,
-          qualification: e.qualification,
-        }))}
         credentials={credentialsList as Array<Array<{ text: string; bold: boolean }>>}
-        additionalTraining={trainingList}
         settings={{
           social: {
             instagram: settings.social?.instagram || undefined,
@@ -99,28 +90,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <Testimonials />
       <Contact
         locale={locale}
-        whatsapp={whatsapp || undefined}
-        telegram="annadoran_nutri"
       />
+      <Newsletter />
     </>
   )
-}
-
-// Helper to extract plain text lines from Payload Lexical richText
-function extractTextFromRichText(richText: unknown): string[] {
-  if (!richText || typeof richText !== 'object') return []
-  const root = (richText as { root?: { children?: unknown[] } }).root
-  if (!root?.children) return []
-
-  return root.children
-    .map((node: unknown) => {
-      const n = node as { children?: Array<{ text?: string }> }
-      if (n.children) {
-        return n.children.map((c) => c.text || '').join('')
-      }
-      return ''
-    })
-    .filter((text: string) => text.length > 0)
 }
 
 // Helper to extract rich text with bold formatting preserved
