@@ -149,6 +149,7 @@
   "footer": {
     "connectSocial": "Connect on social media",
     "privacyPolicy": "Privacy Policy",
+    "terms": "Terms & Conditions",
     "newsletter": "Monthly newsletter",
     "subscribe": "Subscribe",
     "copyright": "© {year} Anna Doran. All rights reserved.",
@@ -244,6 +245,23 @@
       "idealFor": "You have ongoing digestive issues like bloating or IBS, want lasting results, or have tried quick fixes that didn't work.",
       "cta": "Start coaching — £375"
     }
+  },
+  "terms": {
+    "title": "Terms and Conditions",
+    "backHome": "Back to home",
+    "effectiveDate": "Effective from 28 March 2026.",
+    "intro": "By booking a consultation or service with Anna Doran Health, you agree to the following terms and conditions:",
+    "term1": "Cancellation policy: We require at least 24 hours' notice for cancellations. If you cancel within 24 hours of your appointment, you will be asked to pay half of the consultation price.",
+    "term2": "After the initial consultation, if agreed, written materials (meal plans, recommendations, summaries) will be sent to you. Please ask any questions about these materials within 7 days. This does not enter you into an ongoing email support agreement — if you require continued support, please book a follow-up session or coaching programme.",
+    "term3": "If you have booked the Gut Health Coaching programme (6 sessions), all sessions must be used within a 2-month period from the date of your first session.",
+    "term4": "The cost of each service is as listed on the website at the time of booking. We do not offer refunds for completed consultations.",
+    "term5": "As a client, you are responsible for: attending your consultation on time, ensuring a stable internet connection for online sessions, and making any payments due prior to or on the day of the consultation.",
+    "term6": "As a Registered Dietitian, all services provided will be in full compliance with the professional code of conduct for dietitians as outlined by the British Dietetic Association (BDA) and the Health and Care Professions Council (HCPC).",
+    "term7": "All data held will be kept confidential and in line with the UK General Data Protection Regulation (UK GDPR). Please see our Privacy Policy for full details.",
+    "term8": "If you are asked for your GP contact details, please be aware that the dietitian may contact your GP to provide feedback on your consultation. Please let us know if you are not happy with this.",
+    "term9": "In the case of unforeseen circumstances such as illness, your consultation may be cancelled by Anna Doran Health within 24 hours. If this happens, no payment will be due and you will be offered an alternative date as soon as possible.",
+    "term10": "The information and advice provided during consultations is for educational and informational purposes and does not replace medical advice from your doctor or medical team. Always consult your GP before making significant changes to your diet if you have a medical condition.",
+    "contact": "If you have any questions about these terms, please contact us at contact@annadorandiet.com."
   },
   "privacy": {
     "title": "Privacy Policy",

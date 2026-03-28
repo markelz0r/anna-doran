@@ -41,9 +41,14 @@ export function Footer({ settings, locale }: FooterProps) {
             className="h-10 w-auto mb-2"
           />
           <p className="text-[11px] text-[#4b4b4b]">{t('copyright', { year: new Date().getFullYear() })}</p>
-          <a href="#" className="text-[11px] text-[#4b4b4b] hover:text-primary transition-colors">
-            {t('privacyPolicy')}
-          </a>
+          <div className="flex gap-4">
+            <a href={`/${locale}/privacy-policy`} className="text-[11px] text-[#4b4b4b] hover:text-primary transition-colors">
+              {t('privacyPolicy')}
+            </a>
+            <a href={`/${locale}/terms`} className="text-[11px] text-[#4b4b4b] hover:text-primary transition-colors">
+              {t('terms')}
+            </a>
+          </div>
         </div>
       </div>
     </footer>
