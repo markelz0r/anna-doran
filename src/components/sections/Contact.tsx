@@ -65,7 +65,10 @@ export function Contact({ locale }: ContactProps) {
             </a>
           </div>
           <p className="text-sm text-muted-foreground">
-            {t('contactSubtitle')}
+            {t('contactSubtitlePrefix')}{' '}
+            <a href="https://www.instagram.com/annadoran_diet" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Instagram</a>
+            {' '}{t('contactSubtitleOr')}{' '}
+            <a href="mailto:contact@annadorandiet.com" className="text-primary hover:underline">email</a>
           </p>
         </div>
 

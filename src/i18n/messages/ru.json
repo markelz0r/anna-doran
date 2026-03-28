@@ -39,6 +39,8 @@
     "contact": "Готовы почувствовать себя лучше?",
     "contactWarmIntro": "Хотите задать вопрос о здоровье кишечника или готовы записаться — буду рада пообщаться. Без обязательств, просто дружеский разговор о том, как я могу помочь.",
     "contactSubtitle": "Или свяжитесь напрямую через мессенджер или email",
+    "contactSubtitlePrefix": "Или свяжитесь напрямую через",
+    "contactSubtitleOr": "или",
     "problems_list": {
       "1": {
         "bold": "Вздутие, дискомфорт или нерегулярное пищеварение",
@@ -147,13 +149,22 @@
     "bookNow": "Записаться"
   },
   "footer": {
-    "connectSocial": "Мы в соцсетях",
+    "infoHeading": "Информация",
+    "linkServices": "Услуги",
+    "linkAbout": "Обо мне",
+    "linkTestimonials": "Отзывы",
+    "linkContact": "Контакты",
+    "linkCourses": "Курсы и ресурсы",
+    "servicesHeading": "Услуги",
+    "serviceDiscovery": "Бесплатная консультация",
+    "serviceMealCheck": "Проверка баланса питания",
+    "serviceConsultation": "Первичная консультация",
+    "serviceCoaching": "Коучинг здоровья кишечника",
+    "followHeading": "Мы в соцсетях",
+    "contactHeading": "Связаться",
     "privacyPolicy": "Политика конфиденциальности",
     "terms": "Условия и положения",
-    "newsletter": "Ежемесячная рассылка",
-    "subscribe": "Подписаться",
-    "copyright": "© {year} Anna Doran Health. Все права защищены.",
-    "emailPlaceholder": "Ваш email"
+    "copyright": "© {year} Anna Doran Health. Все права защищены."
   },
   "newsletter": {
     "heading": "Советы по питанию и вдохновение",

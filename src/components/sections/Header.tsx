@@ -38,11 +38,11 @@ export function Header({ settings, locale }: HeaderProps) {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <a href={`/${locale}`}>
           <Image
-            src={locale === 'ru' ? '/images/logo-ru.png' : '/images/logo-en.png'}
-            alt={settings.siteName || 'Anna Doran'}
-            width={140}
-            height={130}
-            className="h-12 w-auto"
+            src={locale === 'ru' ? '/images/logo-color-ru.png' : '/images/logo-color.png'}
+            alt={settings.siteName || 'Anna Doran Health'}
+            width={180}
+            height={168}
+            className="h-14 w-auto"
             priority
           />
         </a>

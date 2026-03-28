@@ -39,6 +39,8 @@
     "contact": "Ready to feel better?",
     "contactWarmIntro": "Whether you have a quick question about your gut health or you're ready to book — I'd love to hear from you. No pressure, just a friendly chat to see how I can help.",
     "contactSubtitle": "Or contact me directly on Instagram or email",
+    "contactSubtitlePrefix": "Or contact me directly on",
+    "contactSubtitleOr": "or",
     "problems_list": {
       "1": {
         "bold": "Bloating, discomfort, or irregular digestion",
@@ -147,13 +149,22 @@
     "bookNow": "Book now"
   },
   "footer": {
-    "connectSocial": "Connect on social media",
+    "infoHeading": "Info",
+    "linkServices": "Services",
+    "linkAbout": "About me",
+    "linkTestimonials": "Testimonials",
+    "linkContact": "Contact",
+    "linkCourses": "Courses & Resources",
+    "servicesHeading": "Services",
+    "serviceDiscovery": "Free Discovery Call",
+    "serviceMealCheck": "Meal Balance Check",
+    "serviceConsultation": "Initial Consultation",
+    "serviceCoaching": "Gut Health Coaching",
+    "followHeading": "Follow Us",
+    "contactHeading": "Get in Touch",
     "privacyPolicy": "Privacy Policy",
     "terms": "Terms & Conditions",
-    "newsletter": "Monthly newsletter",
-    "subscribe": "Subscribe",
-    "copyright": "© {year} Anna Doran Health. All rights reserved.",
-    "emailPlaceholder": "Your email"
+    "copyright": "© {year} Anna Doran Health. All rights reserved."
   },
   "newsletter": {
     "heading": "Nutrition tips & inspiration",
