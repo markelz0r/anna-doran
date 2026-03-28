@@ -11,15 +11,9 @@ function OrangeCheck() {
   )
 }
 
-interface GoalsAchievableProps {
-  goals: Array<{
-    id: string
-    text: string
-    order: number
-  }>
-}
+const GOAL_KEYS = ['1', '2', '3', '4', '5', '6', '7'] as const
 
-export function GoalsAchievable({ goals }: GoalsAchievableProps) {
+export function GoalsAchievable() {
   const t = useTranslations('sections')
 
   return (
@@ -41,10 +35,12 @@ export function GoalsAchievable({ goals }: GoalsAchievableProps) {
           {/* Right: checklist + CTA */}
           <div className="flex flex-col justify-between h-full">
             <div className="flex flex-col gap-6">
-              {goals.map((item) => (
-                <div key={item.id} className="flex items-start gap-4">
+              {GOAL_KEYS.map((key) => (
+                <div key={key} className="flex items-start gap-4">
                   <OrangeCheck />
-                  <p className="text-[15px] font-normal text-foreground">{item.text}</p>
+                  <p className="text-[15px] font-normal text-foreground">
+                    {t(`goals_list.${key}`)}
+                  </p>
                 </div>
               ))}
             </div>
@@ -52,7 +48,7 @@ export function GoalsAchievable({ goals }: GoalsAchievableProps) {
               href="#contacts"
               className="mt-10 flex items-center justify-center gap-4 bg-primary hover:bg-primary/90 text-white text-base font-medium rounded-full px-10 py-5 transition-colors"
             >
-              Book free discovery call
+              {t('goals_cta')}
               <ArrowRight className="h-5 w-5" />
             </a>
           </div>

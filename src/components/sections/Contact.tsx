@@ -27,6 +27,8 @@ export function Contact({ locale }: ContactProps) {
     const result = await submitContact({
       name: formData.get('name') as string,
       email: formData.get('email') as string,
+      service: (formData.get('service') as string) || undefined,
+      message: (formData.get('message') as string) || undefined,
       privacyConsent: formData.get('privacyConsent') === 'on',
       locale,
     })
@@ -48,6 +50,10 @@ export function Contact({ locale }: ContactProps) {
         </div>
       <div>
         <SectionHeading>{t('contact')}</SectionHeading>
+
+        <p className="text-[15px] text-[#4b4b4b] leading-relaxed mb-6">
+          {t('contactWarmIntro')}
+        </p>
 
         <div className="flex items-center gap-4 mb-6">
           <div className="flex gap-3">
@@ -75,6 +81,24 @@ export function Contact({ locale }: ContactProps) {
             <div>
               <Label htmlFor="email">{f('email')}</Label>
               <Input id="email" name="email" type="email" required />
+            </div>
+            <div>
+              <Label htmlFor="service">{f('service')}</Label>
+              <select
+                id="service"
+                name="service"
+                required
+                className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                defaultValue=""
+              >
+                <option value="" disabled>{f('servicePlaceholder')}</option>
+                <option value="discovery-call">{f('serviceDiscovery')}</option>
+                <option value="meal-balance-check">{f('serviceMealCheck')}</option>
+                <option value="initial-consultation">{f('serviceConsultation')}</option>
+                <option value="follow-up-session">{f('serviceFollowUp')}</option>
+                <option value="gut-health-coaching">{f('serviceCoaching')}</option>
+                <option value="not-sure">{f('serviceNotSure')}</option>
+              </select>
             </div>
             <div>
               <Label htmlFor="message">{f('message')}</Label>

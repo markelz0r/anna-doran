@@ -10,6 +10,18 @@ export const ContactSubmissions: CollectionConfig = {
   fields: [
     { name: 'name', type: 'text', required: true },
     { name: 'email', type: 'email', required: true },
+    {
+      name: 'service',
+      type: 'select',
+      options: [
+        { label: 'Discovery Call', value: 'discovery-call' },
+        { label: 'Meal Balance Check', value: 'meal-balance-check' },
+        { label: 'Initial Consultation', value: 'initial-consultation' },
+        { label: 'Follow-up Session', value: 'follow-up-session' },
+        { label: 'Gut Health Coaching', value: 'gut-health-coaching' },
+        { label: 'Not sure yet', value: 'not-sure' },
+      ],
+    },
     { name: 'privacyConsent', type: 'checkbox', required: true },
     { name: 'locale', type: 'text' },
     { name: 'submittedAt', type: 'date', admin: { readOnly: true } },

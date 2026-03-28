@@ -4,11 +4,13 @@ import { setRequestLocale } from 'next-intl/server'
 
 export const dynamic = 'force-dynamic'
 
+import { getTranslations } from 'next-intl/server'
 import { Hero } from '@/components/sections/Hero'
 import { Testimonials } from '@/components/sections/Testimonials'
 import { ProblemsAddressed } from '@/components/sections/ProblemsAddressed'
 import { GoalsAchievable } from '@/components/sections/GoalsAchievable'
 import { Services } from '@/components/sections/Services'
+import { ServicesV2 } from '@/components/sections/ServicesV2'
 import { About } from '@/components/sections/About'
 import { Contact } from '@/components/sections/Contact'
 import { Newsletter } from '@/components/sections/Newsletter'
@@ -33,50 +35,30 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     ])
 
 
+  const mbc = await getTranslations({ locale, namespace: 'mealBalanceCheck' })
+  const heroT = await getTranslations({ locale, namespace: 'hero' })
+
   // Extract credentials from richText
   const credentialsList = extractRichTextParagraphs(about.credentials)
 
   return (
     <>
       <Hero
-        name={hero.name}
-        title={hero.title}
-        heading={hero.heading}
-        subtitle={hero.tagline}
-        ctaText={hero.ctaText}
-        testimonialSnippets={testimonials.docs.map((t) => t.quote)}
+        name={heroT('name')}
+        title={heroT('title')}
+        heading={heroT('heading')}
+        subtitle={heroT('tagline')}
+        ctaText={heroT('cta')}
+        testimonialSnippets={[
+          heroT('snippets.1'),
+          heroT('snippets.2'),
+          heroT('snippets.3'),
+          heroT('snippets.4'),
+        ]}
       />
-      <ProblemsAddressed
-        problems={problems.docs.map((p) => ({
-          id: String(p.id),
-          text: p.text,
-          order: p.order,
-        }))}
-        conditions={conditions.docs.map((c) => ({
-          id: String(c.id),
-          text: c.text,
-        }))}
-      />
-      <GoalsAchievable
-        goals={goals.docs.map((g) => ({
-          id: String(g.id),
-          text: g.text,
-          order: g.order,
-        }))}
-      />
-      <Services
-        services={services.docs.map((s) => ({
-          id: String(s.id),
-          title: s.title,
-          description: s.description,
-          duration: s.duration || undefined,
-          priceEN: s.priceEN || undefined,
-          priceRU: s.priceRU || undefined,
-          ctaLabel: s.ctaLabel || undefined,
-          highlighted: s.highlighted || false,
-        }))}
-        locale={locale}
-      />
+      <ProblemsAddressed />
+      <GoalsAchievable />
+      <ServicesV2 locale={locale} />
       <About
         about={{ mission: about.mission || undefined }}
         credentials={credentialsList as Array<Array<{ text: string; bold: boolean }>>}

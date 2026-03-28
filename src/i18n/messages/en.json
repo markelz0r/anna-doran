@@ -7,31 +7,143 @@
     "courses": "Courses & Resources"
   },
   "hero": {
-    "cta": "Book free discovery call"
+    "name": "Anna Doran",
+    "title": "Nutritionist and Dietitian",
+    "heading": "Tired of bloating, low energy, and not knowing what to eat?",
+    "tagline": "I help you fix your digestion and build a diet that actually works for your body",
+    "cta": "Book a free discovery call",
+    "snippets": {
+      "1": "My bloating has completely gone — I finally feel comfortable after eating",
+      "2": "I have so much more energy and my skin has cleared up",
+      "3": "Anna helped me understand what was actually triggering my IBS",
+      "4": "I wish I'd seen a dietitian sooner — it's changed how I feel every day"
+    }
   },
   "sections": {
     "testimonials": "What my clients say",
-    "problems": "Queries I solve :",
-    "conditions": "I can also help with serious chronic conditions",
-    "goals": "The goals you can achieve with me safely and effectively",
+    "problems": "Does this sound like you?",
+    "conditions": "Conditions I can help with",
+    "goals": "What we can achieve together",
+    "goals_cta": "Book a free discovery call",
+    "goals_list": {
+      "1": "Say goodbye to bloating and digestive discomfort",
+      "2": "Understand which foods work for your body — and which don't",
+      "3": "Restore your energy and feel lighter every day",
+      "4": "Get clearer skin by fixing what's going on inside",
+      "5": "Build a balanced diet you can actually stick to",
+      "6": "Close vitamin and mineral gaps that affect how you feel",
+      "7": "Feel confident about what you eat — no more guesswork"
+    },
     "services": "My services",
     "about": "About me",
-    "contact": "Start making changes right now",
-    "contactSubtitle": "Leave your contact details below or contact me directly on Instagram or emailing me."
+    "contact": "Ready to feel better?",
+    "contactWarmIntro": "Whether you have a quick question about your gut health or you're ready to book — I'd love to hear from you. No pressure, just a friendly chat to see how I can help.",
+    "contactSubtitle": "Or contact me directly on Instagram or email",
+    "problems_list": {
+      "1": {
+        "bold": "Bloating, discomfort, or irregular digestion",
+        "text": "and you're not sure what's causing it or what to eat"
+      },
+      "2": {
+        "bold": "Tried cutting out foods",
+        "text": "but nothing seems to make a real difference to how you feel"
+      },
+      "3": {
+        "bold": "Low energy and brain fog",
+        "text": "and you suspect your diet might be part of the problem"
+      },
+      "4": {
+        "bold": "Overwhelmed by conflicting nutrition advice",
+        "text": "online and don't know what actually applies to you"
+      },
+      "5": {
+        "bold": "Diagnosed with IBS or food intolerances",
+        "text": "but never received proper dietary guidance"
+      },
+      "6": {
+        "bold": "Want to eat better",
+        "text": "but don't know where to start or need someone to keep you on track"
+      }
+    },
+    "conditions_list": {
+      "1": "Irritable bowel syndrome (IBS)",
+      "2": "Food intolerances (dairy, gluten, FODMAPs)",
+      "3": "Acid reflux (GERD)",
+      "4": "Bloating and digestive discomfort",
+      "5": "Coeliac disease",
+      "6": "Pancreatic exocrine insufficiency",
+      "7": "Liver conditions (fatty liver, fibrosis)",
+      "8": "Type 2 diabetes",
+      "9": "PCOS and hormonal imbalances",
+      "10": "Acne and skin conditions linked to diet",
+      "11": "Cardiovascular disease"
+    }
   },
   "form": {
     "name": "Name",
     "email": "Email",
+    "service": "I'm interested in",
+    "servicePlaceholder": "Select a service",
+    "serviceDiscovery": "Free Discovery Call",
+    "serviceMealCheck": "Meal Balance Check — £39",
+    "serviceConsultation": "Initial Consultation — £89",
+    "serviceFollowUp": "Follow-up Session — £59",
+    "serviceCoaching": "Gut Health Coaching — £375",
+    "serviceNotSure": "Not sure yet — help me choose",
     "message": "Your message",
     "privacyConsent": "I agree to the privacy policy",
     "submit": "Send",
-    "success": "Thank you! Your message has been sent.",
+    "success": "Thank you! I'll get back to you via email within 24 hours.",
     "error": "Something went wrong. Please try again."
   },
   "services": {
     "bookNow": "Book now",
     "free": "FREE",
-    "perConsultation": "per consultation"
+    "perConsultation": "per consultation",
+    "entryHeading": "Getting Started",
+    "comparisonHeading": "Compare Services",
+    "includes": "What's included",
+    "idealFor": "Ideal for",
+    "followUp": "Follow-up support",
+    "notSure": "Not sure which service is right for you?",
+    "feature_questionnaire": "Pre-consultation questionnaire",
+    "feature_foodDiary": "5-day food diary analysis",
+    "feature_foodLists": "Personalised food lists",
+    "feature_supplements": "Supplement guidance",
+    "feature_mealPlan": "1-week example meal plan",
+    "feature_bloodTest": "Blood test review",
+    "feature_dietAdjustments": "Weekly diet adjustments",
+    "feature_ongoingHabitSupport": "Ongoing support & habit coaching",
+    "feature_symptomTracking": "Symptom tracking & review",
+    "feature_webinarBalancedMeals": "Webinar on How to Build Balanced Meals",
+    "feature_webinarMealPlanning": "Webinar on Easy and quick Meal Planning for family",
+    "feature_additionalGuides": "Access to additional guides & seminars if required during coaching",
+    "duration": "Duration",
+    "group_analysis": "In-depth analysis",
+    "group_coaching": "Ongoing coaching",
+    "group_bonuses": "Bonuses",
+    "learnMore": "Learn more"
+  },
+  "mealBalanceCheck": {
+    "backLink": "Back to services",
+    "heading": "Meal Balance Check",
+    "subtitle": "Messenger / email | £39",
+    "highlight": "A quick expert review of your current diet — with personalised suggestions you can start using right away.",
+    "description": "This service gives you a clear picture of how balanced your meals are, where you might have gaps in nutrition, and what small changes can make a real difference to your energy levels and overall wellbeing.",
+    "idealIfLabel": "Ideal if:",
+    "idealIf": "You want a simple, affordable starting point — without a full consultation — to understand whether your current diet is working for you.",
+    "howItWorksHeading": "How it works",
+    "step1Title": "1. Send your food diary",
+    "step1Bullets": ["Take photos of everything you eat and drink for 5 days", "Include meals, snacks, and drinks — no need to weigh anything"],
+    "step2Title": "2. I review your diet",
+    "step2Bullets": ["Analyse meal balance, protein, fibre and key nutrient gaps", "Check food combinations and meal timing", "Identify areas that may affect energy, digestion or mood"],
+    "step3Title": "3. You receive personalised feedback",
+    "step3Bullets": ["Clear, practical tips you can apply straight away", "A guide on how to build balanced meals", "Advice on foods and supplements to improve nutrient intake"],
+    "followUpHeading": "Follow-up support",
+    "followUp": "After receiving your feedback, you'll have 3 days of follow-up support via messenger to ask questions and clarify recommendations.",
+    "importantHeading": "Important note",
+    "important": "This service provides general nutrition feedback based on your food diary. If you have chronic conditions, digestive disorders, food allergies, or take prescribed medications, a full consultation may be more appropriate.",
+    "bookNow": "Book now"
   },
   "footer": {
     "connectSocial": "Connect on social media",
@@ -68,6 +180,69 @@
     "followInstagram": "Follow me on Instagram",
     "watchYouTube": "Watch on YouTube",
     "connectLinkedIn": "Connect on LinkedIn"
+  },
+  "servicesV2": {
+    "tagline": "Personalised nutrition for better digestion, more energy, and a healthier gut",
+    "journeyStart": "Start here",
+    "journeyExplore": "Explore",
+    "journeyDive": "Deep dive",
+    "journeyTransform": "Transform",
+    "popular": "Most popular",
+    "idealIf": "Ideal if",
+    "notSure": "Not sure which service is right for you?",
+    "bookDiscovery": "Book a free discovery call",
+    "discoveryCall": {
+      "title": "Free Discovery Call",
+      "duration": "15-minute video call",
+      "description": "A relaxed, no-pressure chat where I listen to what's going on with your health and help you figure out the best next step.",
+      "feature1": "We talk about your main health concerns",
+      "feature2": "I explain how I can help",
+      "feature3": "Honest advice on next steps — no obligation",
+      "idealFor": "You're curious about working with a dietitian but want to see if we're a good match first.",
+      "cta": "Book free call"
+    },
+    "mealBalanceCheck": {
+      "title": "Meal Balance Check",
+      "duration": "Delivered via email",
+      "description": "A quick, affordable way to get expert eyes on your diet — with practical tips you can use straight away.",
+      "feature1": "5-day food diary analysis",
+      "feature2": "Personalised nutrition feedback",
+      "feature3": "Practical tips to improve digestion & energy",
+      "feature4": "Guide on building balanced meals",
+      "feature5": "Supplement & food recommendations",
+      "feature6": "3 days of follow-up support via messenger",
+      "idealFor": "You want a simple starting point to understand whether your diet is supporting your gut health — without a full consultation.",
+      "cta": "Get started — £39"
+    },
+    "initialConsultation": {
+      "title": "Initial Consultation",
+      "duration": "60 minutes · online via Zoom",
+      "description": "A deep dive into your diet, digestion, and health goals — with a personalised plan to get you started.",
+      "feature1": "Pre-consultation health questionnaire",
+      "feature2": "5-day food diary analysis",
+      "feature3": "Personalised food recommendations",
+      "feature4": "Supplement guidance",
+      "feature5": "1-week example meal plan",
+      "feature6": "Blood test review (if available)",
+      "feature7": "Written summary sent after session",
+      "followUp": "Follow-up session available: 30 min — £59",
+      "idealFor": "You have gut health concerns, digestive issues, low energy, or want a professional review of your diet.",
+      "cta": "Book consultation — £89"
+    },
+    "coachingProgramme": {
+      "title": "Gut Health Coaching",
+      "duration": "6 sessions over 12 weeks",
+      "description": "Ongoing support to transform your gut health step by step — with structure, accountability, and a plan that evolves with you.",
+      "feature1": "Full initial consultation included",
+      "feature2": "5 follow-up sessions (30 min each)",
+      "feature3": "Diet adjustments between sessions",
+      "feature4": "Symptom tracking & review",
+      "feature5": "Habit coaching & accountability",
+      "feature6": "Webinars on balanced meals & meal planning",
+      "feature7": "Additional guides & resources as needed",
+      "idealFor": "You have ongoing digestive issues like bloating or IBS, want lasting results, or have tried quick fixes that didn't work.",
+      "cta": "Start coaching — £375"
+    }
   },
   "language": {
     "switch": "RU"
