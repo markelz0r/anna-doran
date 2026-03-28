@@ -24,12 +24,12 @@ export function ServicesV2({ locale }: ServicesV2Props) {
   const s = useTranslations('servicesV2')
 
   return (
-    <section id="services" className="py-20 bg-card">
-      <div className="container mx-auto px-4">
+    <section id="services" className="py-12 md:py-20 bg-card">
+      <div className="container mx-auto px-2 sm:px-4">
         <SectionHeading>{t('services')}</SectionHeading>
 
         {/* Tagline */}
-        <p className="text-center text-[18px] md:text-[20px] text-[#4b4b4b] max-w-2xl mx-auto mb-12 leading-relaxed">
+        <p className="text-center text-[16px] md:text-[20px] text-[#4b4b4b] max-w-2xl mx-auto mb-8 md:mb-12 leading-relaxed">
           {s('tagline')}
         </p>
 
@@ -45,7 +45,7 @@ export function ServicesV2({ locale }: ServicesV2Props) {
         </div>
 
         {/* Service cards grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
           {SERVICE_KEYS.map((key) => {
             const meta = SERVICE_META[key]
             const features: string[] = []

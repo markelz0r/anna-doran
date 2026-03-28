@@ -40,9 +40,9 @@ export function Header({ settings, locale }: HeaderProps) {
           <Image
             src={locale === 'ru' ? '/images/logo-color-ru.png' : '/images/logo-color.png'}
             alt={settings.siteName || 'Anna Doran Health'}
-            width={180}
-            height={168}
-            className="h-14 w-auto"
+            width={50}
+            height={50}
+            className="h-10 w-10 md:h-12 md:w-12 object-contain"
             priority
           />
         </a>
@@ -71,20 +71,45 @@ export function Header({ settings, locale }: HeaderProps) {
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px]">
-              <nav className="flex flex-col gap-4 mt-8">
-                {navItems.map((item) => (
-                  <a key={item.href} href={item.href} onClick={() => setOpen(false)} className="text-lg font-medium text-foreground hover:text-primary transition-colors">
-                    {item.label}
+            <SheetContent side="right" className="w-full max-w-sm bg-background p-0">
+              <div className="flex flex-col h-full">
+                {/* Logo */}
+                <div className="p-6 pb-4 border-b border-border">
+                  <Image
+                    src={locale === 'ru' ? '/images/logo-color-ru.png' : '/images/logo-color.png'}
+                    alt="Anna Doran Health"
+                    width={50}
+                    height={50}
+                    className="h-10 w-10 object-contain"
+                  />
+                </div>
+
+                {/* Nav links */}
+                <nav className="flex flex-col p-6 gap-1 flex-1">
+                  {navItems.map((item) => (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setOpen(false)}
+                      className="text-lg font-medium text-foreground hover:text-primary hover:bg-primary/5 transition-colors py-3 px-4 rounded-xl"
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+
+                {/* Bottom: social + email */}
+                <div className="p-6 pt-4 border-t border-border">
+                  <SocialIcons
+                    instagram={settings.social?.instagram}
+                    youtube={settings.social?.youtube}
+                    linkedin={settings.social?.linkedin}
+                  />
+                  <a href="mailto:contact@annadorandiet.com" className="block mt-4 text-sm text-muted-foreground hover:text-primary transition-colors">
+                    contact@annadorandiet.com
                   </a>
-                ))}
-                <SocialIcons
-                  instagram={settings.social?.instagram}
-                  youtube={settings.social?.youtube}
-                  linkedin={settings.social?.linkedin}
-                  className="mt-4"
-                />
-              </nav>
+                </div>
+              </div>
             </SheetContent>
           </Sheet>
         </div>

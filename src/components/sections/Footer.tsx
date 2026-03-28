@@ -19,17 +19,17 @@ export function Footer({ settings, locale }: FooterProps) {
   return (
     <footer className="bg-[#4a4a4a] text-white">
       {/* Main footer */}
-      <div className="container mx-auto px-4 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="container mx-auto px-3 sm:px-4 py-10 md:py-14">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
 
-          {/* Column 1: Logo + credentials */}
-          <div>
+          {/* Column 1: Logo */}
+          <div className="col-span-2 lg:col-span-1">
             <Image
               src={locale === 'ru' ? '/images/logo-bw-ru.png' : '/images/logo-bw.png'}
               alt="Anna Doran Health"
-              width={180}
-              height={180}
-              className="h-24 w-auto mb-6 brightness-0 invert"
+              width={80}
+              height={80}
+              className="h-16 w-16 md:h-20 md:w-20 object-contain brightness-0 invert mb-4"
             />
           </div>
 
