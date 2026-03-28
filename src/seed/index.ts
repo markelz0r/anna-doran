@@ -321,74 +321,184 @@ async function seed() {
   console.log('✓ Goals seeded')
 
   // 10. Seed Services
+  // Feature flags in the same order as FEATURE_KEYS in the component:
+  // questionnaire, foodDiary, foodLists, supplements, mealPlan, bloodTest,
+  // dietAdjustments, ongoingHabitSupport, symptomTracking,
+  // webinarBalancedMeals, webinarMealPlanning, additionalGuides
+  const quickFeatures = [false, true,  true,  true,  false, false, false, false, false, true,  false, false]
+  const compFeatures  = [true,  true,  true,  true,  true,  true,  false, false, false, true,  true,  false]
+  const coachFeatures = [true,  true,  true,  true,  true,  true,  false, true,  true,  true,  true,  true]
+
+  const featureLabelsEN = [
+    'Pre-consultation questionnaire',
+    '5-day food diary analysis', 'Personalised food lists',
+    'Supplement guidance', '1-week example meal plan', 'Blood test review',
+    'Weekly diet adjustments', 'Ongoing support & habit coaching',
+    'Symptom tracking & review',
+    'Webinar on How to Build Balanced Meals',
+    'Webinar on Easy and quick Meal Planning for family',
+    'Access to additional guides & seminars if required during coaching',
+  ]
+  const featureLabelsRU = [
+    'Анкета перед консультацией',
+    'Анализ 5-дневного дневника питания', 'Персональные списки продуктов',
+    'Рекомендации по добавкам', 'Примерный план питания на неделю', 'Анализ результатов анализов крови',
+    'Еженедельная корректировка питания', 'Постоянная поддержка и помощь с привычками',
+    'Отслеживание и анализ симптомов',
+    'Вебинар: Как составить сбалансированное питание',
+    'Вебинар: Быстрое и простое планирование питания для семьи',
+    'Доступ к дополнительным гидам и семинарам при необходимости',
+  ]
+
+  function buildFeatures(flags: boolean[], labels: string[], details?: Record<number, string>) {
+    return labels.map((label, i) => ({
+      feature: label,
+      included: flags[i],
+      ...(details?.[i] ? { detail: details[i] } : {}),
+    }))
+  }
+
   const servicesData = [
+    // ── Entry-level ──
     {
       en: {
         title: 'Free Discovery Call',
-        description: 'We will discuss your current health problems and goals. You will get an understanding of the causes of your problems, and an action plan to restore your health.',
+        description: 'Discuss your health concerns, understand the possible causes, and get guidance on the right next steps — no obligation.',
         ctaLabel: 'Book now',
+        duration: '15-20 min',
       },
       ru: {
-        title: 'Персонализированное сопровождение «В гармонии с питанием, телом и душой»',
-        description: 'Обсудим ваше текущее состояние и цели по здоровью. Вы получите понимание причин ваших проблем и план действий по восстановлению здоровья.',
+        title: 'Бесплатный ознакомительный звонок',
+        description: 'Обсудим ваши проблемы со здоровьем, разберёмся в возможных причинах и определим подходящие дальнейшие шаги — без обязательств.',
         ctaLabel: 'Записаться',
+        duration: '15-20 мин',
       },
-      duration: '20-30 min',
       priceEN: 'FREE',
       priceRU: 'Бесплатно',
       order: 1,
       highlighted: false,
+      category: 'entry' as const,
+      featuresEN: buildFeatures([true, true, true], ['Discuss your health concerns and goals', 'Understand the possible causes of your problems', 'Guidance on next steps and the right approach for you']),
+      featuresRU: buildFeatures([true, true, true], ['Обсуждение ваших проблем со здоровьем и целей', 'Понимание возможных причин ваших проблем', 'Рекомендации по дальнейшим шагам и подходящему подходу для вас']),
     },
     {
       en: {
-        title: 'Discovery Consultation',
-        description: 'For anyone who wants to start adopting a healthy lifestyle and is looking for short-term but personalized support for a specific health problem.',
+        title: 'Meal Balance Check',
+        description: 'A quick expert review of your diet with personalised suggestions to improve meal balance, energy levels and deficiencies.',
         ctaLabel: 'Book now',
+        duration: 'Messenger / email',
+        note: 'This service provides general nutrition feedback based on your food diary. If you have chronic conditions, digestive disorders, food allergies, or take prescribed medications, a full consultation may be more appropriate.',
       },
       ru: {
-        title: 'Диагностическая консультация',
-        description: 'Для всех, кто хочет начать придерживаться здорового образа жизни уже сейчас, ищет краткосрочную, но персонализированную поддержку для конкретной проблемы со здоровьем.',
+        title: 'Проверка баланса питания',
+        description: 'Быстрый экспертный анализ вашего рациона с персонализированными рекомендациями по улучшению баланса питания, уровня энергии и восполнению дефицитов.',
         ctaLabel: 'Записаться',
+        duration: 'Мессенджер / email',
+        note: 'Эта услуга предоставляет общие рекомендации по питанию на основе вашего дневника еды. При наличии хронических заболеваний, расстройств пищеварения, пищевой аллергии или приёме назначенных лекарств может потребоваться полная консультация.',
       },
-      duration: '60-90 min',
-      priceEN: '£79',
-      priceRU: '7 900 ₽',
+      priceEN: '£39',
+      priceRU: '3 900 ₽',
       order: 2,
       highlighted: false,
+      category: 'entry' as const,
+      featuresEN: buildFeatures(
+        [true, true, true, true, true, true],
+        [
+          'Send photos of everything you eat for 5 days',
+          'Review of meal balance, protein, fibre & nutrition gaps',
+          'Personalised feedback with practical tips in 5 days',
+          'Guide on balanced meals & better food combinations',
+          'Advice on foods and supplements to improve nutrient intake',
+          '3 days of follow-up support',
+        ],
+      ),
+      featuresRU: buildFeatures(
+        [true, true, true, true, true, true],
+        [
+          'Отправьте фото всей еды за 5 дней',
+          'Анализ баланса питания, белка, клетчатки и дефицитов',
+          'Персонализированная обратная связь с практическими советами за 5 дней',
+          'Руководство по сбалансированным приёмам пищи и сочетаниям продуктов',
+          'Рекомендации по продуктам и добавкам для улучшения питания',
+          '3 дня поддержки после обратной связи',
+        ],
+      ),
     },
+    // ── Comparison tier ──
     {
       en: {
-        title: '"In Harmony with Nutrition"',
-        description: 'For anyone who wants to identify the causes of your health problems and prefer more thorough support (motivation) to restore whole body health.',
+        title: 'Quick Consultation',
+        description: 'A focused session for quick diet advice and specific nutrition questions.',
         ctaLabel: 'Book now',
+        duration: '60 min',
+        followUp: '7 days',
       },
       ru: {
-        title: 'Консультация «В гармонии с питанием»',
-        description: 'Идеально подходит для людей с более сложными и продолжительными проблемами со здоровьем, которые ищут всестороннюю поддержку.',
+        title: 'Быстрая консультация',
+        description: 'Целенаправленная сессия для быстрых рекомендаций по питанию и конкретных вопросов.',
         ctaLabel: 'Записаться',
+        duration: '60 мин',
+        followUp: '7 дней',
       },
-      duration: '6 weeks / 6 sessions',
-      priceEN: '£399',
-      priceRU: '54 900 ₽',
+      priceEN: '£79',
+      priceRU: '7 900 ₽',
       order: 3,
-      highlighted: true,
+      highlighted: false,
+      category: 'comparison' as const,
+      featuresEN: buildFeatures(quickFeatures, featureLabelsEN),
+      featuresRU: buildFeatures(quickFeatures, featureLabelsRU),
+      idealForEN: ['Quick diet advice', 'IBS/bloating questions', 'Supplement clarity', 'Meal balance', 'Conflicting nutrition advice'],
+      idealForRU: ['Быстрые рекомендации по питанию', 'Вопросы по СРК/вздутию', 'Ясность по добавкам', 'Баланс питания', 'Противоречивые советы по питанию'],
     },
     {
       en: {
-        title: '"In Harmony with Nutrition and Body" Coaching',
-        description: 'Personalized ongoing lifestyle and nutrition guidance.',
+        title: 'Comprehensive Assessment',
+        description: 'In-depth assessment with questionnaire and meal pattern review, food diary analysis, and personalised recommendations.',
         ctaLabel: 'Book now',
+        duration: '60 min',
+        followUp: '7 days',
       },
       ru: {
-        title: 'Сопровождение «В гармонии с питанием и телом»',
-        description: '6 недель / 6 расширенных консультаций. Персонализированное сопровождение по питанию и образу жизни.',
+        title: 'Комплексная оценка',
+        description: 'Углублённая оценка с анкетой и анализом режима питания, анализом дневника питания и персонализированными рекомендациями.',
         ctaLabel: 'Записаться',
+        duration: '60 мин',
+        followUp: '7 дней',
       },
-      duration: 'per consultation',
-      priceEN: '£67',
-      priceRU: '6 650 ₽',
+      priceEN: '£119',
+      priceRU: '11 900 ₽',
       order: 4,
       highlighted: false,
+      category: 'comparison' as const,
+      featuresEN: buildFeatures(compFeatures, featureLabelsEN),
+      featuresRU: buildFeatures(compFeatures, featureLabelsRU),
+      idealForEN: ['IBS/gut symptoms', 'Fatigue', 'Acne/skin issues', 'Weight management', 'Blood sugar', 'Blood test optimisation'],
+      idealForRU: ['Симптомы СРК/ЖКТ', 'Усталость', 'Акне/проблемы с кожей', 'Управление весом', 'Уровень сахара в крови', 'Оптимизация анализов крови'],
+    },
+    {
+      en: {
+        title: 'Coaching Program',
+        description: 'A comprehensive 2-month program with 6 sessions, ongoing support, and habit change guidance.',
+        ctaLabel: 'Book now',
+        duration: '6 sessions / 2 months',
+        followUp: 'Throughout program unlimited messaging',
+      },
+      ru: {
+        title: 'Программа сопровождения',
+        description: 'Комплексная 2-месячная программа с 6 сессиями, постоянной поддержкой и помощью в изменении привычек.',
+        ctaLabel: 'Записаться',
+        duration: '6 сессий / 2 месяца',
+        followUp: 'На протяжении программы, безлимитная переписка',
+      },
+      priceEN: '£449',
+      priceRU: '44 900 ₽',
+      order: 5,
+      highlighted: true,
+      category: 'comparison' as const,
+      featuresEN: buildFeatures(coachFeatures, featureLabelsEN),
+      featuresRU: buildFeatures(coachFeatures, featureLabelsRU),
+      idealForEN: ['Weight loss', 'Persistent IBS', 'Energy/metabolic health', 'Sustainable habits', 'Gut health restoration'],
+      idealForRU: ['Снижение веса', 'Хронический СРК', 'Энергия/метаболическое здоровье', 'Устойчивые привычки', 'Восстановление здоровья ЖКТ'],
     },
   ]
 
@@ -398,12 +508,17 @@ async function seed() {
       data: {
         title: s.en.title,
         description: s.en.description,
-        duration: s.duration,
+        duration: s.en.duration,
         priceEN: s.priceEN,
         priceRU: s.priceRU,
         ctaLabel: s.en.ctaLabel,
         order: s.order,
         highlighted: s.highlighted,
+        category: s.category,
+        features: s.featuresEN,
+        followUp: 'followUp' in s.en ? (s.en as { followUp?: string }).followUp : undefined,
+        note: 'note' in s.en ? (s.en as { note?: string }).note : undefined,
+        ...('idealForEN' in s ? { idealFor: (s as { idealForEN: string[] }).idealForEN.map(t => ({ text: t })) } : {}),
       },
       locale: 'en',
     })
@@ -414,6 +529,11 @@ async function seed() {
         title: s.ru.title,
         description: s.ru.description,
         ctaLabel: s.ru.ctaLabel,
+        duration: s.ru.duration,
+        features: s.featuresRU,
+        followUp: 'followUp' in s.ru ? (s.ru as { followUp?: string }).followUp : undefined,
+        note: 'note' in s.ru ? (s.ru as { note?: string }).note : undefined,
+        ...('idealForRU' in s ? { idealFor: (s as { idealForRU: string[] }).idealForRU.map(t => ({ text: t })) } : {}),
       },
       locale: 'ru',
     })
