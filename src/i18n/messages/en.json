@@ -91,7 +91,8 @@
     "serviceCoaching": "Gut Health Coaching — £375",
     "serviceNotSure": "Not sure yet — help me choose",
     "message": "Your message",
-    "privacyConsent": "I agree to the privacy policy",
+    "privacyConsent": "I agree to the",
+    "privacyLink": "Privacy Policy",
     "submit": "Send",
     "success": "Thank you! I'll get back to you via email within 24 hours.",
     "error": "Something went wrong. Please try again."
@@ -243,6 +244,52 @@
       "idealFor": "You have ongoing digestive issues like bloating or IBS, want lasting results, or have tried quick fixes that didn't work.",
       "cta": "Start coaching — £375"
     }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "backHome": "Back to home",
+    "effectiveDate": "Effective from 28 March 2026. This policy is regularly reviewed and updated.",
+
+    "intro": "This privacy policy sets out how Anna Doran Health uses and protects any personal information that you provide to us. Should we ask you to provide certain information by which you can be identified when using our services, you can be assured that it will only be used in accordance with this privacy policy.",
+
+    "whyCollectHeading": "Why we collect your data",
+    "whyCollect": "We collect your personal data because you give us consent to do so, in order to provide our independent nutrition and dietetic services to you. You may also have opted in to receive our newsletter.",
+
+    "whatCollectHeading": "Anna Doran Health may collect the following information",
+    "collect1": "Name, date of birth, age, sex, next of kin, GP name and address, marital status, living arrangements and occupation.",
+    "collect2": "Contact details: home address, email and telephone numbers.",
+    "collect3": "Clinical and health-related information via forms, emails and verbally during a consultation.",
+
+    "usedForHeading": "This information is required for",
+    "usedFor1": "Professional clinical record keeping of client information in accordance with the British Dietetic Association Guidance for Records and Record Keeping.",
+    "usedFor2": "Sharing information with relevant healthcare professionals such as your GP or medical team (consent will always be asked before this is done).",
+    "usedForException": "In exceptional circumstances, information about a client may be disclosed without consent if it is in the public interest to do so. This might be in circumstances where disclosing the information is necessary to prevent a serious crime or serious harm to other people.",
+
+    "websiteDataHeading": "What information is collected via this website and what it is used for",
+    "websiteData1": "When you visit this website, your browsing data may be collected anonymously to help us understand how the site is used. No data is collected which could identify an individual.",
+    "websiteData2": "This website uses cookies to help provide a better user experience. You may disable cookies in your browser if you prefer.",
+    "websiteData3": "If you subscribe to the newsletter, your email address is stored securely and used only to send you regular updates. You are free to unsubscribe at any time.",
+    "websiteData4": "When you submit the contact form, your name, email, selected service, and message are saved securely. A notification containing these details is sent to us via Telegram, a messaging service, so we can respond to your enquiry promptly. By submitting the form, you consent to this transfer.",
+
+    "controlHeading": "Controlling your personal information",
+    "control1": "We will not distribute, sell or lease your personal information to third parties unless we have your explicit permission or are required by law to do so.",
+    "control2": "You may request details of personal information which we hold about you under the UK General Data Protection Regulation (UK GDPR). If you believe that any information we are holding on you is incorrect or incomplete, please contact us as soon as possible and we will promptly correct it.",
+    "control3": "Service providers used to store and process information related to carrying out dietetic services all have robust security procedures in place and are GDPR compliant. BDA and HCPC record-keeping guidelines are strictly adhered to for one-to-one consultations.",
+
+    "retentionHeading": "Data retention",
+    "retention": "Records relating to the care of a client will be stored for eight years, in line with British Dietetic Association Guidance for Records and Record Keeping. Contact form enquiries are retained for 12 months.",
+
+    "rightsHeading": "Your rights",
+    "right1": "The right to access the personal data we hold about you.",
+    "right2": "The right to request correction of any inaccurate data.",
+    "right3": "The right to request deletion of your data.",
+    "right4": "The right to restrict or object to processing of your data.",
+    "right5": "The right to data portability.",
+    "right6": "The right to withdraw consent at any time.",
+    "rightsICO": "If you are unhappy with how your data has been handled, you have the right to complain to the Information Commissioner's Office (ICO) at ico.org.uk.",
+
+    "controllerHeading": "Data controller",
+    "controller": "I (Anna Doran) am the data controller at Anna Doran Health. Please contact me at contact@annadorandiet.com with any queries or requests related to your personal data and I will respond promptly."
   },
   "language": {
     "switch": "RU"

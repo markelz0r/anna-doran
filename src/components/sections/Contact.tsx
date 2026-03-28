@@ -112,7 +112,10 @@ export function Contact({ locale }: ContactProps) {
             <div className="flex items-center gap-2">
               <Checkbox id="privacyConsent" name="privacyConsent" required />
               <Label htmlFor="privacyConsent" className="text-sm text-muted-foreground">
-                {f('privacyConsent')}
+                {f('privacyConsent')}{' '}
+                <a href={`/${locale}/privacy-policy`} target="_blank" className="text-primary underline hover:text-primary/80">
+                  {f('privacyLink')}
+                </a>
               </Label>
             </div>
             <Button type="submit" className="w-full bg-primary hover:bg-primary/90" disabled={status === 'loading'}>
