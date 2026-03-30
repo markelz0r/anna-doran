@@ -17,7 +17,7 @@ export function GoalsAchievable() {
   const t = useTranslations('sections')
 
   return (
-    <section className="py-12 md:py-20">
+    <section className="py-10 md:py-14">
       <div className="container mx-auto px-2 sm:px-4 max-w-6xl">
         <h2 className="font-[family-name:var(--font-heading)] text-[28px] sm:text-[36px] md:text-[42px] font-medium text-foreground mb-8 md:mb-10">
           {t('goals')}

@@ -20,7 +20,7 @@ export function About({ about, credentials, settings }: AboutProps) {
   const locale = useLocale()
 
   return (
-    <section id="about" className="py-12 md:py-20">
+    <section id="about" className="py-10 md:py-14">
       <div className="container mx-auto px-2 sm:px-4 max-w-6xl">
         {/* About Me - two column layout */}
         <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-4 sm:gap-6 mb-8 md:mb-16">

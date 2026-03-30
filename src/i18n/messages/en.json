@@ -88,8 +88,8 @@
     "servicePlaceholder": "Select a service",
     "serviceDiscovery": "Free Discovery Call",
     "serviceMealCheck": "Meal Balance Check — £39",
-    "serviceConsultation": "Initial Consultation — £89",
-    "serviceFollowUp": "Follow-up Session — £59",
+    "serviceConsultation": "Initial Consultation — £99",
+    "serviceFollowUp": "Follow-up Session — £69",
     "serviceCoaching": "Gut Health Coaching — £449",
     "serviceNotSure": "Not sure yet — help me choose",
     "message": "Your message",
@@ -147,6 +147,13 @@
     "importantHeading": "Important note",
     "important": "This service provides general nutrition feedback based on your food diary. If you have chronic conditions, digestive disorders, food allergies, or take prescribed medications, a full consultation may be more appropriate.",
     "bookNow": "Book now"
+  },
+  "floating": {
+    "cta": "Book free discovery call"
+  },
+  "testimonials": {
+    "seeAll": "See all reviews on Google",
+    "addReview": "+ Add a review"
   },
   "footer": {
     "infoHeading": "Info",
@@ -238,9 +245,9 @@
       "feature5": "1-week example meal plan",
       "feature6": "Blood test review (if available)",
       "feature7": "Written summary sent after session",
-      "followUp": "Follow-up session available: 30 min — £59",
+      "followUp": "Follow-up session available: 30–60 min — £69",
       "idealFor": "You have gut health concerns, digestive issues, low energy, or want a professional review of your diet.",
-      "cta": "Book consultation — £89"
+      "cta": "Book consultation — £99"
     },
     "coachingProgramme": {
       "title": "Gut Health Coaching",

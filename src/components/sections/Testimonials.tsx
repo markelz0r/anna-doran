@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react'
 
 function StarRating() {
@@ -29,7 +29,7 @@ function ReviewCard({ name, initial, text, color }: { name: string; initial: str
   )
 }
 
-const reviews = [
+const reviewsEN = [
   {
     name: 'Kati Blom',
     initial: 'K',
@@ -68,9 +68,51 @@ const reviews = [
   },
 ]
 
+const reviewsRU = [
+  {
+    name: 'Кати Блом',
+    initial: 'К',
+    color: 'bg-purple-500',
+    text: "Мне очень понравилось работать с Анной. У меня была интоксикация печени, и мне нужно было очистить организм. Анна помогла понять, на какие продукты стоит обратить внимание, и составила персональный план, которому было легко следовать.",
+  },
+  {
+    name: 'S',
+    initial: 'S',
+    color: 'bg-blue-500',
+    text: "Анна составляет отличные планы питания — прекрасная отправная точка для тех, кто хочет улучшить свой рацион. Реалистично, практично и легко следовать.",
+  },
+  {
+    name: 'София Р.',
+    initial: 'С',
+    color: 'bg-pink-500',
+    text: "Я обратилась к нутрициологу Анне с рядом проблем: высыпания на коже, выпадение волос, проблемы с пищеварением. Она составила чёткий план, и я увидела улучшения уже через несколько недель.",
+  },
+  {
+    name: 'Клиент',
+    initial: 'А',
+    color: 'bg-green-500',
+    text: "Псориаз на локтях теперь без белых хлопьев, только красный. Каждый день чувствую себя счастливее.",
+  },
+  {
+    name: 'Кати',
+    initial: 'К',
+    color: 'bg-orange-400',
+    text: "Было настолько увлекательно и насыщенно фактами, что мне нужно было поспать, чтобы лучше запомнить. Идея о том, что наш разум важнее всего при пищеварении, действительно запомнилась. Спасибо за сессию, которая заставляет задуматься!",
+  },
+  {
+    name: 'Клиент',
+    initial: 'М',
+    color: 'bg-teal-500',
+    text: "Мои концентрация и самочувствие улучшились, у меня больше энергии замечать мелочи вокруг.",
+  },
+]
+
 export function Testimonials() {
   const t = useTranslations('sections')
+  const tReviews = useTranslations('testimonials')
+  const locale = useLocale()
   const scrollRef = useRef<HTMLDivElement>(null)
+  const reviews = locale === 'ru' ? reviewsRU : reviewsEN
 
   const scroll = (direction: 'left' | 'right') => {
     if (!scrollRef.current) return
@@ -82,27 +124,27 @@ export function Testimonials() {
   }
 
   return (
-    <section className="py-20 bg-card">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <h2 className="font-[family-name:var(--font-heading)] text-[36px] md:text-[42px] font-medium text-center text-foreground mb-4">
+    <section id="testimonials" className="py-10 md:py-14 bg-card">
+      <div className="container mx-auto px-2 sm:px-4 max-w-6xl">
+        <h2 className="font-[family-name:var(--font-heading)] text-[28px] sm:text-[36px] md:text-[42px] font-medium text-center text-foreground mb-4">
           {t('testimonials')}
         </h2>
-        <div className="flex justify-center gap-4 mb-10">
+        <div className="flex justify-center gap-3 sm:gap-4 mb-10 flex-wrap">
           <a
             href="https://share.google/ySMcszpq2IjX5YNlv"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 border border-border rounded-full px-6 py-2.5 text-sm font-medium text-foreground hover:bg-secondary transition-colors"
+            className="inline-flex items-center gap-2 border border-border rounded-full px-4 sm:px-6 py-2.5 text-sm font-medium text-foreground hover:bg-secondary transition-colors"
           >
-            See all reviews on Google
+            {tReviews('seeAll')}
           </a>
           <a
             href="https://g.page/r/Ce7g3QEsJm_7EAE/review"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white rounded-full px-6 py-2.5 text-sm font-medium transition-colors"
+            className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white rounded-full px-4 sm:px-6 py-2.5 text-sm font-medium transition-colors"
           >
-            + Add a review
+            {tReviews('addReview')}
           </a>
         </div>
 

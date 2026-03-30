@@ -8,11 +8,11 @@ import { SectionHeading } from '@/components/shared/SectionHeading'
 const SERVICE_KEYS = ['discoveryCall', 'mealBalanceCheck', 'initialConsultation', 'coachingProgramme'] as const
 type ServiceKey = (typeof SERVICE_KEYS)[number]
 
-const SERVICE_META: Record<ServiceKey, { price: string; featured?: boolean; featureCount: number; hasFollowUp?: boolean }> = {
-  discoveryCall:       { price: 'FREE',  featureCount: 3 },
-  mealBalanceCheck:    { price: '£39',   featureCount: 6 },
-  initialConsultation: { price: '£89',   featured: true, featureCount: 7, hasFollowUp: true },
-  coachingProgramme:   { price: '£449',  featureCount: 7 },
+const SERVICE_META: Record<ServiceKey, { priceEN: string; priceRU: string; featured?: boolean; featureCount: number; hasFollowUp?: boolean }> = {
+  discoveryCall:       { priceEN: 'FREE',  priceRU: 'Бесплатно', featureCount: 3 },
+  mealBalanceCheck:    { priceEN: '£39',   priceRU: '3 900 ₽',   featureCount: 6 },
+  initialConsultation: { priceEN: '£99',   priceRU: '9 900 ₽',   featured: true, featureCount: 7, hasFollowUp: true },
+  coachingProgramme:   { priceEN: '£449',  priceRU: '44 900 ₽',  featureCount: 7 },
 }
 
 interface ServicesV2Props {
@@ -24,7 +24,7 @@ export function ServicesV2({ locale }: ServicesV2Props) {
   const s = useTranslations('servicesV2')
 
   return (
-    <section id="services" className="py-12 md:py-20 bg-card">
+    <section id="services" className="py-10 md:py-14 bg-card">
       <div className="container mx-auto px-2 sm:px-4">
         <SectionHeading>{t('services')}</SectionHeading>
 
@@ -73,7 +73,7 @@ export function ServicesV2({ locale }: ServicesV2Props) {
                     {s(`${key}.title`)}
                   </CardTitle>
                   <p className="text-sm text-[#9f9f9f] mt-1">{s(`${key}.duration`)}</p>
-                  <p className="text-[24px] font-medium text-[#1781ae] mt-2">{meta.price}</p>
+                  <p className="text-[24px] font-medium text-[#1781ae] mt-2">{locale === 'ru' ? meta.priceRU : meta.priceEN}</p>
                 </CardHeader>
 
                 <CardContent className="flex-1 flex flex-col">

@@ -37,7 +37,7 @@ export function Contact({ locale }: ContactProps) {
   }
 
   return (
-    <section id="contacts" className="py-12 md:py-20 bg-card">
+    <section id="contacts" className="py-10 md:py-14 bg-card">
       <div className="container mx-auto px-2 sm:px-4 max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
         <div className="hidden md:block">
           <Image

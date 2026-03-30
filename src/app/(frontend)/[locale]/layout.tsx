@@ -9,6 +9,7 @@ export const dynamic = 'force-dynamic'
 import { routing } from '@/i18n/routing'
 import { Header } from '@/components/sections/Header'
 import { Footer } from '@/components/sections/Footer'
+import { FloatingCTA } from '@/components/shared/FloatingCTA'
 import '@/app/globals.css'
 
 const cormorantSC = Cormorant_SC({
@@ -54,6 +55,7 @@ export default async function LocaleLayout({
           <Header settings={settings} locale={locale} />
           <main className="pt-16">{children}</main>
           <Footer settings={settings} locale={locale} />
+          <FloatingCTA />
         </NextIntlClientProvider>
       </body>
     </html>
