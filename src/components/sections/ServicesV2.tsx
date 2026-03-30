@@ -12,7 +12,7 @@ const SERVICE_META: Record<ServiceKey, { price: string; featured?: boolean; feat
   discoveryCall:       { price: 'FREE',  featureCount: 3 },
   mealBalanceCheck:    { price: '£39',   featureCount: 6 },
   initialConsultation: { price: '£89',   featured: true, featureCount: 7, hasFollowUp: true },
-  coachingProgramme:   { price: '£375',  featureCount: 7 },
+  coachingProgramme:   { price: '£449',  featureCount: 7 },
 }
 
 interface ServicesV2Props {
