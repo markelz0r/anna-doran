@@ -213,7 +213,7 @@
     "bookDiscovery": "Book a free discovery call",
     "discoveryCall": {
       "title": "Free Discovery Call",
-      "duration": "15-minute video/audio call",
+      "duration": "15 min · video/audio call",
       "description": "A relaxed, no-pressure chat where I listen to what's going on with your health and help you figure out the best next step.",
       "feature1": "We talk about your main health concerns",
       "feature2": "I explain how I can help",
@@ -236,7 +236,7 @@
     },
     "initialConsultation": {
       "title": "Initial Consultation",
-      "duration": "60 minutes · video call",
+      "duration": "60 min · video call",
       "description": "A deep dive into your diet, digestion, and health goals — with a personalised plan to get you started.",
       "feature1": "Pre-consultation health questionnaire",
       "feature2": "5-day food diary analysis",
@@ -251,7 +251,7 @@
     },
     "coachingProgramme": {
       "title": "Gut Health Coaching",
-      "duration": "6 sessions over 12 weeks",
+      "duration": "6 × 60 min · over 12 weeks",
       "description": "Ongoing support to transform your gut health step by step — with structure, accountability, and a plan that evolves with you.",
       "feature1": "Full initial consultation included",
       "feature2": "5 follow-up sessions (30 min each)",
