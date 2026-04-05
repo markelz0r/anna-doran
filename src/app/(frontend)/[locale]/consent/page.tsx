@@ -113,6 +113,17 @@ export default function ConsentPage() {
               </div>
             </div>
 
+            {/* Note about rights */}
+            <div className="bg-muted/50 rounded-lg p-4 text-xs text-[#6b6b6b] leading-relaxed">
+              <p>
+                {t('note')}{' '}
+                <a href={`/${locale}/privacy-policy`} target="_blank" className="text-primary underline hover:text-primary/80">
+                  {t('privacyLink')}
+                </a>.
+              </p>
+              <p className="mt-2">{t('noteEnd')}</p>
+            </div>
+
             <Button type="submit" className="w-full sm:w-auto bg-primary hover:bg-primary/90 px-8" disabled={status === 'loading'}>
               {status === 'loading' ? '...' : t('submit')}
             </Button>
