@@ -232,7 +232,7 @@
       "feature5": "Supplement & food recommendations",
       "feature6": "3 days of follow-up support via messenger",
       "idealFor": "You want a simple starting point to understand whether your diet is supporting your gut health — without a full consultation.",
-      "cta": "Get started — £39"
+      "cta": "Get started"
     },
     "initialConsultation": {
       "title": "Initial Consultation",
@@ -247,7 +247,7 @@
       "feature7": "Written summary sent after session",
       "followUp": "Follow-up session available: 30–60 min — £79",
       "idealFor": "You have gut health concerns, digestive issues, low energy, or want a professional review of your diet.",
-      "cta": "Book consultation — £109"
+      "cta": "Book consultation"
     },
     "coachingProgramme": {
       "title": "Gut Health Coaching",
@@ -261,8 +261,8 @@
       "feature6": "Webinars on balanced meals & meal planning",
       "feature7": "Additional guides & resources as needed",
       "idealFor": "You have ongoing digestive issues like bloating or IBS, want lasting results, or have tried quick fixes that didn't work.",
-      "savings": "Save £35 vs booking individually",
-      "cta": "Start coaching — £469"
+      "savings": "Save £35 + weekly support, tracking & webinars included",
+      "cta": "Start coaching"
     }
   },
   "terms": {

@@ -75,7 +75,7 @@ export function ServicesV2({ locale }: ServicesV2Props) {
                   <p className="text-sm text-[#9f9f9f] mt-1">{s(`${key}.duration`)}</p>
                   <p className="text-[24px] font-medium text-[#1781ae] mt-2">{locale === 'ru' ? meta.priceRU : meta.priceEN}</p>
                   {meta.hasSavings && (
-                    <span className="inline-block mt-1 text-xs font-semibold text-green-600 bg-green-50 rounded-full px-3 py-1 w-fit">
+                    <span className="inline-block mt-1 text-xs font-semibold text-primary bg-primary/10 rounded-full px-3 py-1 w-fit">
                       {s(`${key}.savings`)}
                     </span>
                   )}
@@ -133,15 +133,6 @@ export function ServicesV2({ locale }: ServicesV2Props) {
           })}
         </div>
 
-        {/* Not sure prompt */}
-        <div className="text-center mt-12">
-          <p className="text-[#9f9f9f] text-base">
-            {s('notSure')}
-          </p>
-          <Button asChild variant="outline" className="mt-3 border-primary text-primary hover:bg-primary/5">
-            <a href="#contacts">{s('bookDiscovery')}</a>
-          </Button>
-        </div>
       </div>
     </section>
   )
