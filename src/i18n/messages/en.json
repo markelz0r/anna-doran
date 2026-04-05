@@ -88,9 +88,9 @@
     "servicePlaceholder": "Select a service",
     "serviceDiscovery": "Free Discovery Call",
     "serviceMealCheck": "Meal Balance Check — £39",
-    "serviceConsultation": "Initial Consultation — £99",
-    "serviceFollowUp": "Follow-up Session — £69",
-    "serviceCoaching": "Gut Health Coaching — £449",
+    "serviceConsultation": "Initial Consultation — £109",
+    "serviceFollowUp": "Follow-up Session — £79",
+    "serviceCoaching": "Gut Health Coaching — £469",
     "serviceNotSure": "Not sure yet — help me choose",
     "message": "Your message",
     "privacyConsent": "I agree to the",
@@ -245,9 +245,9 @@
       "feature5": "1-week example meal plan",
       "feature6": "Blood test review (if available)",
       "feature7": "Written summary sent after session",
-      "followUp": "Follow-up session available: 30–60 min — £69",
+      "followUp": "Follow-up session available: 30–60 min — £79",
       "idealFor": "You have gut health concerns, digestive issues, low energy, or want a professional review of your diet.",
-      "cta": "Book consultation — £99"
+      "cta": "Book consultation — £109"
     },
     "coachingProgramme": {
       "title": "Gut Health Coaching",
@@ -261,7 +261,8 @@
       "feature6": "Webinars on balanced meals & meal planning",
       "feature7": "Additional guides & resources as needed",
       "idealFor": "You have ongoing digestive issues like bloating or IBS, want lasting results, or have tried quick fixes that didn't work.",
-      "cta": "Start coaching — £449"
+      "savings": "Save £35 vs booking individually",
+      "cta": "Start coaching — £469"
     }
   },
   "terms": {

@@ -15,9 +15,9 @@ const contactSchema = z.object({
 const SERVICE_LABELS: Record<string, string> = {
   'discovery-call': 'Free Discovery Call',
   'meal-balance-check': 'Meal Balance Check — £39',
-  'initial-consultation': 'Initial Consultation — £99',
-  'follow-up-session': 'Follow-up Session — £69',
-  'gut-health-coaching': 'Gut Health Coaching — £375',
+  'initial-consultation': 'Initial Consultation — £109',
+  'follow-up-session': 'Follow-up Session — £79',
+  'gut-health-coaching': 'Gut Health Coaching — £469',
   'not-sure': 'Not sure yet',
 }
 

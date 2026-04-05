@@ -8,11 +8,11 @@ import { SectionHeading } from '@/components/shared/SectionHeading'
 const SERVICE_KEYS = ['discoveryCall', 'mealBalanceCheck', 'initialConsultation', 'coachingProgramme'] as const
 type ServiceKey = (typeof SERVICE_KEYS)[number]
 
-const SERVICE_META: Record<ServiceKey, { priceEN: string; priceRU: string; featured?: boolean; featureCount: number; hasFollowUp?: boolean }> = {
+const SERVICE_META: Record<ServiceKey, { priceEN: string; priceRU: string; featured?: boolean; featureCount: number; hasFollowUp?: boolean; hasSavings?: boolean }> = {
   discoveryCall:       { priceEN: 'FREE',  priceRU: 'Бесплатно', featureCount: 3 },
   mealBalanceCheck:    { priceEN: '£39',   priceRU: '3 900 ₽',   featureCount: 6 },
-  initialConsultation: { priceEN: '£99',   priceRU: '9 900 ₽',   featured: true, featureCount: 7, hasFollowUp: true },
-  coachingProgramme:   { priceEN: '£449',  priceRU: '44 900 ₽',  featureCount: 7 },
+  initialConsultation: { priceEN: '£109',  priceRU: '10 900 ₽',  featured: true, featureCount: 7, hasFollowUp: true },
+  coachingProgramme:   { priceEN: '£469',  priceRU: '46 900 ₽',  featureCount: 7, hasSavings: true },
 }
 
 interface ServicesV2Props {
@@ -74,6 +74,11 @@ export function ServicesV2({ locale }: ServicesV2Props) {
                   </CardTitle>
                   <p className="text-sm text-[#9f9f9f] mt-1">{s(`${key}.duration`)}</p>
                   <p className="text-[24px] font-medium text-[#1781ae] mt-2">{locale === 'ru' ? meta.priceRU : meta.priceEN}</p>
+                  {meta.hasSavings && (
+                    <span className="inline-block mt-1 text-xs font-semibold text-green-600 bg-green-50 rounded-full px-3 py-1 w-fit">
+                      {s(`${key}.savings`)}
+                    </span>
+                  )}
                 </CardHeader>
 
                 <CardContent className="flex-1 flex flex-col">
