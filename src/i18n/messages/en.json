@@ -149,7 +149,8 @@
     "bookNow": "Book now"
   },
   "floating": {
-    "cta": "Book free discovery call"
+    "cta": "Book free discovery call",
+    "ctaShort": "Book call"
   },
   "testimonials": {
     "seeAll": "See all reviews on Google",
