@@ -123,7 +123,7 @@ export default async function CoursesPage({ params }: { params: Promise<{ locale
         {/* CTA */}
         <a
           href={`/${locale}#contacts`}
-          className="inline-flex items-center justify-center gap-4 bg-primary hover:bg-primary/90 text-white text-base font-medium rounded-full px-10 py-5 transition-colors"
+          className="inline-flex items-center justify-center gap-4 bg-primary hover:bg-primary/90 text-white text-sm md:text-base font-medium rounded-full px-6 md:px-10 py-3 md:py-5 transition-colors"
         >
           {isRu ? 'Записаться на консультацию' : 'Book free discovery call'}
           <span className="text-xl">→</span>

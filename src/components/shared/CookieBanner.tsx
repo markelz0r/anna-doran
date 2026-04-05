@@ -27,7 +27,7 @@ export function CookieBanner() {
   if (!visible) return null
 
   return (
-    <div className="fixed bottom-16 md:bottom-4 left-4 right-4 md:left-auto md:right-6 md:max-w-md z-50 bg-white border border-border rounded-xl shadow-lg p-4">
+    <div className="fixed bottom-14 md:bottom-4 left-3 right-3 md:left-auto md:right-6 md:max-w-md z-50 bg-white border border-border rounded-xl shadow-lg p-4">
       <p className="text-sm text-foreground leading-relaxed mb-3">
         {t('message')}{' '}
         <a href={`/${locale}/cookie-policy`} className="text-primary underline hover:text-primary/80">

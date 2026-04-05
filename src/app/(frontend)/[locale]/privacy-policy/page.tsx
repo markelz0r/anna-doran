@@ -15,7 +15,7 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
 
   return (
     <section className="py-16">
-      <div className="container mx-auto px-4 max-w-3xl">
+      <div className="container mx-auto px-3 sm:px-4 max-w-3xl">
         <a
           href={`/${locale}`}
           className="inline-flex items-center gap-2 text-primary hover:underline mb-8 text-sm"

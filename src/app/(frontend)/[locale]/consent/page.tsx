@@ -34,7 +34,7 @@ export default function ConsentPage() {
 
   return (
     <section className="py-16">
-      <div className="container mx-auto px-4 max-w-3xl">
+      <div className="container mx-auto px-3 sm:px-4 max-w-3xl">
         <a
           href={`/${locale}`}
           className="inline-flex items-center gap-2 text-primary hover:underline mb-8 text-sm"
@@ -72,7 +72,7 @@ export default function ConsentPage() {
 
             <div className="border-t border-border pt-6 space-y-5">
               {/* Consent 1: Online consultation */}
-              <div className="flex items-start gap-3">
+              <div className="flex items-start gap-2 sm:gap-3">
                 <Checkbox id="consent_consultation" name="consent_consultation" required className="mt-1" />
                 <Label htmlFor="consent_consultation" className="text-sm text-foreground leading-relaxed font-normal">
                   {t('consent1')}
@@ -80,7 +80,7 @@ export default function ConsentPage() {
               </div>
 
               {/* Consent 2: Health data */}
-              <div className="flex items-start gap-3">
+              <div className="flex items-start gap-2 sm:gap-3">
                 <Checkbox id="consent_healthData" name="consent_healthData" required className="mt-1" />
                 <Label htmlFor="consent_healthData" className="text-sm text-foreground leading-relaxed font-normal">
                   {t('consent2')}
@@ -88,7 +88,7 @@ export default function ConsentPage() {
               </div>
 
               {/* Consent 3: No guarantee */}
-              <div className="flex items-start gap-3">
+              <div className="flex items-start gap-2 sm:gap-3">
                 <Checkbox id="consent_noGuarantee" name="consent_noGuarantee" required className="mt-1" />
                 <Label htmlFor="consent_noGuarantee" className="text-sm text-foreground leading-relaxed font-normal">
                   {t('consent3')}
@@ -96,7 +96,7 @@ export default function ConsentPage() {
               </div>
 
               {/* Consent 4: GP contact (optional) */}
-              <div className="flex items-start gap-3">
+              <div className="flex items-start gap-2 sm:gap-3">
                 <Checkbox id="consent_gpContact" name="consent_gpContact" className="mt-1" />
                 <Label htmlFor="consent_gpContact" className="text-sm text-foreground leading-relaxed font-normal">
                   {t('consent4')}
@@ -105,7 +105,7 @@ export default function ConsentPage() {
               </div>
 
               {/* Consent 5: Telegram notification */}
-              <div className="flex items-start gap-3">
+              <div className="flex items-start gap-2 sm:gap-3">
                 <Checkbox id="consent_telegram" name="consent_telegram" required className="mt-1" />
                 <Label htmlFor="consent_telegram" className="text-sm text-foreground leading-relaxed font-normal">
                   {t('consent5')}

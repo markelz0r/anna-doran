@@ -34,7 +34,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
   return (
     <section className="py-16">
-      <div className="container mx-auto px-4 max-w-5xl">
+      <div className="container mx-auto px-3 sm:px-4 max-w-5xl">
         {/* Back link */}
         <a href={`/${locale}`} className="inline-flex items-center gap-2 text-primary hover:underline mb-8 text-sm">
           <ArrowLeft className="h-4 w-4" />
@@ -52,7 +52,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </h2>
 
         <div className="mb-10">
-          <div className="relative rounded-2xl overflow-hidden float-right ml-8 mb-4 w-[280px] lg:w-[320px]">
+          <div className="relative rounded-2xl overflow-hidden float-none sm:float-right ml-0 sm:ml-8 mb-4 w-full sm:w-[280px] lg:w-[320px]">
             <Image
               src="/images/about-journey.png"
               alt="Anna Doran"
@@ -160,7 +160,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                   return (
                     <div key={item.id} className="flex items-stretch gap-6 md:gap-10">
                       {/* Year */}
-                      <div className="min-w-[120px] md:min-w-[140px] text-right pt-4">
+                      <div className="min-w-[80px] sm:min-w-[120px] md:min-w-[140px] text-right pt-4">
                         <span className="text-[20px] md:text-[24px] font-bold text-foreground">{item.year}</span>
                       </div>
                       {/* Logo circle + connecting line */}

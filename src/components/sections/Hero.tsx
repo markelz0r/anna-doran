@@ -41,9 +41,9 @@ export function Hero({ name, title, heading, subtitle, ctaText, testimonialSnipp
             <a href="#contacts">{ctaText} <ArrowRight className="h-4 w-4" /></a>
           </Button>
           {testimonialSnippets.length > 0 && (
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {testimonialSnippets.map((snippet, i) => (
-                <div key={i} className="border border-primary/30 rounded-xl px-3 py-2 text-[12px] font-medium text-[#757575]">
+                <div key={i} className="border border-primary/30 rounded-xl px-3 py-2 text-[13px] font-medium text-[#757575]">
                   &ldquo;{snippet}&rdquo;
                 </div>
               ))}
