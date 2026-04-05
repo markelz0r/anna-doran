@@ -271,6 +271,23 @@
       "cta": "Pay now"
     }
   },
+  "consent": {
+    "title": "Client Consent Form",
+    "backHome": "Back to home",
+    "intro": "Before your first consultation, please read and confirm the following. This ensures you understand how I work, how your data is handled, and what to expect from my services.",
+    "name": "Full name",
+    "email": "Email",
+    "consent1": "I understand that consultations are provided online via video call and that there are limitations to remote consultations compared to in-person assessments. I understand that Anna Doran is a registered dietitian, not a medical doctor.",
+    "consent2": "I give my explicit consent for Anna Doran Health to collect and process my health-related data (including dietary information, symptoms, medical history, and food diaries) for the purpose of providing nutrition and dietetic services, in accordance with Article 9 of the UK GDPR.",
+    "consent3": "I understand that results are not guaranteed and may vary from person to person. The advice provided is based on professional expertise but outcomes depend on individual circumstances and adherence to recommendations.",
+    "consent4": "I consent to Anna Doran contacting my GP to share relevant information about my consultation and dietary recommendations.",
+    "consent5": "I understand that when I submit forms on this website, a notification containing my details is sent via Telegram (a messaging service with servers outside the UK) so that my enquiry can be responded to promptly.",
+    "optional": "optional",
+    "submit": "I confirm and agree",
+    "successTitle": "Thank you!",
+    "successMessage": "Your consent has been recorded. I will be in touch with you shortly to arrange your consultation.",
+    "error": "Something went wrong. Please try again or contact me at contact@annadorandiet.com."
+  },
   "cookieBanner": {
     "message": "This website uses essential cookies to ensure it works properly.",
     "learnMore": "Cookie Policy",

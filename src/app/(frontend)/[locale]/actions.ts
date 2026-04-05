@@ -53,6 +53,62 @@ async function sendTelegramNotification(data: {
   }
 }
 
+async function sendTelegramConsent(data: {
+  name: string
+  email: string
+  consultation: boolean
+  healthData: boolean
+  noGuarantee: boolean
+  gpContact: boolean
+  telegram: boolean
+}) {
+  const token = process.env.TELEGRAM_BOT_TOKEN
+  const chatId = process.env.TELEGRAM_CHAT_ID
+  if (!token || !chatId) return
+
+  const text = [
+    '📋 New client consent form submitted!',
+    '',
+    `👤 Name: ${data.name}`,
+    `📧 Email: ${data.email}`,
+    '',
+    `✅ Online consultation: ${data.consultation ? 'Yes' : 'No'}`,
+    `✅ Health data processing: ${data.healthData ? 'Yes' : 'No'}`,
+    `✅ No guarantee understood: ${data.noGuarantee ? 'Yes' : 'No'}`,
+    `${data.gpContact ? '✅' : '⬜'} GP contact: ${data.gpContact ? 'Yes' : 'No'}`,
+    `✅ Telegram notification: ${data.telegram ? 'Yes' : 'No'}`,
+    '',
+    `📅 Date: ${new Date().toISOString().split('T')[0]}`,
+  ].join('\n')
+
+  try {
+    await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chat_id: chatId, text }),
+    })
+  } catch {
+    // Don't block submission
+  }
+}
+
+export async function submitConsent(data: {
+  name: string
+  email: string
+  consultation: boolean
+  healthData: boolean
+  noGuarantee: boolean
+  gpContact: boolean
+  telegram: boolean
+}) {
+  try {
+    await sendTelegramConsent(data)
+    return { success: true }
+  } catch {
+    return { success: false }
+  }
+}
+
 export async function submitContact(data: {
   name: string
   email: string

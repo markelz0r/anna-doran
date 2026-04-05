@@ -10,9 +10,9 @@ type ServiceKey = (typeof SERVICE_KEYS)[number]
 
 const SERVICE_META: Record<ServiceKey, { priceEN: string; priceRU: string; featured?: boolean; featureCount: number; hasFollowUp?: boolean; hasSavings?: boolean; paymentLink?: string; calLink?: string }> = {
   discoveryCall:       { priceEN: 'FREE',  priceRU: 'Бесплатно', featureCount: 3 },
-  mealBalanceCheck:    { priceEN: '£39',   priceRU: '3 900 ₽',   featureCount: 6, paymentLink: 'https://buy.stripe.com/3cI3cw0ASgRbabL2f7aIM08' },
-  initialConsultation: { priceEN: '£109',  priceRU: '10 900 ₽',  featured: true, featureCount: 7, hasFollowUp: true, paymentLink: 'https://buy.stripe.com/cNidRagzQ58t4Rr4nfaIM09' },
-  coachingProgramme:   { priceEN: '£469',  priceRU: '46 900 ₽',  featureCount: 6, hasSavings: true, paymentLink: 'https://buy.stripe.com/6oUaEY83k58tabL06ZaIM0a' },
+  mealBalanceCheck:    { priceEN: '£39',   priceRU: '3 900 ₽',   featureCount: 6, paymentLink: 'https://buy.stripe.com/14A14o0AS8kFdnX4nfaIM0d' },
+  initialConsultation: { priceEN: '£109',  priceRU: '10 900 ₽',  featured: true, featureCount: 7, hasFollowUp: true, paymentLink: 'https://buy.stripe.com/bJe28s4R8eJ35Vv8DvaIM0e' },
+  coachingProgramme:   { priceEN: '£469',  priceRU: '46 900 ₽',  featureCount: 6, hasSavings: true, paymentLink: 'https://buy.stripe.com/5kQaEYerI7gB83DbPHaIM0f' },
 }
 
 interface ServicesV2Props {
