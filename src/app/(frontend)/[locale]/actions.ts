@@ -62,7 +62,7 @@ async function sendTelegramConsent(data: {
   gpContact: boolean
   telegram: boolean
 }) {
-  const token = process.env.TELEGRAM_BOT_TOKEN
+  const token = process.env.TELEGRAM_CONSENT_BOT_TOKEN
   const chatId = process.env.TELEGRAM_CHAT_ID
   if (!token || !chatId) return
 
