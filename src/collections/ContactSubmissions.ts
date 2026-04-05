@@ -18,7 +18,7 @@ export const ContactSubmissions: CollectionConfig = {
         { label: 'Meal Balance Check', value: 'meal-balance-check' },
         { label: 'Initial Consultation', value: 'initial-consultation' },
         { label: 'Follow-up Session', value: 'follow-up-session' },
-        { label: 'Gut Health Coaching', value: 'gut-health-coaching' },
+        { label: 'Health Coaching', value: 'gut-health-coaching' },
         { label: 'Not sure yet', value: 'not-sure' },
       ],
     },

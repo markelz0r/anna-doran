@@ -17,7 +17,7 @@ const SERVICE_LABELS: Record<string, string> = {
   'meal-balance-check': 'Meal Balance Check — £39',
   'initial-consultation': 'Initial Consultation — £109',
   'follow-up-session': 'Follow-up Session — £79',
-  'gut-health-coaching': 'Gut Health Coaching — £469',
+  'gut-health-coaching': 'Health Coaching — £469',
   'not-sure': 'Not sure yet',
 }
 
