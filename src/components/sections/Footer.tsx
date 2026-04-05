@@ -22,7 +22,7 @@ export function Footer({ settings, locale }: FooterProps) {
       <div className="container mx-auto px-3 sm:px-4 py-10 md:py-14">
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
 
-          {/* Column 1: Logo */}
+          {/* Column 1: Logo + credentials */}
           <div className="col-span-2 lg:col-span-1">
             <Image
               src={locale === 'ru' ? '/images/logo-bw-ru.png' : '/images/logo-bw.png'}
@@ -31,6 +31,10 @@ export function Footer({ settings, locale }: FooterProps) {
               height={80}
               className="h-16 w-16 md:h-20 md:w-20 object-contain brightness-0 invert mb-4"
             />
+            <div className="text-[12px] text-white/50 space-y-1">
+              <p>{t('hcpc')}</p>
+              <p>{t('bda')}</p>
+            </div>
           </div>
 
           {/* Column 2: Info links */}
@@ -123,6 +127,9 @@ export function Footer({ settings, locale }: FooterProps) {
             </a>
             <a href={`/${locale}/terms`} className="text-[12px] text-white/60 hover:text-white transition-colors">
               {t('terms')}
+            </a>
+            <a href={`/${locale}/cookie-policy`} className="text-[12px] text-white/60 hover:text-white transition-colors">
+              {t('cookiePolicy')}
             </a>
           </div>
         </div>

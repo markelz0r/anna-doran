@@ -171,6 +171,9 @@
     "contactHeading": "Get in Touch",
     "privacyPolicy": "Privacy Policy",
     "terms": "Terms & Conditions",
+    "cookiePolicy": "Cookie Policy",
+    "hcpc": "HCPC Registered Dietitian: DT034558",
+    "bda": "Member of the British Dietetic Association",
     "copyright": "© {year} Anna Doran Health. All rights reserved."
   },
   "newsletter": {
@@ -210,6 +213,7 @@
     "popular": "Most popular",
     "idealIf": "Ideal if",
     "askQuestion": "Have a question? Get in touch",
+    "disclaimer": "Professional nutrition advice provided by an HCPC-registered dietitian. This is not a substitute for medical treatment. Please consult your GP if you have a medical condition.",
     "notSure": "Not sure which service is right for you?",
     "bookDiscovery": "Book a free discovery call",
     "discoveryCall": {
@@ -264,6 +268,37 @@
       "savings": "Save £35 + weekly support, tracking & video guides included",
       "cta": "Pay now"
     }
+  },
+  "cookieBanner": {
+    "message": "This website uses essential cookies to ensure it works properly.",
+    "learnMore": "Cookie Policy",
+    "accept": "Accept",
+    "reject": "Reject"
+  },
+  "cookies": {
+    "title": "Cookie Policy",
+    "backHome": "Back to home",
+    "effectiveDate": "Effective from 28 March 2026.",
+    "intro": "This cookie policy explains what cookies are, how I use them on this website, and your choices regarding cookies.",
+    "whatAreCookiesHeading": "What are cookies?",
+    "whatAreCookies": "Cookies are small text files that are stored on your device when you visit a website. They help the website remember your preferences and improve your experience.",
+    "cookiesWeUseHeading": "Cookies I use",
+    "tableHeaderName": "Cookie name",
+    "tableHeaderPurpose": "Purpose",
+    "tableHeaderType": "Type",
+    "tableHeaderDuration": "Duration",
+    "cookie1Purpose": "Stores your language preference (English or Russian)",
+    "cookie1Type": "Essential",
+    "cookie1Duration": "Session",
+    "cookie2Purpose": "Remembers your cookie consent choice",
+    "cookie2Type": "Essential",
+    "cookie2Duration": "1 year",
+    "thirdPartyHeading": "Third-party cookies",
+    "thirdParty": "This website does not currently use any third-party analytics or marketing cookies. If this changes in the future, this policy will be updated and your consent will be requested.",
+    "howToDisableHeading": "How to disable cookies",
+    "howToDisable": "You can disable cookies through your browser settings. Please note that disabling essential cookies may affect how the website functions. Most browsers allow you to block or delete cookies — check your browser's help section for instructions.",
+    "contactHeading": "Contact",
+    "contact": "If you have any questions about this cookie policy, please contact me at contact@annadorandiet.com."
   },
   "terms": {
     "title": "Terms and Conditions",

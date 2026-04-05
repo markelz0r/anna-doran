@@ -10,6 +10,7 @@ import { routing } from '@/i18n/routing'
 import { Header } from '@/components/sections/Header'
 import { Footer } from '@/components/sections/Footer'
 import { FloatingCTA } from '@/components/shared/FloatingCTA'
+import { CookieBanner } from '@/components/shared/CookieBanner'
 import '@/app/globals.css'
 
 const cormorantSC = Cormorant_SC({
@@ -56,6 +57,7 @@ export default async function LocaleLayout({
           <main className="pt-16">{children}</main>
           <Footer settings={settings} locale={locale} />
           <FloatingCTA />
+          <CookieBanner />
         </NextIntlClientProvider>
       </body>
     </html>
