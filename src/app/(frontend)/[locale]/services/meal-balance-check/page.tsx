@@ -103,7 +103,7 @@ export default async function MealBalanceCheckPage({ params }: { params: Promise
         {/* CTA */}
         <div className="text-center">
           <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-base font-medium px-10">
-            <a href={`/${locale}/#contacts`}>{t('bookNow')}</a>
+            <a href="https://buy.stripe.com/14A14o0AS8kFdnX4nfaIM0d" target="_blank" rel="noopener noreferrer">{t('bookNow')}</a>
           </Button>
         </div>
       </div>
