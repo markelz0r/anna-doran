@@ -12,7 +12,7 @@ const SERVICE_META: Record<ServiceKey, { priceEN: string; priceRU: string; featu
   discoveryCall:       { priceEN: 'FREE',  priceRU: 'Бесплатно', featureCount: 3 },
   mealBalanceCheck:    { priceEN: '£39',   priceRU: '3 900 ₽',   featureCount: 6 },
   initialConsultation: { priceEN: '£109',  priceRU: '10 900 ₽',  featured: true, featureCount: 7, hasFollowUp: true },
-  coachingProgramme:   { priceEN: '£469',  priceRU: '46 900 ₽',  featureCount: 7, hasSavings: true },
+  coachingProgramme:   { priceEN: '£469',  priceRU: '46 900 ₽',  featureCount: 6, hasSavings: true },
 }
 
 interface ServicesV2Props {
