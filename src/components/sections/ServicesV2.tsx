@@ -8,11 +8,11 @@ import { SectionHeading } from '@/components/shared/SectionHeading'
 const SERVICE_KEYS = ['discoveryCall', 'mealBalanceCheck', 'initialConsultation', 'coachingProgramme'] as const
 type ServiceKey = (typeof SERVICE_KEYS)[number]
 
-const SERVICE_META: Record<ServiceKey, { priceEN: string; priceRU: string; featured?: boolean; featureCount: number; hasFollowUp?: boolean; hasSavings?: boolean }> = {
+const SERVICE_META: Record<ServiceKey, { priceEN: string; priceRU: string; featured?: boolean; featureCount: number; hasFollowUp?: boolean; hasSavings?: boolean; paymentLink?: string; calLink?: string }> = {
   discoveryCall:       { priceEN: 'FREE',  priceRU: 'Бесплатно', featureCount: 3 },
-  mealBalanceCheck:    { priceEN: '£39',   priceRU: '3 900 ₽',   featureCount: 6 },
-  initialConsultation: { priceEN: '£109',  priceRU: '10 900 ₽',  featured: true, featureCount: 7, hasFollowUp: true },
-  coachingProgramme:   { priceEN: '£469',  priceRU: '46 900 ₽',  featureCount: 6, hasSavings: true },
+  mealBalanceCheck:    { priceEN: '£39',   priceRU: '3 900 ₽',   featureCount: 6, paymentLink: 'https://buy.stripe.com/28EfZi3N4cAV0Bb1b3aIM00' },
+  initialConsultation: { priceEN: '£109',  priceRU: '10 900 ₽',  featured: true, featureCount: 7, hasFollowUp: true, paymentLink: 'https://buy.stripe.com/6oU5kEabs9oJes1cTLaIM01' },
+  coachingProgramme:   { priceEN: '£469',  priceRU: '46 900 ₽',  featureCount: 6, hasSavings: true, paymentLink: 'https://buy.stripe.com/28E4gA6Zg6cxbfP2f7aIM03' },
 }
 
 interface ServicesV2Props {
@@ -124,8 +124,20 @@ export function ServicesV2({ locale }: ServicesV2Props) {
                           : 'bg-primary/90 hover:bg-primary'
                       }`}
                     >
-                      <a href="#contacts">{s(`${key}.cta`)}</a>
+                      <a
+                        href={meta.calLink || meta.paymentLink || '#contacts'}
+                        target={meta.calLink || meta.paymentLink ? '_blank' : undefined}
+                        rel={meta.calLink || meta.paymentLink ? 'noopener noreferrer' : undefined}
+                      >{s(`${key}.cta`)}</a>
                     </Button>
+                    {meta.paymentLink && (
+                      <a
+                        href="#contacts"
+                        className="block text-center text-sm text-primary hover:underline mt-2"
+                      >
+                        {s('askQuestion')}
+                      </a>
+                    )}
                   </div>
                 </CardContent>
               </Card>

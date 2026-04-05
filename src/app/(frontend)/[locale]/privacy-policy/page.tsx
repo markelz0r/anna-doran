@@ -1,5 +1,4 @@
 import { ArrowLeft } from 'lucide-react'
-import { useTranslations } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
 
 export const dynamic = 'force-dynamic'
@@ -37,10 +36,27 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
           {/* Intro */}
           <p>{t('intro')}</p>
 
+          {/* Business info */}
+          <div>
+            <h2 className="font-[family-name:var(--font-heading)] text-[22px] font-semibold mb-3">{t('businessInfoHeading')}</h2>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>{t('businessInfo1')}</li>
+              <li>{t('businessInfo2')}</li>
+              <li>{t('businessInfo3')}</li>
+              <li>{t('businessInfo4')}</li>
+            </ul>
+          </div>
+
           {/* Why we collect */}
           <div>
             <h2 className="font-[family-name:var(--font-heading)] text-[22px] font-semibold mb-3">{t('whyCollectHeading')}</h2>
             <p>{t('whyCollect')}</p>
+          </div>
+
+          {/* Lawful basis */}
+          <div>
+            <h2 className="font-[family-name:var(--font-heading)] text-[22px] font-semibold mb-3">{t('lawfulBasisHeading')}</h2>
+            <p>{t('lawfulBasis')}</p>
           </div>
 
           {/* What we collect */}
@@ -50,6 +66,7 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
               <li>{t('collect1')}</li>
               <li>{t('collect2')}</li>
               <li>{t('collect3')}</li>
+              <li>{t('collect4')}</li>
             </ul>
           </div>
 
@@ -71,6 +88,18 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
               <li>{t('websiteData2')}</li>
               <li>{t('websiteData3')}</li>
               <li>{t('websiteData4')}</li>
+            </ul>
+          </div>
+
+          {/* Third-party processors */}
+          <div>
+            <h2 className="font-[family-name:var(--font-heading)] text-[22px] font-semibold mb-3">{t('thirdPartyHeading')}</h2>
+            <p className="mb-3">{t('thirdPartyIntro')}</p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>{t('thirdParty1')}</li>
+              <li>{t('thirdParty2')}</li>
+              <li>{t('thirdParty3')}</li>
+              <li>{t('thirdParty4')}</li>
             </ul>
           </div>
 

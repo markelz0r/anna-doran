@@ -209,6 +209,7 @@
     "journeyTransform": "Transform",
     "popular": "Most popular",
     "idealIf": "Ideal if",
+    "askQuestion": "Have a question? Get in touch",
     "notSure": "Not sure which service is right for you?",
     "bookDiscovery": "Book a free discovery call",
     "discoveryCall": {
@@ -232,7 +233,7 @@
       "feature5": "Basic supplement advice & review of current intake",
       "feature6": "3 days of follow-up support via email/WhatsApp/Telegram",
       "idealFor": "You want a simple starting point to understand whether your diet is supporting your gut health — without a full consultation.",
-      "cta": "Get started"
+      "cta": "Pay now"
     },
     "initialConsultation": {
       "title": "Initial Consultation",
@@ -247,7 +248,7 @@
       "feature7": "Written summary sent after session",
       "followUp": "Follow-up session available within 6 months — £79",
       "idealFor": "You have gut health concerns, digestive issues, low energy, or want a professional review of your diet.",
-      "cta": "Book consultation"
+      "cta": "Pay now"
     },
     "coachingProgramme": {
       "title": "Health Coaching",
@@ -261,7 +262,7 @@
       "feature6": "Additional guides & resources as needed",
       "idealFor": "You've tried quick fixes that didn't work and want lasting results with ongoing professional support.",
       "savings": "Save £35 + weekly support, tracking & video guides included",
-      "cta": "Start coaching"
+      "cta": "Pay now"
     }
   },
   "terms": {
@@ -269,63 +270,82 @@
     "backHome": "Back to home",
     "effectiveDate": "Effective from 28 March 2026.",
     "intro": "By booking a consultation or service with Anna Doran Health, you agree to the following terms and conditions:",
-    "term1": "Cancellation policy: We require at least 24 hours' notice for cancellations. If you cancel within 24 hours of your appointment, you will be asked to pay half of the consultation price.",
-    "term2": "After the initial consultation, if agreed, written materials (meal plans, recommendations, summaries) will be sent to you. Please ask any questions about these materials within 7 days. This does not enter you into an ongoing email support agreement — if you require continued support, please book a follow-up session or coaching programme.",
-    "term3": "If you have booked the Health Coaching programme (6 sessions), all sessions must be used within a 2-month period from the date of your first session.",
-    "term4": "The cost of each service is as listed on the website at the time of booking. We do not offer refunds for completed consultations.",
-    "term5": "As a client, you are responsible for: attending your consultation on time, ensuring a stable internet connection for online sessions, and making any payments due prior to or on the day of the consultation.",
-    "term6": "As a Registered Dietitian, all services provided will be in full compliance with the professional code of conduct for dietitians as outlined by the British Dietetic Association (BDA) and the Health and Care Professions Council (HCPC).",
-    "term7": "All data held will be kept confidential and in line with the UK General Data Protection Regulation (UK GDPR). Please see our Privacy Policy for full details.",
-    "term8": "If you are asked for your GP contact details, please be aware that the dietitian may contact your GP to provide feedback on your consultation. Please let us know if you are not happy with this.",
-    "term9": "In the case of unforeseen circumstances such as illness, your consultation may be cancelled by Anna Doran Health within 24 hours. If this happens, no payment will be due and you will be offered an alternative date as soon as possible.",
-    "term10": "The information and advice provided during consultations is for educational and informational purposes and does not replace medical advice from your doctor or medical team. Always consult your GP before making significant changes to your diet if you have a medical condition.",
-    "contact": "If you have any questions about these terms, please contact us at contact@annadorandiet.com."
+    "term1": "Cancellation policy: I require at least 24 hours' notice for cancellations. If you cancel within 24 hours of your appointment, you will be asked to pay half of the consultation price.",
+    "term2": "Cooling-off period: Under the Consumer Contracts Regulations 2013, you have the right to cancel a booking within 14 days of purchase without giving a reason. However, if you have requested that the service begins within the 14-day period (e.g., by attending a consultation), you agree to waive this right for any service already provided.",
+    "term3": "After the initial consultation, if agreed, written materials (meal plans, recommendations, summaries) will be sent to you. Please ask any questions about these materials within 7 days. This does not enter you into an ongoing support agreement — if you require continued support, please book a follow-up session or coaching programme.",
+    "term4": "If you have booked the Health Coaching programme (6 sessions), all sessions must be used within a 2-month period from the date of your first session.",
+    "term5": "Payments are processed securely via Stripe. I do not store your card details. Full payment is required before or on the day of the consultation.",
+    "term6": "Refund policy: I do not offer refunds for completed consultations. If a service has not yet been provided and you cancel outside the 24-hour period, a full refund will be issued. Services must be provided with reasonable care and skill in accordance with the Consumer Rights Act 2015.",
+    "term7": "As a client, you are responsible for: attending your consultation on time, ensuring a stable internet connection for online sessions, and making any payments due prior to or on the day of the consultation.",
+    "term8": "As an HCPC-registered Dietitian (DT034558) and member of the British Dietetic Association, all services are provided in full compliance with the professional code of conduct for dietitians as outlined by the BDA and the Health and Care Professions Council (HCPC). I hold professional indemnity insurance.",
+    "term9": "All data held will be kept confidential and in line with the UK General Data Protection Regulation (UK GDPR). Please see my Privacy Policy for full details.",
+    "term10": "If you are asked for your GP contact details, please be aware that I may contact your GP to provide feedback on your consultation. I will always ask for your consent before doing so.",
+    "term11": "In the case of unforeseen circumstances such as illness, your consultation may be cancelled by me within 24 hours. If this happens, no payment will be due and you will be offered an alternative date as soon as possible.",
+    "term12": "The information and advice provided during consultations is for educational and informational purposes and does not replace medical advice from your doctor or medical team. Always consult your GP before making significant changes to your diet if you have a medical condition. Results are not guaranteed and may vary from person to person.",
+    "contact": "If you have any questions about these terms, please contact me at contact@annadorandiet.com."
   },
   "privacy": {
     "title": "Privacy Policy",
     "backHome": "Back to home",
     "effectiveDate": "Effective from 28 March 2026. This policy is regularly reviewed and updated.",
 
-    "intro": "This privacy policy sets out how Anna Doran Health uses and protects any personal information that you provide to us. Should we ask you to provide certain information by which you can be identified when using our services, you can be assured that it will only be used in accordance with this privacy policy.",
+    "intro": "This privacy policy sets out how I, Anna Doran (Anna Doran Health), use and protect any personal information that you provide to me. Should I ask you to provide certain information by which you can be identified when using my services, you can be assured that it will only be used in accordance with this privacy policy and the UK General Data Protection Regulation (UK GDPR).",
 
-    "whyCollectHeading": "Why we collect your data",
-    "whyCollect": "We collect your personal data because you give us consent to do so, in order to provide our independent nutrition and dietetic services to you. You may also have opted in to receive our newsletter.",
+    "businessInfoHeading": "About me",
+    "businessInfo1": "Business name: Anna Doran Health",
+    "businessInfo2": "HCPC Registration: DT034558",
+    "businessInfo3": "Email: contact@annadorandiet.com",
+    "businessInfo4": "ICO Registration: pending",
 
-    "whatCollectHeading": "Anna Doran Health may collect the following information",
+    "whyCollectHeading": "Why I collect your data",
+    "whyCollect": "I collect your personal data with your explicit consent in order to provide my independent nutrition and dietetic services to you. You may also have opted in to receive my newsletter.",
+
+    "lawfulBasisHeading": "Lawful basis for processing",
+    "lawfulBasis": "I process your personal data under Article 6(1)(a) UK GDPR (consent). Health and dietary information is classified as special category data under Article 9 UK GDPR. I process this data on the basis of your explicit consent (Article 9(2)(a)), which you provide when booking a consultation and completing the client consent form. You may withdraw your consent at any time by contacting me.",
+
+    "whatCollectHeading": "What information I collect",
     "collect1": "Name, date of birth, age, sex, next of kin, GP name and address, marital status, living arrangements and occupation.",
     "collect2": "Contact details: home address, email and telephone numbers.",
-    "collect3": "Clinical and health-related information via forms, emails and verbally during a consultation.",
+    "collect3": "Clinical and health-related information via forms, emails and verbally during a consultation. This includes dietary information, symptoms, medical history, and food diaries.",
+    "collect4": "Payment information processed securely by Stripe. I do not store your card details — these are handled entirely by Stripe in compliance with PCI DSS standards.",
 
     "usedForHeading": "This information is required for",
     "usedFor1": "Professional clinical record keeping of client information in accordance with the British Dietetic Association Guidance for Records and Record Keeping.",
-    "usedFor2": "Sharing information with relevant healthcare professionals such as your GP or medical team (consent will always be asked before this is done).",
+    "usedFor2": "Sharing information with relevant healthcare professionals such as your GP or medical team (your separate consent will always be obtained before this is done).",
     "usedForException": "In exceptional circumstances, information about a client may be disclosed without consent if it is in the public interest to do so. This might be in circumstances where disclosing the information is necessary to prevent a serious crime or serious harm to other people.",
 
-    "websiteDataHeading": "What information is collected via this website and what it is used for",
-    "websiteData1": "When you visit this website, your browsing data may be collected anonymously to help us understand how the site is used. No data is collected which could identify an individual.",
-    "websiteData2": "This website uses cookies to help provide a better user experience. You may disable cookies in your browser if you prefer.",
+    "websiteDataHeading": "What information is collected via this website",
+    "websiteData1": "When you visit this website, your browsing data may be collected anonymously to help me understand how the site is used. No data is collected which could identify an individual.",
+    "websiteData2": "This website uses cookies to help provide a better user experience. Please see the Cookie Policy for full details. You may disable cookies in your browser if you prefer.",
     "websiteData3": "If you subscribe to the newsletter, your email address is stored securely and used only to send you regular updates. You are free to unsubscribe at any time.",
-    "websiteData4": "When you submit the contact form, your name, email, selected service, and message are saved securely. A notification containing these details is sent to us via Telegram, a messaging service, so we can respond to your enquiry promptly. By submitting the form, you consent to this transfer.",
+    "websiteData4": "When you submit the contact form, your name, email, selected service, and message are saved securely. A notification containing these details is sent to me via Telegram, a messaging service operated outside the UK. By submitting the form, you consent to this international data transfer.",
+
+    "thirdPartyHeading": "Third-party service providers",
+    "thirdPartyIntro": "I use the following third-party services to operate my business. Each provider has their own privacy policy and data protection measures:",
+    "thirdParty1": "Stripe — payment processing. Your card details are handled securely by Stripe and are never stored on my systems.",
+    "thirdParty2": "Cal.com — appointment scheduling. Your name and email are shared when you book a consultation.",
+    "thirdParty3": "Telegram — I receive instant notifications of contact form submissions to respond to enquiries promptly. Telegram servers are located outside the UK.",
+    "thirdParty4": "Contabo (server hosting) — the website and database are hosted on secure servers in Europe.",
 
     "controlHeading": "Controlling your personal information",
-    "control1": "We will not distribute, sell or lease your personal information to third parties unless we have your explicit permission or are required by law to do so.",
-    "control2": "You may request details of personal information which we hold about you under the UK General Data Protection Regulation (UK GDPR). If you believe that any information we are holding on you is incorrect or incomplete, please contact us as soon as possible and we will promptly correct it.",
-    "control3": "Service providers used to store and process information related to carrying out dietetic services all have robust security procedures in place and are GDPR compliant. BDA and HCPC record-keeping guidelines are strictly adhered to for one-to-one consultations.",
+    "control1": "I will not distribute, sell or lease your personal information to third parties unless I have your explicit permission or am required by law to do so.",
+    "control2": "You may request details of personal information which I hold about you under the UK General Data Protection Regulation (UK GDPR). If you believe that any information I am holding on you is incorrect or incomplete, please contact me as soon as possible and I will promptly correct it.",
+    "control3": "All service providers used to store and process information related to carrying out dietetic services have robust security procedures in place and are GDPR compliant. BDA and HCPC record-keeping guidelines are strictly adhered to for one-to-one consultations.",
 
     "retentionHeading": "Data retention",
-    "retention": "Records relating to the care of a client will be stored for eight years, in line with British Dietetic Association Guidance for Records and Record Keeping. Contact form enquiries are retained for 12 months.",
+    "retention": "Records relating to the care of a client will be stored for eight years, in line with British Dietetic Association Guidance for Records and Record Keeping. Contact form enquiries are retained for 12 months. Payment records are retained for six years in accordance with HMRC requirements.",
 
-    "rightsHeading": "Your rights",
-    "right1": "The right to access the personal data we hold about you.",
+    "rightsHeading": "Your rights under UK GDPR",
+    "right1": "The right to access the personal data we hold about you (Subject Access Request).",
     "right2": "The right to request correction of any inaccurate data.",
-    "right3": "The right to request deletion of your data.",
+    "right3": "The right to request deletion of your data (right to be forgotten).",
     "right4": "The right to restrict or object to processing of your data.",
     "right5": "The right to data portability.",
-    "right6": "The right to withdraw consent at any time.",
+    "right6": "The right to withdraw consent at any time, without affecting the lawfulness of processing carried out before withdrawal.",
     "rightsICO": "If you are unhappy with how your data has been handled, you have the right to complain to the Information Commissioner's Office (ICO) at ico.org.uk.",
 
     "controllerHeading": "Data controller",
-    "controller": "I (Anna Doran) am the data controller at Anna Doran Health. Please contact me at contact@annadorandiet.com with any queries or requests related to your personal data and I will respond promptly."
+    "controller": "I (Anna Doran, HCPC registered dietitian DT034558) am the data controller at Anna Doran Health. Please contact me at contact@annadorandiet.com with any queries or requests related to your personal data and I will respond promptly."
   },
   "language": {
     "switch": "RU"

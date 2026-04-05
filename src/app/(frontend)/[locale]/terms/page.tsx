@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return { title: t('title') }
 }
 
-const TERM_KEYS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'] as const
+const TERM_KEYS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'] as const
 
 export default async function TermsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
