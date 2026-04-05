@@ -31,10 +31,6 @@ export function Footer({ settings, locale }: FooterProps) {
               height={80}
               className="h-16 w-16 md:h-20 md:w-20 object-contain brightness-0 invert mb-4"
             />
-            <div className="text-[12px] text-white/50 space-y-1">
-              <p>{t('hcpc')}</p>
-              <p>{t('bda')}</p>
-            </div>
           </div>
 
           {/* Column 2: Info links */}
