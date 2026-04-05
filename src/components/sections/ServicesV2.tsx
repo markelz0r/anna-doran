@@ -145,10 +145,6 @@ export function ServicesV2({ locale }: ServicesV2Props) {
           })}
         </div>
 
-        {/* Disclaimer */}
-        <p className="text-center text-xs text-[#9f9f9f] mt-8 max-w-2xl mx-auto">
-          {s('disclaimer')}
-        </p>
       </div>
     </section>
   )
