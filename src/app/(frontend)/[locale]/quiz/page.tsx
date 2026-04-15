@@ -27,6 +27,19 @@ const DAYS = ['d1', 'd2', 'd3'] as const
 export default function QuizPage() {
   const t = useTranslations('quiz')
   const locale = useLocale()
+
+  // Quiz only available in English for now
+  if (locale === 'ru') {
+    return (
+      <section className="py-16">
+        <div className="container mx-auto px-3 sm:px-4 max-w-2xl text-center">
+          <p className="text-[#4b4b4b] text-[15px] mb-4">Этот тест пока доступен только на английском языке.</p>
+          <a href="/en/quiz" className="text-primary hover:underline">Take the quiz in English →</a>
+        </div>
+      </section>
+    )
+  }
+
   const [step, setStep] = useState(0) // 0-5: questions, 6: result, 7: email, 8: download
   const [answers, setAnswers] = useState<number[]>([])
   const [result, setResult] = useState<ResultType>('A')
@@ -75,9 +88,21 @@ export default function QuizPage() {
     })
     setStatus('done')
     setStep(8)
+    // Trigger PDF download
+    const link = document.createElement('a')
+    link.href = pdfFiles[result]
+    link.download = ''
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
   }
 
   const planPrefix = result === 'A' ? 'planA' : result === 'B' ? 'planB' : 'planC'
+  const pdfFiles: Record<ResultType, string> = {
+    A: '/pdfs/Dairy-Free-Gut-Reset.pdf',
+    B: '/pdfs/Low-FODMAP-Gut-Reset.pdf',
+    C: '/pdfs/Gut-Calming-Habits-Reset.pdf',
+  }
 
   return (
     <section className="py-10 md:py-16">

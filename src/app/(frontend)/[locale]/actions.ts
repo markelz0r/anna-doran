@@ -4,6 +4,29 @@ import { getPayload } from 'payload'
 import config from '@payload-config'
 import { z } from 'zod'
 
+async function addToMailerLite(email: string, name: string, groupId: string, fields?: Record<string, string>) {
+  const apiKey = process.env.MAILERLITE_API_KEY
+  if (!apiKey) return
+
+  try {
+    await fetch('https://connect.mailerlite.com/api/subscribers', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify({
+        email,
+        fields: { name, ...fields },
+        groups: [groupId],
+      }),
+    })
+  } catch {
+    // Don't block form submission
+  }
+}
+
 const contactSchema = z.object({
   name: z.string().min(1),
   email: z.string().email(),
@@ -143,6 +166,21 @@ export async function submitQuizLead(data: {
     } catch {
       // Don't block
     }
+  }
+
+  // Add to MailerLite quiz leads group
+  const quizGroup = process.env.MAILERLITE_QUIZ_GROUP
+  if (quizGroup && data.newsletterConsent) {
+    await addToMailerLite(data.email, data.name, quizGroup, { bloating_type: data.resultType })
+  }
+
+  return { success: true }
+}
+
+export async function submitNewsletter(data: { name: string; email: string }) {
+  const newsletterGroup = process.env.MAILERLITE_NEWSLETTER_GROUP
+  if (newsletterGroup) {
+    await addToMailerLite(data.email, data.name, newsletterGroup)
   }
   return { success: true }
 }

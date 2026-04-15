@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import { submitNewsletter } from '@/app/(frontend)/[locale]/actions'
 
 export function Newsletter() {
   const t = useTranslations('newsletter')
@@ -12,14 +13,17 @@ export function Newsletter() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setStatus('loading')
-
-    // For now, just show success — can wire up to an API/Payload later
-    setTimeout(() => setStatus('success'), 500)
+    const form = new FormData(e.currentTarget)
+    const result = await submitNewsletter({
+      name: form.get('name') as string,
+      email: form.get('email') as string,
+    })
+    setStatus(result.success ? 'success' : 'error')
   }
 
   return (
-    <section className="py-16 bg-muted/50">
-      <div className="container mx-auto px-4 max-w-5xl">
+    <section className="py-10 md:py-14 bg-muted/50">
+      <div className="container mx-auto px-3 sm:px-4 max-w-5xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
