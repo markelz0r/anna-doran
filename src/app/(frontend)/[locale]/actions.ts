@@ -109,6 +109,44 @@ export async function submitConsent(data: {
   }
 }
 
+export async function submitQuizLead(data: {
+  name: string
+  email: string
+  resultType: string
+  newsletterConsent: boolean
+}) {
+  const token = process.env.TELEGRAM_BOT_TOKEN
+  const chatId = process.env.TELEGRAM_CHAT_ID
+  if (token && chatId) {
+    const typeLabels: Record<string, string> = {
+      A: 'Dairy Sensitivity',
+      B: 'FODMAP-Related',
+      C: 'Lifestyle & Habits',
+    }
+    const text = [
+      '📊 New quiz lead!',
+      '',
+      `👤 Name: ${data.name}`,
+      `📧 Email: ${data.email}`,
+      `🔖 Bloating type: ${typeLabels[data.resultType] || data.resultType}`,
+      `📬 Newsletter consent: ${data.newsletterConsent ? 'Yes' : 'No'}`,
+      '',
+      `📅 Date: ${new Date().toISOString().split('T')[0]}`,
+    ].join('\n')
+
+    try {
+      await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: chatId, text }),
+      })
+    } catch {
+      // Don't block
+    }
+  }
+  return { success: true }
+}
+
 export async function submitContact(data: {
   name: string
   email: string

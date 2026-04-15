@@ -1,5 +1,4 @@
-import { ArrowLeft } from 'lucide-react'
-import { useTranslations } from 'next-intl'
+import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
 
 export const dynamic = 'force-dynamic'
@@ -10,56 +9,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return { title: t('heading') }
 }
 
-const placeholderCourses = [
-  {
-    titleEn: 'Foundations of Nutrition',
-    titleRu: 'Основы питания',
-    descEn: 'Learn the fundamentals of balanced nutrition and how food affects your body and mind.',
-    descRu: 'Изучите основы сбалансированного питания и то, как еда влияет на ваше тело и разум.',
-  },
-  {
-    titleEn: 'Gut Health Masterclass',
-    titleRu: 'Мастер-класс по здоровью кишечника',
-    descEn: 'A deep dive into gut health, microbiome balance, and digestive wellness strategies.',
-    descRu: 'Глубокое погружение в здоровье кишечника, баланс микробиома и стратегии пищеварения.',
-  },
-  {
-    titleEn: 'Hormonal Balance Program',
-    titleRu: 'Программа гормонального баланса',
-    descEn: 'Understand how nutrition impacts your hormones and learn to restore natural balance.',
-    descRu: 'Узнайте, как питание влияет на ваши гормоны, и научитесь восстанавливать естественный баланс.',
-  },
-]
-
-const placeholderResources = [
-  {
-    titleEn: 'Free Recipe E-Book',
-    titleRu: 'Бесплатная книга рецептов',
-    descEn: 'A collection of simple, nutritious recipes to support your health goals.',
-    descRu: 'Коллекция простых и питательных рецептов для поддержки ваших целей здоровья.',
-  },
-  {
-    titleEn: 'Weekly Meal Planner Template',
-    titleRu: 'Шаблон плана питания на неделю',
-    descEn: 'An easy-to-use template to help you plan balanced meals for the week.',
-    descRu: 'Удобный шаблон, который поможет вам спланировать сбалансированное питание на неделю.',
-  },
-  {
-    titleEn: 'Nutrition Self-Assessment Guide',
-    titleRu: 'Руководство по самооценке питания',
-    descEn: 'Evaluate your current eating habits and identify areas for improvement.',
-    descRu: 'Оцените свои текущие привычки питания и определите области для улучшения.',
-  },
-]
-
 export default async function CoursesPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'courses' })
-  const isRu = locale === 'ru'
+  const q = await getTranslations({ locale, namespace: 'quiz' })
 
   return (
-    <section className="py-16">
-      <div className="container mx-auto px-4 max-w-5xl">
+    <section className="py-10 md:py-16">
+      <div className="container mx-auto px-3 sm:px-4 max-w-5xl">
         {/* Back link */}
         <a
           href={`/${locale}`}
@@ -70,54 +27,68 @@ export default async function CoursesPage({ params }: { params: Promise<{ locale
         </a>
 
         {/* Heading */}
-        <h1 className="font-[family-name:var(--font-heading)] text-[42px] md:text-[52px] font-medium text-foreground mb-12">
+        <h1 className="font-[family-name:var(--font-heading)] text-[32px] md:text-[42px] font-medium text-foreground mb-10">
           {t('heading')}
         </h1>
 
-        {/* Courses Section */}
-        <h2 className="font-[family-name:var(--font-heading)] text-[28px] md:text-[36px] font-medium text-foreground mb-6">
-          {t('coursesSection')}
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          {placeholderCourses.map((course, i) => (
-            <div
-              key={i}
-              className="rounded-2xl border border-border bg-card p-6 flex flex-col gap-4"
-            >
-              <h3 className="text-lg font-semibold text-foreground">
-                {isRu ? course.titleRu : course.titleEn}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed flex-1">
-                {isRu ? course.descRu : course.descEn}
+        {/* Quiz CTA - Featured */}
+        <div className="bg-primary/5 border-2 border-primary rounded-2xl p-6 md:p-10 mb-12">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div>
+              <span className="inline-block text-xs font-semibold text-primary uppercase tracking-wide mb-2">Free</span>
+              <h2 className="font-[family-name:var(--font-heading)] text-[24px] md:text-[30px] font-medium text-foreground mb-2">
+                {q('ctaTitle')}
+              </h2>
+              <p className="text-[15px] text-[#4b4b4b] leading-relaxed">
+                {q('ctaDesc')}
               </p>
-              <span className="inline-flex items-center self-start rounded-full bg-primary/10 text-primary text-xs font-medium px-3 py-1">
-                {t('comingSoon')}
-              </span>
             </div>
-          ))}
+            <a
+              href={`/${locale}/quiz`}
+              className="inline-flex items-center justify-center gap-3 bg-primary hover:bg-primary/90 text-white text-base font-medium rounded-full px-8 py-4 transition-colors shrink-0"
+            >
+              {q('ctaBtn')}
+              <ArrowRight className="h-5 w-5" />
+            </a>
+          </div>
         </div>
 
         {/* Resources Section */}
-        <h2 className="font-[family-name:var(--font-heading)] text-[28px] md:text-[36px] font-medium text-foreground mb-6">
+        <h2 className="font-[family-name:var(--font-heading)] text-[24px] md:text-[30px] font-medium text-foreground mb-6">
           {t('resourcesSection')}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          {placeholderResources.map((resource, i) => (
-            <div
-              key={i}
-              className="rounded-2xl border border-border bg-card p-6 flex flex-col gap-4"
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          <div className="rounded-2xl border border-border bg-card p-6 flex flex-col gap-4">
+            <h3 className="text-lg font-semibold text-foreground">
+              {locale === 'ru' ? '3-дневный план питания для здоровья кишечника' : '3-Day Gut Reset Meal Plans'}
+            </h3>
+            <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+              {locale === 'ru'
+                ? 'Персонализированные планы питания на основе вашего типа вздутия. Пройдите тест, чтобы получить свой план.'
+                : 'Personalised meal plans based on your bloating type. Take the quiz above to get yours — includes 3 meals and snacks for each day.'}
+            </p>
+            <a
+              href={`/${locale}/quiz`}
+              className="inline-flex items-center self-start rounded-full bg-primary text-white text-xs font-medium px-4 py-2 hover:bg-primary/90 transition-colors"
             >
-              <h3 className="text-lg font-semibold text-foreground">
-                {isRu ? resource.titleRu : resource.titleEn}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed flex-1">
-                {isRu ? resource.descRu : resource.descEn}
-              </p>
-              <span className="inline-flex items-center self-start rounded-full border border-primary text-primary text-xs font-medium px-3 py-1 hover:bg-primary/10 transition-colors cursor-pointer">
-                {t('comingSoon')}
-              </span>
-            </div>
-          ))}
+              {q('ctaBtn')} →
+            </a>
+          </div>
+        </div>
+
+        {/* Courses Coming Soon */}
+        <h2 className="font-[family-name:var(--font-heading)] text-[24px] md:text-[30px] font-medium text-foreground mb-6">
+          {t('coursesSection')}
+        </h2>
+        <div className="rounded-2xl border border-border bg-card p-6 mb-12">
+          <p className="text-muted-foreground text-sm">
+            {locale === 'ru'
+              ? 'Курсы по питанию и здоровью кишечника скоро появятся. Следите за обновлениями в Instagram.'
+              : 'Nutrition and gut health courses are coming soon. Follow me on Instagram for updates.'}
+          </p>
+          <span className="inline-flex items-center mt-3 rounded-full bg-primary/10 text-primary text-xs font-medium px-3 py-1">
+            {t('comingSoon')}
+          </span>
         </div>
 
         {/* CTA */}
@@ -125,8 +96,8 @@ export default async function CoursesPage({ params }: { params: Promise<{ locale
           href={`/${locale}#contacts`}
           className="inline-flex items-center justify-center gap-4 bg-primary hover:bg-primary/90 text-white text-sm md:text-base font-medium rounded-full px-6 md:px-10 py-3 md:py-5 transition-colors"
         >
-          {isRu ? 'Записаться на консультацию' : 'Book free discovery call'}
-          <span className="text-xl">→</span>
+          {locale === 'ru' ? 'Записаться на консультацию' : 'Book free discovery call'}
+          <ArrowRight className="h-5 w-5" />
         </a>
       </div>
     </section>
