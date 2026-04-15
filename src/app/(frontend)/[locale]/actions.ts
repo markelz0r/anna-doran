@@ -168,10 +168,14 @@ export async function submitQuizLead(data: {
     }
   }
 
-  // Add to MailerLite quiz leads group
+  // Add to MailerLite quiz leads group + newsletter group
   const quizGroup = process.env.MAILERLITE_QUIZ_GROUP
+  const newsletterGroup = process.env.MAILERLITE_NEWSLETTER_GROUP
   if (quizGroup && data.newsletterConsent) {
     await addToMailerLite(data.email, data.name, quizGroup, { bloating_type: data.resultType })
+  }
+  if (newsletterGroup && data.newsletterConsent) {
+    await addToMailerLite(data.email, data.name, newsletterGroup)
   }
 
   return { success: true }
