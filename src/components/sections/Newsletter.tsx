@@ -22,7 +22,7 @@ export function Newsletter() {
   }
 
   return (
-    <section className="py-10 md:py-14 bg-muted/50">
+    <section id="newsletter" className="py-10 md:py-14 bg-muted/50">
       <div className="container mx-auto px-3 sm:px-4 max-w-5xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>

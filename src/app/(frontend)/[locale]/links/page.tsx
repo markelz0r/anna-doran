@@ -20,6 +20,11 @@ const LINKS_EN = [
     icon: '🥗',
   },
   {
+    label: 'Subscribe to my Newsletter',
+    href: 'https://annadorandiet.com/en#newsletter',
+    icon: '📬',
+  },
+  {
     label: 'Meal Balance Check — £39',
     href: 'https://annadorandiet.com/en/services/meal-balance-check',
     icon: '📋',
