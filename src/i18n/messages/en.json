@@ -275,8 +275,10 @@
     "tip5": "Take magnesium",
     "tip6": "Move more — regular physical activity helps digestion",
 
-    "successTitle": "Your meal plan is ready!",
-    "successDesc": "Thank you! Check your download. If you'd like personalised support, book a consultation.",
+    "successTitle": "Your meal plan is on its way!",
+    "successDesc": "Your PDF has been downloaded. I've also sent a copy and some helpful tips to your email.",
+    "checkEmail": "Check your inbox in the next few minutes (don't forget to check your spam folder).",
+    "downloadAgain": "Download PDF again",
     "bookConsultation": "Book a consultation",
 
     "ctaTitle": "What's Causing Your Bloating?",

@@ -219,53 +219,28 @@ export default function QuizPage() {
           </div>
         )}
 
-        {/* Download / Meal plan display */}
+        {/* Success / Download */}
         {step === 8 && (
-          <div>
-            <div className="text-center mb-8">
-              <h2 className="font-[family-name:var(--font-heading)] text-[28px] md:text-[34px] font-medium text-foreground mb-2">
-                {t('successTitle')}
-              </h2>
-              <p className="text-[#4b4b4b] text-[15px] mb-4">{t('successDesc')}</p>
+          <div className="text-center py-8">
+            <div className="text-6xl mb-4">📩</div>
+            <h2 className="font-[family-name:var(--font-heading)] text-[28px] md:text-[34px] font-medium text-foreground mb-3">
+              {t('successTitle')}
+            </h2>
+            <p className="text-[#4b4b4b] text-[15px] mb-2 max-w-md mx-auto">
+              {t('successDesc')}
+            </p>
+            <p className="text-[#9f9f9f] text-sm mb-8 max-w-md mx-auto">
+              {t('checkEmail')}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button asChild className="bg-primary hover:bg-primary/90">
+                <a href={pdfFiles[result]} download>
+                  {t('downloadAgain')}
+                </a>
+              </Button>
+              <Button asChild variant="outline" className="border-primary text-primary">
                 <a href={`/${locale}#services`}>{t('bookConsultation')}</a>
               </Button>
-            </div>
-
-            {/* Meal plan */}
-            <div className="mt-8">
-              <h3 className="font-[family-name:var(--font-heading)] text-[22px] font-semibold text-primary mb-6 text-center">
-                {t(`${planPrefix}Title`)}
-              </h3>
-
-              {DAYS.map((day, dayIdx) => (
-                <div key={day} className="mb-6">
-                  <h4 className="font-semibold text-foreground text-base mb-3 bg-primary/10 rounded-lg px-4 py-2">
-                    {t(`day${dayIdx + 1}`)}
-                  </h4>
-                  <div className="space-y-2 pl-2">
-                    {MEALS.map((meal) => (
-                      <div key={meal} className="flex gap-3 text-sm">
-                        <span className="font-medium text-[#6b6b6b] min-w-[70px] shrink-0">{t(meal)}</span>
-                        <span className="text-[#4b4b4b]">{t(`${planPrefix}_${day}_${meal}`)}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-
-              {/* Additional tips */}
-              <div className="mt-8 bg-muted/50 rounded-xl p-5">
-                <h4 className="font-semibold text-foreground text-base mb-3">{t('tipsTitle')}</h4>
-                <ul className="space-y-2 text-sm text-[#4b4b4b]">
-                  <li className="flex items-start gap-2"><span className="text-primary shrink-0">✓</span> {t('tip1')}</li>
-                  <li className="flex items-start gap-2"><span className="text-primary shrink-0">✓</span> {t('tip2')}</li>
-                  <li className="flex items-start gap-2"><span className="text-primary shrink-0">✓</span> {t('tip3')}</li>
-                  <li className="flex items-start gap-2"><span className="text-primary shrink-0">✓</span> {t('tip4')}</li>
-                  <li className="flex items-start gap-2"><span className="text-primary shrink-0">✓</span> {t('tip5')}</li>
-                  <li className="flex items-start gap-2"><span className="text-primary shrink-0">✓</span> {t('tip6')}</li>
-                </ul>
-              </div>
             </div>
           </div>
         )}

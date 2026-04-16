@@ -4,10 +4,15 @@ import { Phone, Mail, ArrowRight } from 'lucide-react'
 
 const LINKS_EN = [
   {
+    label: 'Take the FREE Bloating Quiz + Get a Meal Plan',
+    href: 'https://annadorandiet.com/en/quiz',
+    icon: '🎁',
+    highlight: true,
+  },
+  {
     label: 'Book a Free Discovery Call',
     href: 'https://annadorandiet.com/en#contacts',
     icon: '📞',
-    highlight: true,
   },
   {
     label: 'My Services & Pricing',
