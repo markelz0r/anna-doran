@@ -522,7 +522,7 @@
     "thirdPartyHeading": "Third-party service providers",
     "thirdPartyIntro": "I use the following third-party services to operate my business. Each provider has their own privacy policy and data protection measures:",
     "thirdParty1": "Stripe — payment processing. Your card details are handled securely by Stripe and are never stored on my systems.",
-    "thirdParty2": "Cal.com — appointment scheduling. Your name and email are shared when you book a consultation.",
+    "thirdParty2": "MailerLite — email newsletter. Your name and email are stored to send you nutrition updates you have subscribed to.",
     "thirdParty3": "Telegram — I receive instant notifications of contact form submissions to respond to enquiries promptly. Telegram servers are located outside the UK.",
     "thirdParty4": "Contabo (server hosting) — the website and database are hosted on secure servers in Europe.",
 
