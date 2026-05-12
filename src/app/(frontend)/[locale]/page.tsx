@@ -49,6 +49,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         heading={heroT('heading')}
         subtitle={heroT('tagline')}
         ctaText={heroT('cta')}
+        trustBadges={[
+          heroT('trustHcpc'),
+          heroT('trustBda'),
+          heroT('trustInsured'),
+        ]}
         testimonialSnippets={[
           heroT('snippets.1'),
           heroT('snippets.2'),

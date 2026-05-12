@@ -4,12 +4,26 @@ import { getPayload } from 'payload'
 import config from '@payload-config'
 import { z } from 'zod'
 
-async function addToMailerLite(email: string, name: string, groupId: string, fields?: Record<string, string>) {
+type MailerLiteResult = { ok: true } | { ok: false; reason: string }
+
+async function addToMailerLite(
+  email: string,
+  name: string,
+  groupId: string,
+  fields?: Record<string, string>,
+): Promise<MailerLiteResult> {
   const apiKey = process.env.MAILERLITE_API_KEY
-  if (!apiKey) return
+  if (!apiKey) {
+    console.error('[MailerLite] MAILERLITE_API_KEY env var is not set')
+    return { ok: false, reason: 'config_missing' }
+  }
+  if (!groupId) {
+    console.error('[MailerLite] group ID is empty')
+    return { ok: false, reason: 'config_missing' }
+  }
 
   try {
-    await fetch('https://connect.mailerlite.com/api/subscribers', {
+    const res = await fetch('https://connect.mailerlite.com/api/subscribers', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${apiKey}`,
@@ -22,8 +36,19 @@ async function addToMailerLite(email: string, name: string, groupId: string, fie
         groups: [groupId],
       }),
     })
-  } catch {
-    // Don't block form submission
+
+    if (!res.ok) {
+      const body = await res.text().catch(() => '')
+      console.error(
+        `[MailerLite] subscribe failed for ${email} (group ${groupId}): status=${res.status} body=${body.slice(0, 500)}`,
+      )
+      return { ok: false, reason: `api_${res.status}` }
+    }
+
+    return { ok: true }
+  } catch (err) {
+    console.error(`[MailerLite] network error subscribing ${email} (group ${groupId}):`, err)
+    return { ok: false, reason: 'network_error' }
   }
 }
 
@@ -183,10 +208,12 @@ export async function submitQuizLead(data: {
 
 export async function submitNewsletter(data: { name: string; email: string }) {
   const newsletterGroup = process.env.MAILERLITE_NEWSLETTER_GROUP
-  if (newsletterGroup) {
-    await addToMailerLite(data.email, data.name, newsletterGroup)
+  if (!newsletterGroup) {
+    console.error('[Newsletter] MAILERLITE_NEWSLETTER_GROUP env var is not set')
+    return { success: false, reason: 'config_missing' }
   }
-  return { success: true }
+  const result = await addToMailerLite(data.email, data.name, newsletterGroup)
+  return { success: result.ok, reason: result.ok ? undefined : result.reason }
 }
 
 export async function submitContact(data: {

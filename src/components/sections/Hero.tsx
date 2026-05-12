@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 interface HeroProps {
@@ -8,10 +8,24 @@ interface HeroProps {
   heading: string
   subtitle: string
   ctaText: string
+  trustBadges?: string[]
   testimonialSnippets?: string[]
 }
 
-export function Hero({ name, title, heading, subtitle, ctaText, testimonialSnippets = [] }: HeroProps) {
+function TrustStrip({ badges }: { badges: string[] }) {
+  return (
+    <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5">
+      {badges.map((badge, i) => (
+        <span key={i} className="inline-flex items-center gap-1.5 text-[12px] sm:text-[13px] font-medium text-[#4b4b4b]">
+          <CheckCircle2 className="h-3.5 w-3.5 text-primary shrink-0" aria-hidden="true" />
+          {badge}
+        </span>
+      ))}
+    </div>
+  )
+}
+
+export function Hero({ name, title, heading, subtitle, ctaText, trustBadges = [], testimonialSnippets = [] }: HeroProps) {
   return (
     <section className="overflow-hidden">
 
@@ -37,9 +51,14 @@ export function Hero({ name, title, heading, subtitle, ctaText, testimonialSnipp
           <p className="text-[17px] text-primary font-medium mb-5 leading-snug">
             {subtitle}
           </p>
-          <Button asChild size="lg" className="text-base font-medium px-8 py-5 bg-primary hover:bg-primary/90 rounded-full w-fit flex items-center gap-2 mb-5">
+          <Button asChild size="lg" className="text-base font-medium px-8 py-5 bg-primary hover:bg-primary/90 rounded-full w-fit flex items-center gap-2 mb-3">
             <a href="#contacts">{ctaText} <ArrowRight className="h-4 w-4" /></a>
           </Button>
+          {trustBadges.length > 0 && (
+            <div className="mb-5">
+              <TrustStrip badges={trustBadges} />
+            </div>
+          )}
           {testimonialSnippets.length > 0 && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {testimonialSnippets.map((snippet, i) => (
@@ -63,11 +82,17 @@ export function Hero({ name, title, heading, subtitle, ctaText, testimonialSnipp
             <p className="font-[family-name:var(--font-heading)] text-[26px] text-primary font-normal mb-6 uppercase tracking-wide leading-snug">
               {subtitle}
             </p>
-            <div className="flex flex-col gap-3 mb-6">
+            <div className="flex flex-col gap-3 mb-4">
               <Button asChild size="lg" className="text-base font-medium px-8 py-6 bg-primary hover:bg-primary/90 rounded-full w-fit flex items-center gap-2">
                 <a href="#contacts">{ctaText} <ArrowRight className="h-5 w-5" /></a>
               </Button>
             </div>
+
+            {trustBadges.length > 0 && (
+              <div className="mb-2">
+                <TrustStrip badges={trustBadges} />
+              </div>
+            )}
 
             {testimonialSnippets.length > 0 && (
               <div className="grid grid-cols-2 gap-3 mt-4">

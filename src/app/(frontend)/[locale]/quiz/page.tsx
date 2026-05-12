@@ -207,7 +207,7 @@ export default function QuizPage() {
                 <Input id="email" name="email" type="email" required />
               </div>
               <div className="flex items-start gap-2 sm:gap-3">
-                <Checkbox id="newsletter" name="newsletter" required className="mt-1" />
+                <Checkbox id="newsletter" name="newsletter" className="mt-1" />
                 <Label htmlFor="newsletter" className="text-sm text-[#4b4b4b] font-normal leading-relaxed">
                   {t('newsletterConsent')}
                 </Label>
@@ -232,16 +232,25 @@ export default function QuizPage() {
             <p className="text-[#9f9f9f] text-sm mb-8 max-w-md mx-auto">
               {t('checkEmail')}
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button asChild className="bg-primary hover:bg-primary/90">
-                <a href={pdfFiles[result]} download>
-                  {t('downloadAgain')}
-                </a>
-              </Button>
-              <Button asChild variant="outline" className="border-primary text-primary">
-                <a href={`/${locale}#services`}>{t('bookConsultation')}</a>
+
+            {/* Next-step Discovery Call card */}
+            <div className="bg-primary/5 border-2 border-primary/30 rounded-2xl p-6 max-w-md mx-auto mb-6 text-left">
+              <h3 className="font-[family-name:var(--font-heading)] text-[20px] md:text-[22px] font-semibold text-foreground mb-2 text-center">
+                {t('nextStepHeading')}
+              </h3>
+              <p className="text-[14px] text-[#4b4b4b] mb-4 text-center leading-relaxed">
+                {t('nextStepDesc')}
+              </p>
+              <Button asChild className="w-full bg-primary hover:bg-primary/90 text-base py-5">
+                <a href={`/${locale}#contacts`}>{t('bookDiscoveryCall')}</a>
               </Button>
             </div>
+
+            <Button asChild variant="ghost" className="text-[#9f9f9f] hover:text-foreground text-sm">
+              <a href={pdfFiles[result]} download>
+                ↓ {t('downloadAgain')}
+              </a>
+            </Button>
           </div>
         )}
       </div>

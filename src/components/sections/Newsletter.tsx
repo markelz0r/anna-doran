@@ -38,28 +38,33 @@ export function Newsletter() {
             {status === 'success' ? (
               <p className="text-green-600 font-medium">{t('success')}</p>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
-                <Input
-                  name="name"
-                  placeholder={t('namePlaceholder')}
-                  required
-                  className="flex-1"
-                />
-                <Input
-                  name="email"
-                  type="email"
-                  placeholder={t('emailPlaceholder')}
-                  required
-                  className="flex-1"
-                />
-                <Button
-                  type="submit"
-                  className="bg-primary hover:bg-primary/90 whitespace-nowrap"
-                  disabled={status === 'loading'}
-                >
-                  {status === 'loading' ? '...' : t('subscribe')}
-                </Button>
-              </form>
+              <>
+                <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
+                  <Input
+                    name="name"
+                    placeholder={t('namePlaceholder')}
+                    required
+                    className="flex-1"
+                  />
+                  <Input
+                    name="email"
+                    type="email"
+                    placeholder={t('emailPlaceholder')}
+                    required
+                    className="flex-1"
+                  />
+                  <Button
+                    type="submit"
+                    className="bg-primary hover:bg-primary/90 whitespace-nowrap"
+                    disabled={status === 'loading'}
+                  >
+                    {status === 'loading' ? '...' : t('subscribe')}
+                  </Button>
+                </form>
+                {status === 'error' && (
+                  <p className="text-red-600 text-sm mt-3">{t('error')}</p>
+                )}
+              </>
             )}
           </div>
         </div>

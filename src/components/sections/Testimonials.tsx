@@ -14,14 +14,19 @@ function StarRating() {
   )
 }
 
-function ReviewCard({ name, initial, text, color }: { name: string; initial: string; text: string; color: string }) {
+function ReviewCard({ name, initial, text, color, concern }: { name: string; initial: string; text: string; color: string; concern?: string }) {
   return (
     <div className="bg-[#f5f0e0] rounded-2xl p-6 flex flex-col gap-3 min-w-[280px] w-[300px] shrink-0">
       <div className="flex items-center gap-3">
         <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-medium text-sm ${color}`}>
           {initial}
         </div>
-        <span className="text-base font-medium text-foreground">{name}</span>
+        <div className="flex flex-col">
+          <span className="text-base font-medium text-foreground">{name}</span>
+          {concern && (
+            <span className="text-xs text-primary font-medium">{concern}</span>
+          )}
+        </div>
       </div>
       <StarRating />
       <p className="text-sm text-foreground leading-relaxed">{text}</p>
@@ -34,36 +39,42 @@ const reviewsEN = [
     name: 'Kati Blom',
     initial: 'K',
     color: 'bg-purple-500',
+    concern: 'Liver support',
     text: "I enjoyed immensely my time with Anna. I had a liver intoxication, and I needed to purify my system. Anna helped me understand what foods to focus on and created a personalised plan that was easy to follow.",
   },
   {
-    name: 'S',
+    name: 'Sarah',
     initial: 'S',
     color: 'bg-blue-500',
+    concern: 'Meal planning',
     text: "Anna gives very good meal planning guide which is an excellent starting point for anyone looking to improve their diet. Realistic, practical and easy to follow.",
   },
   {
     name: 'Sofia R.',
     initial: 'S',
     color: 'bg-pink-500',
+    concern: 'Skin, hair & digestion',
     text: "I reached out to nutritionist Anna with a range of issues: skin breakouts, hair loss, digestive problems. She created a clear plan and I saw improvements within weeks.",
   },
   {
     name: 'Client',
     initial: 'A',
     color: 'bg-green-500',
+    concern: 'Psoriasis',
     text: "Elbow psoriasis is now without white flakes, only red. I feel every day happier.",
   },
   {
     name: 'Kati',
     initial: 'K',
     color: 'bg-orange-400',
+    concern: 'Nutrition education',
     text: "It was so engaging and fact induced that I had to sleep to get a better memory of it. The idea of our mind being most important when digesting really stayed with me. Thanks for a thought-provoking session!",
   },
   {
     name: 'Client',
     initial: 'M',
     color: 'bg-teal-500',
+    concern: 'Energy & focus',
     text: "My concentration and wellbeing has improved, I have more energy to see small things in the environment.",
   },
 ]
@@ -73,36 +84,42 @@ const reviewsRU = [
     name: 'Кати Блом',
     initial: 'К',
     color: 'bg-purple-500',
+    concern: 'Поддержка печени',
     text: "Мне очень понравилось работать с Анной. У меня была интоксикация печени, и мне нужно было очистить организм. Анна помогла понять, на какие продукты стоит обратить внимание, и составила персональный план, которому было легко следовать.",
   },
   {
-    name: 'S',
-    initial: 'S',
+    name: 'Сара',
+    initial: 'С',
     color: 'bg-blue-500',
+    concern: 'Планирование питания',
     text: "Анна составляет отличные планы питания — прекрасная отправная точка для тех, кто хочет улучшить свой рацион. Реалистично, практично и легко следовать.",
   },
   {
     name: 'София Р.',
     initial: 'С',
     color: 'bg-pink-500',
+    concern: 'Кожа, волосы и ЖКТ',
     text: "Я обратилась к нутрициологу Анне с рядом проблем: высыпания на коже, выпадение волос, проблемы с пищеварением. Она составила чёткий план, и я увидела улучшения уже через несколько недель.",
   },
   {
     name: 'Клиент',
     initial: 'А',
     color: 'bg-green-500',
+    concern: 'Псориаз',
     text: "Псориаз на локтях теперь без белых хлопьев, только красный. Каждый день чувствую себя счастливее.",
   },
   {
     name: 'Кати',
     initial: 'К',
     color: 'bg-orange-400',
+    concern: 'Знания о питании',
     text: "Было настолько увлекательно и насыщенно фактами, что мне нужно было поспать, чтобы лучше запомнить. Идея о том, что наш разум важнее всего при пищеварении, действительно запомнилась. Спасибо за сессию, которая заставляет задуматься!",
   },
   {
     name: 'Клиент',
     initial: 'М',
     color: 'bg-teal-500',
+    concern: 'Энергия и концентрация',
     text: "Мои концентрация и самочувствие улучшились, у меня больше энергии замечать мелочи вокруг.",
   },
 ]

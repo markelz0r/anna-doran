@@ -12,6 +12,9 @@
     "heading": "Tired of bloating, low energy, and not knowing what to eat?",
     "tagline": "I help you fix your digestion and build a diet that actually works for your body",
     "cta": "Book a free discovery call",
+    "trustHcpc": "HCPC Registered Dietitian",
+    "trustBda": "BDA Full Member",
+    "trustInsured": "Fully insured",
     "snippets": {
       "1": "My bloating has completely gone — I finally feel comfortable after eating",
       "2": "I have so much more energy and my skin has cleared up",
@@ -202,7 +205,7 @@
     "getYourPlanDesc": "Enter your details below to download your personalised gut reset plan.",
     "name": "Full name",
     "email": "Email",
-    "newsletterConsent": "I agree to receive a nutrition newsletter from Anna Doran Health every 2 months. You can unsubscribe at any time.",
+    "newsletterConsent": "I'd like to receive nutrition tips from Anna Doran Health every 2 months. You can unsubscribe at any time.",
     "download": "Download my meal plan",
     "downloading": "Preparing...",
 
@@ -278,6 +281,9 @@
     "successTitle": "Your meal plan is on its way!",
     "successDesc": "Your PDF has been downloaded. I've also sent a copy and some helpful tips to your email.",
     "checkEmail": "Check your inbox in the next few minutes (don't forget to check your spam folder).",
+    "nextStepHeading": "Want me to look at it with you?",
+    "nextStepDesc": "Book a free 15-minute Discovery Call — we'll talk through what's going on with your gut and figure out the best next step for you. No obligation.",
+    "bookDiscoveryCall": "Book my free Discovery Call",
     "downloadAgain": "Download PDF again",
     "bookConsultation": "Book a consultation",
 
@@ -316,11 +322,12 @@
   },
   "newsletter": {
     "heading": "Nutrition tips & inspiration",
-    "subtitle": "Sign up for tips, recipes, and lifestyle inspiration to help balancing your health with nutrition.",
+    "subtitle": "Sign up for tips, recipes, and lifestyle inspiration to help balancing your health with nutrition. Sent every 2 months — no spam, unsubscribe any time.",
     "namePlaceholder": "Your name",
     "emailPlaceholder": "Your email",
     "subscribe": "Subscribe",
-    "success": "Thank you for subscribing!"
+    "success": "Thank you for subscribing!",
+    "error": "Something went wrong — please try again, or email contact@annadorandiet.com."
   },
   "courses": {
     "heading": "Courses & Resources",
