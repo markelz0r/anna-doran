@@ -78,7 +78,7 @@ export function About({ about, credentials, settings }: AboutProps) {
                 Anna Doran
               </h2>
               <p className="font-[family-name:var(--font-heading)] text-xs sm:text-sm md:text-base text-white uppercase tracking-wider leading-relaxed">
-                My mission is to help people improve their health through practical nutrition advice that fits into real life. I focus on building sustainable habits rather than extreme diets, because small, consistent changes can make a meaningful difference to long-term health.
+                {about.mission}
               </p>
             </div>
           </div>
