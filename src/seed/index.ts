@@ -105,7 +105,7 @@ async function seed() {
       mission: 'To use all her knowledge and experience to support and guide individuals on their journey to restoring health and beauty',
       credentials: richTextParagraphs([
         "Hi, I'm Anna, a Registered Dietitian and Nutritionist with a Master's degree in Dietetics from Teesside University. I am registered with the Health and Care Professions Council (HCPC) and a member of the British Dietetic Association (BDA), which means the advice I provide is safe, regulated and evidence-based.",
-        "Alongside my private practice, I work in an NHS acute hospital, supporting patients with a wide range of medical conditions including digestive disorders, diabetes, and nutritional deficiencies, both on hospital wards and in outpatient clinics.",
+        "Alongside my private practice, I work as a Gastroenterology Specialist Dietitian within an NHS community service, supporting patients with a wide range of digestive and gastrointestinal conditions — including IBS, inflammatory bowel disease, coeliac disease, and functional gut disorders.",
         "I am also a Research Officer for the BDA Sustainable Diets Specialist Group, contributing to work exploring the relationship between nutrition, health, and sustainable food systems.",
       ]),
       additionalTraining: richTextParagraphs([
@@ -135,6 +135,7 @@ async function seed() {
       mission: 'Использовать все мои знания и опыт для помощи людям, которые приняли решение начать свой путь к восстановлению здоровья и красоте',
       credentials: richTextParagraphs([
         'Диетолог (Teesside University, Англия) и сертифицированный интегративный нутрициолог',
+        'Специалист-диетолог по гастроэнтерологии в общественной службе NHS — помогаю пациентам с заболеваниями ЖКТ: СРК, ВЗК (болезнь Крона, язвенный колит), целиакией и функциональными расстройствами кишечника',
         'Фармаколог (University of East Anglia, Англия) с опытом работы в клинических исследованиях международной компании IQVIA',
         'Создатель и Президент сообщества по питанию FoodTalk, Teesside University, Англия',
         'Регулярно организуем семинары и лекции по здоровому питанию и образу жизни',
