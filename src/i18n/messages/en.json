@@ -99,7 +99,7 @@
     "privacyConsent": "I agree to the",
     "privacyLink": "Privacy Policy",
     "submit": "Send",
-    "success": "Thank you! I'll get back to you via email within 24 hours.",
+    "success": "Thank you! I'll get back to you within 48 hours via email.",
     "error": "Something went wrong. Please try again."
   },
   "services": {
