@@ -55,9 +55,15 @@ async function addToMailerLite(
 const contactSchema = z.object({
   name: z.string().min(1),
   email: z.string().email(),
+  phone: z.string().optional(),
+  preferredContact: z.enum(['email', 'phone', 'either']),
   service: z.string().optional(),
+  message: z.string().optional(),
   privacyConsent: z.literal(true),
   locale: z.string(),
+}).refine((d) => d.preferredContact !== 'phone' || (d.phone && d.phone.trim().length > 0), {
+  message: 'Phone number is required when phone is the preferred contact',
+  path: ['phone'],
 })
 
 const SERVICE_LABELS: Record<string, string> = {
@@ -72,6 +78,8 @@ const SERVICE_LABELS: Record<string, string> = {
 async function sendTelegramNotification(data: {
   name: string
   email: string
+  phone?: string
+  preferredContact?: 'email' | 'phone' | 'either'
   service?: string
   message?: string
 }) {
@@ -80,12 +88,19 @@ async function sendTelegramNotification(data: {
   if (!token || !chatId) return
 
   const serviceLabel = data.service ? SERVICE_LABELS[data.service] || data.service : 'Not selected'
+  const prefLabel = data.preferredContact === 'phone'
+    ? 'Phone'
+    : data.preferredContact === 'either'
+      ? 'Either'
+      : 'Email'
 
   const text = [
     '📩 New enquiry from your website!',
     '',
     `👤 Name: ${data.name}`,
     `📧 Email: ${data.email}`,
+    data.phone ? `📞 Phone: ${data.phone}` : '',
+    `✅ Prefers: ${prefLabel}`,
     `🔖 Service: ${serviceLabel}`,
     data.message ? `💬 Message: ${data.message}` : '',
   ].filter(Boolean).join('\n')
@@ -219,6 +234,8 @@ export async function submitNewsletter(data: { name: string; email: string }) {
 export async function submitContact(data: {
   name: string
   email: string
+  phone?: string
+  preferredContact: 'email' | 'phone' | 'either'
   service?: string
   message?: string
   privacyConsent: boolean
@@ -239,6 +256,8 @@ export async function submitContact(data: {
     await sendTelegramNotification({
       name: data.name,
       email: data.email,
+      phone: data.phone,
+      preferredContact: data.preferredContact,
       service: data.service,
       message: data.message,
     })

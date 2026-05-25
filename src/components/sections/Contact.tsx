@@ -18,6 +18,7 @@ export function Contact({ locale }: ContactProps) {
   const t = useTranslations('sections')
   const f = useTranslations('form')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [preferredContact, setPreferredContact] = useState<'email' | 'phone' | 'either'>('email')
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -27,6 +28,8 @@ export function Contact({ locale }: ContactProps) {
     const result = await submitContact({
       name: formData.get('name') as string,
       email: formData.get('email') as string,
+      phone: (formData.get('phone') as string) || undefined,
+      preferredContact,
       service: (formData.get('service') as string) || undefined,
       message: (formData.get('message') as string) || undefined,
       privacyConsent: formData.get('privacyConsent') === 'on',
@@ -35,6 +38,12 @@ export function Contact({ locale }: ContactProps) {
 
     setStatus(result.success ? 'success' : 'error')
   }
+
+  const successKey = preferredContact === 'phone'
+    ? 'successPhone'
+    : preferredContact === 'either'
+      ? 'successEither'
+      : 'successEmail'
 
   return (
     <section id="contacts" className="py-10 md:py-14 bg-card">
@@ -74,7 +83,7 @@ export function Contact({ locale }: ContactProps) {
 
 
         {status === 'success' ? (
-          <p className="text-center text-green-600 font-medium">{f('success')}</p>
+          <p className="text-center text-green-600 font-medium">{f(successKey)}</p>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
@@ -84,6 +93,35 @@ export function Contact({ locale }: ContactProps) {
             <div>
               <Label htmlFor="email">{f('email')}</Label>
               <Input id="email" name="email" type="email" required />
+            </div>
+            <div>
+              <Label htmlFor="phone">
+                {f('phone')}{preferredContact === 'phone' ? ' *' : ''}
+              </Label>
+              <Input
+                id="phone"
+                name="phone"
+                type="tel"
+                required={preferredContact === 'phone'}
+              />
+            </div>
+            <div>
+              <Label>{f('preferredContact')}</Label>
+              <div className="flex flex-wrap gap-4 mt-2">
+                {(['email', 'phone', 'either'] as const).map((opt) => (
+                  <label key={opt} className="flex items-center gap-2 text-sm cursor-pointer">
+                    <input
+                      type="radio"
+                      name="preferredContact"
+                      value={opt}
+                      checked={preferredContact === opt}
+                      onChange={() => setPreferredContact(opt)}
+                      className="accent-primary"
+                    />
+                    {f(opt === 'email' ? 'prefEmail' : opt === 'phone' ? 'prefPhone' : 'prefEither')}
+                  </label>
+                ))}
+              </div>
             </div>
             <div>
               <Label htmlFor="service">{f('service')}</Label>

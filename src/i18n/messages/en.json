@@ -87,6 +87,11 @@
   "form": {
     "name": "Name",
     "email": "Email",
+    "phone": "Phone",
+    "preferredContact": "How should I get back to you?",
+    "prefEmail": "Email",
+    "prefPhone": "Phone",
+    "prefEither": "Either",
     "service": "I'm interested in",
     "servicePlaceholder": "Select a service",
     "serviceDiscovery": "Free Discovery Call",
@@ -100,6 +105,9 @@
     "privacyLink": "Privacy Policy",
     "submit": "Send",
     "success": "Thank you! I'll get back to you within 48 hours via email.",
+    "successEmail": "Thank you! I'll email you within 48 hours.",
+    "successPhone": "Thank you! I'll message you within 48 hours.",
+    "successEither": "Thank you! I'll get back to you within 48 hours.",
     "error": "Something went wrong. Please try again."
   },
   "services": {

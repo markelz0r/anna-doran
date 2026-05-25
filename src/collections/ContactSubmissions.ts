@@ -2,7 +2,7 @@ import type { CollectionConfig } from 'payload'
 
 export const ContactSubmissions: CollectionConfig = {
   slug: 'contact-submissions',
-  admin: { useAsTitle: 'name', defaultColumns: ['name', 'email', 'submittedAt'] },
+  admin: { useAsTitle: 'name', defaultColumns: ['name', 'email', 'phone', 'preferredContact', 'submittedAt'] },
   access: {
     read: ({ req: { user } }) => Boolean(user),
     create: () => true,
@@ -10,6 +10,16 @@ export const ContactSubmissions: CollectionConfig = {
   fields: [
     { name: 'name', type: 'text', required: true },
     { name: 'email', type: 'email', required: true },
+    { name: 'phone', type: 'text' },
+    {
+      name: 'preferredContact',
+      type: 'select',
+      options: [
+        { label: 'Email', value: 'email' },
+        { label: 'Phone', value: 'phone' },
+        { label: 'Either', value: 'either' },
+      ],
+    },
     {
       name: 'service',
       type: 'select',
@@ -22,6 +32,7 @@ export const ContactSubmissions: CollectionConfig = {
         { label: 'Not sure yet', value: 'not-sure' },
       ],
     },
+    { name: 'message', type: 'textarea' },
     { name: 'privacyConsent', type: 'checkbox', required: true },
     { name: 'locale', type: 'text' },
     { name: 'submittedAt', type: 'date', admin: { readOnly: true } },
