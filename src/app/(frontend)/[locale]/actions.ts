@@ -123,7 +123,6 @@ async function sendTelegramConsent(data: {
   healthData: boolean
   noGuarantee: boolean
   gpContact: boolean
-  telegram: boolean
 }) {
   const token = process.env.TELEGRAM_CONSENT_BOT_TOKEN
   const chatId = process.env.TELEGRAM_CHAT_ID
@@ -139,7 +138,6 @@ async function sendTelegramConsent(data: {
     `✅ Health data processing: ${data.healthData ? 'Yes' : 'No'}`,
     `✅ No guarantee understood: ${data.noGuarantee ? 'Yes' : 'No'}`,
     `${data.gpContact ? '✅' : '⬜'} GP contact: ${data.gpContact ? 'Yes' : 'No'}`,
-    `✅ Telegram notification: ${data.telegram ? 'Yes' : 'No'}`,
     '',
     `📅 Date: ${new Date().toISOString().split('T')[0]}`,
   ].join('\n')
@@ -162,7 +160,6 @@ export async function submitConsent(data: {
   healthData: boolean
   noGuarantee: boolean
   gpContact: boolean
-  telegram: boolean
 }) {
   try {
     await sendTelegramConsent(data)

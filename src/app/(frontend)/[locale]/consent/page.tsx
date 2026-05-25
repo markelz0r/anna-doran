@@ -26,7 +26,6 @@ export default function ConsentPage() {
       healthData: form.get('consent_healthData') === 'on',
       noGuarantee: form.get('consent_noGuarantee') === 'on',
       gpContact: form.get('consent_gpContact') === 'on',
-      telegram: form.get('consent_telegram') === 'on',
     })
 
     setStatus(result.success ? 'success' : 'error')
@@ -70,10 +69,21 @@ export default function ConsentPage() {
               </div>
             </div>
 
+            {/* Article 13 transparency block (static, no tick) */}
+            <div className="border border-border bg-muted/30 rounded-lg p-4">
+              <h3 className="font-medium text-foreground mb-2 text-base">{t('transparencyHeading')}</h3>
+              <p className="text-sm text-[#4b4b4b] leading-relaxed">{t('transparencyBody')}</p>
+            </div>
+
             <div className="border-t border-border pt-6 space-y-5">
+              <p className="text-xs text-muted-foreground italic -mt-1">
+                <span className="text-red-500 font-medium not-italic">*</span> {t('requiredHint')}
+              </p>
+
               {/* Consent 1: Online consultation */}
               <div className="flex items-start gap-2 sm:gap-3">
                 <Checkbox id="consent_consultation" name="consent_consultation" required className="mt-1" />
+                <span className="text-red-500 font-medium text-sm mt-0.5 shrink-0" aria-hidden="true">*</span>
                 <Label htmlFor="consent_consultation" className="text-sm text-foreground leading-relaxed font-normal">
                   {t('consent1')}
                 </Label>
@@ -82,6 +92,7 @@ export default function ConsentPage() {
               {/* Consent 2: Health data */}
               <div className="flex items-start gap-2 sm:gap-3">
                 <Checkbox id="consent_healthData" name="consent_healthData" required className="mt-1" />
+                <span className="text-red-500 font-medium text-sm mt-0.5 shrink-0" aria-hidden="true">*</span>
                 <Label htmlFor="consent_healthData" className="text-sm text-foreground leading-relaxed font-normal">
                   {t('consent2')}
                 </Label>
@@ -90,6 +101,7 @@ export default function ConsentPage() {
               {/* Consent 3: No guarantee */}
               <div className="flex items-start gap-2 sm:gap-3">
                 <Checkbox id="consent_noGuarantee" name="consent_noGuarantee" required className="mt-1" />
+                <span className="text-red-500 font-medium text-sm mt-0.5 shrink-0" aria-hidden="true">*</span>
                 <Label htmlFor="consent_noGuarantee" className="text-sm text-foreground leading-relaxed font-normal">
                   {t('consent3')}
                 </Label>
@@ -98,22 +110,30 @@ export default function ConsentPage() {
               {/* Consent 4: GP contact (optional) */}
               <div className="flex items-start gap-2 sm:gap-3">
                 <Checkbox id="consent_gpContact" name="consent_gpContact" className="mt-1" />
+                <span className="text-sm font-medium mt-0.5 shrink-0 invisible" aria-hidden="true">*</span>
                 <Label htmlFor="consent_gpContact" className="text-sm text-foreground leading-relaxed font-normal">
-                  {t('consent4')}
-                  <span className="text-muted-foreground ml-1">({t('optional')})</span>
+                  <span>
+                    {t('consent4')}
+                    <span className="text-muted-foreground ml-1">({t('optional')})</span>
+                  </span>
                 </Label>
               </div>
 
-              {/* Consent 5: Telegram notification */}
-              <div className="flex items-start gap-2 sm:gap-3">
-                <Checkbox id="consent_telegram" name="consent_telegram" required className="mt-1" />
-                <Label htmlFor="consent_telegram" className="text-sm text-foreground leading-relaxed font-normal">
-                  {t('consent5')}
-                </Label>
+            </div>
+
+            {/* Safeguarding + withdrawal disclosures (static) */}
+            <div className="space-y-4 border-t border-border pt-6">
+              <div>
+                <h3 className="font-medium text-foreground mb-2 text-base">{t('safeguardingHeading')}</h3>
+                <p className="text-sm text-[#4b4b4b] leading-relaxed">{t('safeguardingBody')}</p>
+              </div>
+              <div>
+                <h3 className="font-medium text-foreground mb-2 text-base">{t('withdrawalHeading')}</h3>
+                <p className="text-sm text-[#4b4b4b] leading-relaxed">{t('withdrawalBody')}</p>
               </div>
             </div>
 
-            {/* Note about rights */}
+            {/* Note about rights / privacy policy link */}
             <div className="bg-muted/50 rounded-lg p-4 text-xs text-[#6b6b6b] leading-relaxed">
               <p>
                 {t('note')}{' '}
