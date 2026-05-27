@@ -27,7 +27,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   return {
-    title: locale === 'ru' ? 'Анна Доран — Нутрициолог и Диетолог' : 'Anna Doran — Nutritionist and Dietitian',
+    title: locale === 'ru' ? 'Анна Доран — Диетолог' : 'Anna Doran — Dietitian',
     description:
       locale === 'ru'
         ? 'Восстановите энергию и здоровье через осознанное отношение к себе и своему питанию'

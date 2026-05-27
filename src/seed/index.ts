@@ -49,7 +49,7 @@ async function seed() {
     slug: 'site-settings',
     data: {
       siteName: 'Anna Doran',
-      tagline: 'Nutritionist and Dietitian',
+      tagline: 'Dietitian',
       email: 'contact@annadoranhealth.com',
       phoneEN: '+447990651664',
       phoneRU: '+79151154413',
@@ -67,7 +67,7 @@ async function seed() {
   await payload.updateGlobal({
     slug: 'site-settings',
     data: {
-      tagline: 'Нутрициолог и Диетолог',
+      tagline: 'Диетолог',
     },
     locale: 'ru',
   })
@@ -78,7 +78,7 @@ async function seed() {
     slug: 'hero-content',
     data: {
       name: 'Anna Doran',
-      title: 'Nutritionist and Dietitian',
+      title: 'Dietitian',
       heading: 'Restore your energy and health',
       tagline: 'through a conscious attitude towards yourself and your diet',
       ctaText: 'Book free discovery call',
@@ -89,7 +89,7 @@ async function seed() {
     slug: 'hero-content',
     data: {
       name: 'Анна Доран',
-      title: 'нутрициолог и диетолог',
+      title: 'диетолог',
       heading: 'Восстановите энергию и здоровье',
       tagline: 'через осознанное отношение к себе и своему питанию',
       ctaText: 'Бесплатная диагностика',
@@ -104,7 +104,7 @@ async function seed() {
     data: {
       mission: 'To use all her knowledge and experience to support and guide individuals on their journey to restoring health and beauty',
       credentials: richTextParagraphs([
-        "Hi, I'm Anna, a Registered Dietitian and Nutritionist with a Master's degree in Dietetics from Teesside University. I am registered with the Health and Care Professions Council (HCPC) and a member of the British Dietetic Association (BDA), which means the advice I provide is safe, regulated and evidence-based.",
+        "Hi, I'm Anna, a Registered Dietitian with a Master's degree in Dietetics from Teesside University. I am registered with the Health and Care Professions Council (HCPC) and a member of the British Dietetic Association (BDA), which means the advice I provide is safe, regulated and evidence-based.",
         "Alongside my private practice, I work as a Gastroenterology Specialist Dietitian within an NHS community service, supporting patients with a wide range of digestive and gastrointestinal conditions — including IBS, inflammatory bowel disease, coeliac disease, and functional gut disorders.",
         "I am also a Research Officer for the BDA Sustainable Diets Specialist Group, contributing to work exploring the relationship between nutrition, health, and sustainable food systems.",
       ]),
@@ -134,7 +134,7 @@ async function seed() {
     data: {
       mission: 'Использовать все мои знания и опыт для помощи людям, которые приняли решение начать свой путь к восстановлению здоровья и красоте',
       credentials: richTextParagraphs([
-        'Диетолог (Teesside University, Англия) и сертифицированный интегративный нутрициолог',
+        'Диетолог (Teesside University, Англия)',
         'Специалист-диетолог по гастроэнтерологии в общественной службе NHS — помогаю пациентам с заболеваниями ЖКТ: СРК, ВЗК (болезнь Крона, язвенный колит), целиакией и функциональными расстройствами кишечника',
         'Фармаколог (University of East Anglia, Англия) с опытом работы в клинических исследованиях международной компании IQVIA',
         'Создатель и Президент сообщества по питанию FoodTalk, Teesside University, Англия',
@@ -551,8 +551,8 @@ async function seed() {
     },
     {
       year: '2020–2022',
-      en: { institution: 'International Institute of Integrative Nutriciology (MIIN)', qualification: 'Integrative and Preventive Nutritionist' },
-      ru: { institution: 'Международный институт интегративной нутрициологии', qualification: 'Интегративный и Превентивный Нутрициолог' },
+      en: { institution: 'International Institute of Integrative Nutriciology (MIIN)', qualification: 'Integrative and Preventive Nutrition' },
+      ru: { institution: 'Международный институт интегративной нутрициологии', qualification: 'Интегративная и превентивная нутрициология' },
       order: 2,
     },
     {

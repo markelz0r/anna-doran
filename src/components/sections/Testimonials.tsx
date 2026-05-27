@@ -54,7 +54,7 @@ const reviewsEN = [
     initial: 'S',
     color: 'bg-pink-500',
     concern: 'Skin, hair & digestion',
-    text: "I reached out to nutritionist Anna with a range of issues: skin breakouts, hair loss, digestive problems. She created a clear plan and I saw improvements within weeks.",
+    text: "I reached out to dietitian Anna with a range of issues: skin breakouts, hair loss, digestive problems. She created a clear plan and I saw improvements within weeks.",
   },
   {
     name: 'Client',
@@ -99,7 +99,7 @@ const reviewsRU = [
     initial: 'С',
     color: 'bg-pink-500',
     concern: 'Кожа, волосы и ЖКТ',
-    text: "Я обратилась к нутрициологу Анне с рядом проблем: высыпания на коже, выпадение волос, проблемы с пищеварением. Она составила чёткий план, и я увидела улучшения уже через несколько недель.",
+    text: "Я обратилась к диетологу Анне с рядом проблем: высыпания на коже, выпадение волос, проблемы с пищеварением. Она составила чёткий план, и я увидела улучшения уже через несколько недель.",
   },
   {
     name: 'Клиент',

@@ -134,7 +134,7 @@ export default async function LinksPage({ params }: { params: Promise<{ locale: 
           Anna Doran
         </h1>
         <p className="text-[15px] text-primary font-medium mt-1">
-          {isRu ? 'Нутрициолог и Диетолог' : 'Nutritionist & Dietitian'}
+          {isRu ? 'Диетолог' : 'Dietitian'}
         </p>
         <p className="text-[13px] text-muted-foreground mt-2 text-center max-w-xs leading-relaxed">
           {isRu

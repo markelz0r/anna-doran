@@ -60,10 +60,15 @@ export function Hero({ name, title, heading, subtitle, ctaText, trustBadges = []
             </div>
           )}
           {testimonialSnippets.length > 0 && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-2">
               {testimonialSnippets.map((snippet, i) => (
-                <div key={i} className="border border-primary/30 rounded-xl px-3 py-2 text-[13px] font-medium text-[#757575]">
-                  &ldquo;{snippet}&rdquo;
+                <div key={i} className="relative bg-primary/10 rounded-2xl px-4 py-3 text-[13px] text-foreground/80 leading-relaxed">
+                  {snippet}
+                  <span
+                    className="absolute -bottom-1.5 left-6 w-3 h-3 bg-primary/10"
+                    style={{ clipPath: 'polygon(0 0, 100% 0, 50% 100%)' }}
+                    aria-hidden="true"
+                  />
                 </div>
               ))}
             </div>
@@ -97,8 +102,13 @@ export function Hero({ name, title, heading, subtitle, ctaText, trustBadges = []
             {testimonialSnippets.length > 0 && (
               <div className="grid grid-cols-2 gap-3 mt-4">
                 {testimonialSnippets.map((snippet, i) => (
-                  <div key={i} className="border border-primary/30 rounded-xl px-3 py-2 text-[13px] font-medium text-[#757575]">
-                    &ldquo;{snippet}&rdquo;
+                  <div key={i} className="relative bg-primary/10 rounded-2xl px-4 py-3 text-[13px] text-foreground/80 leading-relaxed">
+                    {snippet}
+                    <span
+                      className="absolute -bottom-1.5 left-6 w-3 h-3 bg-primary/10"
+                      style={{ clipPath: 'polygon(0 0, 100% 0, 50% 100%)' }}
+                      aria-hidden="true"
+                    />
                   </div>
                 ))}
               </div>

@@ -8,15 +8,15 @@
   },
   "hero": {
     "name": "Anna Doran",
-    "title": "Nutritionist and Dietitian",
-    "heading": "Tired of bloating, low energy, and not knowing what to eat?",
-    "tagline": "I help you fix your digestion and build a diet that actually works for your body",
+    "title": "Dietitian",
+    "heading": "Struggling with bloating, low energy, or unsure what to eat?",
+    "tagline": "I'll help you understand what's going on with your gut, and find a way of eating that feels right for your body.",
     "cta": "Book a free discovery call",
     "trustHcpc": "HCPC Registered Dietitian",
     "trustBda": "BDA Full Member",
     "trustInsured": "Fully insured",
     "snippets": {
-      "1": "My bloating has completely gone — I finally feel comfortable after eating",
+      "1": "My bloating has completely gone — I finally feel comfortable after eating",
       "2": "I have so much more energy and my skin has cleared up",
       "3": "Anna helped me understand what was actually triggering my IBS",
       "4": "I wish I'd seen a dietitian sooner — it's changed how I feel every day"
