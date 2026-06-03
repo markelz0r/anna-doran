@@ -137,6 +137,10 @@ export default function ConsentPage() {
             <div className="bg-muted/50 rounded-lg p-4 text-xs text-[#6b6b6b] leading-relaxed">
               <p>
                 {t('note')}{' '}
+                <a href={`/${locale}/terms`} target="_blank" className="text-primary underline hover:text-primary/80">
+                  {t('termsLink')}
+                </a>
+                {t('noteMiddle')}{' '}
                 <a href={`/${locale}/privacy-policy`} target="_blank" className="text-primary underline hover:text-primary/80">
                   {t('privacyLink')}
                 </a>.
