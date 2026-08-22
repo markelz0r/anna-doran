@@ -39,11 +39,6 @@ const EN_PARAGRAPHS: Paragraph[] = [
     { text: "Gastroenterology Dietitian within the NHS", bold: true },
     ", supporting patients with a wide range of complex digestive and gastrointestinal conditions — including IBS, inflammatory bowel disease, coeliac disease, and functional gut disorders.",
   ],
-  [
-    "I am also a ",
-    { text: "Research Officer for the BDA Sustainable Diets Specialist Group", bold: true },
-    ", contributing to work exploring the relationship between nutrition, health, and sustainable food systems.",
-  ],
 ]
 
 const RU_PARAGRAPHS: Paragraph[] = [
@@ -52,11 +47,6 @@ const RU_PARAGRAPHS: Paragraph[] = [
     "Параллельно с частной практикой я работаю ",
     { text: "диетологом-гастроэнтерологом в NHS", bold: true },
     " (Национальная служба здравоохранения Великобритании), помогая пациентам со сложными заболеваниями пищеварительной системы — включая СРК, воспалительные заболевания кишечника (болезнь Крона, язвенный колит), целиакию и функциональные расстройства ЖКТ.",
-  ],
-  [
-    "Также я являюсь ",
-    { text: "научным сотрудником специализированной группы по устойчивому питанию Британской ассоциации диетологов (BDA)", bold: true },
-    ", где участвую в работе, исследующей связь между питанием, здоровьем и устойчивыми пищевыми системами.",
   ],
 ]
 

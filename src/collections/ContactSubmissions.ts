@@ -16,8 +16,11 @@ export const ContactSubmissions: CollectionConfig = {
       type: 'select',
       options: [
         { label: 'Email', value: 'email' },
-        { label: 'Phone', value: 'phone' },
-        { label: 'Either', value: 'either' },
+        { label: 'Call', value: 'call' },
+        { label: 'WhatsApp', value: 'whatsapp' },
+        { label: 'Any', value: 'any' },
+        { label: 'Phone (legacy)', value: 'phone' },
+        { label: 'Either (legacy)', value: 'either' },
       ],
     },
     {

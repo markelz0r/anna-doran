@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { Phone } from 'lucide-react'
+import { MessageCircle } from 'lucide-react'
 
 export function FloatingCTA() {
   const t = useTranslations('floating')
@@ -13,7 +13,7 @@ export function FloatingCTA() {
         className="flex items-center gap-2 bg-primary hover:bg-primary/90 text-white text-xs font-medium pl-4 pr-3 py-3 rounded-full shadow-lg hover:shadow-xl transition-all"
       >
         {t('ctaShort')}
-        <Phone className="h-4 w-4" />
+        <MessageCircle className="h-4 w-4" />
       </a>
     </div>
   )

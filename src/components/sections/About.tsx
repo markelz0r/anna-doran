@@ -48,11 +48,10 @@ export function About({ about, credentials, settings }: AboutProps) {
             </a>
 
             {/* Professional body logos */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-border items-center">
+            <div className="grid grid-cols-3 gap-3 sm:gap-4 mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-border items-center">
               <Image src="/images/logo-nhs.svg" alt="NHS" width={100} height={48} className="h-8 sm:h-12 w-full object-contain" />
               <Image src="/images/logo-trust-dietitian.png" alt="Trust a Dietitian" width={100} height={48} className="h-8 sm:h-12 w-full object-contain" />
               <Image src="/images/logo-bda-new.png" alt="BDA - The Association of UK Dietitians" width={100} height={48} className="h-8 sm:h-12 w-full object-contain" />
-              <Image src="/images/logo-sustainable-diets.png" alt="BDA Sustainable Diets Specialist Group" width={100} height={48} className="h-8 sm:h-12 w-full object-contain" />
             </div>
           </div>
 

@@ -8,11 +8,11 @@ import { SectionHeading } from '@/components/shared/SectionHeading'
 const SERVICE_KEYS = ['discoveryCall', 'mealBalanceCheck', 'initialConsultation', 'coachingProgramme'] as const
 type ServiceKey = (typeof SERVICE_KEYS)[number]
 
-const SERVICE_META: Record<ServiceKey, { priceEN: string; priceRU: string; featured?: boolean; featureCount: number; hasFollowUp?: boolean; hasSavings?: boolean; paymentLink?: string; calLink?: string; learnMoreHref?: string }> = {
+const SERVICE_META: Record<ServiceKey, { priceEN: string; priceRU: string; featured?: boolean; featureCount: number; hasFollowUp?: boolean; hasHighlight?: boolean; paymentLink?: string; calLink?: string; learnMoreHref?: string }> = {
   discoveryCall:       { priceEN: 'FREE',  priceRU: 'Бесплатно', featureCount: 3 },
   mealBalanceCheck:    { priceEN: '£39',   priceRU: '3 900 ₽',   featureCount: 6, paymentLink: 'https://buy.stripe.com/14A14o0AS8kFdnX4nfaIM0d', learnMoreHref: '/services/meal-balance-check' },
   initialConsultation: { priceEN: '£109',  priceRU: '10 900 ₽',  featured: true, featureCount: 7, hasFollowUp: true, paymentLink: 'https://buy.stripe.com/bJe28s4R8eJ35Vv8DvaIM0e' },
-  coachingProgramme:   { priceEN: '£469',  priceRU: '46 900 ₽',  featureCount: 6, hasSavings: true, paymentLink: 'https://buy.stripe.com/5kQaEYerI7gB83DbPHaIM0f' },
+  coachingProgramme:   { priceEN: '£469',  priceRU: '46 900 ₽',  featureCount: 6, hasHighlight: true, paymentLink: 'https://buy.stripe.com/5kQaEYerI7gB83DbPHaIM0f' },
 }
 
 interface ServicesV2Props {
@@ -27,22 +27,6 @@ export function ServicesV2({ locale }: ServicesV2Props) {
     <section id="services" className="py-10 md:py-14 bg-card">
       <div className="container mx-auto px-2 sm:px-4">
         <SectionHeading>{t('services')}</SectionHeading>
-
-        {/* Tagline */}
-        <p className="text-center text-[16px] md:text-[20px] text-[#4b4b4b] max-w-2xl mx-auto mb-8 md:mb-12 leading-relaxed">
-          {s('tagline')}
-        </p>
-
-        {/* Journey indicator */}
-        <div className="hidden md:flex items-center justify-center gap-2 mb-10 text-sm text-[#9f9f9f]">
-          <span className="bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">{s('journeyStart')}</span>
-          <span className="text-[#d1d1d1]">→</span>
-          <span className="bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">{s('journeyExplore')}</span>
-          <span className="text-[#d1d1d1]">→</span>
-          <span className="bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">{s('journeyDive')}</span>
-          <span className="text-[#d1d1d1]">→</span>
-          <span className="bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">{s('journeyTransform')}</span>
-        </div>
 
         {/* Service cards grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
@@ -74,9 +58,9 @@ export function ServicesV2({ locale }: ServicesV2Props) {
                   </CardTitle>
                   <p className="text-sm text-[#9f9f9f] mt-1">{s(`${key}.duration`)}</p>
                   <p className="text-[24px] font-medium text-[#1781ae] mt-2">{locale === 'ru' ? meta.priceRU : meta.priceEN}</p>
-                  {meta.hasSavings && (
+                  {meta.hasHighlight && (
                     <span className="inline-block mt-1 text-xs font-semibold text-primary bg-primary/10 rounded-full px-3 py-1 w-fit">
-                      {s(`${key}.savings`)}
+                      {s(`${key}.highlight`)}
                     </span>
                   )}
                 </CardHeader>

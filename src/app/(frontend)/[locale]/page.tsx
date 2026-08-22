@@ -52,7 +52,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         trustBadges={[
           heroT('trustHcpc'),
           heroT('trustBda'),
-          heroT('trustInsured'),
+          heroT('trustInsurers'),
         ]}
         testimonialSnippets={[
           heroT('snippets.1'),

@@ -13,8 +13,9 @@
     "tagline": "I'll help you understand what's going on with your gut, and find a way of eating that feels right for your body.",
     "cta": "Book a free discovery call",
     "trustHcpc": "HCPC Registered Dietitian",
-    "trustBda": "BDA Full Member",
+    "trustBda": "Member of British Dietetic Association",
     "trustInsured": "Fully insured",
+    "trustInsurers": "Recognised by AXA Health, Aviva, WPA",
     "snippets": {
       "1": "My bloating has completely gone — I finally feel comfortable after eating",
       "2": "I have so much more energy and my skin has cleared up",
@@ -41,8 +42,8 @@
     "about": "About me",
     "contact": "Ready to feel better?",
     "contactWarmIntro": "Whether you have a quick question about your gut health or you're ready to book — I'd love to hear from you. No pressure, just a friendly chat to see how I can help.",
-    "contactSubtitle": "Or contact me directly on Instagram or email",
-    "contactSubtitlePrefix": "Or contact me directly on",
+    "contactSubtitle": "Or reach me directly:",
+    "contactSubtitlePrefix": "Or reach me directly:",
     "contactSubtitleOr": "or",
     "problems_list": {
       "1": {
@@ -90,8 +91,9 @@
     "phone": "Phone",
     "preferredContact": "How should I get back to you?",
     "prefEmail": "Email",
-    "prefPhone": "Phone",
-    "prefEither": "Either",
+    "prefCall": "Call",
+    "prefWhatsapp": "WhatsApp",
+    "prefAny": "Any",
     "service": "I'm interested in",
     "servicePlaceholder": "Select a service",
     "serviceDiscovery": "Free Discovery Call",
@@ -106,8 +108,9 @@
     "submit": "Send",
     "success": "Thank you! I'll get back to you within 48 hours via email.",
     "successEmail": "Thank you! I'll email you within 48 hours.",
-    "successPhone": "Thank you! I'll message you within 48 hours.",
-    "successEither": "Thank you! I'll get back to you within 48 hours.",
+    "successCall": "Thank you! I'll call you within 48 hours.",
+    "successWhatsapp": "Thank you! I'll message you on WhatsApp within 48 hours.",
+    "successAny": "Thank you! I'll get back to you within 48 hours.",
     "error": "Something went wrong. Please try again."
   },
   "services": {
@@ -301,7 +304,7 @@
   },
   "floating": {
     "cta": "Book free discovery call",
-    "ctaShort": "Book call"
+    "ctaShort": "Get in touch"
   },
   "testimonials": {
     "seeAll": "See all reviews on Google",
@@ -433,7 +436,7 @@
       "feature5": "Video guides on balanced meals & meal planning",
       "feature6": "Additional guides & resources as needed",
       "idealFor": "You've tried quick fixes that didn't work and want lasting results with ongoing professional support.",
-      "savings": "Save £35 + weekly support, tracking & video guides included",
+      "highlight": "Daily support · habit building",
       "cta": "Pay now"
     }
   },
@@ -517,6 +520,7 @@
     "term13": "In the case of unforeseen circumstances such as illness, your session may be cancelled by me within 24 hours. If this happens, no payment will be due and you will be offered an alternative date as soon as possible.",
     "term14": "The information and advice provided during all services is for educational and informational purposes and does not replace medical advice from your doctor or medical team. Always consult your GP before making significant changes to your diet if you have a medical condition. Results are not guaranteed and may vary from person to person.",
     "term15": "Testimonials and case studies: With your consent, anonymised case studies or testimonials may be shared on my website and social media channels (including Instagram, WhatsApp, YouTube and Telegram). No identifying information such as your name, photo, or contact details will be shared without your explicit written permission. All content shared on social media is for educational purposes only and does not constitute individual medical or dietary advice.",
+    "term16": "Liability. I provide my services with reasonable care and skill in line with my HCPC and BDA professional obligations and hold professional indemnity insurance. To the fullest extent permitted by law, my total liability to you for any claim arising out of or in connection with the services is limited to the total fees you have paid me for the specific service giving rise to the claim. I am not liable for any indirect, consequential, or economic loss, loss of earnings, or loss of opportunity. Nothing in these terms limits my liability for death or personal injury caused by negligence, for fraud, or for any other liability which cannot be excluded by law.",
     "contact": "If you have any questions about these terms, please contact me at contact@annadorandiet.com."
   },
   "privacy": {
@@ -536,7 +540,8 @@
     "whyCollect": "I collect your personal data with your explicit consent in order to provide my independent nutrition and dietetic services to you. You may also have opted in to receive my newsletter.",
 
     "lawfulBasisHeading": "Lawful basis for processing",
-    "lawfulBasis": "I process your personal data under Article 6(1)(a) UK GDPR (consent). Health and dietary information is classified as special category data under Article 9 UK GDPR. I process this data on the basis of your explicit consent (Article 9(2)(a)), which you provide when booking a consultation and completing the client consent form. You may withdraw your consent at any time by contacting me.",
+    "lawfulBasis": "I process your personal data under Article 6(1)(b) UK GDPR (performance of a contract) when you book a paid service, and Article 6(1)(a) (consent) for the newsletter and contact form enquiries.",
+    "lawfulBasisHealth": "Health and dietary information is special category data under Article 9 UK GDPR. As an HCPC-registered dietitian, I process this data under Article 9(2)(h) (provision of health care by a health professional under a duty of confidentiality), read with Schedule 1 Part 1 paragraph 2 of the Data Protection Act 2018. Where I share information with your GP or another healthcare professional, I will obtain your separate explicit consent (Article 9(2)(a)) before doing so.",
 
     "whatCollectHeading": "What information I collect",
     "collect1": "Name, date of birth, age, sex, next of kin, GP name and address, marital status, living arrangements and occupation.",
@@ -559,7 +564,7 @@
     "thirdPartyIntro": "I use the following third-party services to operate my business. Each provider has their own privacy policy and data protection measures:",
     "thirdParty1": "Stripe — payment processing. Your card details are handled securely by Stripe and are never stored on my systems.",
     "thirdParty2": "MailerLite — email newsletter. Your name and email are stored to send you nutrition updates you have subscribed to.",
-    "thirdParty3": "Telegram — I receive instant notifications when you submit a contact or consent form, so I can respond promptly. The submitted personal details (name, email, message content, and consent choices) are transmitted via Telegram's messaging service, whose servers are located outside the UK.",
+    "thirdParty3": "Telegram — I receive an instant notification when you submit a contact or consent form, so I can respond promptly. The notification contains only your name, email and basic contact preferences — it never includes the contents of your message or any health information. Full submission details are stored only in my secure admin system. Telegram's servers are located outside the UK.",
     "thirdParty4": "Contabo (server hosting) — the website and database are hosted on secure servers in Europe.",
     "thirdParty5": "Zoom — used for online video consultations. Audio and video are transmitted in real time and are not recorded unless separately agreed with you in writing. Zoom is bound by its own GDPR-aligned Data Processing Agreement; servers are located in multiple regions including the US.",
     "thirdParty6": "Microsoft Teams — also used for online video consultations. Audio and video are transmitted in real time and are not recorded unless separately agreed with you in writing. Microsoft Teams offers UK data residency under its Data Processing Addendum.",

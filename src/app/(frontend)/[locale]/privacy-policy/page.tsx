@@ -57,6 +57,7 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
           <div>
             <h2 className="font-[family-name:var(--font-heading)] text-[22px] font-semibold mb-3">{t('lawfulBasisHeading')}</h2>
             <p>{t('lawfulBasis')}</p>
+            <p className="mt-3">{t('lawfulBasisHealth')}</p>
           </div>
 
           {/* What we collect */}

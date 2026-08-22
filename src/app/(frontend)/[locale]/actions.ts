@@ -56,15 +56,15 @@ const contactSchema = z.object({
   name: z.string().min(1),
   email: z.string().email(),
   phone: z.string().optional(),
-  preferredContact: z.enum(['email', 'phone', 'either']),
+  preferredContact: z.enum(['email', 'call', 'whatsapp', 'any']),
   service: z.string().optional(),
   message: z.string().optional(),
   privacyConsent: z.literal(true),
   locale: z.string(),
-}).refine((d) => d.preferredContact !== 'phone' || (d.phone && d.phone.trim().length > 0), {
-  message: 'Phone number is required when phone is the preferred contact',
-  path: ['phone'],
-})
+}).refine(
+  (d) => (d.preferredContact !== 'call' && d.preferredContact !== 'whatsapp') || (d.phone && d.phone.trim().length > 0),
+  { message: 'Phone number is required when Call or WhatsApp is the preferred contact', path: ['phone'] },
+)
 
 const SERVICE_LABELS: Record<string, string> = {
   'discovery-call': 'Free Discovery Call',
@@ -79,7 +79,7 @@ async function sendTelegramNotification(data: {
   name: string
   email: string
   phone?: string
-  preferredContact?: 'email' | 'phone' | 'either'
+  preferredContact?: 'email' | 'call' | 'whatsapp' | 'any'
   service?: string
   message?: string
 }) {
@@ -87,22 +87,27 @@ async function sendTelegramNotification(data: {
   const chatId = process.env.TELEGRAM_CHAT_ID
   if (!token || !chatId) return
 
-  const serviceLabel = data.service ? SERVICE_LABELS[data.service] || data.service : 'Not selected'
-  const prefLabel = data.preferredContact === 'phone'
-    ? 'Phone'
-    : data.preferredContact === 'either'
-      ? 'Either'
-      : 'Email'
+  const prefLabelMap: Record<string, string> = {
+    email: 'Email',
+    call: 'Call',
+    whatsapp: 'WhatsApp',
+    any: 'Any',
+  }
+  const prefLabel = prefLabelMap[data.preferredContact || 'email'] || 'Email'
 
+  // Notification deliberately excludes the service selection and message body —
+  // both can contain special-category health data which UK GDPR/ICO guidance
+  // says should not be transmitted via non-UK-compliant channels like Telegram.
+  // Full submission details are stored in Payload at /admin and visible there only.
   const text = [
-    '📩 New enquiry from your website!',
+    '📩 New enquiry — full details in admin panel',
     '',
     `👤 Name: ${data.name}`,
     `📧 Email: ${data.email}`,
     data.phone ? `📞 Phone: ${data.phone}` : '',
     `✅ Prefers: ${prefLabel}`,
-    `🔖 Service: ${serviceLabel}`,
-    data.message ? `💬 Message: ${data.message}` : '',
+    '',
+    '🔒 Open https://annadorandiet.com/admin → Contact Submissions to view the service requested and message body.',
   ].filter(Boolean).join('\n')
 
   try {
@@ -232,7 +237,7 @@ export async function submitContact(data: {
   name: string
   email: string
   phone?: string
-  preferredContact: 'email' | 'phone' | 'either'
+  preferredContact: 'email' | 'call' | 'whatsapp' | 'any'
   service?: string
   message?: string
   privacyConsent: boolean
