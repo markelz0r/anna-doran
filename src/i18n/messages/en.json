@@ -17,10 +17,10 @@
     "trustInsured": "Fully insured",
     "trustInsurers": "Recognised by AXA Health, Aviva, WPA",
     "snippets": {
-      "1": "My bloating has completely gone — I finally feel comfortable after eating",
-      "2": "I have so much more energy and my skin has cleared up",
+      "1": "Anna took the time to actually understand my history — it didn't feel like just another diet sheet",
+      "2": "I finally have a plan that fits my life, not the other way around",
       "3": "Anna helped me understand what was actually triggering my IBS",
-      "4": "I wish I'd seen a dietitian sooner — it's changed how I feel every day"
+      "4": "I wish I'd seen a dietitian sooner instead of trying to figure it all out alone"
     }
   },
   "sections": {
@@ -30,12 +30,12 @@
     "goals": "What we can achieve together",
     "goals_cta": "Book a free discovery call",
     "goals_list": {
-      "1": "Say goodbye to bloating and digestive discomfort",
+      "1": "Explore the dietary triggers behind your symptoms",
       "2": "Understand which foods work for your body — and which don't",
-      "3": "Restore your energy and feel lighter every day",
-      "4": "Get clearer skin by fixing what's going on inside",
+      "3": "Build a nutrition plan that fits your life",
+      "4": "Support digestion, energy, and everyday wellbeing",
       "5": "Build a balanced diet you can actually stick to",
-      "6": "Close vitamin and mineral gaps that affect how you feel",
+      "6": "Identify nutritional gaps in your diet",
       "7": "Feel confident about what you eat — no more guesswork"
     },
     "services": "My services",
@@ -151,11 +151,23 @@
     "idealIf": "You want a simple starting point to understand whether your diet is supporting your gut health — without a full consultation.",
     "howItWorksHeading": "How it works",
     "step1Title": "1. Send your food diary",
-    "step1Bullets": ["Take photos of everything you eat and drink for 5 days", "Include meals, snacks, and drinks — no need to weigh anything"],
+    "step1Bullets": [
+      "Take photos of everything you eat and drink for 5 days",
+      "Include meals, snacks, and drinks — no need to weigh anything"
+    ],
     "step2Title": "2. I review your diet",
-    "step2Bullets": ["Analyse meal balance, protein, fibre and key nutrient gaps", "Check food combinations and meal timing", "Identify areas that may affect energy, digestion or mood"],
+    "step2Bullets": [
+      "Analyse meal balance, protein, fibre and key nutrient gaps",
+      "Check food combinations and meal timing",
+      "Identify areas that may affect energy, digestion or mood"
+    ],
     "step3Title": "3. You receive personalised feedback within 5 working days",
-    "step3Bullets": ["Personalised nutrition feedback", "Practical tips to improve digestion & energy", "Guide on building balanced meals", "Basic supplement advice & review of current intake"],
+    "step3Bullets": [
+      "Personalised nutrition feedback",
+      "Practical tips to improve digestion & energy",
+      "Guide on building balanced meals",
+      "Basic supplement advice & review of current intake"
+    ],
     "followUpHeading": "Follow-up support",
     "followUp": "After receiving your feedback, you'll have 5 days of follow-up support via email, WhatsApp, or Telegram to ask questions and clarify recommendations.",
     "importantHeading": "Important note",
@@ -170,40 +182,33 @@
     "prevBtn": "Back",
     "seeResults": "See my results",
     "questionOf": "Question {current} of {total}",
-
     "q1": "When does your bloating usually happen?",
     "q1a1": "After meals",
     "q1a2": "Throughout the day",
     "q1a3": "Mainly in the evening",
     "q1a4": "After specific foods",
-
     "q2": "Which foods seem to make it worse?",
     "q2a1": "Milk, milky coffee, ice cream, cakes with cream",
     "q2a2": "Bread, pasta, onions, garlic, beans",
     "q2a3": "No specific food — it happens randomly",
     "q2a4": "I'm not sure",
-
     "q3": "How would you describe your eating speed?",
     "q3a1": "I eat quickly, often on the go; I often talk when I eat",
     "q3a2": "Normal pace",
     "q3a3": "I eat slowly and mindfully",
-
     "q4": "Do you experience any of these alongside bloating?",
     "q4a1": "Gas, cramps after dairy products",
     "q4a2": "Gas, cramps after bread/wheat/beans",
     "q4a3": "Feeling heavy, sluggish, brain fog",
     "q4a4": "Heartburn or acid reflux",
-
     "q5": "How would you describe your stress levels?",
     "q5a1": "Low — I feel generally relaxed",
     "q5a2": "Moderate — sometimes stressed",
     "q5a3": "High — often stressed or anxious",
-
     "q6": "How regular are your meals?",
     "q6a1": "I eat at regular times each day",
     "q6a2": "I skip meals or eat at irregular times",
     "q6a3": "I graze/snack throughout the day",
-
     "resultTitle": "Your bloating type:",
     "typeA": "Dairy Sensitivity Bloating",
     "typeADesc": "Your bloating pattern suggests that dairy products may be a key trigger. Many people struggle to digest lactose properly, which can cause bloating, gas, and discomfort after eating dairy.",
@@ -211,7 +216,6 @@
     "typeBDesc": "Your bloating pattern suggests that certain fermentable carbohydrates (FODMAPs) may be triggering your symptoms. These are found in foods like onions, garlic, wheat, beans, and some fruits.",
     "typeC": "Lifestyle & Habits Bloating",
     "typeCDesc": "Your bloating pattern suggests that eating habits, meal timing, and stress may be key contributors. This type of bloating is often linked to how and when you eat, rather than specific foods.",
-
     "getYourPlan": "Get your free 3-day meal plan",
     "getYourPlanDesc": "Enter your details below to download your personalised gut reset plan.",
     "name": "Full name",
@@ -219,11 +223,9 @@
     "newsletterConsent": "I'd like to receive nutrition tips from Anna Doran Health every 2 months. You can unsubscribe at any time.",
     "download": "Download my meal plan",
     "downloading": "Preparing...",
-
     "planATitle": "Dairy-Free Gut Reset",
     "planBTitle": "Low-FODMAP Gut Reset",
     "planCTitle": "Gut-Calming Habits Reset",
-
     "day1": "Day 1",
     "day2": "Day 2",
     "day3": "Day 3",
@@ -232,7 +234,6 @@
     "lunch": "Lunch",
     "snack2": "Snack",
     "dinner": "Dinner",
-
     "planA_d1_breakfast": "Overnight oats with almond milk, banana & chia seeds",
     "planA_d1_snack1": "Rice cakes with almond butter",
     "planA_d1_lunch": "Grilled chicken salad with avocado, cucumber & olive oil dressing",
@@ -248,7 +249,6 @@
     "planA_d3_lunch": "Tuna & avocado wrap with mixed leaves",
     "planA_d3_snack2": "Dark chocolate (2 squares) + walnuts",
     "planA_d3_dinner": "Chicken curry with coconut milk & basmati rice",
-
     "planB_d1_breakfast": "Porridge with lactose-free milk, blueberries",
     "planB_d1_snack1": "Unripe banana & 10 walnut halves",
     "planB_d1_lunch": "Grilled chicken with rice, spinach & red pepper",
@@ -264,7 +264,6 @@
     "planB_d3_lunch": "Jacket potato with tuna & mixed leaves (no onion)",
     "planB_d3_snack2": "Rice cakes with jam",
     "planB_d3_dinner": "Chicken stir-fry with rice, pak choi & ginger (no garlic/onion)",
-
     "planC_d1_breakfast": "Warm porridge with cinnamon, banana & honey (eat sitting down, no phone)",
     "planC_d1_snack1": "Herbal tea (peppermint or ginger) + handful of almonds",
     "planC_d1_lunch": "Chicken & vegetable soup — eat slowly, chew well",
@@ -280,7 +279,6 @@
     "planC_d3_lunch": "Wrap with grilled halloumi, mixed leaves & hummus — eat slowly",
     "planC_d3_snack2": "Carrot & cucumber sticks with tzatziki",
     "planC_d3_dinner": "Prawn stir-fry with rice & pak choi (eat before 7pm)",
-
     "tipsTitle": "Additional tips for constipation and bloating",
     "tip1": "Have 2 kiwis per day",
     "tip2": "Begin taking psyllium husk (slowly increasing the dose)",
@@ -288,7 +286,6 @@
     "tip4": "Use water with added minerals",
     "tip5": "Take magnesium",
     "tip6": "Move more — regular physical activity helps digestion",
-
     "successTitle": "Your meal plan is on its way!",
     "successDesc": "Your PDF has been downloaded. I've also sent a copy and some helpful tips to your email.",
     "checkEmail": "Check your inbox in the next few minutes (don't forget to check your spam folder).",
@@ -297,7 +294,6 @@
     "bookDiscoveryCall": "Book my free Discovery Call",
     "downloadAgain": "Download PDF again",
     "bookConsultation": "Book a consultation",
-
     "ctaTitle": "What's Causing Your Bloating?",
     "ctaDesc": "Take our free 6-question quiz and get a personalised 3-day meal plan",
     "ctaBtn": "Take the quiz"
@@ -359,18 +355,17 @@
     "followInstagram": "Follow me on Instagram",
     "watchYouTube": "Watch on YouTube",
     "connectLinkedIn": "Connect on LinkedIn",
-    "journeyPara1": "My journey into the realm of nutrition began from a personal interest to overcome annoying acne and improve my irregular menstrual cycle, a challenge beginning from a diagnosis of polycystic ovaries (PCOS) at the age of 16. Seeking answers, I pursued studies in Pharmacology, driven by a passion to develop drugs that could restore hormonal balance. Yet, upon completing my Bachelor's degree, I came to the realization that medication offered only a TEMPORARY FIX.",
-    "journeyPara2": "What's the source? How can I prevent this? It was only years later, after numerous attempts and mistakes, that I finally realised the underlying cause of all my problems was the food I was eating.",
+    "journeyPara1": "My interest in nutrition began during my late teens, when I was diagnosed with PCOS. Curious about the relationship between food, lifestyle, and health, I started a degree in Pharmacology — then became increasingly drawn to nutrition as a way to complement clinical care.",
+    "journeyPara2": "That curiosity eventually took me back to university. I completed my MSc in Dietetics at Teesside and became a Registered Dietitian — now applying the same evidence-based approach with my own clients.",
     "journeySubheading": "Over the years I...",
     "journeyMilestones": [
-      "excluded any dairy products from my diet",
-      "began to practice intuitive eating",
-      "had several sessions with an osteopath and a psychologist",
-      "completed nutrition studies at the Institute of Integrative Nutrition",
-      "completed MSc Degree in Dietetics at Teesside University",
-      "continuously exploring alternative approaches to restoring health through work with psychosomatics and integrative doctors"
+      "Completed BSc Pharmacology at University of East Anglia",
+      "Studied Integrative and Preventive Nutrition at MIIN",
+      "Completed MSc in Dietetics at Teesside University",
+      "Registered as a Dietitian with the HCPC (DT034558)",
+      "Currently practising as a Gastroenterology Dietitian in the NHS"
     ],
-    "journeyClosing": "All this knowledge helps me to see the BIGGER and COMPLEX picture of the various causes of health problems, and I use it to restore health on ALL LEVELs. To this day, I have successfully addressed many of my own health issues, and my results speak for themselves. I have dramatically improved my skin, stabilised my cycles, cleared my acne, and made substantial progress in overall well-being."
+    "journeyClosing": "Today, my private practice is grounded in evidence-based dietetic care, with a particular focus on gut health and the connections between digestion, nutrition, and overall wellbeing."
   },
   "servicesV2": {
     "tagline": "Personalised nutrition for better digestion, more energy, and a healthier gut",
@@ -527,39 +522,31 @@
     "title": "Privacy Policy",
     "backHome": "Back to home",
     "effectiveDate": "Effective from 28 March 2026. This policy is regularly reviewed and updated.",
-
     "intro": "This privacy policy sets out how I, Anna Doran (Anna Doran Health), use and protect any personal information that you provide to me. Should I ask you to provide certain information by which you can be identified when using my services, you can be assured that it will only be used in accordance with this privacy policy and the UK General Data Protection Regulation (UK GDPR).",
-
     "businessInfoHeading": "About me",
     "businessInfo1": "Business name: Anna Doran Health",
     "businessInfo2": "HCPC Registration: DT034558",
     "businessInfo3": "Email: contact@annadorandiet.com",
     "businessInfo4": "ICO Registration: CSN1032456",
-
     "whyCollectHeading": "Why I collect your data",
     "whyCollect": "I collect your personal data with your explicit consent in order to provide my independent nutrition and dietetic services to you. You may also have opted in to receive my newsletter.",
-
     "lawfulBasisHeading": "Lawful basis for processing",
     "lawfulBasis": "I process your personal data under Article 6(1)(b) UK GDPR (performance of a contract) when you book a paid service, and Article 6(1)(a) (consent) for the newsletter and contact form enquiries.",
     "lawfulBasisHealth": "Health and dietary information is special category data under Article 9 UK GDPR. As an HCPC-registered dietitian, I process this data under Article 9(2)(h) (provision of health care by a health professional under a duty of confidentiality), read with Schedule 1 Part 1 paragraph 2 of the Data Protection Act 2018. Where I share information with your GP or another healthcare professional, I will obtain your separate explicit consent (Article 9(2)(a)) before doing so.",
-
     "whatCollectHeading": "What information I collect",
     "collect1": "Name, date of birth, age, sex, next of kin, GP name and address, marital status, living arrangements and occupation.",
     "collect2": "Contact details: home address, email and telephone numbers.",
     "collect3": "Clinical and health-related information via forms, emails and verbally during a consultation. This includes dietary information, symptoms, medical history, and food diaries.",
     "collect4": "Payment information processed securely by Stripe. I do not store your card details — these are handled entirely by Stripe in compliance with PCI DSS standards.",
-
     "usedForHeading": "This information is required for",
     "usedFor1": "Professional clinical record keeping of client information in accordance with the British Dietetic Association Guidance for Records and Record Keeping.",
     "usedFor2": "Sharing information with relevant healthcare professionals such as your GP or medical team (your separate consent will always be obtained before this is done).",
     "usedForException": "In exceptional circumstances, information about a client may be disclosed without consent if it is in the public interest to do so. This might be in circumstances where disclosing the information is necessary to prevent a serious crime or serious harm to other people.",
-
     "websiteDataHeading": "What information is collected via this website",
     "websiteData1": "When you visit this website, your browsing data may be collected anonymously to help me understand how the site is used. No data is collected which could identify an individual.",
     "websiteData2": "This website uses cookies to help provide a better user experience. Please see the Cookie Policy for full details. You may disable cookies in your browser if you prefer.",
     "websiteData3": "If you subscribe to the newsletter, your email address is stored securely and used only to send you regular updates. You are free to unsubscribe at any time.",
     "websiteData4": "When you submit the contact form, your name, email, selected service, and message are saved securely. A notification containing these details is sent to me via Telegram, a messaging service operated outside the UK. By submitting the form, you consent to this international data transfer.",
-
     "thirdPartyHeading": "Third-party service providers",
     "thirdPartyIntro": "I use the following third-party services to operate my business. Each provider has their own privacy policy and data protection measures:",
     "thirdParty1": "Stripe — payment processing. Your card details are handled securely by Stripe and are never stored on my systems.",
@@ -568,15 +555,12 @@
     "thirdParty4": "Contabo (server hosting) — the website and database are hosted on secure servers in Europe.",
     "thirdParty5": "Zoom — used for online video consultations. Audio and video are transmitted in real time and are not recorded unless separately agreed with you in writing. Zoom is bound by its own GDPR-aligned Data Processing Agreement; servers are located in multiple regions including the US.",
     "thirdParty6": "Microsoft Teams — also used for online video consultations. Audio and video are transmitted in real time and are not recorded unless separately agreed with you in writing. Microsoft Teams offers UK data residency under its Data Processing Addendum.",
-
     "controlHeading": "Controlling your personal information",
     "control1": "I will not distribute, sell or lease your personal information to third parties unless I have your explicit permission or am required by law to do so.",
     "control2": "You may request details of personal information which I hold about you under the UK General Data Protection Regulation (UK GDPR). If you believe that any information I am holding on you is incorrect or incomplete, please contact me as soon as possible and I will promptly correct it.",
     "control3": "All service providers used to store and process information related to carrying out dietetic services have robust security procedures in place and are GDPR compliant. BDA and HCPC record-keeping guidelines are strictly adhered to for one-to-one consultations.",
-
     "retentionHeading": "Data retention",
     "retention": "Records relating to the care of a client will be stored for eight years, in line with British Dietetic Association Guidance for Records and Record Keeping. Contact form enquiries are retained for 12 months. Payment records are retained for six years in accordance with HMRC requirements.",
-
     "rightsHeading": "Your rights under UK GDPR",
     "right1": "The right to access the personal data we hold about you (Subject Access Request).",
     "right2": "The right to request correction of any inaccurate data.",
@@ -585,7 +569,6 @@
     "right5": "The right to data portability.",
     "right6": "The right to withdraw consent at any time, without affecting the lawfulness of processing carried out before withdrawal.",
     "rightsICO": "If you are unhappy with how your data has been handled, you have the right to complain to the Information Commissioner's Office (ICO) at ico.org.uk.",
-
     "controllerHeading": "Data controller",
     "controller": "I (Anna Doran, HCPC registered dietitian DT034558) am the data controller at Anna Doran Health. Please contact me at contact@annadorandiet.com with any queries or requests related to your personal data and I will respond promptly."
   },
