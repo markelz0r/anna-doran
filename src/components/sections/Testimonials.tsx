@@ -36,13 +36,6 @@ function ReviewCard({ name, initial, text, color, concern }: { name: string; ini
 
 const reviewsEN = [
   {
-    name: 'Kati Blom',
-    initial: 'K',
-    color: 'bg-purple-500',
-    concern: 'Liver support',
-    text: "I enjoyed immensely my time with Anna. I had a liver intoxication, and I needed to purify my system. Anna helped me understand what foods to focus on and created a personalised plan that was easy to follow.",
-  },
-  {
     name: 'Sarah',
     initial: 'S',
     color: 'bg-blue-500',
@@ -50,25 +43,11 @@ const reviewsEN = [
     text: "Anna gives very good meal planning guide which is an excellent starting point for anyone looking to improve their diet. Realistic, practical and easy to follow.",
   },
   {
-    name: 'Sofia R.',
-    initial: 'S',
-    color: 'bg-pink-500',
-    concern: 'Skin, hair & digestion',
-    text: "I reached out to dietitian Anna with a range of issues: skin breakouts, hair loss, digestive problems. She created a clear plan and I saw improvements within weeks.",
-  },
-  {
-    name: 'Client',
-    initial: 'A',
-    color: 'bg-green-500',
-    concern: 'Psoriasis',
-    text: "Elbow psoriasis is now without white flakes, only red. I feel every day happier.",
-  },
-  {
     name: 'Kati',
     initial: 'K',
     color: 'bg-orange-400',
     concern: 'Nutrition education',
-    text: "It was so engaging and fact induced that I had to sleep to get a better memory of it. The idea of our mind being most important when digesting really stayed with me. Thanks for a thought-provoking session!",
+    text: "It was so engaging and fact induced that I had to sleep to get a better memory of it. Thanks for a thought-provoking session!",
   },
   {
     name: 'Client',
@@ -81,13 +60,6 @@ const reviewsEN = [
 
 const reviewsRU = [
   {
-    name: 'Кати Блом',
-    initial: 'К',
-    color: 'bg-purple-500',
-    concern: 'Поддержка печени',
-    text: "Мне очень понравилось работать с Анной. У меня была интоксикация печени, и мне нужно было очистить организм. Анна помогла понять, на какие продукты стоит обратить внимание, и составила персональный план, которому было легко следовать.",
-  },
-  {
     name: 'Сара',
     initial: 'С',
     color: 'bg-blue-500',
@@ -95,25 +67,11 @@ const reviewsRU = [
     text: "Анна составляет отличные планы питания — прекрасная отправная точка для тех, кто хочет улучшить свой рацион. Реалистично, практично и легко следовать.",
   },
   {
-    name: 'София Р.',
-    initial: 'С',
-    color: 'bg-pink-500',
-    concern: 'Кожа, волосы и ЖКТ',
-    text: "Я обратилась к диетологу Анне с рядом проблем: высыпания на коже, выпадение волос, проблемы с пищеварением. Она составила чёткий план, и я увидела улучшения уже через несколько недель.",
-  },
-  {
-    name: 'Клиент',
-    initial: 'А',
-    color: 'bg-green-500',
-    concern: 'Псориаз',
-    text: "Псориаз на локтях теперь без белых хлопьев, только красный. Каждый день чувствую себя счастливее.",
-  },
-  {
     name: 'Кати',
     initial: 'К',
     color: 'bg-orange-400',
     concern: 'Знания о питании',
-    text: "Было настолько увлекательно и насыщенно фактами, что мне нужно было поспать, чтобы лучше запомнить. Идея о том, что наш разум важнее всего при пищеварении, действительно запомнилась. Спасибо за сессию, которая заставляет задуматься!",
+    text: "Было настолько увлекательно и насыщенно фактами, что мне нужно было поспать, чтобы лучше запомнить. Спасибо за сессию, которая заставляет задуматься!",
   },
   {
     name: 'Клиент',
