@@ -1,8 +1,7 @@
 'use client'
 
-import { useRef } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
-import { Star, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Star } from 'lucide-react'
 
 function StarRating() {
   return (
@@ -16,7 +15,7 @@ function StarRating() {
 
 function ReviewCard({ name, initial, text, color, concern }: { name: string; initial: string; text: string; color: string; concern?: string }) {
   return (
-    <div className="bg-[#f5f0e0] rounded-2xl p-6 flex flex-col gap-3 min-w-[280px] w-[300px] shrink-0">
+    <div className="bg-[#f5f0e0] rounded-2xl p-6 flex flex-col gap-3 w-full max-w-[380px]">
       <div className="flex items-center gap-3">
         <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-medium text-sm ${color}`}>
           {initial}
@@ -86,17 +85,7 @@ export function Testimonials() {
   const t = useTranslations('sections')
   const tReviews = useTranslations('testimonials')
   const locale = useLocale()
-  const scrollRef = useRef<HTMLDivElement>(null)
   const reviews = locale === 'ru' ? reviewsRU : reviewsEN
-
-  const scroll = (direction: 'left' | 'right') => {
-    if (!scrollRef.current) return
-    const amount = 320
-    scrollRef.current.scrollBy({
-      left: direction === 'left' ? -amount : amount,
-      behavior: 'smooth',
-    })
-  }
 
   return (
     <section id="testimonials" className="py-10 md:py-14 bg-card">
@@ -123,29 +112,11 @@ export function Testimonials() {
           </a>
         </div>
 
-        {/* Scrollable review cards with arrows */}
-        <div className="relative">
-          <button
-            onClick={() => scroll('left')}
-            className="absolute left-0 top-1/2 -translate-y-1/2 md:-translate-x-4 z-10 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors"
-          >
-            <ChevronLeft className="h-5 w-5 text-foreground" />
-          </button>
-          <div
-            ref={scrollRef}
-            className="flex gap-4 overflow-x-auto scrollbar-hide pb-4 scroll-smooth"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-          >
-            {reviews.map((review, i) => (
-              <ReviewCard key={i} {...review} />
-            ))}
-          </div>
-          <button
-            onClick={() => scroll('right')}
-            className="absolute right-0 top-1/2 -translate-y-1/2 md:translate-x-4 z-10 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors"
-          >
-            <ChevronRight className="h-5 w-5 text-foreground" />
-          </button>
+        {/* Review cards grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 justify-items-center">
+          {reviews.map((review, i) => (
+            <ReviewCard key={i} {...review} />
+          ))}
         </div>
       </div>
     </section>
