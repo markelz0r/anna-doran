@@ -362,7 +362,7 @@
       "Completed BSc Pharmacology at University of East Anglia",
       "Studied Integrative and Preventive Nutrition at MIIN",
       "Completed MSc in Dietetics at Teesside University",
-      "Registered as a Dietitian with the HCPC (DT034558)",
+      "Registered as a Dietitian with the HCPC",
       "Currently practising as a Gastroenterology Dietitian in the NHS"
     ],
     "journeyClosing": "Everything I went through as a teenager and in my twenties changed how I see health — not just what's on the plate, but the whole person around it. Personally, I noticed real improvements as I understood my own body better. In my clinical work, though, every recommendation I give is grounded in evidence and your individual picture. My more personal thoughts on the mind–body side of health sit in the section just below.",
@@ -370,7 +370,8 @@
     "beyondBody1": "Beyond my professional dietetic work, I have a strong personal interest in psychology and the mind–body connection. Writers like Lise Bourbeau — who explores the emotional roots of physical experience — resonate deeply with me. Books such as her Listen to Your Body have shaped how I think about wellbeing on a personal level.",
     "beyondBody2": "These are personal reflections, not clinical methods I use with my clients — my professional dietetic advice always stays firmly within evidence-based practice.",
     "journeyPara3": "That question led to years of reading, trying things, making mistakes, and slowly beginning to understand how much everyday habits shape how we feel. Somewhere in those years, I realised I wanted to help other people through the same confusion — not from a place of theory, but from someone who's genuinely been there.",
-    "journeyPara4": "So I went back to university and completed my MSc in Dietetics at Teesside, becoming a Registered Dietitian with the HCPC (DT034558). Today I work as a Gastroenterology Dietitian within the NHS and in private practice."
+    "journeyPara4": "So I went back to university and completed my MSc in Dietetics at Teesside, becoming a Registered Dietitian. From there I spent 1.5 years working on hospital wards, supporting patients with a wide range of serious conditions — and it became clear where my heart was. Time and time again, I saw how much goes wrong when the gut–brain axis is out of balance, and I knew that gut health was where I wanted to focus.",
+    "journeyPara5": "Today I work part-time as a Gastroenterology Dietitian within the NHS, supporting patients with IBS, coeliac disease, inflammatory bowel disease and other complex digestive conditions. I love my NHS work — but honestly, what draws me most is my private practice. It's where I get to build proper connections with the clients who choose to work with me, take the time to really listen, and shape care around their whole life."
   },
   "servicesV2": {
     "tagline": "Personalised nutrition for better digestion, more energy, and a healthier gut",
@@ -478,7 +479,7 @@
   "cookies": {
     "title": "Cookie Policy",
     "backHome": "Back to home",
-    "effectiveDate": "Effective from 28 March 2026.",
+    "effectiveDate": "Effective from 25 August 2026.",
     "intro": "This cookie policy explains what cookies are, how I use them on this website, and your choices regarding cookies.",
     "whatAreCookiesHeading": "What are cookies?",
     "whatAreCookies": "Cookies are small text files that are stored on your device when you visit a website. They help the website remember your preferences and improve your experience.",
@@ -503,7 +504,7 @@
   "terms": {
     "title": "Terms and Conditions",
     "backHome": "Back to home",
-    "effectiveDate": "Effective from 28 March 2026.",
+    "effectiveDate": "Effective from 25 August 2026.",
     "intro": "By booking a consultation or service with Anna Doran Health, you agree to the following terms and conditions:",
     "term1": "Cancellation policy: I require at least 24 hours' notice for cancellations of consultations and coaching sessions. If you cancel within 24 hours of your appointment, you will be asked to pay half of the service price.",
     "term2": "Cooling-off period: Under the Consumer Contracts Regulations 2013, you have the right to cancel a booking within 14 days of purchase without giving a reason. However, if you have requested that the service begins within the 14-day period (e.g., by attending a consultation or receiving your Meal Balance Check feedback), you agree to waive this right for any service already provided.",
@@ -521,12 +522,14 @@
     "term14": "The information and advice provided during all services is for educational and informational purposes and does not replace medical advice from your doctor or medical team. Always consult your GP before making significant changes to your diet if you have a medical condition. Results are not guaranteed and may vary from person to person.",
     "term15": "Testimonials and case studies: With your consent, anonymised case studies or testimonials may be shared on my website and social media channels (including Instagram, WhatsApp, YouTube and Telegram). No identifying information such as your name, photo, or contact details will be shared without your explicit written permission. All content shared on social media is for educational purposes only and does not constitute individual medical or dietary advice.",
     "term16": "Liability. I provide my services with reasonable care and skill in line with my HCPC and BDA professional obligations and hold professional indemnity insurance. To the fullest extent permitted by law, my total liability to you for any claim arising out of or in connection with the services is limited to the total fees you have paid me for the specific service giving rise to the claim. I am not liable for any indirect, consequential, or economic loss, loss of earnings, or loss of opportunity. Nothing in these terms limits my liability for death or personal injury caused by negligence, for fraud, or for any other liability which cannot be excluded by law.",
-    "contact": "If you have any questions about these terms, please contact me at contact@annadorandiet.com."
+    "contact": "If you have any questions about these terms, please contact me at contact@annadorandiet.com.",
+    "term17": "Complaints. If you have any concerns about the service you have received, please contact me first at contact@annadorandiet.com so we can try to resolve them together. If you are not satisfied with my response, you may raise your complaint with one of the following bodies as appropriate: (a) Health and Care Professions Council (HCPC) — for concerns about my professional practice or fitness to practise. Email: concerns@hcpc-uk.org · Phone: 0300 500 6184 · Website: hcpc-uk.org. (b) British Dietetic Association (BDA) — for concerns about professional conduct or ethics. Email: professionaladvice@bda.uk.com · Website: bda.uk.com. (c) Information Commissioner's Office (ICO) — for concerns about how your personal data has been handled. Website: ico.org.uk.",
+    "term18": "Governing law. These terms are governed by the laws of England and Wales. Any disputes arising from or relating to these terms or the services provided will be subject to the exclusive jurisdiction of the courts of England and Wales."
   },
   "privacy": {
     "title": "Privacy Policy",
     "backHome": "Back to home",
-    "effectiveDate": "Effective from 28 March 2026. This policy is regularly reviewed and updated.",
+    "effectiveDate": "Effective from 25 August 2026. This policy is regularly reviewed and updated.",
     "intro": "This privacy policy sets out how I, Anna Doran (Anna Doran Health), use and protect any personal information that you provide to me. Should I ask you to provide certain information by which you can be identified when using my services, you can be assured that it will only be used in accordance with this privacy policy and the UK General Data Protection Regulation (UK GDPR).",
     "businessInfoHeading": "About me",
     "businessInfo1": "Business name: Anna Doran Health",

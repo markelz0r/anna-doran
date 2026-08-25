@@ -66,6 +66,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             <p>{t('journeyPara2')}</p>
             <p>{t('journeyPara3')}</p>
             <p>{t('journeyPara4')}</p>
+            <p>{t('journeyPara5')}</p>
 
             <h2 className="font-[family-name:var(--font-heading)] text-[28px] md:text-[36px] font-medium text-foreground !mt-6 mb-2">
               {t('journeySubheading')}
@@ -77,8 +78,6 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                 <p className="text-base text-foreground leading-relaxed">{item}</p>
               </div>
             ))}
-
-            <p>{t('journeyClosing')}</p>
 
             <h2 className="font-[family-name:var(--font-heading)] text-[28px] md:text-[36px] font-medium text-foreground !mt-8 mb-3">
               {t('beyondHeading')}
