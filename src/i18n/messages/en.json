@@ -561,8 +561,8 @@
     "thirdParty2": "MailerLite — email newsletter. Your name and email are stored to send you nutrition updates you have subscribed to.",
     "thirdParty3": "Telegram — I receive an instant notification when you submit a contact or consent form, so I can respond promptly. The notification contains only your name, email and basic contact preferences — it never includes the contents of your message or any health information. Full submission details are stored only in my secure admin system. Telegram's servers are located outside the UK.",
     "thirdParty4": "Contabo (server hosting) — the website and database are hosted on secure servers in Europe.",
-    "thirdParty5": "Zoom — used for online video consultations. Audio and video are transmitted in real time and are not recorded unless separately agreed with you in writing. Zoom is bound by its own GDPR-aligned Data Processing Agreement; servers are located in multiple regions including the US.",
-    "thirdParty6": "Microsoft Teams — also used for online video consultations. Audio and video are transmitted in real time and are not recorded unless separately agreed with you in writing. Microsoft Teams offers UK data residency under its Data Processing Addendum.",
+    "thirdParty5": "Google Meet — used for online video consultations. Audio and video are transmitted in real time and are not recorded unless separately agreed with you in writing. Google Meet is provided as part of my Google Workspace subscription and operates under Google's Data Processing Agreement, with data hosted on servers in the UK/EU.",
+    "thirdParty6": "Google Workspace — my professional email (contact@annadorandiet.com), client contact records (Google Sheets) and client documents (Google Drive) are hosted on Google Workspace. Google is bound by its Data Processing Agreement and offers UK/EU data residency.",
     "controlHeading": "Controlling your personal information",
     "control1": "I will not distribute, sell or lease your personal information to third parties unless I have your explicit permission or am required by law to do so.",
     "control2": "You may request details of personal information which I hold about you under the UK General Data Protection Regulation (UK GDPR). If you believe that any information I am holding on you is incorrect or incomplete, please contact me as soon as possible and I will promptly correct it.",
@@ -578,7 +578,9 @@
     "right6": "The right to withdraw consent at any time, without affecting the lawfulness of processing carried out before withdrawal.",
     "rightsICO": "If you are unhappy with how your data has been handled, you have the right to complain to the Information Commissioner's Office (ICO) at ico.org.uk.",
     "controllerHeading": "Data controller",
-    "controller": "I (Anna Doran, HCPC registered dietitian DT034558) am the data controller at Anna Doran Health. Please contact me at contact@annadorandiet.com with any queries or requests related to your personal data and I will respond promptly."
+    "controller": "I (Anna Doran, HCPC registered dietitian DT034558) am the data controller at Anna Doran Health. Please contact me at contact@annadorandiet.com with any queries or requests related to your personal data and I will respond promptly.",
+    "thirdParty7": "Cal.com — booking scheduler for free discovery calls. Cal.com stores your name, email and appointment time under its own GDPR-aligned Data Processing Agreement.",
+    "thirdParty8": "WhatsApp Business — used for direct client communication (appointment logistics only, no clinical or health data). Messages are end-to-end encrypted. WhatsApp is operated by Meta Platforms Ireland under its own Data Processing Agreement."
   },
   "language": {
     "switch": "RU"
