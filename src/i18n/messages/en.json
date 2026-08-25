@@ -355,8 +355,8 @@
     "followInstagram": "Follow me on Instagram",
     "watchYouTube": "Watch on YouTube",
     "connectLinkedIn": "Connect on LinkedIn",
-    "journeyPara1": "My interest in nutrition began during my late teens, when I was diagnosed with PCOS. Curious about the relationship between food, lifestyle, and health, I started a degree in Pharmacology — then became increasingly drawn to nutrition as a way to complement clinical care.",
-    "journeyPara2": "That curiosity eventually took me back to university. I completed my MSc in Dietetics at Teesside and became a Registered Dietitian — now applying the same evidence-based approach with my own clients.",
+    "journeyPara1": "My journey into nutrition wasn't planned. It started at 16, when I was diagnosed with polycystic ovaries (PCOS). Alongside irregular cycles, I struggled with persistent acne — the kind that follows you into every photo and eats away at your confidence — and very few clear answers about why. Frustrated by symptoms I couldn't seem to fix, I went to university to study Pharmacology, hoping to understand the medicines I was being offered and, honestly, hoping science would give me a straightforward answer.",
+    "journeyPara2": "Instead, over my degree I became more and more curious about what was happening beyond the pill bottle — how the body responds to food, sleep, stress, movement. I kept asking myself: what's the source? how can I actually prevent this? — questions medication alone couldn't answer for me.",
     "journeySubheading": "Over the years I...",
     "journeyMilestones": [
       "Completed BSc Pharmacology at University of East Anglia",
@@ -365,10 +365,12 @@
       "Registered as a Dietitian with the HCPC (DT034558)",
       "Currently practising as a Gastroenterology Dietitian in the NHS"
     ],
-    "journeyClosing": "Today, my private practice is grounded in evidence-based dietetic care, with a particular focus on gut health and the connections between digestion, nutrition, and overall wellbeing.",
+    "journeyClosing": "Everything I went through as a teenager and in my twenties changed how I see health — not just what's on the plate, but the whole person around it. Personally, I noticed real improvements as I understood my own body better. In my clinical work, though, every recommendation I give is grounded in evidence and your individual picture. My more personal thoughts on the mind–body side of health sit in the section just below.",
     "beyondHeading": "Beyond my clinical practice",
     "beyondBody1": "Beyond my professional dietetic work, I have a strong personal interest in psychology and the mind–body connection. Writers like Lise Bourbeau — who explores the emotional roots of physical experience — resonate deeply with me. Books such as her Listen to Your Body have shaped how I think about wellbeing on a personal level.",
-    "beyondBody2": "These are personal reflections, not clinical methods I use with my clients — my professional dietetic advice always stays firmly within evidence-based practice."
+    "beyondBody2": "These are personal reflections, not clinical methods I use with my clients — my professional dietetic advice always stays firmly within evidence-based practice.",
+    "journeyPara3": "That question led to years of reading, trying things, making mistakes, and slowly beginning to understand how much everyday habits shape how we feel. Somewhere in those years, I realised I wanted to help other people through the same confusion — not from a place of theory, but from someone who's genuinely been there.",
+    "journeyPara4": "So I went back to university and completed my MSc in Dietetics at Teesside, becoming a Registered Dietitian with the HCPC (DT034558). Today I work as a Gastroenterology Dietitian within the NHS and in private practice."
   },
   "servicesV2": {
     "tagline": "Personalised nutrition for better digestion, more energy, and a healthier gut",

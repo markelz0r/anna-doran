@@ -64,6 +64,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           <div className="text-base text-foreground leading-relaxed space-y-4">
             <p>{t('journeyPara1')}</p>
             <p>{t('journeyPara2')}</p>
+            <p>{t('journeyPara3')}</p>
+            <p>{t('journeyPara4')}</p>
 
             <h2 className="font-[family-name:var(--font-heading)] text-[28px] md:text-[36px] font-medium text-foreground !mt-6 mb-2">
               {t('journeySubheading')}
