@@ -77,6 +77,12 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             ))}
 
             <p>{t('journeyClosing')}</p>
+
+            <h2 className="font-[family-name:var(--font-heading)] text-[28px] md:text-[36px] font-medium text-foreground !mt-8 mb-3">
+              {t('beyondHeading')}
+            </h2>
+            <p className="text-base text-foreground leading-relaxed">{t('beyondBody1')}</p>
+            <p className="text-base text-foreground leading-relaxed">{t('beyondBody2')}</p>
           </div>
         </div>
 
