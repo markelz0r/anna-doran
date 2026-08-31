@@ -26,6 +26,9 @@ export default function ConsentPage() {
       healthData: form.get('consent_healthData') === 'on',
       noGuarantee: form.get('consent_noGuarantee') === 'on',
       gpContact: form.get('consent_gpContact') === 'on',
+      insurerSharing: form.get('consent_insurerSharing') === 'on',
+      videoRecording: form.get('consent_videoRecording') === 'on',
+      cancellationWaiver: form.get('consent_cancellationWaiver') === 'on',
     })
 
     setStatus(result.success ? 'success' : 'error')
@@ -116,6 +119,36 @@ export default function ConsentPage() {
                     {t('consent4')}
                     <span className="text-muted-foreground ml-1">({t('optional')})</span>
                   </span>
+                </Label>
+              </div>
+
+              {/* Consent 5: Insurer sharing (optional, Art 9(2)(a)) */}
+              <div className="flex items-start gap-2 sm:gap-3">
+                <Checkbox id="consent_insurerSharing" name="consent_insurerSharing" className="mt-1" />
+                <span className="text-sm font-medium mt-0.5 shrink-0 invisible" aria-hidden="true">*</span>
+                <Label htmlFor="consent_insurerSharing" className="text-sm text-foreground leading-relaxed font-normal">
+                  <span>
+                    {t('consent5')}
+                    <span className="text-muted-foreground ml-1">({t('optional')})</span>
+                  </span>
+                </Label>
+              </div>
+
+              {/* Consent 6: Video recording (required) */}
+              <div className="flex items-start gap-2 sm:gap-3">
+                <Checkbox id="consent_videoRecording" name="consent_videoRecording" required className="mt-1" />
+                <span className="text-red-500 font-medium text-sm mt-0.5 shrink-0" aria-hidden="true">*</span>
+                <Label htmlFor="consent_videoRecording" className="text-sm text-foreground leading-relaxed font-normal">
+                  {t('consent6')}
+                </Label>
+              </div>
+
+              {/* Consent 7: CCR 2013 waiver (required) */}
+              <div className="flex items-start gap-2 sm:gap-3">
+                <Checkbox id="consent_cancellationWaiver" name="consent_cancellationWaiver" required className="mt-1" />
+                <span className="text-red-500 font-medium text-sm mt-0.5 shrink-0" aria-hidden="true">*</span>
+                <Label htmlFor="consent_cancellationWaiver" className="text-sm text-foreground leading-relaxed font-normal">
+                  {t('consent7')}
                 </Label>
               </div>
 

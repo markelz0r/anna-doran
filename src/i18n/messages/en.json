@@ -468,7 +468,10 @@
     "submit": "I confirm and agree",
     "successTitle": "Thank you!",
     "successMessage": "Thank you — your consent has been received. I will be in touch shortly to arrange your first session.",
-    "error": "Something went wrong. Please try again, or email me at contact@annadorandiet.com."
+    "error": "Something went wrong. Please try again, or email me at contact@annadorandiet.com.",
+    "consent5": "If I am using private health insurance to pay for my sessions (e.g. WPA, AXA Health, Aviva), I explicitly consent (under UK GDPR Article 9(2)(a)) to Anna sharing relevant clinical notes with my insurer if they request them as part of processing a claim. This consent is separate from the consent for direct care above and I can withdraw it at any time.",
+    "consent6": "I understand that consultations are held via Google Meet (or a mutually agreed alternative platform). Sessions are not audio- or video-recorded unless we agree in writing before the session begins.",
+    "consent7": "If I have booked a session to take place within the next 14 days, I agree to that session going ahead within this period. I understand that under the Consumer Contracts Regulations 2013, this means I won't be entitled to a full refund once the session has taken place."
   },
   "cookieBanner": {
     "message": "This website uses essential cookies to ensure it works properly.",

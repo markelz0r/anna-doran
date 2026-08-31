@@ -95,19 +95,20 @@ async function sendTelegramNotification(data: {
   }
   const prefLabel = prefLabelMap[data.preferredContact || 'email'] || 'Email'
 
-  // Notification deliberately excludes the service selection and message body —
-  // both can contain special-category health data which UK GDPR/ICO guidance
-  // says should not be transmitted via non-UK-compliant channels like Telegram.
-  // Full submission details are stored in Payload at /admin and visible there only.
+  const serviceLabel = data.service ? (SERVICE_LABELS[data.service] || data.service) : null
+
   const text = [
-    '📩 New enquiry — full details in admin panel',
+    '📩 New enquiry',
     '',
     `👤 Name: ${data.name}`,
     `📧 Email: ${data.email}`,
     data.phone ? `📞 Phone: ${data.phone}` : '',
     `✅ Prefers: ${prefLabel}`,
+    serviceLabel ? `🎯 Service: ${serviceLabel}` : '',
     '',
-    '🔒 Open https://annadorandiet.com/admin → Contact Submissions to view the service requested and message body.',
+    data.message ? `💬 Message:\n${data.message}` : '',
+    '',
+    '🔗 Full record: https://annadorandiet.com/admin → Contact Submissions',
   ].filter(Boolean).join('\n')
 
   try {
@@ -128,6 +129,9 @@ async function sendTelegramConsent(data: {
   healthData: boolean
   noGuarantee: boolean
   gpContact: boolean
+  insurerSharing: boolean
+  videoRecording: boolean
+  cancellationWaiver: boolean
 }) {
   const token = process.env.TELEGRAM_CONSENT_BOT_TOKEN
   const chatId = process.env.TELEGRAM_CHAT_ID
@@ -143,6 +147,9 @@ async function sendTelegramConsent(data: {
     `✅ Health data processing: ${data.healthData ? 'Yes' : 'No'}`,
     `✅ No guarantee understood: ${data.noGuarantee ? 'Yes' : 'No'}`,
     `${data.gpContact ? '✅' : '⬜'} GP contact: ${data.gpContact ? 'Yes' : 'No'}`,
+    `${data.insurerSharing ? '✅' : '⬜'} Insurer sharing (Art 9(2)(a)): ${data.insurerSharing ? 'Yes' : 'No'}`,
+    `✅ Video recording acknowledged: ${data.videoRecording ? 'Yes' : 'No'}`,
+    `✅ 14-day cooling-off waiver (CCR 2013): ${data.cancellationWaiver ? 'Yes' : 'No'}`,
     '',
     `📅 Date: ${new Date().toISOString().split('T')[0]}`,
   ].join('\n')
@@ -165,6 +172,9 @@ export async function submitConsent(data: {
   healthData: boolean
   noGuarantee: boolean
   gpContact: boolean
+  insurerSharing: boolean
+  videoRecording: boolean
+  cancellationWaiver: boolean
 }) {
   try {
     await sendTelegramConsent(data)
