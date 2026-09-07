@@ -8,9 +8,13 @@ services:
         - NEXT_PUBLIC_GA_MEASUREMENT_ID=${NEXT_PUBLIC_GA_MEASUREMENT_ID:-}
     expose:
       - "3000"
+    # Secrets (PAYLOAD_SECRET, Telegram, MailerLite) come from .env on the host.
+    # Never reintroduce a PAYLOAD_SECRET default here: a fallback value would
+    # silently invalidate every existing admin session.
+    env_file:
+      - .env
     environment:
       - DATABASE_URI=mongodb://mongo:27017/anna-doran
-      - PAYLOAD_SECRET=${PAYLOAD_SECRET:-prod-secret-change-me-in-env}
       - NEXT_PUBLIC_SERVER_URL=https://annadorandiet.com
     depends_on:
       - mongo
