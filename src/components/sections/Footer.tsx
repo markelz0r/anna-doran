@@ -49,6 +49,9 @@ export function Footer({ settings, locale }: FooterProps) {
               <a href={`/${locale}#testimonials`} className="text-white/80 hover:text-white transition-colors text-[15px]">
                 {t('linkTestimonials')}
               </a>
+              <a href={`/${locale}/faq`} className="text-white/80 hover:text-white transition-colors text-[15px]">
+                {t('linkFaq')}
+              </a>
               <a href={`/${locale}#contacts`} className="text-white/80 hover:text-white transition-colors text-[15px]">
                 {t('linkContact')}
               </a>
@@ -119,9 +122,6 @@ export function Footer({ settings, locale }: FooterProps) {
             {t('copyright', { year: new Date().getFullYear() })}
           </p>
           <div className="flex gap-4">
-            <a href={`/${locale}/faq`} className="text-[12px] text-white/60 hover:text-white transition-colors">
-              {t('faq')}
-            </a>
             <a href={`/${locale}/privacy-policy`} className="text-[12px] text-white/60 hover:text-white transition-colors">
               {t('privacyPolicy')}
             </a>

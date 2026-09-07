@@ -15,6 +15,7 @@ import { Goals } from '@/collections/Goals'
 import { EducationTimeline } from '@/collections/EducationTimeline'
 import { ContactSubmissions } from '@/collections/ContactSubmissions'
 import { ConsentSubmissions } from '@/collections/ConsentSubmissions'
+import { NewsletterSubscribers } from '@/collections/NewsletterSubscribers'
 import { QuizLeads } from '@/collections/QuizLeads'
 
 import { SiteSettings } from '@/globals/SiteSettings'
@@ -43,6 +44,7 @@ export default buildConfig({
     EducationTimeline,
     ContactSubmissions,
     ConsentSubmissions,
+    NewsletterSubscribers,
     QuizLeads,
   ],
   globals: [SiteSettings, HeroContent, AboutContent, FooterContent],

@@ -10,7 +10,7 @@ type MailerLiteResult = { ok: true } | { ok: false; reason: string }
 
 async function addToMailerLite(
   email: string,
-  name: string,
+  name: string | undefined,
   groupId: string,
   fields?: Record<string, string>,
 ): Promise<MailerLiteResult> {
@@ -34,7 +34,7 @@ async function addToMailerLite(
       },
       body: JSON.stringify({
         email,
-        fields: { name, ...fields },
+        fields: { ...(name ? { name } : {}), ...fields },
         groups: [groupId],
       }),
     })
@@ -248,21 +248,95 @@ export async function submitQuizLead(data: {
   if (quizGroup && data.newsletterConsent) {
     await addToMailerLite(data.email, data.name, quizGroup, { bloating_type: data.resultType })
   }
-  if (newsletterGroup && data.newsletterConsent) {
-    await addToMailerLite(data.email, data.name, newsletterGroup)
+  if (data.newsletterConsent) {
+    const recordId = await recordNewsletterSubscriber(data.email, { locale: data.locale, source: 'quiz' })
+    if (newsletterGroup) {
+      await markMailerLiteOutcome(recordId, await addToMailerLite(data.email, data.name, newsletterGroup))
+    }
   }
 
   return { success: true }
 }
 
-export async function submitNewsletter(data: { name: string; email: string }) {
+type NewsletterSource = 'newsletter-form' | 'enquiry-form' | 'quiz'
+
+/**
+ * Records a newsletter opt-in on our own server, whichever form it came from.
+ * Stored before MailerLite is contacted so a MailerLite outage cannot lose a
+ * subscriber; the flag it sets shows which ones still need adding by hand.
+ * Returns the record id, or undefined if the write failed.
+ */
+async function recordNewsletterSubscriber(
+  emailRaw: string,
+  opts: { locale?: string; source: NewsletterSource },
+): Promise<string | number | undefined> {
+  const email = emailRaw.trim().toLowerCase()
+  try {
+    const payload = await getPayload({ config })
+    const existing = await payload.find({
+      collection: 'newsletter-subscribers',
+      where: { email: { equals: email } },
+      limit: 1,
+    })
+    if (existing.docs.length > 0) return existing.docs[0].id
+
+    const created = await payload.create({
+      collection: 'newsletter-subscribers',
+      data: {
+        email,
+        source: opts.source,
+        addedToMailerLite: false,
+        locale: opts.locale,
+        subscribedAt: new Date().toISOString(),
+      },
+    })
+    return created.id
+  } catch (err) {
+    console.error('[Newsletter] failed to store subscriber:', err)
+    return undefined
+  }
+}
+
+/** Records whether the automatic MailerLite add worked, for the admin view. */
+async function markMailerLiteOutcome(
+  id: string | number | undefined,
+  result: MailerLiteResult,
+): Promise<void> {
+  if (id === undefined) return
+  try {
+    const payload = await getPayload({ config })
+    await payload.update({
+      collection: 'newsletter-subscribers',
+      id,
+      data: {
+        addedToMailerLite: result.ok,
+        mailerLiteError: result.ok ? undefined : result.reason,
+      },
+    })
+  } catch (err) {
+    console.error('[Newsletter] failed to record MailerLite outcome:', err)
+  }
+}
+
+export async function submitNewsletter(data: { email: string; locale?: string }) {
+  const recordId = await recordNewsletterSubscriber(data.email, {
+    locale: data.locale,
+    source: 'newsletter-form',
+  })
+  if (recordId === undefined) return { success: false, reason: 'store_failed' }
+
   const newsletterGroup = process.env.MAILERLITE_NEWSLETTER_GROUP
   if (!newsletterGroup) {
     console.error('[Newsletter] MAILERLITE_NEWSLETTER_GROUP env var is not set')
-    return { success: false, reason: 'config_missing' }
+    return { success: true }
   }
-  const result = await addToMailerLite(data.email, data.name, newsletterGroup)
-  return { success: result.ok, reason: result.ok ? undefined : result.reason }
+
+  const result = await addToMailerLite(data.email.trim().toLowerCase(), undefined, newsletterGroup)
+  await markMailerLiteOutcome(recordId, result)
+
+  // Their address is safely stored either way, so the signup has succeeded
+  // from the subscriber's point of view.
+  return { success: true }
 }
 
 export async function submitContact(data: {
@@ -296,8 +370,14 @@ export async function submitContact(data: {
 
     // Newsletter is a separate, optional opt-in: never subscribe without the tick.
     const newsletterGroup = process.env.MAILERLITE_NEWSLETTER_GROUP
-    if (newsletterGroup && data.newsletterConsent) {
-      await addToMailerLite(data.email, data.name, newsletterGroup)
+    if (data.newsletterConsent) {
+      const recordId = await recordNewsletterSubscriber(data.email, {
+        locale: data.locale,
+        source: 'enquiry-form',
+      })
+      if (newsletterGroup) {
+        await markMailerLiteOutcome(recordId, await addToMailerLite(data.email, data.name, newsletterGroup))
+      }
     }
 
     return { success: true }

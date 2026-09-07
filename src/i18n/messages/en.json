@@ -331,7 +331,8 @@
     "bda": "Member of the British Dietetic Association",
     "copyright": "© {year} Anna Doran Health. All rights reserved.",
     "serviceAskDietitian": "Ask a Dietitian",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "linkFaq": "FAQ"
   },
   "newsletter": {
     "heading": "Nutrition tips & inspiration",
@@ -598,12 +599,12 @@
     "websiteDataHeading": "What information is collected via this website",
     "websiteData1": "This website uses Google Analytics to help me understand how the site is used — for example which pages are most read. It is entirely optional: no analytics cookie is set and no data is sent to Google unless you press 'Accept analytics' on the cookie notice, and you can change your mind at any time using the 'Cookie settings' link in the footer. IP addresses are anonymised, and I only ever see general trends, never individual visitors. There is no advertising pixel or session-recording tool on this site. My hosting provider also keeps standard server logs for security and reliability purposes.",
     "websiteData2": "This website uses cookies to help provide a better user experience. Please see my <link>Cookie Policy</link> for full details. You may disable cookies in your browser if you prefer.",
-    "websiteData3": "You can subscribe to my newsletter from the signup form, the bloating quiz or the enquiry form. In every case it is a separate, optional tick box — I will never add you to the list because you contacted me or took the quiz. Your name and email are stored in MailerLite and used only to send you updates, and you can unsubscribe from any email at any time.",
+    "websiteData3": "You can subscribe to my newsletter from the signup form, the bloating quiz or the enquiry form. In every case it is a separate, optional tick box — I will never add you to the list because you contacted me or took the quiz. The signup form asks for your email address only. If you subscribe through the quiz or the enquiry form, the name you gave there is stored alongside it. Your details are held in MailerLite, used only to send you updates, and you can unsubscribe from any email at any time.",
     "websiteData4": "When you submit the contact form, your name, email, phone number, selected service and message are saved securely on my own server. A short notification is sent to me via Telegram so that I can respond promptly. That notification contains only your first name, the service you selected and how you would prefer to be contacted. Telegram is operated outside the UK; see 'Sending data outside the UK' below.",
     "thirdPartyHeading": "Third-party service providers",
     "thirdPartyIntro": "I use the following third-party services to operate my business. Each provider has their own privacy policy and data protection measures:",
     "thirdParty1": "Stripe — payment processing. Your card details are handled securely by Stripe and are never stored on my systems.",
-    "thirdParty2": "MailerLite — email newsletter. Your name and email are stored to send you nutrition updates you have subscribed to.",
+    "thirdParty2": "MailerLite — email newsletter. Your email address is stored so that I can send you the nutrition updates you asked for, together with your name if you subscribed through the quiz or the enquiry form.",
     "thirdParty3": "Telegram — sends me an instant notification when you submit the contact form, the client consent form or the bloating quiz, so that I can respond to you promptly. Notifications contain only a first name and, depending on the form, the service you selected or your general quiz result category. I read each full submission in my own admin system. Telegram is operated outside the UK; see 'Sending data outside the UK' below.",
     "thirdParty4": "Contabo (server hosting) — the website and database are hosted on secure servers in Europe.",
     "thirdParty5": "Google Meet — used for online video consultations. Audio and video are transmitted in real time and are not recorded unless separately agreed with you in writing. Google Meet is provided as part of my Google Workspace subscription and operates under Google's Data Processing Addendum.",
