@@ -112,7 +112,8 @@
     "successWhatsapp": "Thank you! I'll message you on WhatsApp within 48 hours.",
     "successAny": "Thank you! I'll get back to you within 48 hours.",
     "error": "Something went wrong. Please try again.",
-    "newsletterConsent": "Email me occasional gut health tips and updates. You can unsubscribe at any time."
+    "newsletterConsent": "Email me occasional gut health tips and updates. You can unsubscribe at any time.",
+    "requiredNote": "Required"
   },
   "services": {
     "bookNow": "Book now",

@@ -14,6 +14,14 @@ interface ContactProps {
   locale: string
 }
 
+function Req() {
+  return (
+    <span className="text-destructive ml-0.5" aria-hidden="true">
+      *
+    </span>
+  )
+}
+
 export function Contact({ locale }: ContactProps) {
   const t = useTranslations('sections')
   const f = useTranslations('form')
@@ -87,17 +95,27 @@ export function Contact({ locale }: ContactProps) {
           <p className="text-center text-green-600 font-medium">{f(successKey)}</p>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
+            <p className="text-xs text-muted-foreground">
+              <Req /> {f('requiredNote')}
+            </p>
             <div>
-              <Label htmlFor="name">{f('name')}</Label>
+              <Label htmlFor="name">
+                {f('name')}
+                <Req />
+              </Label>
               <Input id="name" name="name" required />
             </div>
             <div>
-              <Label htmlFor="email">{f('email')}</Label>
+              <Label htmlFor="email">
+                {f('email')}
+                <Req />
+              </Label>
               <Input id="email" name="email" type="email" required />
             </div>
             <div>
               <Label htmlFor="phone">
-                {f('phone')}{(preferredContact === 'call' || preferredContact === 'whatsapp') ? ' *' : ''}
+                {f('phone')}
+                {(preferredContact === 'call' || preferredContact === 'whatsapp') && <Req />}
               </Label>
               <Input
                 id="phone"
@@ -128,7 +146,10 @@ export function Contact({ locale }: ContactProps) {
               </div>
             </div>
             <div>
-              <Label htmlFor="service">{f('service')}</Label>
+              <Label htmlFor="service">
+                {f('service')}
+                <Req />
+              </Label>
               <select
                 id="service"
                 name="service"
@@ -161,6 +182,7 @@ export function Contact({ locale }: ContactProps) {
                 <a href={`/${locale}/privacy-policy`} target="_blank" className="text-primary underline hover:text-primary/80">
                   {f('privacyLink')}
                 </a>
+                <Req />
               </Label>
             </div>
             <div className="flex items-center gap-2">
