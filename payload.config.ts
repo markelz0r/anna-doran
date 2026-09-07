@@ -14,6 +14,8 @@ import { Conditions } from '@/collections/Conditions'
 import { Goals } from '@/collections/Goals'
 import { EducationTimeline } from '@/collections/EducationTimeline'
 import { ContactSubmissions } from '@/collections/ContactSubmissions'
+import { ConsentSubmissions } from '@/collections/ConsentSubmissions'
+import { QuizLeads } from '@/collections/QuizLeads'
 
 import { SiteSettings } from '@/globals/SiteSettings'
 import { HeroContent } from '@/globals/HeroContent'
@@ -40,6 +42,8 @@ export default buildConfig({
     Goals,
     EducationTimeline,
     ContactSubmissions,
+    ConsentSubmissions,
+    QuizLeads,
   ],
   globals: [SiteSettings, HeroContent, AboutContent, FooterContent],
   editor: lexicalEditor(),

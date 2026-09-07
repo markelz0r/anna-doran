@@ -85,6 +85,7 @@ export default function QuizPage() {
       email: form.get('email') as string,
       resultType: result,
       newsletterConsent: form.get('newsletter') === 'on',
+      locale,
     })
     setStatus('done')
     setStep(8)

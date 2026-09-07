@@ -42,3 +42,6 @@ next-env.d.ts
 # deploy scripts with credentials
 deploy.py
 run-seed.py
+
+# Personal Claude context (not for repo)
+CLAUDE.md

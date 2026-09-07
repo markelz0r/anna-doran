@@ -11,6 +11,7 @@ import { Header } from '@/components/sections/Header'
 import { Footer } from '@/components/sections/Footer'
 import { FloatingCTA } from '@/components/shared/FloatingCTA'
 import { CookieBanner } from '@/components/shared/CookieBanner'
+import { GoogleAnalytics } from '@/components/shared/GoogleAnalytics'
 import '@/app/globals.css'
 
 const cormorantSC = Cormorant_SC({
@@ -58,6 +59,7 @@ export default async function LocaleLayout({
           <Footer settings={settings} locale={locale} />
           <FloatingCTA />
           <CookieBanner />
+          <GoogleAnalytics />
         </NextIntlClientProvider>
       </body>
     </html>

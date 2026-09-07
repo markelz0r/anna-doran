@@ -33,6 +33,7 @@ export function Contact({ locale }: ContactProps) {
       service: (formData.get('service') as string) || undefined,
       message: (formData.get('message') as string) || undefined,
       privacyConsent: formData.get('privacyConsent') === 'on',
+      newsletterConsent: formData.get('newsletterConsent') === 'on',
       locale,
     })
 
@@ -160,6 +161,12 @@ export function Contact({ locale }: ContactProps) {
                 <a href={`/${locale}/privacy-policy`} target="_blank" className="text-primary underline hover:text-primary/80">
                   {f('privacyLink')}
                 </a>
+              </Label>
+            </div>
+            <div className="flex items-center gap-2">
+              <Checkbox id="newsletterConsent" name="newsletterConsent" />
+              <Label htmlFor="newsletterConsent" className="text-sm text-muted-foreground">
+                {f('newsletterConsent')}
               </Label>
             </div>
             <Button type="submit" className="w-full bg-primary hover:bg-primary/90" disabled={status === 'loading'}>

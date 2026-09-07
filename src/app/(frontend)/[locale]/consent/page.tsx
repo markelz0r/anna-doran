@@ -29,6 +29,7 @@ export default function ConsentPage() {
       insurerSharing: form.get('consent_insurerSharing') === 'on',
       videoRecording: form.get('consent_videoRecording') === 'on',
       cancellationWaiver: form.get('consent_cancellationWaiver') === 'on',
+      locale,
     })
 
     setStatus(result.success ? 'success' : 'error')
@@ -163,6 +164,10 @@ export default function ConsentPage() {
               <div>
                 <h3 className="font-medium text-foreground mb-2 text-base">{t('withdrawalHeading')}</h3>
                 <p className="text-sm text-[#4b4b4b] leading-relaxed">{t('withdrawalBody')}</p>
+              </div>
+              <div>
+                <h3 className="font-medium text-foreground mb-2 text-base">{t('recordHeading')}</h3>
+                <p className="text-sm text-[#4b4b4b] leading-relaxed">{t('recordBody')}</p>
               </div>
             </div>
 

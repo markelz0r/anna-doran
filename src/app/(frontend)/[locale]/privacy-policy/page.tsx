@@ -44,6 +44,7 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
               <li>{t('businessInfo2')}</li>
               <li>{t('businessInfo3')}</li>
               <li>{t('businessInfo4')}</li>
+              <li>{t('businessInfo5')}</li>
             </ul>
           </div>
 
@@ -86,9 +87,22 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
             <h2 className="font-[family-name:var(--font-heading)] text-[22px] font-semibold mb-3">{t('websiteDataHeading')}</h2>
             <ul className="list-disc pl-6 space-y-2">
               <li>{t('websiteData1')}</li>
-              <li>{t('websiteData2')}</li>
+              <li>
+                {t.rich('websiteData2', {
+                  link: (chunks) => (
+                    <a
+                      href={`/${locale}/cookie-policy`}
+                      className="text-primary underline hover:text-primary/80"
+                    >
+                      {chunks}
+                    </a>
+                  ),
+                })}
+              </li>
               <li>{t('websiteData3')}</li>
               <li>{t('websiteData4')}</li>
+              <li>{t('websiteData5')}</li>
+              <li>{t('websiteData6')}</li>
             </ul>
           </div>
 
@@ -105,7 +119,16 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
               <li>{t('thirdParty6')}</li>
               <li>{t('thirdParty7')}</li>
               <li>{t('thirdParty8')}</li>
+              <li>{t('thirdParty9')}</li>
+              <li>{t('thirdParty10')}</li>
             </ul>
+          </div>
+
+          {/* Private medical insurance */}
+          <div>
+            <h2 className="font-[family-name:var(--font-heading)] text-[22px] font-semibold mb-3">{t('insuranceHeading')}</h2>
+            <p>{t('insurance')}</p>
+            <p className="mt-3">{t('insurance2')}</p>
           </div>
 
           {/* Controlling your info */}
@@ -134,6 +157,39 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
               <li>{t('right6')}</li>
             </ul>
             <p className="mt-3">{t('rightsICO')}</p>
+          </div>
+
+          {/* International transfers */}
+          <div>
+            <h2 className="font-[family-name:var(--font-heading)] text-[22px] font-semibold mb-3">{t('transfersHeading')}</h2>
+            <p>{t('transfers')}</p>
+            <p className="mt-3">{t('transfers2')}</p>
+            <p className="mt-3">{t('transfers3')}</p>
+            <p className="mt-3">{t('transfers4')}</p>
+          </div>
+
+          {/* Security */}
+          <div>
+            <h2 className="font-[family-name:var(--font-heading)] text-[22px] font-semibold mb-3">{t('securityHeading')}</h2>
+            <p>{t('security')}</p>
+          </div>
+
+          {/* Automated decision-making */}
+          <div>
+            <h2 className="font-[family-name:var(--font-heading)] text-[22px] font-semibold mb-3">{t('automatedHeading')}</h2>
+            <p>{t('automated')}</p>
+          </div>
+
+          {/* Complaints */}
+          <div>
+            <h2 className="font-[family-name:var(--font-heading)] text-[22px] font-semibold mb-3">{t('complaintsHeading')}</h2>
+            <p>{t('complaints')}</p>
+          </div>
+
+          {/* Changes to this policy */}
+          <div>
+            <h2 className="font-[family-name:var(--font-heading)] text-[22px] font-semibold mb-3">{t('changesHeading')}</h2>
+            <p>{t('changes')}</p>
           </div>
 
           {/* Data controller */}

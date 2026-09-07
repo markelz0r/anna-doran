@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
+import { CookieSettingsLink } from '@/components/shared/CookieSettingsLink'
 
 interface FooterProps {
   settings: {
@@ -127,6 +128,7 @@ export function Footer({ settings, locale }: FooterProps) {
             <a href={`/${locale}/cookie-policy`} className="text-[12px] text-white/60 hover:text-white transition-colors">
               {t('cookiePolicy')}
             </a>
+            <CookieSettingsLink className="text-[12px] text-white/60 hover:text-white transition-colors" />
           </div>
         </div>
       </div>

@@ -65,6 +65,18 @@ export default async function CookiePolicyPage({ params }: { params: Promise<{ l
                     <td className="py-2 pr-4">{t('cookie2Type')}</td>
                     <td className="py-2">{t('cookie2Duration')}</td>
                   </tr>
+                  <tr className="border-b border-border/50">
+                    <td className="py-2 pr-4 font-mono text-xs">_ga</td>
+                    <td className="py-2 pr-4">{t('cookie3Purpose')}</td>
+                    <td className="py-2 pr-4">{t('cookie3Type')}</td>
+                    <td className="py-2">{t('cookie3Duration')}</td>
+                  </tr>
+                  <tr className="border-b border-border/50">
+                    <td className="py-2 pr-4 font-mono text-xs">_ga_*</td>
+                    <td className="py-2 pr-4">{t('cookie4Purpose')}</td>
+                    <td className="py-2 pr-4">{t('cookie4Type')}</td>
+                    <td className="py-2">{t('cookie4Duration')}</td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -73,6 +85,11 @@ export default async function CookiePolicyPage({ params }: { params: Promise<{ l
           <div>
             <h2 className="font-[family-name:var(--font-heading)] text-[22px] font-semibold mb-3">{t('thirdPartyHeading')}</h2>
             <p>{t('thirdParty')}</p>
+          </div>
+
+          <div>
+            <h2 className="font-[family-name:var(--font-heading)] text-[22px] font-semibold mb-3">{t('changeMindHeading')}</h2>
+            <p>{t('changeMind')}</p>
           </div>
 
           <div>

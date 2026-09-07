@@ -4,6 +4,8 @@ import { getPayload } from 'payload'
 import config from '@payload-config'
 import { z } from 'zod'
 
+import { CONSENT_VERSION } from '@/lib/consent-version'
+
 type MailerLiteResult = { ok: true } | { ok: false; reason: string }
 
 async function addToMailerLite(
@@ -60,6 +62,7 @@ const contactSchema = z.object({
   service: z.string().optional(),
   message: z.string().optional(),
   privacyConsent: z.literal(true),
+  newsletterConsent: z.boolean().optional(),
   locale: z.string(),
 }).refine(
   (d) => (d.preferredContact !== 'call' && d.preferredContact !== 'whatsapp') || (d.phone && d.phone.trim().length > 0),
@@ -77,11 +80,8 @@ const SERVICE_LABELS: Record<string, string> = {
 
 async function sendTelegramNotification(data: {
   name: string
-  email: string
-  phone?: string
   preferredContact?: 'email' | 'call' | 'whatsapp' | 'any'
   service?: string
-  message?: string
 }) {
   const token = process.env.TELEGRAM_BOT_TOKEN
   const chatId = process.env.TELEGRAM_CHAT_ID
@@ -97,18 +97,18 @@ async function sendTelegramNotification(data: {
 
   const serviceLabel = data.service ? (SERVICE_LABELS[data.service] || data.service) : null
 
+  // Only a first name goes to Telegram — no surname, email, phone or message body.
+  // The identifying detail stays in Payload on our own server.
+  const firstName = data.name.trim().split(/\s+/)[0]
+
   const text = [
     '📩 New enquiry',
     '',
-    `👤 Name: ${data.name}`,
-    `📧 Email: ${data.email}`,
-    data.phone ? `📞 Phone: ${data.phone}` : '',
+    `👤 ${firstName}`,
     `✅ Prefers: ${prefLabel}`,
     serviceLabel ? `🎯 Service: ${serviceLabel}` : '',
     '',
-    data.message ? `💬 Message:\n${data.message}` : '',
-    '',
-    '🔗 Full record: https://annadorandiet.com/admin → Contact Submissions',
+    '🔗 Full details: https://annadorandiet.com/admin → Website Queries',
   ].filter(Boolean).join('\n')
 
   try {
@@ -122,36 +122,20 @@ async function sendTelegramNotification(data: {
   }
 }
 
-async function sendTelegramConsent(data: {
-  name: string
-  email: string
-  consultation: boolean
-  healthData: boolean
-  noGuarantee: boolean
-  gpContact: boolean
-  insurerSharing: boolean
-  videoRecording: boolean
-  cancellationWaiver: boolean
-}) {
+async function sendTelegramConsent(data: { name: string }) {
   const token = process.env.TELEGRAM_CONSENT_BOT_TOKEN
   const chatId = process.env.TELEGRAM_CHAT_ID
   if (!token || !chatId) return
 
+  // First name only: the consents themselves reveal health context, so they stay in Payload.
+  const firstName = data.name.trim().split(/\s+/)[0]
+
   const text = [
-    '📋 New client consent form submitted!',
+    '📋 New client consent form',
     '',
-    `👤 Name: ${data.name}`,
-    `📧 Email: ${data.email}`,
+    `👤 ${firstName}`,
     '',
-    `✅ Online consultation: ${data.consultation ? 'Yes' : 'No'}`,
-    `✅ Health data processing: ${data.healthData ? 'Yes' : 'No'}`,
-    `✅ No guarantee understood: ${data.noGuarantee ? 'Yes' : 'No'}`,
-    `${data.gpContact ? '✅' : '⬜'} GP contact: ${data.gpContact ? 'Yes' : 'No'}`,
-    `${data.insurerSharing ? '✅' : '⬜'} Insurer sharing (Art 9(2)(a)): ${data.insurerSharing ? 'Yes' : 'No'}`,
-    `✅ Video recording acknowledged: ${data.videoRecording ? 'Yes' : 'No'}`,
-    `✅ 14-day cooling-off waiver (CCR 2013): ${data.cancellationWaiver ? 'Yes' : 'No'}`,
-    '',
-    `📅 Date: ${new Date().toISOString().split('T')[0]}`,
+    '🔗 Full record: https://annadorandiet.com/admin → Consent Submissions',
   ].join('\n')
 
   try {
@@ -175,13 +159,28 @@ export async function submitConsent(data: {
   insurerSharing: boolean
   videoRecording: boolean
   cancellationWaiver: boolean
+  locale?: string
 }) {
   try {
-    await sendTelegramConsent(data)
-    return { success: true }
-  } catch {
+    const payload = await getPayload({ config })
+
+    await payload.create({
+      collection: 'consent-submissions',
+      data: {
+        ...data,
+        consentVersion: CONSENT_VERSION,
+        submittedAt: new Date().toISOString(),
+      },
+    })
+  } catch (err) {
+    // The stored record is the evidence of consent under UK GDPR Art 7(1),
+    // so a write failure must surface rather than be masked by Telegram succeeding.
+    console.error('[Consent] failed to store submission:', err)
     return { success: false }
   }
+
+  await sendTelegramConsent(data)
+  return { success: true }
 }
 
 export async function submitQuizLead(data: {
@@ -189,7 +188,27 @@ export async function submitQuizLead(data: {
   email: string
   resultType: string
   newsletterConsent: boolean
+  locale?: string
 }) {
+  // Store the full record on our own server first: Telegram only gets the
+  // result category, so this is the only place the lead's details are kept.
+  try {
+    const payload = await getPayload({ config })
+    await payload.create({
+      collection: 'quiz-leads',
+      data: {
+        name: data.name,
+        email: data.email,
+        resultType: data.resultType as 'A' | 'B' | 'C',
+        newsletterConsent: data.newsletterConsent,
+        locale: data.locale,
+        submittedAt: new Date().toISOString(),
+      },
+    })
+  } catch (err) {
+    console.error('[QuizLead] failed to store lead', err)
+  }
+
   const token = process.env.TELEGRAM_BOT_TOKEN
   const chatId = process.env.TELEGRAM_CHAT_ID
   if (token && chatId) {
@@ -198,13 +217,15 @@ export async function submitQuizLead(data: {
       B: 'FODMAP-Related',
       C: 'Lifestyle & Habits',
     }
+    // First name only, never the email address. The full lead is in Payload.
+    const firstName = data.name.trim().split(/\s+/)[0]
+
     const text = [
-      '📊 New quiz lead!',
+      '📊 Quiz completed',
       '',
-      `👤 Name: ${data.name}`,
-      `📧 Email: ${data.email}`,
-      `🔖 Bloating type: ${typeLabels[data.resultType] || data.resultType}`,
-      `📬 Newsletter consent: ${data.newsletterConsent ? 'Yes' : 'No'}`,
+      `👤 ${firstName}`,
+      `🔖 Result: ${typeLabels[data.resultType] || data.resultType}`,
+      `📬 Newsletter: ${data.newsletterConsent ? 'yes' : 'no'}`,
       '',
       `📅 Date: ${new Date().toISOString().split('T')[0]}`,
     ].join('\n')
@@ -251,6 +272,7 @@ export async function submitContact(data: {
   service?: string
   message?: string
   privacyConsent: boolean
+  newsletterConsent?: boolean
   locale: string
 }) {
   try {
@@ -267,12 +289,15 @@ export async function submitContact(data: {
 
     await sendTelegramNotification({
       name: data.name,
-      email: data.email,
-      phone: data.phone,
       preferredContact: data.preferredContact,
       service: data.service,
-      message: data.message,
     })
+
+    // Newsletter is a separate, optional opt-in: never subscribe without the tick.
+    const newsletterGroup = process.env.MAILERLITE_NEWSLETTER_GROUP
+    if (newsletterGroup && data.newsletterConsent) {
+      await addToMailerLite(data.email, data.name, newsletterGroup)
+    }
 
     return { success: true }
   } catch {
