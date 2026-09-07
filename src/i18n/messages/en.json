@@ -115,7 +115,9 @@
     "error": "Something went wrong. Please try again.",
     "newsletterConsent": "Email me occasional gut health tips and updates. You can unsubscribe at any time.",
     "requiredNote": "Required",
-    "serviceAskDietitian": "Ask a Dietitian — £75"
+    "serviceAskDietitian": "Ask a Dietitian — £75",
+    "formHeading": "Send me a message",
+    "formReplyPromise": "I reply to every enquiry within 48 hours."
   },
   "services": {
     "bookNow": "Book now",
@@ -454,7 +456,10 @@
       "idealFor": "You want to discuss your current diet and health concerns and leave with clear advice — without a written plan.",
       "note": "Everything happens within the session — nothing is sent to you afterwards, so do bring something to make notes on.",
       "cta": "Pay now"
-    }
+    },
+    "faqLink": "Read the FAQ",
+    "or": "or",
+    "bookDiscoveryInline": "book a free discovery call"
   },
   "consent": {
     "requiredHint": "Items marked with * must be completed before you can submit this form.",
@@ -698,6 +703,10 @@
     "testsQ": "Will I need any tests before my assessment?",
     "testsA": "No tests are required before we meet. If you have had blood tests or other investigations recently, do bring them: reviewing your results is part of the Initial Consultation and often explains a great deal. If you haven't had anything done, that is completely fine — on the free discovery call I can give you a general steer on whether a particular kind of test is worth asking your GP about. What I do need beforehand is your health questionnaire and 5-day food diary, returned at least 3 working days ahead. I will also be straight with you about tests that are not worth your money — a number of commercial food intolerance tests sold online have no evidence behind them, and I would rather you spent that money on something that actually helps.",
     "whySpecialistQ": "Why work with a gastroenterology specialist dietitian?",
-    "whySpecialistA": "Gut symptoms are easy to guess at and hard to get right, and there is a great deal of confident, unevidenced advice about them online. Working with a specialist means a few concrete things. The advice you get is evidence-based, and I work in NHS gastroenterology alongside my private practice, so I see how these conditions are managed day to day. I keep up with the testing landscape and can tell you which tests are genuinely useful and which are marketed rather than proven. Dietitian is also a legally protected title, which is not true of every label used by people offering nutrition advice. Nothing I suggest will be extreme — restriction is a tool, not a destination, and the aim is always to widen your diet again safely. And rather than handing you a set of rules, the point is that you finish with a better understanding of your own body and a clear idea of your next step."
+    "whySpecialistA": "Gut symptoms are easy to guess at and hard to get right, and there is a great deal of confident, unevidenced advice about them online. Working with a specialist means a few concrete things. The advice you get is evidence-based, and I work in NHS gastroenterology alongside my private practice, so I see how these conditions are managed day to day. I keep up with the testing landscape and can tell you which tests are genuinely useful and which are marketed rather than proven. Dietitian is also a legally protected title, which is not true of every label used by people offering nutrition advice. Nothing I suggest will be extreme — restriction is a tool, not a destination, and the aim is always to widen your diet again safely. And rather than handing you a set of rules, the point is that you finish with a better understanding of your own body and a clear idea of your next step.",
+    "askVsConsultationQ": "What's the difference between Ask a Dietitian and an Initial Consultation?",
+    "askVsConsultationA": "Ask a Dietitian (£75, 40 minutes) is a single conversation. We talk through what is going on now, you are welcome to bring a food diary and we will look at it together, and I give you practical advice during the session. Nothing is sent afterwards, so do bring something to make notes on.\n\nAn Initial Consultation (£145, 60 minutes) is a full assessment. You complete a health questionnaire and a 5-day food diary beforehand, and I analyse those — along with any recent blood results — before we meet, so the session itself is spent on solutions rather than gathering information. Afterwards you receive a written summary, a personalised meal plan, food lists by category, and a supplement plan with doses and timing.\n\nThe simplest way to choose: if you have specific questions you want answered, book Ask a Dietitian. If you want a plan you can follow on your own afterwards, book the Initial Consultation. If you are unsure, the free 20-minute discovery call exists for exactly that.",
+    "followUpQ": "What is a follow-up session, and who is it for?",
+    "followUpA": "A follow-up (£95, 45 minutes) is for clients who have already had an Initial Consultation with me. We look at how things have gone, work out what has helped and what has not, and adjust your plan accordingly. Afterwards I send you updated written materials — revised food lists, meal plan or supplement guidance as needed — within 7 working days.\n\nFollow-ups are available at that reduced rate within 3 months of your initial consultation. After 3 months a new initial consultation is needed, simply because enough will usually have changed that starting fresh is more useful than adjusting an old plan.\n\nIf you would like ongoing support rather than occasional check-ins, the Health Coaching programme works out better value than booking follow-ups one at a time."
   }
 }

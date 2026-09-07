@@ -6,9 +6,14 @@ import { Button } from '@/components/ui/button'
 export const dynamic = 'force-dynamic'
 
 const FAQ_KEYS = [
-  'whySpecialist', 'qualified', 'referral', 'conditions', 'first', 'tests',
-  'where', 'howMany', 'covers', 'insurance', 'cancel', 'discovery', 'gp',
-  'mealPlan', 'outsideUk',
+  // Is this right for me?
+  'whySpecialist', 'qualified', 'conditions', 'referral', 'where', 'outsideUk',
+  // Which service, and what does it cost?
+  'discovery', 'askVsConsultation', 'howMany', 'followUp', 'covers', 'insurance',
+  // What actually happens
+  'first', 'tests', 'mealPlan',
+  // Afterwards and practicalities
+  'gp', 'cancel',
 ] as const
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {

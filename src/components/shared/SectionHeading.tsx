@@ -1,4 +1,5 @@
 import React from 'react'
+import { cn } from '@/lib/utils'
 
 interface SectionHeadingProps {
   children: React.ReactNode
@@ -7,7 +8,7 @@ interface SectionHeadingProps {
 
 export function SectionHeading({ children, className = '' }: SectionHeadingProps) {
   return (
-    <h2 className={`text-[36px] md:text-[42px] font-medium text-center mb-12 text-foreground ${className}`}>
+    <h2 className={cn('text-[36px] md:text-[42px] font-medium text-center mb-12 text-foreground', className)}>
       {children}
     </h2>
   )

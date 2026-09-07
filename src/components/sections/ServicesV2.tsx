@@ -145,6 +145,18 @@ export function ServicesV2({ locale }: ServicesV2Props) {
           })}
         </div>
 
+        {/* Help for anyone unsure which card is theirs */}
+        <p className="text-center text-sm text-[#4b4b4b] mt-8">
+          {s('notSure')}{' '}
+          <a href={`/${locale}/faq`} className="text-primary underline hover:text-primary/80">
+            {s('faqLink')}
+          </a>{' '}
+          {s('or')}{' '}
+          <a href="#contacts" className="text-primary underline hover:text-primary/80">
+            {s('bookDiscoveryInline')}
+          </a>.
+        </p>
+
       </div>
     </section>
   )

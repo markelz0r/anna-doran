@@ -33,7 +33,7 @@ export function ProblemsAddressed() {
           <div className="hidden lg:block">
             <div className="relative rounded-3xl overflow-hidden aspect-[2/3]">
               <Image
-                src="/images/problems-photo-1.png"
+                src="/images/problems-photo-1.webp"
                 alt=""
                 fill
                 className="object-cover"
@@ -48,7 +48,7 @@ export function ProblemsAddressed() {
           <div className="hidden lg:block">
             <div className="relative rounded-3xl overflow-hidden h-full min-h-[300px]">
               <Image
-                src="/images/problems-photo-2.png"
+                src="/images/problems-photo-2.webp"
                 alt=""
                 fill
                 className="object-cover"

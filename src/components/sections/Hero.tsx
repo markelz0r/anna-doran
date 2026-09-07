@@ -34,7 +34,7 @@ export function Hero({ name, title, heading, subtitle, ctaText, trustBadges = []
         {/* Photo banner */}
         <div className="relative h-[45vh] overflow-hidden">
           <Image
-            src="/images/hero-anna.png"
+            src="/images/hero-anna.webp"
             alt={name}
             fill
             className="object-cover object-[center_25%]"
@@ -118,7 +118,7 @@ export function Hero({ name, title, heading, subtitle, ctaText, trustBadges = []
           {/* Right column - image */}
           <div className="relative my-4 rounded-3xl overflow-hidden">
             <Image
-              src="/images/hero-anna.png"
+              src="/images/hero-anna.webp"
               alt={name}
               fill
               className="object-cover object-top"

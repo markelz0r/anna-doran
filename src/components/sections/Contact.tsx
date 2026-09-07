@@ -58,18 +58,9 @@ export function Contact({ locale }: ContactProps) {
 
   return (
     <section id="contacts" className="py-10 md:py-14 bg-card">
-      <div className="container mx-auto px-2 sm:px-4 max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-        <div className="hidden md:block">
-          <Image
-            src="/images/nutrition-greens.png"
-            alt="Anna Doran"
-            width={450}
-            height={580}
-            className="rounded-2xl shadow-lg object-cover"
-          />
-        </div>
+      <div className="container mx-auto px-2 sm:px-4 max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
       <div>
-        <SectionHeading>{t('contact')}</SectionHeading>
+        <SectionHeading className="text-left mb-4">{t('contact')}</SectionHeading>
 
         <p className="text-[15px] text-[#4b4b4b] leading-relaxed mb-6">
           {t('contactWarmIntro')}
@@ -90,7 +81,26 @@ export function Contact({ locale }: ContactProps) {
           </div>
         </div>
 
+        <div className="hidden md:block">
+          <Image
+            src="/images/nutrition-greens.webp"
+            alt="Anna Doran"
+            width={450}
+            height={580}
+            className="rounded-2xl shadow-lg object-cover w-full h-auto"
+          />
+        </div>
+      </div>
 
+      <div className="md:pt-20">
+        {status !== 'success' && (
+          <div className="mb-5">
+            <h3 className="font-[family-name:var(--font-heading)] text-[22px] md:text-[24px] font-medium text-foreground mb-1">
+              {f('formHeading')}
+            </h3>
+            <p className="text-sm text-muted-foreground">{f('formReplyPromise')}</p>
+          </div>
+        )}
         {status === 'success' ? (
           <p className="text-center text-green-600 font-medium">{f(successKey)}</p>
         ) : (

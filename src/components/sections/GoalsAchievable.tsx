@@ -26,7 +26,7 @@ export function GoalsAchievable() {
           {/* Left: image */}
           <div className="relative rounded-2xl overflow-hidden aspect-[3/4] max-w-full md:max-w-[380px] hidden sm:block">
             <Image
-              src="/images/goals-photo.png"
+              src="/images/goals-photo.webp"
               alt=""
               fill
               className="object-cover"
