@@ -45,3 +45,7 @@ run-seed.py
 
 # Personal Claude context (not for repo)
 CLAUDE.md
+
+# Photoshoot source files (working copies, not for the repo)
+/A4_*.jpg
+/W0002187_mini.jpg
