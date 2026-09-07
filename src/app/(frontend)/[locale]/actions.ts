@@ -71,10 +71,10 @@ const contactSchema = z.object({
 
 const SERVICE_LABELS: Record<string, string> = {
   'discovery-call': 'Free Discovery Call',
-  'meal-balance-check': 'Meal Balance Check — £39',
-  'initial-consultation': 'Initial Consultation — £109',
-  'follow-up-session': 'Follow-up Session — £79',
-  'gut-health-coaching': 'Health Coaching — £469',
+  'ask-dietitian': 'Ask a Dietitian — £75',
+  'initial-consultation': 'Initial Consultation — £145',
+  'follow-up-session': 'Follow-up Session — £95',
+  'gut-health-coaching': 'Health Coaching — £549',
   'not-sure': 'Not sure yet',
 }
 
@@ -153,6 +153,7 @@ export async function submitConsent(data: {
   name: string
   email: string
   consultation: boolean
+  safetyEscalation: boolean
   healthData: boolean
   noGuarantee: boolean
   gpContact: boolean

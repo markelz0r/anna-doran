@@ -9,11 +9,28 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return { title: t('title') }
 }
 
-const TERM_KEYS = ['19', '1', '20', '2', '4', '5', '6', '7', '21', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18'] as const
+/**
+ * Clauses grouped so a reader can find the part that affects them without
+ * scanning 22 undifferentiated paragraphs. Numbering runs continuously across
+ * sections so a clause can still be referred to by number.
+ *
+ * term3 (Meal Balance Check) is deliberately absent — the service was withdrawn
+ * on 7 Sep 2026 and the clause is kept in the translation files as an archive.
+ */
+const SECTIONS = [
+  { heading: 'sectionBooking',  keys: ['7', '21', '19'] },
+  { heading: 'sectionChanges',  keys: ['1', '20', '2', '8', '13'] },
+  { heading: 'sectionServices', keys: ['23', '22', '4', '5', '6'] },
+  { heading: 'sectionWorking',  keys: ['9', '12', '14', '24'] },
+  { heading: 'sectionInfo',     keys: ['11', '15', '17'] },
+  { heading: 'sectionLegal',    keys: ['10', '16', '18'] },
+] as const
 
 export default async function TermsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'terms' })
+
+  let clauseNumber = 1
 
   return (
     <section className="py-16">
@@ -35,13 +52,25 @@ export default async function TermsPage({ params }: { params: Promise<{ locale: 
         </p>
 
         <div className="text-[15px] text-foreground leading-relaxed">
-          <p className="mb-8">{t('intro')}</p>
+          <p className="mb-10">{t('intro')}</p>
 
-          <ol className="list-decimal pl-6 space-y-5">
-            {TERM_KEYS.map((key) => (
-              <li key={key}>{t(`term${key}`)}</li>
-            ))}
-          </ol>
+          {SECTIONS.map((section) => {
+            const start = clauseNumber
+            clauseNumber += section.keys.length
+
+            return (
+              <div key={section.heading} className="mb-10">
+                <h2 className="font-[family-name:var(--font-heading)] text-[22px] font-semibold mb-4 pb-2 border-b border-border">
+                  {t(section.heading)}
+                </h2>
+                <ol start={start} className="list-decimal pl-6 space-y-5">
+                  {section.keys.map((key) => (
+                    <li key={key}>{t(`term${key}`)}</li>
+                  ))}
+                </ol>
+              </div>
+            )
+          })}
 
           <div className="mt-10 pt-6 border-t border-border">
             <p className="font-medium">{t('contact')}</p>

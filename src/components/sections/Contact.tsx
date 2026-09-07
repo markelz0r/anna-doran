@@ -159,6 +159,7 @@ export function Contact({ locale }: ContactProps) {
               >
                 <option value="" disabled>{f('servicePlaceholder')}</option>
                 <option value="discovery-call">{f('serviceDiscovery')}</option>
+                <option value="ask-dietitian">{f('serviceAskDietitian')}</option>
                 <option value="initial-consultation">{f('serviceConsultation')}</option>
                 <option value="follow-up-session">{f('serviceFollowUp')}</option>
                 <option value="gut-health-coaching">{f('serviceCoaching')}</option>
@@ -174,9 +175,9 @@ export function Contact({ locale }: ContactProps) {
                 className="flex w-full rounded-md border border-input bg-transparent px-3 py-2 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
               />
             </div>
-            <div className="flex items-center gap-2">
-              <Checkbox id="privacyConsent" name="privacyConsent" required />
-              <Label htmlFor="privacyConsent" className="text-sm text-muted-foreground">
+            <div className="flex items-start gap-2">
+              <Checkbox id="privacyConsent" name="privacyConsent" required className="mt-0.5 shrink-0" />
+              <Label htmlFor="privacyConsent" className="text-sm text-muted-foreground leading-snug">
                 {f('privacyConsent')}{' '}
                 <a href={`/${locale}/privacy-policy`} target="_blank" className="text-primary underline hover:text-primary/80">
                   {f('privacyLink')}
@@ -184,9 +185,9 @@ export function Contact({ locale }: ContactProps) {
                 <Req />
               </Label>
             </div>
-            <div className="flex items-center gap-2">
-              <Checkbox id="newsletterConsent" name="newsletterConsent" />
-              <Label htmlFor="newsletterConsent" className="text-sm text-muted-foreground">
+            <div className="flex items-start gap-2">
+              <Checkbox id="newsletterConsent" name="newsletterConsent" className="mt-0.5 shrink-0" />
+              <Label htmlFor="newsletterConsent" className="text-sm text-muted-foreground leading-snug">
                 {f('newsletterConsent')}
               </Label>
             </div>

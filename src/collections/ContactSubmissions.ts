@@ -29,7 +29,7 @@ export const ContactSubmissions: CollectionConfig = {
       type: 'select',
       options: [
         { label: 'Discovery Call', value: 'discovery-call' },
-        { label: 'Meal Balance Check', value: 'meal-balance-check' },
+        { label: 'Ask a Dietitian', value: 'ask-dietitian' },
         { label: 'Initial Consultation', value: 'initial-consultation' },
         { label: 'Follow-up Session', value: 'follow-up-session' },
         { label: 'Health Coaching', value: 'gut-health-coaching' },

@@ -23,6 +23,7 @@ export default function ConsentPage() {
       name: form.get('name') as string,
       email: form.get('email') as string,
       consultation: form.get('consent_consultation') === 'on',
+      safetyEscalation: form.get('consent_safetyEscalation') === 'on',
       healthData: form.get('consent_healthData') === 'on',
       noGuarantee: form.get('consent_noGuarantee') === 'on',
       gpContact: form.get('consent_gpContact') === 'on',
@@ -64,11 +65,17 @@ export default function ConsentPage() {
             {/* Name & Email */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <Label htmlFor="name">{t('name')}</Label>
+                <Label htmlFor="name">
+                  {t('name')}{' '}
+                  <span className="text-red-500 font-medium" aria-hidden="true">*</span>
+                </Label>
                 <Input id="name" name="name" required />
               </div>
               <div>
-                <Label htmlFor="email">{t('email')}</Label>
+                <Label htmlFor="email">
+                  {t('email')}{' '}
+                  <span className="text-red-500 font-medium" aria-hidden="true">*</span>
+                </Label>
                 <Input id="email" name="email" type="email" required />
               </div>
             </div>
@@ -80,20 +87,15 @@ export default function ConsentPage() {
             </div>
 
             <div className="border-t border-border pt-6 space-y-5">
-              <p className="text-xs text-muted-foreground italic -mt-1">
+              <p className="text-sm text-[#4b4b4b] leading-relaxed -mt-1">
+                {t('voluntaryNote')}
+              </p>
+
+              <p className="text-xs text-muted-foreground italic">
                 <span className="text-red-500 font-medium not-italic">*</span> {t('requiredHint')}
               </p>
 
-              {/* Consent 1: Online consultation */}
-              <div className="flex items-start gap-2 sm:gap-3">
-                <Checkbox id="consent_consultation" name="consent_consultation" required className="mt-1" />
-                <span className="text-red-500 font-medium text-sm mt-0.5 shrink-0" aria-hidden="true">*</span>
-                <Label htmlFor="consent_consultation" className="text-sm text-foreground leading-relaxed font-normal">
-                  {t('consent1')}
-                </Label>
-              </div>
-
-              {/* Consent 2: Health data */}
+              {/* Age, capacity and health data — the core consent, so it leads */}
               <div className="flex items-start gap-2 sm:gap-3">
                 <Checkbox id="consent_healthData" name="consent_healthData" required className="mt-1" />
                 <span className="text-red-500 font-medium text-sm mt-0.5 shrink-0" aria-hidden="true">*</span>
@@ -102,40 +104,25 @@ export default function ConsentPage() {
                 </Label>
               </div>
 
-              {/* Consent 3: No guarantee */}
+              {/* Online sessions, remote limitations and scope of practice */}
               <div className="flex items-start gap-2 sm:gap-3">
-                <Checkbox id="consent_noGuarantee" name="consent_noGuarantee" required className="mt-1" />
+                <Checkbox id="consent_consultation" name="consent_consultation" required className="mt-1" />
                 <span className="text-red-500 font-medium text-sm mt-0.5 shrink-0" aria-hidden="true">*</span>
-                <Label htmlFor="consent_noGuarantee" className="text-sm text-foreground leading-relaxed font-normal">
-                  {t('consent3')}
+                <Label htmlFor="consent_consultation" className="text-sm text-foreground leading-relaxed font-normal">
+                  {t('consent1')}
                 </Label>
               </div>
 
-              {/* Consent 4: GP contact (optional) */}
+              {/* Urgent medical attention — follows directly from scope above */}
               <div className="flex items-start gap-2 sm:gap-3">
-                <Checkbox id="consent_gpContact" name="consent_gpContact" className="mt-1" />
-                <span className="text-sm font-medium mt-0.5 shrink-0 invisible" aria-hidden="true">*</span>
-                <Label htmlFor="consent_gpContact" className="text-sm text-foreground leading-relaxed font-normal">
-                  <span>
-                    {t('consent4')}
-                    <span className="text-muted-foreground ml-1">({t('optional')})</span>
-                  </span>
+                <Checkbox id="consent_safetyEscalation" name="consent_safetyEscalation" required className="mt-1" />
+                <span className="text-red-500 font-medium text-sm mt-0.5 shrink-0" aria-hidden="true">*</span>
+                <Label htmlFor="consent_safetyEscalation" className="text-sm text-foreground leading-relaxed font-normal">
+                  {t('consent8')}
                 </Label>
               </div>
 
-              {/* Consent 5: Insurer sharing (optional, Art 9(2)(a)) */}
-              <div className="flex items-start gap-2 sm:gap-3">
-                <Checkbox id="consent_insurerSharing" name="consent_insurerSharing" className="mt-1" />
-                <span className="text-sm font-medium mt-0.5 shrink-0 invisible" aria-hidden="true">*</span>
-                <Label htmlFor="consent_insurerSharing" className="text-sm text-foreground leading-relaxed font-normal">
-                  <span>
-                    {t('consent5')}
-                    <span className="text-muted-foreground ml-1">({t('optional')})</span>
-                  </span>
-                </Label>
-              </div>
-
-              {/* Consent 6: Video recording (required) */}
+              {/* Platform and no recording — practical arrangements */}
               <div className="flex items-start gap-2 sm:gap-3">
                 <Checkbox id="consent_videoRecording" name="consent_videoRecording" required className="mt-1" />
                 <span className="text-red-500 font-medium text-sm mt-0.5 shrink-0" aria-hidden="true">*</span>
@@ -144,7 +131,16 @@ export default function ConsentPage() {
                 </Label>
               </div>
 
-              {/* Consent 7: CCR 2013 waiver (required) */}
+              {/* Results are not guaranteed */}
+              <div className="flex items-start gap-2 sm:gap-3">
+                <Checkbox id="consent_noGuarantee" name="consent_noGuarantee" required className="mt-1" />
+                <span className="text-red-500 font-medium text-sm mt-0.5 shrink-0" aria-hidden="true">*</span>
+                <Label htmlFor="consent_noGuarantee" className="text-sm text-foreground leading-relaxed font-normal">
+                  {t('consent3')}
+                </Label>
+              </div>
+
+              {/* Consumer Contracts Regulations 2013 waiver */}
               <div className="flex items-start gap-2 sm:gap-3">
                 <Checkbox id="consent_cancellationWaiver" name="consent_cancellationWaiver" required className="mt-1" />
                 <span className="text-red-500 font-medium text-sm mt-0.5 shrink-0" aria-hidden="true">*</span>
@@ -153,6 +149,27 @@ export default function ConsentPage() {
                 </Label>
               </div>
 
+              <div className="pt-4 mt-2 border-t border-border">
+                <h3 className="font-medium text-foreground mb-1 text-base">{t('optionalHeading')}</h3>
+                <p className="text-sm text-[#4b4b4b] leading-relaxed mb-5">{t('optionalIntro')}</p>
+
+              {/* Optional: GP contact */}
+              <div className="flex items-start gap-2 sm:gap-3">
+                <Checkbox id="consent_gpContact" name="consent_gpContact" className="mt-1" />
+                <Label htmlFor="consent_gpContact" className="text-sm text-foreground leading-relaxed font-normal">
+                  {t('consent4')}
+                </Label>
+              </div>
+
+              {/* Optional: insurer sharing (UK GDPR Art 9(2)(a)) */}
+              <div className="flex items-start gap-2 sm:gap-3">
+                <Checkbox id="consent_insurerSharing" name="consent_insurerSharing" className="mt-1" />
+                <Label htmlFor="consent_insurerSharing" className="text-sm text-foreground leading-relaxed font-normal">
+                  {t('consent5')}
+                </Label>
+              </div>
+
+              </div>
             </div>
 
             {/* Safeguarding + withdrawal disclosures (static) */}

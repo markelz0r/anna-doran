@@ -29,6 +29,7 @@ export function Header({ settings, locale }: HeaderProps) {
     { label: t('home'), href: `/${locale}` },
     { label: t('services'), href: `/${locale}#services` },
     { label: t('about'), href: `/${locale}/about` },
+    { label: t('faq'), href: `/${locale}/faq` },
     { label: t('contacts'), href: `/${locale}#contacts` },
     { label: t('courses'), href: `/${locale}/courses` },
   ]

@@ -5,13 +5,14 @@ import { Button } from '@/components/ui/button'
 import { SectionHeading } from '@/components/shared/SectionHeading'
 
 /* ─── Service card data (hardcoded for now — move to CMS later) ─── */
-const SERVICE_KEYS = ['discoveryCall', 'initialConsultation', 'coachingProgramme'] as const
+const SERVICE_KEYS = ['discoveryCall', 'askDietitian', 'initialConsultation', 'coachingProgramme'] as const
 type ServiceKey = (typeof SERVICE_KEYS)[number]
 
-const SERVICE_META: Record<ServiceKey, { priceEN: string; priceRU: string; featured?: boolean; featureCount: number; hasFollowUp?: boolean; hasHighlight?: boolean; paymentLink?: string; calLink?: string; learnMoreHref?: string }> = {
+const SERVICE_META: Record<ServiceKey, { priceEN: string; priceRU: string; featured?: boolean; featureCount: number; hasFollowUp?: boolean; hasNote?: boolean; hasHighlight?: boolean; hasAskQuestion?: boolean; paymentLink?: string; calLink?: string; learnMoreHref?: string }> = {
   discoveryCall:       { priceEN: 'FREE',  priceRU: 'Бесплатно', featureCount: 3 },
-  initialConsultation: { priceEN: '£109',  priceRU: '10 900 ₽',  featured: true, featureCount: 7, hasFollowUp: true, paymentLink: 'https://buy.stripe.com/bJe28s4R8eJ35Vv8DvaIM0e' },
-  coachingProgramme:   { priceEN: '£469',  priceRU: '46 900 ₽',  featureCount: 6, hasHighlight: true, paymentLink: 'https://buy.stripe.com/5kQaEYerI7gB83DbPHaIM0f' },
+  askDietitian:        { priceEN: '£75',   priceRU: '8 800 ₽',   featureCount: 3, hasNote: true, hasAskQuestion: true, paymentLink: 'https://buy.stripe.com/cNi4gA5VccAV6Zz8DvaIM0h' },
+  initialConsultation: { priceEN: '£145',  priceRU: '17 000 ₽',  featured: true, featureCount: 5, hasFollowUp: true, hasAskQuestion: true, paymentLink: 'https://buy.stripe.com/dRm4gA97o30l4RraLDaIM0i' },
+  coachingProgramme:   { priceEN: '£549',  priceRU: '64 000 ₽',  featureCount: 5, hasHighlight: true, hasAskQuestion: true, paymentLink: 'https://buy.stripe.com/fZu4gA1EW44p6Zz7zraIM0j' },
 }
 
 interface ServicesV2Props {
@@ -28,9 +29,10 @@ export function ServicesV2({ locale }: ServicesV2Props) {
         <SectionHeading>{t('services')}</SectionHeading>
 
         {/* Service cards grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
           {SERVICE_KEYS.map((key) => {
             const meta = SERVICE_META[key]
+            const checkoutLink = locale === 'ru' ? undefined : meta.paymentLink
             const features: string[] = []
             for (let i = 1; i <= meta.featureCount; i++) {
               features.push(s(`${key}.feature${i}`))
@@ -87,6 +89,13 @@ export function ServicesV2({ locale }: ServicesV2Props) {
                     </p>
                   )}
 
+                  {/* Scope note — makes clear this is guidance, not a clinical assessment */}
+                  {meta.hasNote && (
+                    <p className="text-xs text-[#6b6b6b] italic mb-4 leading-relaxed">
+                      {s(`${key}.note`)}
+                    </p>
+                  )}
+
                   {/* Ideal if */}
                   <div className="bg-muted/50 rounded-lg p-3 mb-4">
                     <p className="text-xs font-semibold text-[#6b6b6b] uppercase tracking-wide mb-1">
@@ -116,12 +125,12 @@ export function ServicesV2({ locale }: ServicesV2Props) {
                       }`}
                     >
                       <a
-                        href={meta.calLink || meta.paymentLink || '#contacts'}
-                        target={meta.calLink || meta.paymentLink ? '_blank' : undefined}
-                        rel={meta.calLink || meta.paymentLink ? 'noopener noreferrer' : undefined}
+                        href={meta.calLink || checkoutLink || '#contacts'}
+                        target={meta.calLink || checkoutLink ? '_blank' : undefined}
+                        rel={meta.calLink || checkoutLink ? 'noopener noreferrer' : undefined}
                       >{s(`${key}.cta`)}</a>
                     </Button>
-                    {meta.paymentLink && (
+                    {meta.hasAskQuestion && checkoutLink && (
                       <a
                         href="#contacts"
                         className="block text-center text-sm text-primary hover:underline mt-2"

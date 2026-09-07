@@ -15,7 +15,8 @@ export const ConsentSubmissions: CollectionConfig = {
   fields: [
     { name: 'name', type: 'text', required: true },
     { name: 'email', type: 'email', required: true },
-    { name: 'consultation', type: 'checkbox', label: 'Online consultation & scope of practice' },
+    { name: 'consultation', type: 'checkbox', label: 'Online sessions & scope of practice' },
+    { name: 'safetyEscalation', type: 'checkbox', label: 'Urgent medical attention & escalation' },
     { name: 'healthData', type: 'checkbox', label: 'Health data processing (Art 6(1)(b) / 9(2)(h))' },
     { name: 'noGuarantee', type: 'checkbox', label: 'Results not guaranteed' },
     { name: 'gpContact', type: 'checkbox', label: 'GP contact (optional)' },

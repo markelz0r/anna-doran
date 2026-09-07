@@ -40,7 +40,7 @@ export function Footer({ settings, locale }: FooterProps) {
               {t('infoHeading')}
             </h3>
             <nav className="flex flex-col gap-3">
-              <a href={`/${locale}#services`} className="text-white/80 hover:text-white transition-colors text-[15px]">
+              <a href={`/${locale}/services`} className="text-white/80 hover:text-white transition-colors text-[15px]">
                 {t('linkServices')}
               </a>
               <a href={`/${locale}/about`} className="text-white/80 hover:text-white transition-colors text-[15px]">
@@ -64,13 +64,16 @@ export function Footer({ settings, locale }: FooterProps) {
               {t('servicesHeading')}
             </h3>
             <nav className="flex flex-col gap-3">
-              <a href={`/${locale}#services`} className="text-white/80 hover:text-white transition-colors text-[15px]">
+              <a href={`/${locale}/services`} className="text-white/80 hover:text-white transition-colors text-[15px]">
                 {t('serviceDiscovery')}
               </a>
-              <a href={`/${locale}#services`} className="text-white/80 hover:text-white transition-colors text-[15px]">
+              <a href={`/${locale}/services`} className="text-white/80 hover:text-white transition-colors text-[15px]">
+                {t('serviceAskDietitian')}
+              </a>
+              <a href={`/${locale}/services`} className="text-white/80 hover:text-white transition-colors text-[15px]">
                 {t('serviceConsultation')}
               </a>
-              <a href={`/${locale}#services`} className="text-white/80 hover:text-white transition-colors text-[15px]">
+              <a href={`/${locale}/services`} className="text-white/80 hover:text-white transition-colors text-[15px]">
                 {t('serviceCoaching')}
               </a>
             </nav>
@@ -116,6 +119,9 @@ export function Footer({ settings, locale }: FooterProps) {
             {t('copyright', { year: new Date().getFullYear() })}
           </p>
           <div className="flex gap-4">
+            <a href={`/${locale}/faq`} className="text-[12px] text-white/60 hover:text-white transition-colors">
+              {t('faq')}
+            </a>
             <a href={`/${locale}/privacy-policy`} className="text-[12px] text-white/60 hover:text-white transition-colors">
               {t('privacyPolicy')}
             </a>

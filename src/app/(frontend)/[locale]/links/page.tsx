@@ -25,6 +25,11 @@ const LINKS_EN = [
     icon: '📬',
   },
   {
+    label: 'Ask a Dietitian — £45',
+    href: 'https://annadorandiet.com/en#services',
+    icon: '💬',
+  },
+  {
     label: 'About Me',
     href: 'https://annadorandiet.com/en/about',
     icon: '👩‍⚕️',
@@ -67,6 +72,11 @@ const LINKS_RU = [
     label: 'Мои услуги и цены',
     href: 'https://annadorandiet.com/ru#services',
     icon: '🥗',
+  },
+  {
+    label: 'Вопрос диетологу — 4 500 ₽',
+    href: 'https://annadorandiet.com/ru#services',
+    icon: '💬',
   },
   {
     label: 'Обо мне',
