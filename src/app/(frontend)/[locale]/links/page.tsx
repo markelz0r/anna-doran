@@ -25,11 +25,6 @@ const LINKS_EN = [
     icon: '📬',
   },
   {
-    label: 'Meal Balance Check — £39',
-    href: 'https://annadorandiet.com/en/services/meal-balance-check',
-    icon: '📋',
-  },
-  {
     label: 'About Me',
     href: 'https://annadorandiet.com/en/about',
     icon: '👩‍⚕️',
@@ -72,11 +67,6 @@ const LINKS_RU = [
     label: 'Мои услуги и цены',
     href: 'https://annadorandiet.com/ru#services',
     icon: '🥗',
-  },
-  {
-    label: 'Проверка рациона — 3 900 ₽',
-    href: 'https://annadorandiet.com/ru/services/meal-balance-check',
-    icon: '📋',
   },
   {
     label: 'Обо мне',

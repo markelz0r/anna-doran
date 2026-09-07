@@ -5,12 +5,11 @@ import { Button } from '@/components/ui/button'
 import { SectionHeading } from '@/components/shared/SectionHeading'
 
 /* ─── Service card data (hardcoded for now — move to CMS later) ─── */
-const SERVICE_KEYS = ['discoveryCall', 'mealBalanceCheck', 'initialConsultation', 'coachingProgramme'] as const
+const SERVICE_KEYS = ['discoveryCall', 'initialConsultation', 'coachingProgramme'] as const
 type ServiceKey = (typeof SERVICE_KEYS)[number]
 
 const SERVICE_META: Record<ServiceKey, { priceEN: string; priceRU: string; featured?: boolean; featureCount: number; hasFollowUp?: boolean; hasHighlight?: boolean; paymentLink?: string; calLink?: string; learnMoreHref?: string }> = {
   discoveryCall:       { priceEN: 'FREE',  priceRU: 'Бесплатно', featureCount: 3 },
-  mealBalanceCheck:    { priceEN: '£39',   priceRU: '3 900 ₽',   featureCount: 6, paymentLink: 'https://buy.stripe.com/14A14o0AS8kFdnX4nfaIM0d', learnMoreHref: '/services/meal-balance-check' },
   initialConsultation: { priceEN: '£109',  priceRU: '10 900 ₽',  featured: true, featureCount: 7, hasFollowUp: true, paymentLink: 'https://buy.stripe.com/bJe28s4R8eJ35Vv8DvaIM0e' },
   coachingProgramme:   { priceEN: '£469',  priceRU: '46 900 ₽',  featureCount: 6, hasHighlight: true, paymentLink: 'https://buy.stripe.com/5kQaEYerI7gB83DbPHaIM0f' },
 }
@@ -29,7 +28,7 @@ export function ServicesV2({ locale }: ServicesV2Props) {
         <SectionHeading>{t('services')}</SectionHeading>
 
         {/* Service cards grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
           {SERVICE_KEYS.map((key) => {
             const meta = SERVICE_META[key]
             const features: string[] = []

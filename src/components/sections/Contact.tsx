@@ -159,7 +159,6 @@ export function Contact({ locale }: ContactProps) {
               >
                 <option value="" disabled>{f('servicePlaceholder')}</option>
                 <option value="discovery-call">{f('serviceDiscovery')}</option>
-                <option value="meal-balance-check">{f('serviceMealCheck')}</option>
                 <option value="initial-consultation">{f('serviceConsultation')}</option>
                 <option value="follow-up-session">{f('serviceFollowUp')}</option>
                 <option value="gut-health-coaching">{f('serviceCoaching')}</option>

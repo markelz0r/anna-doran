@@ -35,7 +35,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     ])
 
 
-  const mbc = await getTranslations({ locale, namespace: 'mealBalanceCheck' })
   const heroT = await getTranslations({ locale, namespace: 'hero' })
 
   // Extract credentials from richText
