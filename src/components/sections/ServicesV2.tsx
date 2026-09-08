@@ -8,11 +8,11 @@ import { SectionHeading } from '@/components/shared/SectionHeading'
 const SERVICE_KEYS = ['discoveryCall', 'askDietitian', 'initialConsultation', 'coachingProgramme'] as const
 type ServiceKey = (typeof SERVICE_KEYS)[number]
 
-const SERVICE_META: Record<ServiceKey, { priceEN: string; priceRU: string; featured?: boolean; featureCount: number; hasFollowUp?: boolean; hasNote?: boolean; hasHighlight?: boolean; hasAskQuestion?: boolean; paymentLink?: string; calLink?: string; learnMoreHref?: string }> = {
+const SERVICE_META: Record<ServiceKey, { priceEN: string; priceRU: string; featured?: boolean; featureCount: number; hasFollowUp?: boolean; hasNote?: boolean; hasHighlight?: boolean; hasSaving?: boolean; hasAskQuestion?: boolean; paymentLink?: string; calLink?: string; learnMoreHref?: string }> = {
   discoveryCall:       { priceEN: 'FREE',  priceRU: 'Бесплатно', featureCount: 3 },
   askDietitian:        { priceEN: '£75',   priceRU: '8 800 ₽',   featureCount: 3, hasNote: true, hasAskQuestion: true, paymentLink: 'https://buy.stripe.com/cNi4gA5VccAV6Zz8DvaIM0h' },
   initialConsultation: { priceEN: '£145',  priceRU: '17 000 ₽',  featured: true, featureCount: 5, hasFollowUp: true, hasAskQuestion: true, paymentLink: 'https://buy.stripe.com/dRm4gA97o30l4RraLDaIM0i' },
-  coachingProgramme:   { priceEN: '£549',  priceRU: '64 000 ₽',  featureCount: 5, hasHighlight: true, hasAskQuestion: true, paymentLink: 'https://buy.stripe.com/fZu4gA1EW44p6Zz7zraIM0j' },
+  coachingProgramme:   { priceEN: '£549',  priceRU: '64 000 ₽',  featureCount: 5, hasHighlight: true, hasSaving: true, hasAskQuestion: true, paymentLink: 'https://buy.stripe.com/fZu4gA1EW44p6Zz7zraIM0j' },
 }
 
 interface ServicesV2Props {
@@ -43,13 +43,22 @@ export function ServicesV2({ locale }: ServicesV2Props) {
                 key={key}
                 className={`relative flex flex-col ${
                   meta.featured
-                    ? 'border-primary border-2 shadow-lg lg:-mt-2 lg:mb-[-8px]'
+                    ? 'border-primary border-2 shadow-lg'
                     : ''
                 }`}
               >
                 {meta.featured && (
                   <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-xs px-3">
                     {s('popular')}
+                  </Badge>
+                )}
+                {/* Corner badge, mirroring "Most popular". Absolutely positioned so it costs no
+                    layout: the headers stay identical and the descriptions stay in line. The text
+                    is kept short because the card is ~213px wide at four columns and a longer
+                    label would spill into the neighbouring card. */}
+                {meta.hasHighlight && (
+                  <Badge className="absolute -top-3 right-4 bg-primary/10 text-primary text-xs px-3 hover:bg-primary/10">
+                    {s(`${key}.highlight`)}
                   </Badge>
                 )}
 
@@ -59,11 +68,6 @@ export function ServicesV2({ locale }: ServicesV2Props) {
                   </CardTitle>
                   <p className="text-sm text-[#9f9f9f] mt-1">{s(`${key}.duration`)}</p>
                   <p className="text-[24px] font-medium text-[#1781ae] mt-2">{locale === 'ru' ? meta.priceRU : meta.priceEN}</p>
-                  {meta.hasHighlight && (
-                    <span className="inline-block mt-1 text-xs font-semibold text-primary bg-primary/10 rounded-full px-3 py-1 w-fit">
-                      {s(`${key}.highlight`)}
-                    </span>
-                  )}
                 </CardHeader>
 
                 <CardContent className="flex-1 flex flex-col">
@@ -82,12 +86,23 @@ export function ServicesV2({ locale }: ServicesV2Props) {
                     ))}
                   </ul>
 
-                  {/* Follow-up note */}
+                  {/* Follow-up note. The coaching equivalent sits in this same slot rather than
+                      under the price: it keeps the header the same height as its sibling cards,
+                      and a follow-up rate reads as a detail for someone already interested, not
+                      something needed while scanning prices. £80.80 against the £95 on the
+                      Initial Consultation card is the whole value argument — no struck-through
+                      "was" price, since £620 was never a former selling price. */}
                   {meta.hasFollowUp && (
                     <p className="text-sm text-primary font-medium mb-4">
                       + {s(`${key}.followUp`)}
                     </p>
                   )}
+                  {meta.hasSaving && (
+                    <p className="text-sm text-primary font-medium mb-4">
+                      {s(`${key}.perSession`)}
+                    </p>
+                  )}
+
 
                   {/* Scope note — makes clear this is guidance, not a clinical assessment */}
                   {meta.hasNote && (

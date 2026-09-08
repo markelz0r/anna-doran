@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
  */
 const SECTIONS = [
   { heading: 'sectionBooking',  keys: ['7', '21', '19'] },
-  { heading: 'sectionChanges',  keys: ['1', '20', '2', '8', '13'] },
+  { heading: 'sectionChanges',  keys: ['1', '26', '20', '13', '2', '25', '8'] },
   { heading: 'sectionServices', keys: ['23', '22', '4', '5', '6'] },
   { heading: 'sectionWorking',  keys: ['9', '12', '14', '24'] },
   { heading: 'sectionInfo',     keys: ['11', '15', '17'] },
