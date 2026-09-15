@@ -9,7 +9,7 @@ import { LinkJSXConverter, RichText, type JSXConvertersFunction } from '@payload
 import { Button } from '@/components/ui/button'
 import { Newsletter } from '@/components/sections/Newsletter'
 import { formatPostDate, imagePosition, postImage, type Post } from '@/lib/posts'
-import { SITE_URL } from '@/lib/site'
+import { ORGANIZATION_ID, PERSON_ID, SITE_URL } from '@/lib/site'
 
 export const dynamic = 'force-dynamic'
 
@@ -91,8 +91,8 @@ export default async function BlogPostPage({ params }: { params: Params }) {
     dateModified: post.updatedAt,
     mainEntityOfPage: url,
     image: image?.url ? new URL(image.url, SITE_URL).toString() : undefined,
-    author: { '@type': 'Person', name: 'Anna Doran', jobTitle: 'Dietitian', url: `${SITE_URL}/en/about` },
-    publisher: { '@type': 'Organization', name: 'Anna Doran Health', url: SITE_URL },
+    author: { '@type': 'Person', '@id': PERSON_ID, name: 'Anna Doran', jobTitle: 'Dietitian', url: `${SITE_URL}/en/about` },
+    publisher: { '@type': 'Organization', '@id': ORGANIZATION_ID, name: 'Anna Doran Health', url: SITE_URL },
   }
 
   return (

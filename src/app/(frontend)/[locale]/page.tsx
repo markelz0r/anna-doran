@@ -14,6 +14,7 @@ import { ServicesV2 } from '@/components/sections/ServicesV2'
 import { About } from '@/components/sections/About'
 import { Contact } from '@/components/sections/Contact'
 import { Newsletter } from '@/components/sections/Newsletter'
+import { ORGANIZATION_ID, PERSON_ID, SITE_URL, socialProfileUrls } from '@/lib/site'
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
@@ -40,8 +41,37 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   // Extract credentials from richText
   const credentialsList = extractRichTextParagraphs(about.credentials)
 
+  // Business and person structured data: tells search engines which social profiles belong
+  // to Anna Doran Health, so the website and those profiles are recognised as the same.
+  const profiles = socialProfileUrls(settings.social)
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Organization',
+        '@id': ORGANIZATION_ID,
+        name: 'Anna Doran Health',
+        url: SITE_URL,
+        logo: `${SITE_URL}/images/logo-color.png`,
+        email: 'contact@annadorandiet.com',
+        founder: { '@id': PERSON_ID },
+        sameAs: [profiles.instagram, profiles.youtube].filter(Boolean),
+      },
+      {
+        '@type': 'Person',
+        '@id': PERSON_ID,
+        name: 'Anna Doran',
+        jobTitle: 'Dietitian',
+        url: `${SITE_URL}/en/about`,
+        worksFor: { '@id': ORGANIZATION_ID },
+        sameAs: [profiles.instagram, profiles.youtube, profiles.linkedin].filter(Boolean),
+      },
+    ],
+  }
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Hero
         name={heroT('name')}
         title={heroT('title')}
