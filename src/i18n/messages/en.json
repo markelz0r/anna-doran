@@ -5,7 +5,8 @@
     "about": "About me",
     "contacts": "Contacts",
     "courses": "Courses & Resources",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "blog": "Blog"
   },
   "hero": {
     "name": "Anna Doran",
@@ -319,6 +320,7 @@
     "linkTestimonials": "Testimonials",
     "linkContact": "Contact",
     "linkCourses": "Courses & Resources",
+    "linkBlog": "Blog",
     "servicesHeading": "Services",
     "serviceDiscovery": "Free Discovery Call",
     "serviceMealCheck": "Meal Balance Check",
@@ -344,6 +346,20 @@
     "subscribe": "Subscribe",
     "success": "Thank you for subscribing!",
     "error": "Something went wrong — please try again, or email contact@annadorandiet.com."
+  },
+  "blog": {
+    "title": "Blog",
+    "metaTitle": "Gut Health Blog — Anna Doran, Dietitian",
+    "metaDescription": "Evidence-based articles on gut health, IBS, bloating and everyday eating from Anna Doran, HCPC-registered Dietitian.",
+    "intro": "Practical, evidence-based articles on gut health, IBS, bloating and everyday eating.",
+    "backHome": "Back to home",
+    "backToBlog": "All articles",
+    "readMore": "Read article",
+    "empty": "The first articles are on their way. In the meantime, you can sign up to my monthly newsletter below.",
+    "byline": "By Anna Doran, HCPC-registered Dietitian",
+    "disclaimer": "This article is general information, not personal medical advice. If you have symptoms or a diagnosed condition, speak to your GP or a registered healthcare professional before changing your diet.",
+    "ctaText": "Want advice that fits your own symptoms and routine?",
+    "ctaButton": "Book a free discovery call"
   },
   "courses": {
     "heading": "Courses & Resources",

@@ -32,6 +32,8 @@ export function Header({ settings, locale }: HeaderProps) {
     { label: t('faq'), href: `/${locale}/faq` },
     { label: t('contacts'), href: `/${locale}#contacts` },
     { label: t('courses'), href: `/${locale}/courses` },
+    // The blog is English-only, so the Russian menu doesn't link to it.
+    ...(locale === 'en' ? [{ label: t('blog'), href: '/en/blog' }] : []),
   ]
 
   return (
@@ -49,7 +51,7 @@ export function Header({ settings, locale }: HeaderProps) {
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-4 lg:gap-6">
           {navItems.map((item) => (
             <a key={item.href} href={item.href} className="text-sm font-medium text-foreground hover:text-primary transition-colors">
               {item.label}

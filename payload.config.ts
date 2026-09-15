@@ -9,6 +9,7 @@ import { Users } from '@/collections/Users'
 import { Media } from '@/collections/Media'
 import { Testimonials } from '@/collections/Testimonials'
 import { Services } from '@/collections/Services'
+import { Posts } from '@/collections/Posts'
 import { Problems } from '@/collections/Problems'
 import { Conditions } from '@/collections/Conditions'
 import { Goals } from '@/collections/Goals'
@@ -38,6 +39,7 @@ export default buildConfig({
     Media,
     Testimonials,
     Services,
+    Posts,
     Problems,
     Conditions,
     Goals,

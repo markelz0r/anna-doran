@@ -18,6 +18,10 @@ services:
       - NEXT_PUBLIC_SERVER_URL=https://annadorandiet.com
     depends_on:
       - mongo
+    # Files uploaded in the admin (e.g. blog pictures) are kept on the host;
+    # inside the container they would be wiped on every rebuild.
+    volumes:
+      - ./media:/app/media
     restart: unless-stopped
 
   mongo:

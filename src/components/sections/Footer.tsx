@@ -58,6 +58,11 @@ export function Footer({ settings, locale }: FooterProps) {
               <a href={`/${locale}/courses`} className="text-white/80 hover:text-white transition-colors text-[15px]">
                 {t('linkCourses')}
               </a>
+              {locale === 'en' && (
+                <a href="/en/blog" className="text-white/80 hover:text-white transition-colors text-[15px]">
+                  {t('linkBlog')}
+                </a>
+              )}
             </nav>
           </div>
 
