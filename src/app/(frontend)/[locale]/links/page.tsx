@@ -1,3 +1,4 @@
+import { pageAlternates } from '@/lib/site'
 import Image from 'next/image'
 import { setRequestLocale } from 'next-intl/server'
 import { Phone, Mail, ArrowRight } from 'lucide-react'
@@ -109,6 +110,11 @@ const LINKS_RU = [
     icon: '💼',
   },
 ]
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  return { alternates: pageAlternates(locale, '/links') }
+}
 
 export default async function LinksPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params

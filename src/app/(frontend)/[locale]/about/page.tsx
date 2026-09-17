@@ -1,3 +1,4 @@
+import { pageAlternates } from '@/lib/site'
 import Image from 'next/image'
 import { ArrowLeft, Instagram, Linkedin, Youtube } from 'lucide-react'
 import { getPayload } from 'payload'
@@ -8,6 +9,11 @@ import { Button } from '@/components/ui/button'
 import { ScrollableTimeline } from '@/components/shared/ScrollableTimeline'
 
 export const dynamic = 'force-dynamic'
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  return { alternates: pageAlternates(locale, '/about') }
+}
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params

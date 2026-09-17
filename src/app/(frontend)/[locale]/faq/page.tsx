@@ -1,3 +1,4 @@
+import { pageAlternates } from '@/lib/site'
 import Image from 'next/image'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
@@ -19,7 +20,7 @@ const FAQ_KEYS = FAQ_GROUPS.flatMap((g) => g.keys)
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'faq' })
-  return { title: t('title'), description: t('intro') }
+  return { title: t('title'), description: t('intro'), alternates: pageAlternates(locale, '/faq') }
 }
 
 export default async function FaqPage({ params }: { params: Promise<{ locale: string }> }) {

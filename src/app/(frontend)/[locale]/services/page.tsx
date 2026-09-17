@@ -1,3 +1,4 @@
+import { pageAlternates } from '@/lib/site'
 import { ArrowLeft } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
 import { ServicesV2 } from '@/components/sections/ServicesV2'
@@ -10,6 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: t('metaTitle'),
     description: t('metaDescription'),
+    alternates: pageAlternates(locale, '/services'),
   }
 }
 

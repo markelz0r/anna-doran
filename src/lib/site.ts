@@ -21,3 +21,14 @@ export function socialProfileUrls(social: SocialHandles | null | undefined) {
     linkedin: linkedin ? `https://www.linkedin.com/in/${linkedin}` : undefined,
   }
 }
+
+// Canonical address and language alternates for a page. Tells search engines which single
+// address to index (the www one) and that the English and Russian pages are versions of
+// the same content, rather than duplicates.
+export function pageAlternates(locale: string, path = '') {
+  const url = (lang: string) => `${SITE_URL}/${lang}${path}`
+  return {
+    canonical: url(locale),
+    languages: { en: url('en'), ru: url('ru'), 'x-default': url('en') },
+  }
+}

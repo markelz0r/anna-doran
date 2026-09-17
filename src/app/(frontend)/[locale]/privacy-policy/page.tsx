@@ -1,3 +1,4 @@
+import { pageAlternates } from '@/lib/site'
 import { ArrowLeft } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
 
@@ -6,7 +7,7 @@ export const dynamic = 'force-dynamic'
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'privacy' })
-  return { title: t('title') }
+  return { title: t('title'), alternates: pageAlternates(locale, '/privacy-policy') }
 }
 
 export default async function PrivacyPolicyPage({ params }: { params: Promise<{ locale: string }> }) {
