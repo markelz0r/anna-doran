@@ -58,15 +58,15 @@ const contactSchema = z.object({
   name: z.string().min(1),
   email: z.string().email(),
   phone: z.string().optional(),
-  preferredContact: z.enum(['email', 'call', 'whatsapp', 'any']),
+  preferredContact: z.enum(['email', 'text', 'any']),
   service: z.string().optional(),
   message: z.string().optional(),
   privacyConsent: z.literal(true),
   newsletterConsent: z.boolean().optional(),
   locale: z.string(),
 }).refine(
-  (d) => (d.preferredContact !== 'call' && d.preferredContact !== 'whatsapp') || (d.phone && d.phone.trim().length > 0),
-  { message: 'Phone number is required when Call or WhatsApp is the preferred contact', path: ['phone'] },
+  (d) => d.preferredContact !== 'text' || (d.phone && d.phone.trim().length > 0),
+  { message: 'Phone number is required when Text message is the preferred contact', path: ['phone'] },
 )
 
 const SERVICE_LABELS: Record<string, string> = {
@@ -80,7 +80,7 @@ const SERVICE_LABELS: Record<string, string> = {
 
 async function sendTelegramNotification(data: {
   name: string
-  preferredContact?: 'email' | 'call' | 'whatsapp' | 'any'
+  preferredContact?: 'email' | 'text' | 'any'
   service?: string
 }) {
   const token = process.env.TELEGRAM_BOT_TOKEN
@@ -89,9 +89,11 @@ async function sendTelegramNotification(data: {
 
   const prefLabelMap: Record<string, string> = {
     email: 'Email',
+    text: 'Text message',
+    any: 'Any',
+    // Older submissions still carry these.
     call: 'Call',
     whatsapp: 'WhatsApp',
-    any: 'Any',
   }
   const prefLabel = prefLabelMap[data.preferredContact || 'email'] || 'Email'
 
@@ -343,7 +345,7 @@ export async function submitContact(data: {
   name: string
   email: string
   phone?: string
-  preferredContact: 'email' | 'call' | 'whatsapp' | 'any'
+  preferredContact: 'email' | 'text' | 'any'
   service?: string
   message?: string
   privacyConsent: boolean

@@ -17,9 +17,11 @@ export const ContactSubmissions: CollectionConfig = {
       type: 'select',
       options: [
         { label: 'Email', value: 'email' },
-        { label: 'Call', value: 'call' },
-        { label: 'WhatsApp', value: 'whatsapp' },
+        { label: 'Text message', value: 'text' },
         { label: 'Any', value: 'any' },
+        // Kept so older submissions still display the option they chose.
+        { label: 'Call (legacy)', value: 'call' },
+        { label: 'WhatsApp (legacy)', value: 'whatsapp' },
         { label: 'Phone (legacy)', value: 'phone' },
         { label: 'Either (legacy)', value: 'either' },
       ],

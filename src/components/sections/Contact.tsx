@@ -26,7 +26,7 @@ export function Contact({ locale }: ContactProps) {
   const t = useTranslations('sections')
   const f = useTranslations('form')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
-  const [preferredContact, setPreferredContact] = useState<'email' | 'call' | 'whatsapp' | 'any'>('email')
+  const [preferredContact, setPreferredContact] = useState<'email' | 'text' | 'any'>('email')
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -50,8 +50,7 @@ export function Contact({ locale }: ContactProps) {
 
   const successKeyMap = {
     email: 'successEmail',
-    call: 'successCall',
-    whatsapp: 'successWhatsapp',
+    text: 'successText',
     any: 'successAny',
   } as const
   const successKey = successKeyMap[preferredContact]
@@ -125,20 +124,20 @@ export function Contact({ locale }: ContactProps) {
             <div>
               <Label htmlFor="phone">
                 {f('phone')}
-                {(preferredContact === 'call' || preferredContact === 'whatsapp') && <Req />}
+                {preferredContact === 'text' && <Req />}
               </Label>
               <Input
                 id="phone"
                 name="phone"
                 type="tel"
-                required={preferredContact === 'call' || preferredContact === 'whatsapp'}
+                required={preferredContact === 'text'}
               />
             </div>
             <div>
               <Label>{f('preferredContact')}</Label>
               <div className="flex flex-wrap gap-4 mt-2">
-                {(['email', 'call', 'whatsapp', 'any'] as const).map((opt) => {
-                  const labelKey = { email: 'prefEmail', call: 'prefCall', whatsapp: 'prefWhatsapp', any: 'prefAny' }[opt]
+                {(['email', 'text', 'any'] as const).map((opt) => {
+                  const labelKey = { email: 'prefEmail', text: 'prefText', any: 'prefAny' }[opt]
                   return (
                     <label key={opt} className="flex items-center gap-2 text-sm cursor-pointer">
                       <input
