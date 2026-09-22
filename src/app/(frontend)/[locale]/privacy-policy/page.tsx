@@ -122,6 +122,7 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
               <li>{t('thirdParty8')}</li>
               <li>{t('thirdParty9')}</li>
               <li>{t('thirdParty10')}</li>
+              <li>{t('thirdParty11')}</li>
             </ul>
           </div>
 

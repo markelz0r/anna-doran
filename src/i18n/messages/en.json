@@ -600,7 +600,7 @@
   "privacy": {
     "title": "Privacy Policy",
     "backHome": "Back to home",
-    "effectiveDate": "Effective from 7 September 2026. This policy is regularly reviewed and updated.",
+    "effectiveDate": "Effective from 22 September 2026. This policy is regularly reviewed and updated.",
     "intro": "This privacy policy sets out how I, Anna Doran (Anna Doran Health), use and protect any personal information that you provide to me. Should I ask you to provide certain information by which you can be identified when using my services, you can be assured that it will only be used in accordance with this privacy policy and the UK General Data Protection Regulation (UK GDPR).",
     "businessInfoHeading": "About me",
     "businessInfo1": "Business name: Anna Doran Health",
@@ -672,7 +672,8 @@
     "insuranceHeading": "If you use private medical insurance",
     "insurance": "If you claim through a private medical insurer, I share information with them so that your care can be invoiced. This normally includes your name, date of birth, policy and authorisation numbers, the dates and type of your appointments, and the clinical codes describing your treatment. I share it only with your own insurer, and only with your separate explicit consent under Article 9(2)(a) UK GDPR, which you give on my client consent form.",
     "insurance2": "Your insurer decides for itself how it uses your information, so it acts as an independent data controller and its own privacy policy applies alongside mine. Your insurer may also send me information about you, such as your policy details and authorisation for treatment. You are never obliged to claim on insurance — you are always welcome to pay for your appointments directly.",
-    "thirdParty10": "Healthcode — the secure system used across UK private healthcare to submit invoices to insurers. If you claim on insurance, your billing and appointment details pass through Healthcode. It is a UK company and this data stays in the UK."
+    "thirdParty10": "Healthcode — the secure system used across UK private healthcare to submit invoices to insurers. If you claim on insurance, your billing and appointment details pass through Healthcode. It is a UK company and this data stays in the UK.",
+    "thirdParty11": "Social media (Instagram, TikTok, YouTube and LinkedIn) — I post nutrition content on these platforms. If you message or comment there, that message is handled by the platform under its own privacy policy, and I cannot keep it as confidential as email. I do not discuss your health or any clinical details on social media: please use email or the contact form for anything personal."
   },
   "language": {
     "switch": "RU"
