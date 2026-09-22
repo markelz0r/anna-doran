@@ -76,6 +76,15 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             </Button>
             <Button variant="outline" size="lg" asChild
               className="rounded-full border-primary text-primary hover:bg-primary hover:text-white w-full">
+              <a href="https://www.tiktok.com/@annadoran_diet" target="_blank" rel="noopener noreferrer">
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 1 1-1.77-2.45v-3.2a5.77 5.77 0 1 0 4.86 5.69V8.66a7.35 7.35 0 0 0 4.3 1.38v-3.1a4.29 4.29 0 0 1-3.24-1.12Z" />
+                </svg>
+                {t('followTikTok')}
+              </a>
+            </Button>
+            <Button variant="outline" size="lg" asChild
+              className="rounded-full border-primary text-primary hover:bg-primary hover:text-white w-full">
               <a href="https://www.youtube.com/@annadoran_diet" target="_blank" rel="noopener noreferrer">
                 <Youtube className="h-5 w-5" />
                 {t('watchYouTube')}

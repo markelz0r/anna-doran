@@ -7,7 +7,7 @@ export const SITE_URL = 'https://www.annadorandiet.com'
 export const ORGANIZATION_ID = `${SITE_URL}/#organization`
 export const PERSON_ID = `${SITE_URL}/#anna-doran`
 
-type SocialHandles = { instagram?: string | null; youtube?: string | null; linkedin?: string | null }
+type SocialHandles = { instagram?: string | null; youtube?: string | null; linkedin?: string | null; tiktok?: string | null }
 
 // Profile URLs built from the handles saved in Site Settings (the same handles the header icons use).
 export function socialProfileUrls(social: SocialHandles | null | undefined) {
@@ -15,10 +15,12 @@ export function socialProfileUrls(social: SocialHandles | null | undefined) {
   const instagram = clean(social?.instagram)
   const youtube = clean(social?.youtube)
   const linkedin = clean(social?.linkedin)
+  const tiktok = clean(social?.tiktok)
   return {
     instagram: instagram ? `https://www.instagram.com/${instagram}` : undefined,
     youtube: youtube ? `https://www.youtube.com/@${youtube}` : undefined,
     linkedin: linkedin ? `https://www.linkedin.com/in/${linkedin}` : undefined,
+    tiktok: tiktok ? `https://www.tiktok.com/@${tiktok}` : undefined,
   }
 }
 

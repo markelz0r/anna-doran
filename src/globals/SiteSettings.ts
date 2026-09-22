@@ -19,6 +19,7 @@ export const SiteSettings: GlobalConfig = {
         { name: 'telegram', type: 'text' },
         { name: 'linkedin', type: 'text' },
         { name: 'youtube', type: 'text', label: 'YouTube' },
+        { name: 'tiktok', type: 'text', label: 'TikTok', admin: { description: 'Handle only, without the @ — e.g. annadoran_diet' } },
       ],
     },
     { name: 'logo', type: 'upload', relationTo: 'media' },
