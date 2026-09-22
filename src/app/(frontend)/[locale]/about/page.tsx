@@ -53,13 +53,41 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           {t('heading')}
         </h1>
 
-        {/* Intro video — click-to-play, so nothing loads from YouTube until the visitor asks for it */}
-        <div className="relative rounded-2xl overflow-hidden aspect-video bg-black mb-10 max-w-3xl">
-          <YouTubeEmbed
-            videoId="kyxSx0Ca8fU"
-            title={t('introVideo')}
-            thumbnail="/images/video-kyxSx0Ca8fU.jpg"
-          />
+        {/* Intro video with the social links alongside it. Click-to-play, so nothing loads
+            from YouTube until the visitor asks for it. The links drop below the video on
+            narrow screens rather than squeezing beside it. */}
+        <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6 lg:gap-8 items-start mb-10">
+          <div className="relative rounded-2xl overflow-hidden aspect-video bg-black">
+            <YouTubeEmbed
+              videoId="kyxSx0Ca8fU"
+              title={t('introVideo')}
+              thumbnail="/images/video-kyxSx0Ca8fU.jpg"
+            />
+          </div>
+
+          <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
+            <Button variant="outline" size="lg" asChild
+              className="rounded-full border-primary text-primary hover:bg-primary hover:text-white w-full">
+              <a href="https://www.instagram.com/annadoran_diet/" target="_blank" rel="noopener noreferrer">
+                <Instagram className="h-5 w-5" />
+                {t('followInstagram')}
+              </a>
+            </Button>
+            <Button variant="outline" size="lg" asChild
+              className="rounded-full border-primary text-primary hover:bg-primary hover:text-white w-full">
+              <a href="https://www.youtube.com/@annadoran_diet" target="_blank" rel="noopener noreferrer">
+                <Youtube className="h-5 w-5" />
+                {t('watchYouTube')}
+              </a>
+            </Button>
+            <Button variant="outline" size="lg" asChild
+              className="rounded-full border-primary text-primary hover:bg-primary hover:text-white w-full">
+              <a href="https://www.linkedin.com/in/annadoranhealth" target="_blank" rel="noopener noreferrer">
+                <Linkedin className="h-5 w-5" />
+                {t('connectLinkedIn')}
+              </a>
+            </Button>
+          </div>
         </div>
 
         {/* Journey section */}
@@ -101,32 +129,6 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             <p className="text-base text-foreground leading-relaxed">{t('beyondBody1')}</p>
             <p className="text-base text-foreground leading-relaxed">{t('beyondBody2')}</p>
           </div>
-        </div>
-
-        {/* Social Media Links */}
-        <Separator className="my-8" />
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
-          <Button variant="outline" size="lg" asChild
-            className="rounded-full border-primary text-primary hover:bg-primary hover:text-white">
-            <a href="https://www.instagram.com/annadoran_diet/" target="_blank" rel="noopener noreferrer">
-              <Instagram className="h-5 w-5" />
-              {t('followInstagram')}
-            </a>
-          </Button>
-          <Button variant="outline" size="lg" asChild
-            className="rounded-full border-primary text-primary hover:bg-primary hover:text-white">
-            <a href="https://www.youtube.com/@annadoran_diet" target="_blank" rel="noopener noreferrer">
-              <Youtube className="h-5 w-5" />
-              {t('watchYouTube')}
-            </a>
-          </Button>
-          <Button variant="outline" size="lg" asChild
-            className="rounded-full border-primary text-primary hover:bg-primary hover:text-white">
-            <a href="https://www.linkedin.com/in/annadoranhealth" target="_blank" rel="noopener noreferrer">
-              <Linkedin className="h-5 w-5" />
-              {t('connectLinkedIn')}
-            </a>
-          </Button>
         </div>
 
         {/* Transformation videos */}
