@@ -7,6 +7,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
 import { ScrollableTimeline } from '@/components/shared/ScrollableTimeline'
+import { YouTubeEmbed } from '@/components/shared/YouTubeEmbed'
 
 export const dynamic = 'force-dynamic'
 
@@ -127,21 +128,17 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
           <div className="relative rounded-2xl overflow-hidden aspect-video bg-black">
-            <iframe
-              src="https://www.youtube.com/embed/ecA9BnoHNEg"
+            <YouTubeEmbed
+              videoId="ecA9BnoHNEg"
               title="Transformation video 1"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="absolute inset-0 w-full h-full"
+              thumbnail="/images/video-ecA9BnoHNEg.jpg"
             />
           </div>
           <div className="relative rounded-2xl overflow-hidden aspect-video bg-black">
-            <iframe
-              src="https://www.youtube.com/embed/2Kqh-p-FsYs"
+            <YouTubeEmbed
+              videoId="2Kqh-p-FsYs"
               title="Transformation video 2"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="absolute inset-0 w-full h-full"
+              thumbnail="/images/video-2Kqh-p-FsYs.jpg"
             />
           </div>
         </div>

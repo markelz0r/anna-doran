@@ -525,7 +525,7 @@
   "cookies": {
     "title": "Cookie Policy",
     "backHome": "Back to home",
-    "effectiveDate": "Effective from 7 September 2026.",
+    "effectiveDate": "Effective from 22 September 2026.",
     "intro": "This cookie policy explains what cookies are, how this website uses them and similar storage technologies, and your choices.",
     "whatAreCookiesHeading": "What are cookies?",
     "whatAreCookies": "Cookies are small text files stored on your device when you visit a website. Some websites, including this one, also use your browser's local storage, which works in a similar way. They help the site remember your preferences and improve your experience.",
@@ -541,7 +541,7 @@
     "cookie2Type": "Essential (local storage)",
     "cookie2Duration": "Until you clear your browser storage",
     "thirdPartyHeading": "Third-party cookies",
-    "thirdParty": "I use Google Analytics to see how many people visit the site and which pages are most useful. It is the only third-party service that sets cookies here, and it is switched off by default: the Google script is not loaded at all, and no Google cookie is created, unless and until you press 'Accept analytics'. If you choose 'Essential only', nothing is sent to Google. Google Analytics is configured to anonymise IP addresses, and I use it only to view general trends — I cannot identify individual visitors from it. Google processes some of this data in the United States under the UK extension to the EU–US Data Privacy Framework. There is no advertising pixel and no session-recording tool on this site.",
+    "thirdParty": "I use Google Analytics to see how many people visit the site and which pages are most useful. It is switched off by default: the Google script is not loaded at all, and no Google cookie is created, unless and until you press 'Accept analytics'. If you choose 'Essential only', nothing is sent to Google. Google Analytics is configured to anonymise IP addresses, and I use it only to view general trends — I cannot identify individual visitors from it. Google processes some of this data in the United States under the UK extension to the EU–US Data Privacy Framework. There is no advertising pixel and no session-recording tool on this site. The only other third-party content here is the videos on my About page. They are embedded from YouTube in privacy-enhanced mode, and nothing is requested from YouTube until you press play — at that point YouTube may set its own cookies, and Google's privacy policy applies to what happens in the player.",
     "howToDisableHeading": "How to disable cookies",
     "howToDisable": "As well as the 'Cookie settings' link on this site, you can block or delete cookies through your browser settings — check your browser's help section for instructions. Please note that disabling essential cookies may affect how the website functions. Google also offers a browser add-on that opts you out of Google Analytics on every site, at tools.google.com/dlpage/gaoptout.",
     "contactHeading": "Contact",
