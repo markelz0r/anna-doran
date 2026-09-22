@@ -53,6 +53,15 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           {t('heading')}
         </h1>
 
+        {/* Intro video — click-to-play, so nothing loads from YouTube until the visitor asks for it */}
+        <div className="relative rounded-2xl overflow-hidden aspect-video bg-black mb-10 max-w-3xl">
+          <YouTubeEmbed
+            videoId="kyxSx0Ca8fU"
+            title={t('introVideo')}
+            thumbnail="/images/video-kyxSx0Ca8fU.jpg"
+          />
+        </div>
+
         {/* Journey section */}
         <h2 className="font-[family-name:var(--font-heading)] text-[28px] md:text-[36px] font-medium text-foreground mb-6">
           {t('journeyHeading')}
