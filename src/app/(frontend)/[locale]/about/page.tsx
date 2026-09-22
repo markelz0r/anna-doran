@@ -57,7 +57,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             from YouTube until the visitor asks for it. The links drop below the video on
             narrow screens rather than squeezing beside it. */}
         <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6 lg:gap-8 items-stretch mb-10">
-          <div className="relative rounded-2xl overflow-hidden aspect-video bg-black">
+          <div className="relative rounded-2xl overflow-hidden bg-black">
             <YouTubeEmbed
               videoId="kyxSx0Ca8fU"
               title={t('introVideo')}
@@ -148,14 +148,14 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-          <div className="relative rounded-2xl overflow-hidden aspect-video bg-black">
+          <div className="relative rounded-2xl overflow-hidden bg-black">
             <YouTubeEmbed
               videoId="ecA9BnoHNEg"
               title="Transformation video 1"
               thumbnail="/images/video-ecA9BnoHNEg.jpg"
             />
           </div>
-          <div className="relative rounded-2xl overflow-hidden aspect-video bg-black">
+          <div className="relative rounded-2xl overflow-hidden bg-black">
             <YouTubeEmbed
               videoId="2Kqh-p-FsYs"
               title="Transformation video 2"
