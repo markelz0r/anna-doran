@@ -56,7 +56,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         {/* Intro video with the social links alongside it. Click-to-play, so nothing loads
             from YouTube until the visitor asks for it. The links drop below the video on
             narrow screens rather than squeezing beside it. */}
-        <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6 lg:gap-8 items-start mb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6 lg:gap-8 items-stretch mb-10">
           <div className="relative rounded-2xl overflow-hidden aspect-video bg-black">
             <YouTubeEmbed
               videoId="kyxSx0Ca8fU"
@@ -65,7 +65,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             />
           </div>
 
-          <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
+          <div className="flex flex-col gap-3 lg:h-full lg:justify-center">
+            <p className="text-sm font-medium text-muted-foreground lg:mb-1">{t('findMe')}</p>
             <Button variant="outline" size="lg" asChild
               className="rounded-full border-primary text-primary hover:bg-primary hover:text-white w-full">
               <a href="https://www.instagram.com/annadoran_diet/" target="_blank" rel="noopener noreferrer">
