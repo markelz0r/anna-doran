@@ -60,7 +60,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         logo: `${SITE_URL}/images/logo-color.png`,
         email: 'contact@annadorandiet.com',
         founder: { '@id': PERSON_ID },
-        sameAs: [profiles.instagram, profiles.youtube].filter(Boolean),
+        sameAs: [profiles.instagram, profiles.youtube, profiles.tiktok].filter(Boolean),
       },
       {
         '@type': 'Person',
@@ -69,7 +69,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         jobTitle: 'Dietitian',
         url: `${SITE_URL}/en/about`,
         worksFor: { '@id': ORGANIZATION_ID },
-        sameAs: [profiles.instagram, profiles.youtube, profiles.linkedin].filter(Boolean),
+        sameAs: [profiles.instagram, profiles.youtube, profiles.tiktok, profiles.linkedin].filter(Boolean),
       },
     ],
   }
