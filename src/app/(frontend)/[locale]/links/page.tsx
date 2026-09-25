@@ -113,7 +113,13 @@ const LINKS_RU = [
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
-  return { alternates: pageAlternates(locale, '/links') }
+  return {
+    alternates: pageAlternates(locale, '/links'),
+    // A link-in-bio copy of the site menu, for Instagram and TikTok profiles.
+    // Kept out of the index so it doesn't compete with the real pages, but
+    // followed so the links it points at still count.
+    robots: { index: false, follow: true },
+  }
 }
 
 export default async function LinksPage({ params }: { params: Promise<{ locale: string }> }) {

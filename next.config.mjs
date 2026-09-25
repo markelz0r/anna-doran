@@ -9,10 +9,12 @@ const nextConfig = {
     return [
       // Meal Balance Check was withdrawn on 7 Sep 2026. The page is kept in
       // /archive; this stops previously shared links from dead-ending.
+      // Permanent (308): the service is not coming back, so Google should drop
+      // the old URL from the index instead of holding it and re-crawling it.
       {
         source: '/:locale(en|ru)/services/meal-balance-check',
         destination: '/:locale#services',
-        permanent: false,
+        permanent: true,
       },
     ]
   },
