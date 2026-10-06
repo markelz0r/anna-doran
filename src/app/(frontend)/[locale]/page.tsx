@@ -101,12 +101,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <About
         about={{ mission: about.mission || undefined }}
         credentials={credentialsList as Array<Array<{ text: string; bold: boolean }>>}
-        settings={{
-          social: {
-            instagram: settings.social?.instagram || undefined,
-            linkedin: settings.social?.linkedin || undefined,
-          },
-        }}
+        social={profiles}
       />
       <Testimonials />
       <Contact

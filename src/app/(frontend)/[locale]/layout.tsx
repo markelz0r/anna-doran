@@ -12,6 +12,7 @@ import { Footer } from '@/components/sections/Footer'
 import { FloatingCTA } from '@/components/shared/FloatingCTA'
 import { CookieBanner } from '@/components/shared/CookieBanner'
 import { GoogleAnalytics } from '@/components/shared/GoogleAnalytics'
+import { HashScroll } from '@/components/shared/HashScroll'
 import '@/app/globals.css'
 
 const cormorantSC = Cormorant_SC({
@@ -60,6 +61,7 @@ export default async function LocaleLayout({
           <FloatingCTA />
           <CookieBanner />
           <GoogleAnalytics />
+          <HashScroll />
         </NextIntlClientProvider>
       </body>
     </html>

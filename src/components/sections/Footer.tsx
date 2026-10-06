@@ -48,7 +48,7 @@ export function Footer({ settings, locale }: FooterProps) {
               <a href={`/${locale}/services`} className="text-white/80 hover:text-white transition-colors text-[15px]">
                 {t('linkServices')}
               </a>
-              <a href={`/${locale}/about`} className="text-white/80 hover:text-white transition-colors text-[15px]">
+              <a href={`/${locale}#about`} className="text-white/80 hover:text-white transition-colors text-[15px]">
                 {t('linkAbout')}
               </a>
               <a href={`/${locale}#testimonials`} className="text-white/80 hover:text-white transition-colors text-[15px]">

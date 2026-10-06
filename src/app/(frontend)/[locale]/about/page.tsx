@@ -1,11 +1,10 @@
 import { pageAlternates } from '@/lib/site'
 import Image from 'next/image'
-import { ArrowLeft, Instagram, Linkedin, Youtube } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import { getPayload } from 'payload'
 import config from '@payload-config'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Separator } from '@/components/ui/separator'
-import { Button } from '@/components/ui/button'
 import { ScrollableTimeline } from '@/components/shared/ScrollableTimeline'
 import { YouTubeEmbed } from '@/components/shared/YouTubeEmbed'
 
@@ -42,8 +41,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   return (
     <section className="py-16">
       <div className="container mx-auto px-3 sm:px-4 max-w-5xl">
-        {/* Back link */}
-        <a href={`/${locale}`} className="inline-flex items-center gap-2 text-primary hover:underline mb-8 text-sm">
+        {/* Back link: returns to the About section on the homepage, where visitors came from */}
+        <a href={`/${locale}#about`} className="inline-flex items-center gap-2 text-primary hover:underline mb-8 text-sm">
           <ArrowLeft className="h-4 w-4" />
           {t('backHome')}
         </a>
@@ -52,53 +51,6 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <h1 className="font-[family-name:var(--font-heading)] text-[42px] md:text-[52px] font-medium text-foreground mb-8">
           {t('heading')}
         </h1>
-
-        {/* Intro video with the social links alongside it. Click-to-play, so nothing loads
-            from YouTube until the visitor asks for it. The links drop below the video on
-            narrow screens rather than squeezing beside it. */}
-        <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6 lg:gap-8 items-stretch mb-10">
-          <div className="relative rounded-2xl overflow-hidden bg-black">
-            <YouTubeEmbed
-              videoId="kyxSx0Ca8fU"
-              title={t('introVideo')}
-              thumbnail="/images/video-kyxSx0Ca8fU.jpg"
-            />
-          </div>
-
-          <div className="flex flex-col gap-3 lg:h-full lg:justify-center">
-            <p className="text-sm font-medium text-muted-foreground lg:mb-1">{t('findMe')}</p>
-            <Button variant="outline" size="lg" asChild
-              className="rounded-full border-primary text-primary hover:bg-primary hover:text-white w-full">
-              <a href="https://www.instagram.com/annadoran_diet/" target="_blank" rel="noopener noreferrer">
-                <Instagram className="h-5 w-5" />
-                {t('followInstagram')}
-              </a>
-            </Button>
-            <Button variant="outline" size="lg" asChild
-              className="rounded-full border-primary text-primary hover:bg-primary hover:text-white w-full">
-              <a href="https://www.tiktok.com/@annadoran_diet" target="_blank" rel="noopener noreferrer">
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 1 1-1.77-2.45v-3.2a5.77 5.77 0 1 0 4.86 5.69V8.66a7.35 7.35 0 0 0 4.3 1.38v-3.1a4.29 4.29 0 0 1-3.24-1.12Z" />
-                </svg>
-                {t('followTikTok')}
-              </a>
-            </Button>
-            <Button variant="outline" size="lg" asChild
-              className="rounded-full border-primary text-primary hover:bg-primary hover:text-white w-full">
-              <a href="https://www.youtube.com/@annadoran_diet" target="_blank" rel="noopener noreferrer">
-                <Youtube className="h-5 w-5" />
-                {t('watchYouTube')}
-              </a>
-            </Button>
-            <Button variant="outline" size="lg" asChild
-              className="rounded-full border-primary text-primary hover:bg-primary hover:text-white w-full">
-              <a href="https://www.linkedin.com/in/annadoranhealth" target="_blank" rel="noopener noreferrer">
-                <Linkedin className="h-5 w-5" />
-                {t('connectLinkedIn')}
-              </a>
-            </Button>
-          </div>
-        </div>
 
         {/* Journey section */}
         <h2 className="font-[family-name:var(--font-heading)] text-[28px] md:text-[36px] font-medium text-foreground mb-6">

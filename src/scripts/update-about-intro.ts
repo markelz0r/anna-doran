@@ -1,7 +1,7 @@
 /**
- * Updates the "About me" card on the home page (about-content.credentials) so it opens
- * with Anna's credentials, and rewords the second paragraph so the NHS role is not
- * repeated now that it appears in the first line.
+ * Updates the "About me" card on the home page (about-content.credentials): opens with
+ * Anna's specialism and her private practice in Norwich, Norfolk, then her NHS work,
+ * then her personal story.
  *
  * Local:      npx cross-env PAYLOAD_CONFIG_PATH=payload.config.ts npx tsx src/scripts/update-about-intro.ts
  * Production: ssh … "cd /root/anna-doran && docker compose -f docker-compose.prod.yml exec -T app \
@@ -39,29 +39,33 @@ function richTextParagraphs(paragraphs: Paragraph[]) {
 
 const EN_PARAGRAPHS: Paragraph[] = [
   [
-    "Hi, I'm Anna, an HCPC-registered dietitian and ",
-    { text: 'Gastroenterology Specialist Dietitian in the NHS', bold: true },
-    ', with a particular interest in gut health and the gut–skin connection.',
+    "Hi, I'm Anna, a ",
+    { text: 'Gastroenterology Specialist Dietitian', bold: true },
+    ' registered with the HCPC, with a particular interest in the gut–brain axis and the gut–skin connection. Alongside my part-time NHS role, I run a private practice ',
+    { text: 'in Norwich, Norfolk', bold: true },
+    ', supporting clients locally and online across the UK.',
   ],
   [
-    "My route into nutrition wasn't planned — it came from years of trying to fix my own PCOS, acne and irregular cycles. I realised that medication only ever masked the symptoms; what actually changed things was learning how food, lifestyle and mindset work together. That experience pushed me to learn more about the science of nutrition by obtaining a degree in dietetics, so I could help others find the same shift.",
+    'In the NHS, I support patients with a wide range of complex digestive conditions, including IBS, inflammatory bowel disease, coeliac disease, stoma management, fatty liver disease and functional gut disorders. I bring the same evidence-based approach to my private clients.',
   ],
   [
-    'Within the NHS I support patients with a wide range of complex digestive and gastrointestinal conditions — including IBS, inflammatory bowel disease, coeliac disease, and functional gut disorders.',
+    "My route into nutrition wasn't planned. It came from years of trying to manage my own gut problems, as well as PCOS, irregular cycles and acne. Medication alone never gave me the full picture; what really made the difference was learning how food, lifestyle and mindset work together. That experience led me to study the science of nutrition and qualify as a dietitian, so I could help others make the same shift.",
   ],
 ]
 
 const RU_PARAGRAPHS: Paragraph[] = [
   [
-    'Привет, я Анна — диетолог с регистрацией HCPC и ',
-    { text: 'диетолог-гастроэнтеролог в NHS', bold: true },
-    ', с особым интересом к здоровью кишечника и связи кишечника и кожи.',
+    'Привет, я Анна — ',
+    { text: 'диетолог-гастроэнтеролог', bold: true },
+    ' с регистрацией HCPC, с особым интересом к оси «кишечник — мозг» и связи кишечника и кожи. Помимо работы в NHS на неполный день, я веду частную практику ',
+    { text: 'в Норвиче (графство Норфолк)', bold: true },
+    ' и консультирую клиентов как лично, так и онлайн по всей Великобритании.',
   ],
   [
-    'Мой путь в нутрициологию начался не по плану — он сложился из многолетних попыток справиться с собственными проблемами: СПКЯ, акне и нерегулярным циклом. Я поняла, что лекарства лишь маскируют симптомы; настоящие перемены принесло понимание того, как питание, образ жизни и образ мышления работают вместе. Этот опыт подтолкнул меня глубже изучить науку о питании и получить диплом диетолога, чтобы помогать другим пройти этот же путь.',
+    'В NHS (Национальная служба здравоохранения Великобритании) я помогаю пациентам со сложными заболеваниями пищеварительной системы — включая СРК, воспалительные заболевания кишечника (болезнь Крона, язвенный колит), целиакию, жировую болезнь печени и функциональные расстройства ЖКТ, а также пациентам со стомой. Тот же научно обоснованный подход я применяю и в работе с частными клиентами.',
   ],
   [
-    'В NHS (Национальная служба здравоохранения Великобритании) я помогаю пациентам со сложными заболеваниями пищеварительной системы — включая СРК, воспалительные заболевания кишечника (болезнь Крона, язвенный колит), целиакию и функциональные расстройства ЖКТ.',
+    'Мой путь в нутрициологию начался не по плану — он сложился из многолетних попыток справиться с собственными проблемами с кишечником, а также с СПКЯ, нерегулярным циклом и акне. Одни лекарства так и не дали мне полной картины; по-настоящему всё изменило понимание того, как питание, образ жизни и образ мышления работают вместе. Этот опыт привёл меня к изучению науки о питании и получению квалификации диетолога, чтобы помогать другим прийти к тем же переменам.',
   ],
 ]
 

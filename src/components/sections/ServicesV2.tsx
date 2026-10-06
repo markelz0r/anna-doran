@@ -140,14 +140,14 @@ export function ServicesV2({ locale }: ServicesV2Props) {
                       }`}
                     >
                       <a
-                        href={meta.calLink || checkoutLink || '#contacts'}
+                        href={meta.calLink || checkoutLink || `/${locale}#contacts`}
                         target={meta.calLink || checkoutLink ? '_blank' : undefined}
                         rel={meta.calLink || checkoutLink ? 'noopener noreferrer' : undefined}
                       >{s(`${key}.cta`)}</a>
                     </Button>
                     {meta.hasAskQuestion && checkoutLink && (
                       <a
-                        href="#contacts"
+                        href={`/${locale}#contacts`}
                         className="block text-center text-sm text-primary hover:underline mt-2"
                       >
                         {s('askQuestion')}
@@ -167,7 +167,7 @@ export function ServicesV2({ locale }: ServicesV2Props) {
             {s('faqLink')}
           </a>{' '}
           {s('or')}{' '}
-          <a href="#contacts" className="text-primary underline hover:text-primary/80">
+          <a href={`/${locale}#contacts`} className="text-primary underline hover:text-primary/80">
             {s('bookDiscoveryInline')}
           </a>.
         </p>

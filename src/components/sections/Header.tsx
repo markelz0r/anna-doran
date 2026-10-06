@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { Menu } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
 import { LanguageToggle } from '@/components/shared/LanguageToggle'
 import { SocialIcons } from '@/components/shared/SocialIcons'
 
@@ -15,6 +15,7 @@ interface HeaderProps {
     social?: {
       instagram?: string
       youtube?: string
+      tiktok?: string
       linkedin?: string
     }
   }
@@ -24,11 +25,12 @@ interface HeaderProps {
 export function Header({ settings, locale }: HeaderProps) {
   const t = useTranslations('nav')
   const [open, setOpen] = useState(false)
+  const menuLabel = locale === 'ru' ? 'Меню' : 'Menu'
 
   const navItems = [
     { label: t('home'), href: `/${locale}` },
     { label: t('services'), href: `/${locale}#services` },
-    { label: t('about'), href: `/${locale}/about` },
+    { label: t('about'), href: `/${locale}#about` },
     { label: t('faq'), href: `/${locale}/faq` },
     { label: t('contacts'), href: `/${locale}#contacts` },
     { label: t('courses'), href: `/${locale}/courses` },
@@ -60,6 +62,7 @@ export function Header({ settings, locale }: HeaderProps) {
           <SocialIcons
             instagram={settings.social?.instagram}
             youtube={settings.social?.youtube}
+            tiktok={settings.social?.tiktok}
             linkedin={settings.social?.linkedin}
           />
           <LanguageToggle />
@@ -70,11 +73,13 @@ export function Header({ settings, locale }: HeaderProps) {
           <LanguageToggle />
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" aria-label={menuLabel}>
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-full max-w-sm bg-background p-0">
+              {/* Named for screen readers; the menu itself has no visible heading */}
+              <SheetTitle className="sr-only">{menuLabel}</SheetTitle>
               <div className="flex flex-col h-full">
                 {/* Logo */}
                 <div className="p-6 pb-4 border-b border-border">
@@ -106,6 +111,7 @@ export function Header({ settings, locale }: HeaderProps) {
                   <SocialIcons
                     instagram={settings.social?.instagram}
                     youtube={settings.social?.youtube}
+                    tiktok={settings.social?.tiktok}
                     linkedin={settings.social?.linkedin}
                   />
                   <a href="mailto:contact@annadorandiet.com" className="block mt-4 text-sm text-muted-foreground hover:text-primary transition-colors">
