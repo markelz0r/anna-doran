@@ -308,7 +308,7 @@
     "ctaShort": "Get in touch"
   },
   "testimonials": {
-    "seeAll": "See all reviews on Google",
+    "seeAll": "See all reviews on Trustpilot",
     "addReview": "+ Add a review"
   },
   "footer": {
@@ -443,13 +443,13 @@
       "feature4": "Detailed supplement plan with doses & timing",
       "followUp": "Follow-up within 3 months: £95",
       "idealFor": "You want more than advice in the moment — a full look at what's going on and at your diet, plus a written plan to follow afterwards.",
-      "cta": "Pay now",
+      "cta": "Book free call",
       "feature5": "Written summary sent after your session"
     },
     "coachingProgramme": {
       "title": "Health Coaching",
-      "duration": "6 × 60 min · over 2 months",
-      "description": "Everything in the Initial Consultation — plus two months of support while we widen your diet again. You get one meal plan to start and clear food lists to work from, then we adjust what's in and what's out session by session as we find what your gut tolerates.",
+      "duration": "6 × 60 min · over 2–3 months",
+      "description": "Everything in the Initial Consultation — plus two to three months of support while we widen your diet again. You get one meal plan to start and clear food lists to work from, then we adjust what's in and what's out session by session as we find what your gut tolerates.",
       "feature1": "Full initial consultation and 5 follow-up sessions",
       "feature2": "Food lists adjusted each session as we test tolerance",
       "feature3": "Symptom tracking between sessions",
@@ -457,7 +457,7 @@
       "feature5": "Video guides and resources as needed",
       "idealFor": "You've tried cutting foods out on your own and want to understand what's really going on, with ongoing support for lasting results.",
       "highlight": "Ongoing support",
-      "cta": "Pay now",
+      "cta": "Book free call",
       "perSession": "Follow-ups: £80.80 each, instead of £95"
     },
     "askDietitian": {
@@ -557,14 +557,14 @@
   "terms": {
     "title": "Terms and Conditions",
     "backHome": "Back to home",
-    "effectiveDate": "Effective from 17 September 2026.",
+    "effectiveDate": "Effective from 29 October 2026.",
     "intro": "By booking a consultation or service with Anna Doran Health, you agree to the following terms and conditions:",
     "term1": "Cancellations and rescheduling: Please give me at least 48 hours' notice to cancel or move a session. With 48 hours' notice or more you can reschedule free of charge, up to twice per booking, or cancel and be refunded as set out below. With less than 48 hours' notice, half the price of that session is retained, because it is rarely possible to offer the time to someone else at that point.",
     "term2": "Cooling-off period: Under the Consumer Contracts Regulations 2013, you have the right to cancel a booking within 14 days of purchase without giving a reason. However, if you have requested that the service begins within the 14-day period (for example, by attending a consultation or receiving your written recommendations), you agree to waive this right for any service already provided.",
     "term3": "Meal Balance Check: After receiving your 5-day food diary, I will deliver your personalised feedback via email within 5 working days. You will then have 5 days of follow-up support via email, WhatsApp, or Telegram to ask questions. No refund is available once feedback has been delivered.",
     "term4": "Initial Consultation: Before we meet I will send you a health questionnaire and ask for a 5-day food diary. Please return these — along with any recent blood results you would like me to look at — at least 3 working days before your appointment, so that I have time to analyse them properly. If they arrive later than that I may not be able to prepare fully, and we may need to use part of the session gathering information instead. After the session I will send you a written summary, a personalised meal plan, food lists by category, and a supplement plan with doses and timing, usually within 5 working days, and always within 7. Please ask any questions about these materials within 14 days. This does not enter you into an ongoing support agreement; if you would like continued support, please book a follow-up session or the coaching programme.",
     "term5": "Follow-up sessions: A 45-minute follow-up session is available at a reduced rate of £95 if booked within 3 months of your initial consultation. After the session I will send you updated written materials — revised food lists, meal plan or supplement guidance as needed — usually within 5 working days, and always within 7. After 3 months, a new initial consultation at the current price will be required. If you had an initial consultation with me before 7 September 2026, your follow-up will be honoured at the rate and within the window quoted to you at the time.",
-    "term6": "Health Coaching programme: The programme is 6 sessions of 60 minutes. It begins with a full initial consultation, followed by 5 further sessions in which we adjust your food lists as we test which foods you tolerate, and I send you updated materials as your plan changes. All 6 sessions are intended to be used within 2 months of your first session, so that the programme keeps its momentum. If illness or other genuine circumstances get in the way, please talk to me — I will extend the period by agreement rather than let sessions you have paid for go to waste.",
+    "term6": "Health Coaching programme: The programme is 6 sessions of 60 minutes. It begins with a full initial consultation, followed by 5 further sessions in which we adjust your food lists as we test which foods you tolerate, and I send you updated materials as your plan changes. All 6 sessions are intended to be used over 2–3 months, and within 3 months of your first session, so that the programme keeps its momentum. If illness or other genuine circumstances get in the way, please talk to me — I will extend the period by agreement rather than let sessions you have paid for go to waste.",
     "term7": "Payments: Fees are in pounds sterling (GBP). Payment is taken securely via Stripe and is due at the time of booking — I do not store your card details. Your meeting link is issued once payment has been received. If you are paying from outside the UK, any currency conversion or bank charges are your responsibility.",
     "term8": "Refunds: I do not refund services that have already been delivered. Refunds due to you are issued within 14 days, to the payment method you originally used. None of this affects your statutory rights: under the Consumer Rights Act 2015 my services must be carried out with reasonable care and skill, and if they are not, you are entitled to ask me to put things right or to an appropriate price reduction. Nothing in these terms removes those rights.",
     "term9": "Your responsibilities: Please join your sessions on time and from somewhere private with a stable internet connection, return any questionnaires, food diaries or test results by the dates agreed, and tell me about relevant medical conditions, medications and supplements so that my advice is safe and appropriate for you.",

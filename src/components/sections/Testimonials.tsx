@@ -95,7 +95,7 @@ export function Testimonials() {
         </h2>
         <div className="flex justify-center gap-3 sm:gap-4 mb-10 flex-wrap">
           <a
-            href="https://share.google/ySMcszpq2IjX5YNlv"
+            href="https://uk.trustpilot.com/review/annadorandiet.com"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 border border-border rounded-full px-4 sm:px-6 py-2.5 text-sm font-medium text-foreground hover:bg-secondary transition-colors"
@@ -103,7 +103,7 @@ export function Testimonials() {
             {tReviews('seeAll')}
           </a>
           <a
-            href="https://g.page/r/Ce7g3QEsJm_7EAE/review"
+            href="https://uk.trustpilot.com/evaluate/annadorandiet.com"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white rounded-full px-4 sm:px-6 py-2.5 text-sm font-medium transition-colors"

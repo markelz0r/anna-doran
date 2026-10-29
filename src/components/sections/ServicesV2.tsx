@@ -11,8 +11,8 @@ type ServiceKey = (typeof SERVICE_KEYS)[number]
 const SERVICE_META: Record<ServiceKey, { priceEN: string; priceRU: string; featured?: boolean; featureCount: number; hasFollowUp?: boolean; hasNote?: boolean; hasHighlight?: boolean; hasSaving?: boolean; hasAskQuestion?: boolean; paymentLink?: string; calLink?: string; learnMoreHref?: string }> = {
   discoveryCall:       { priceEN: 'FREE',  priceRU: 'Бесплатно', featureCount: 3 },
   askDietitian:        { priceEN: '£75',   priceRU: '8 800 ₽',   featureCount: 3, hasNote: true, hasAskQuestion: true, paymentLink: 'https://buy.stripe.com/cNi4gA5VccAV6Zz8DvaIM0h' },
-  initialConsultation: { priceEN: '£145',  priceRU: '17 000 ₽',  featured: true, featureCount: 5, hasFollowUp: true, hasAskQuestion: true, paymentLink: 'https://buy.stripe.com/dRm4gA97o30l4RraLDaIM0i' },
-  coachingProgramme:   { priceEN: '£549',  priceRU: '64 000 ₽',  featureCount: 5, hasHighlight: true, hasSaving: true, hasAskQuestion: true, paymentLink: 'https://buy.stripe.com/fZu4gA1EW44p6Zz7zraIM0j' },
+  initialConsultation: { priceEN: '£145',  priceRU: '17 000 ₽',  featured: true, featureCount: 5, hasFollowUp: true, hasAskQuestion: true },
+  coachingProgramme:   { priceEN: '£549',  priceRU: '64 000 ₽',  featureCount: 5, hasHighlight: true, hasSaving: true, hasAskQuestion: true },
 }
 
 interface ServicesV2Props {
