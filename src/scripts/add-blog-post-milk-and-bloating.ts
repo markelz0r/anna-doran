@@ -7,6 +7,7 @@
  */
 import 'dotenv/config'
 import { randomBytes } from 'crypto'
+import path from 'path'
 import { getPayload } from 'payload'
 import config from '@payload-config'
 
@@ -290,15 +291,29 @@ const body: LexicalNode[] = [
   ]),
 ]
 
+// Picture shown at the top of the article and on its blog card. The focal point keeps Anna's
+// face and the books on her head in view when the portrait photo is cropped to a banner.
+const heroImageFile = path.resolve(process.cwd(), 'src/scripts/assets/milk-and-bloating-anna-doran.jpg')
+const heroImageData = {
+  alt: 'Anna Doran, dietitian, sitting on a sofa reading a nutrition book with a stack of books balanced on her head',
+  focalX: 50,
+  focalY: 52,
+}
+
 async function run() {
   const payload = await getPayload({ config })
 
-  // No picture yet: Anna will supply one, and it can be added here the same way as in
-  // add-blog-post-bloating-after-eating.ts.
+  const filename = path.basename(heroImageFile)
+  const existingImage = await payload.find({ collection: 'media', where: { filename: { equals: filename } }, limit: 1 })
+  const image = existingImage.docs[0]
+    ? await payload.update({ collection: 'media', id: existingImage.docs[0].id, data: heroImageData })
+    : await payload.create({ collection: 'media', data: heroImageData, filePath: heroImageFile })
+
   const data = {
     title,
     slug,
     excerpt,
+    heroImage: image.id,
     content: { root: { type: 'root', ...base, children: body } },
     _status: 'published' as const,
   }
@@ -308,6 +323,7 @@ async function run() {
     ? await payload.update({ collection: 'posts', id: existing.docs[0].id, data, draft: false })
     : await payload.create({ collection: 'posts', data, draft: false })
 
+  console.log(`${existingImage.docs[0] ? 'Updated' : 'Uploaded'} picture: ${(image as { filename?: string }).filename} (${image.id})`)
   console.log(`${existing.docs[0] ? 'Updated' : 'Created'} blog post: ${(doc as { slug?: string }).slug} (${doc.id})`)
   process.exit(0)
 }
