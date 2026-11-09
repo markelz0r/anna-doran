@@ -95,4 +95,26 @@
   }
   .blog-content img { border-radius: var(--radius-xl); max-width: 100%; height: auto; }
   .blog-content hr { border: 0; border-top: 1px solid var(--color-border); margin: 2em 0; }
+
+  /* Comparison tables: scroll sideways on small phones rather than squashing the columns. */
+  .blog-table { overflow-x: auto; margin-top: 1.5em; border: 1px solid var(--color-border); border-radius: var(--radius-xl); }
+  .blog-table table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; min-width: 560px; }
+  .blog-table th, .blog-table td { padding: 10px 14px; text-align: left; vertical-align: top; border-top: 1px solid var(--color-border); }
+  .blog-table tr:first-child > * { border-top: 0; background: var(--color-muted); font-weight: 600; }
+  .blog-table tr > :first-child { font-weight: 600; color: var(--color-muted-foreground); }
+  .blog-table p { margin: 0; }
+
+  /* Green "Tip" box for practical advice. */
+  .blog-tip { margin-top: 1.5em; padding: 18px 22px; border-radius: var(--radius-xl); background: #eef5ea; border: 1px solid #cfe0c4; color: #2f4a24; }
+  .blog-tip-title { display: flex; align-items: center; gap: 8px; font-weight: 600; color: #3f6b2e; margin-bottom: 0.4em; }
+  .blog-tip > * + * { margin-top: 0.6em; }
+  .blog-tip a { color: #3f6b2e; }
+
+  /* Numbered step cards, e.g. the lactose-free swap. */
+  .blog-steps { list-style: none !important; padding: 0 !important; margin-top: 1.5em; display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); counter-reset: none; }
+  .blog-steps li { margin: 0 !important; padding: 16px 18px; border-radius: var(--radius-xl); background: var(--color-card); border: 1px solid var(--color-border); display: flex; flex-direction: column; gap: 4px; }
+  .blog-steps-number { width: 28px; height: 28px; border-radius: 9999px; background: var(--color-primary); color: var(--color-primary-foreground); font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 4px; }
+  .blog-steps-label { font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-muted-foreground); }
+  .blog-steps-title { font-weight: 600; line-height: 1.35; }
+  .blog-steps-text { font-size: 15px; line-height: 1.6; color: var(--color-muted-foreground); }
 }

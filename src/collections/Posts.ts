@@ -1,4 +1,35 @@
-import type { CollectionConfig, FieldHook } from 'payload'
+import type { Block, CollectionConfig, FieldHook } from 'payload'
+import { BlocksFeature, EXPERIMENTAL_TableFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
+
+// Green box for practical advice inside an article.
+const TipBlock: Block = {
+  slug: 'tip',
+  labels: { singular: 'Tip box', plural: 'Tip boxes' },
+  fields: [
+    { name: 'title', type: 'text', defaultValue: 'Tip', admin: { description: 'Short heading shown at the top of the box.' } },
+    { name: 'content', type: 'richText', required: true },
+  ],
+}
+
+// A row of numbered cards for a step-by-step plan, e.g. a 4-week food trial.
+const StepsBlock: Block = {
+  slug: 'steps',
+  labels: { singular: 'Steps', plural: 'Steps' },
+  fields: [
+    {
+      name: 'steps',
+      type: 'array',
+      minRows: 2,
+      maxRows: 6,
+      required: true,
+      fields: [
+        { name: 'label', type: 'text', admin: { description: 'Small text above the title, e.g. "Week 1".' } },
+        { name: 'title', type: 'text', required: true },
+        { name: 'text', type: 'textarea' },
+      ],
+    },
+  ],
+}
 
 // "Is low FODMAP right for me?" -> "is-low-fodmap-right-for-me"
 const slugify = (value: string) =>
@@ -43,7 +74,19 @@ export const Posts: CollectionConfig = {
       relationTo: 'media',
       admin: { description: 'Optional picture shown at the top of the article and on the blog page.' },
     },
-    { name: 'content', type: 'richText', required: true },
+    {
+      name: 'content',
+      type: 'richText',
+      required: true,
+      editor: lexicalEditor({
+        features: ({ defaultFeatures }) => [
+          ...defaultFeatures,
+          EXPERIMENTAL_TableFeature(),
+          BlocksFeature({ blocks: [TipBlock, StepsBlock] }),
+        ],
+      }),
+      admin: { description: 'Use the + menu to add a table, a green Tip box or Steps cards. Headings (H2) are listed automatically in "In this article" at the top.' },
+    },
     {
       name: 'slug',
       type: 'text',

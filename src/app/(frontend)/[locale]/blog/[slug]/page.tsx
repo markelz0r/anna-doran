@@ -1,14 +1,15 @@
 import type { ComponentProps } from 'react'
 import Image from 'next/image'
 import { notFound, redirect } from 'next/navigation'
-import { ArrowLeft, ArrowRight } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Lightbulb } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
 import { getPayload } from 'payload'
 import config from '@payload-config'
+import type { SerializedBlockNode } from '@payloadcms/richtext-lexical'
 import { LinkJSXConverter, RichText, type JSXConvertersFunction } from '@payloadcms/richtext-lexical/react'
 import { Button } from '@/components/ui/button'
 import { Newsletter } from '@/components/sections/Newsletter'
-import { formatPostDate, imagePosition, postImage, type Post } from '@/lib/posts'
+import { formatPostDate, headingId, imagePosition, nodeText, postHeadings, postImage, type Post } from '@/lib/posts'
 import { ORGANIZATION_ID, PERSON_ID, SITE_URL } from '@/lib/site'
 
 export const dynamic = 'force-dynamic'
@@ -43,6 +44,57 @@ const converters: JSXConvertersFunction = ({ defaultConverters }) => ({
       return slug ? `/en/blog/${slug}` : '/en'
     },
   }),
+  // H2s get an id so the "In this article" list can link to them.
+  heading: ({ node, nodesToJSX }) => {
+    const Tag = node.tag
+    const id = Tag === 'h2' ? headingId(nodeText(node)) : undefined
+    return <Tag id={id}>{nodesToJSX({ nodes: node.children })}</Tag>
+  },
+  table: ({ node, nodesToJSX }) => (
+    <div className="blog-table">
+      <table>
+        <tbody>{nodesToJSX({ nodes: node.children })}</tbody>
+      </table>
+    </div>
+  ),
+  tablerow: ({ node, nodesToJSX }) => <tr>{nodesToJSX({ nodes: node.children })}</tr>,
+  tablecell: ({ node, nodesToJSX }) => {
+    const Tag = node.headerState > 0 ? 'th' : 'td'
+    return (
+      <Tag colSpan={node.colSpan && node.colSpan > 1 ? node.colSpan : undefined}>
+        {nodesToJSX({ nodes: node.children })}
+      </Tag>
+    )
+  },
+  blocks: {
+    tip: ({ node }: { node: SerializedBlockNode }) => {
+      const fields = node.fields as { title?: string; content?: RichTextData }
+      return (
+        <aside className="blog-tip">
+          <p className="blog-tip-title">
+            <Lightbulb className="h-5 w-5" aria-hidden="true" />
+            {fields.title || 'Tip'}
+          </p>
+          {fields.content && <RichText data={fields.content} converters={converters} disableContainer />}
+        </aside>
+      )
+    },
+    steps: ({ node }: { node: SerializedBlockNode }) => {
+      const { steps = [] } = node.fields as { steps?: { id?: string; label?: string; title: string; text?: string }[] }
+      return (
+        <ol className="blog-steps">
+          {steps.map((step, index) => (
+            <li key={step.id ?? index}>
+              <span className="blog-steps-number" aria-hidden="true">{index + 1}</span>
+              {step.label && <span className="blog-steps-label">{step.label}</span>}
+              <span className="blog-steps-title">{step.title}</span>
+              {step.text && <span className="blog-steps-text">{step.text}</span>}
+            </li>
+          ))}
+        </ol>
+      )
+    },
+  },
 })
 
 export async function generateMetadata({ params }: { params: Params }) {
@@ -80,6 +132,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
   const t = await getTranslations({ locale, namespace: 'blog' })
   const image = postImage(post)
   const url = `${SITE_URL}/en/blog/${post.slug}`
+  const headings = postHeadings(post.content)
 
   // BlogPosting structured data — helps search engines show the author and date.
   const jsonLd = {
@@ -126,6 +179,23 @@ export default async function BlogPostPage({ params }: { params: Params }) {
                 sizes="(max-width: 768px) 100vw, 768px"
               />
             </div>
+          )}
+
+          {headings.length > 2 && (
+            <nav aria-labelledby="in-this-article" className="mb-10 rounded-2xl border border-border p-5 md:p-6">
+              <p id="in-this-article" className="font-medium text-foreground mb-3">
+                {t('inThisArticle')}
+              </p>
+              <ol className="space-y-1.5 text-[15px] list-decimal pl-5 marker:text-muted-foreground">
+                {headings.map((heading) => (
+                  <li key={heading.id}>
+                    <a href={`#${heading.id}`} className="text-primary hover:underline underline-offset-2">
+                      {heading.text}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </nav>
           )}
 
           <RichText data={post.content as RichTextData} converters={converters} className="blog-content" />
