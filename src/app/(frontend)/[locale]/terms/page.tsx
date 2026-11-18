@@ -1,13 +1,13 @@
 import { pageAlternates } from '@/lib/site'
 import { ArrowLeft } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
+import { pageMeta } from '@/lib/page-meta'
 
 export const dynamic = 'force-dynamic'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
-  const t = await getTranslations({ locale, namespace: 'terms' })
-  return { title: t('title'), alternates: pageAlternates(locale, '/terms') }
+  return { ...pageMeta(locale, 'terms'), alternates: pageAlternates(locale, '/terms') }
 }
 
 /**

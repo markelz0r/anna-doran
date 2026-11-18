@@ -1,5 +1,6 @@
 import { pageAlternates } from '@/lib/site'
 import { QuizForm } from './QuizForm'
+import { pageMeta } from '@/lib/page-meta'
 
 /**
  * Server wrapper around the interactive quiz.
@@ -11,7 +12,7 @@ import { QuizForm } from './QuizForm'
  */
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
-  return { alternates: pageAlternates(locale, '/quiz') }
+  return { ...pageMeta(locale, 'quiz'), alternates: pageAlternates(locale, '/quiz') }
 }
 
 export default function QuizPage() {

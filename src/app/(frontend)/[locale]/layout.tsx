@@ -14,6 +14,7 @@ import { CookieBanner } from '@/components/shared/CookieBanner'
 import { GoogleAnalytics } from '@/components/shared/GoogleAnalytics'
 import { HashScroll } from '@/components/shared/HashScroll'
 import '@/app/globals.css'
+import { pageMeta } from '@/lib/page-meta'
 
 const cormorantSC = Cormorant_SC({
   subsets: ['latin', 'cyrillic'],
@@ -28,13 +29,8 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
-  return {
-    title: locale === 'ru' ? 'Анна Доран — Диетолог' : 'Anna Doran — Dietitian',
-    description:
-      locale === 'ru'
-        ? 'Восстановите энергию и здоровье через осознанное отношение к себе и своему питанию'
-        : 'Restore your energy and health through a conscious attitude towards yourself and your diet',
-  }
+  // Fallback for pages that don't set their own title and description.
+  return pageMeta(locale, 'home')
 }
 
 export default async function LocaleLayout({

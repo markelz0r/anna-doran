@@ -7,12 +7,13 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Separator } from '@/components/ui/separator'
 import { ScrollableTimeline } from '@/components/shared/ScrollableTimeline'
 import { YouTubeEmbed } from '@/components/shared/YouTubeEmbed'
+import { pageMeta } from '@/lib/page-meta'
 
 export const dynamic = 'force-dynamic'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
-  return { alternates: pageAlternates(locale, '/about') }
+  return { ...pageMeta(locale, 'about'), alternates: pageAlternates(locale, '/about') }
 }
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -73,17 +74,6 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             <p>{t('journeyPara3')}</p>
             <p>{t('journeyPara4')}</p>
             <p>{t('journeyPara5')}</p>
-
-            <h2 className="font-[family-name:var(--font-heading)] text-[28px] md:text-[36px] font-medium text-foreground !mt-6 mb-2">
-              {t('journeySubheading')}
-            </h2>
-
-            {(t.raw('journeyMilestones') as string[]).map((item, i) => (
-              <div key={i} className="flex items-start gap-3">
-                <span className="w-2 h-2 rounded-full bg-primary shrink-0 mt-2" />
-                <p className="text-base text-foreground leading-relaxed">{item}</p>
-              </div>
-            ))}
 
             <h2 className="font-[family-name:var(--font-heading)] text-[28px] md:text-[36px] font-medium text-foreground !mt-8 mb-3">
               {t('beyondHeading')}

@@ -15,10 +15,11 @@ import { About } from '@/components/sections/About'
 import { Contact } from '@/components/sections/Contact'
 import { Newsletter } from '@/components/sections/Newsletter'
 import { ORGANIZATION_ID, pageAlternates, PERSON_ID, SITE_URL, socialProfileUrls } from '@/lib/site'
+import { pageMeta } from '@/lib/page-meta'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
-  return { alternates: pageAlternates(locale) }
+  return { ...pageMeta(locale, 'home'), alternates: pageAlternates(locale) }
 }
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
